@@ -19,7 +19,6 @@
     height: 4rem;
     display: flex;
     justify-content: center;
-    
   }
   .logo h1 a{
     color: #EDEDED;
@@ -48,7 +47,7 @@
   .nav-links  li a:hover{
     color: #DA0037;
   }
-  .nav-links .btn{
+.btn{
     background-color: #DA0037;
     color: #EDEDED;
     border: none;
@@ -58,7 +57,7 @@
     cursor: pointer;
     
   }
-  .nav-links .btn:hover{
+ .btn:hover{
     background-color: #FF0044;
   }
   .toggle-button {
@@ -94,7 +93,7 @@
      padding-top: 10px ;
      height: 0;
      opacity: 0;
-     
+     z-index: 1;
      }
      .toggle-button{
       display: flex;
