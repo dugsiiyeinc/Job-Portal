@@ -184,7 +184,7 @@ img{
     border-radius: 5px;
     cursor: pointer;
 }
-.Job-tilte{
+.Job-tilte p{
   
   font-size: 25px;
   
@@ -196,13 +196,7 @@ img{
    
 }
 
-/* mobile section */
-@media (max-width:768px){
-  .recent-jobs-list-container {
-    display: grid;
-    grid-template-columns: 1fr;  
-      
-}
-}
+ 
+
 
 /* job posting list end */
