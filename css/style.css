@@ -89,6 +89,110 @@ img{
 
 /* start job posting  list */
 
+  .Recent-jobs {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
 
 
+  
+  }
+  .recent-jobs-heading{
+    display: flex;
+    
+    align-items: center;
+   justify-content: center;
+   font-size: 25px;
+  }
+  
+  .recent-jobs-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    cursor: pointer;
+    gap: 18px;
+
+   
+}
+
+ 
+
+  .recent-jobs-list{
+    display: flex;
+    flex-direction: column;
+    background-color: #EDEDED;
+    border-radius: .75rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 );
+    padding: .5rem;
+    margin-top: 19px;
+    
+    
+  }
+
+  .recent-jobs-list:hover{
+    border-radius: .75rem ease-in 0.5;
+    border-width: 3px;
+    --tw-border-opacity: 1;
+    border: solid 2px #171717
+
+  }
+  .job-card-above{
+    margin-top: 20px;
+    display: flex;
+   
+    gap: 5px;
+    margin-bottom: 10px;
+    
+    color:#171717;
+   
+  }
+  .job-card-above img{
+    width: 80px;
+    height: 90px ;
+    object-fit: contain;
+    
+  }
+
+  .job-card-titles{
+    display: flex;
+    flex-direction: column;
+     justify-content: space-around;
+    padding: 5px;
+    
+  }
+  
+  .Job-tilte{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-align: start;
+     
+    font-size: 23px;
+    line-height: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  
+.job-card-buttom button{
+  background-color: #DA0037;
+    color: #EDEDED;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Job-tilte{
+  
+  font-size: 25px;
+  
+}
+
+.Job-hiring-company{
+  font-size: 18px;
+  font-weight: 500px;
+   
+}
 /* job posting list end */
