@@ -14,3 +14,74 @@ body{
   width: min(90% ,1200px);
   margin: 0 auto;
 }
+img{
+  max-width: 100%;
+}
+/* hero section */
+.hero-section{
+  height:calc(100vh - 4rem);
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.hero-section .hero-left{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hero-left h2{
+  font-size: 3rem;
+  font-weight: 800;
+}
+.hero-left p{
+  font-size: 1.4rem;
+}
+.hero-search {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.hero-search input{
+  flex: 1;
+  padding: 12px ;
+  border-radius: 5px;
+  border: none;
+  background-color: #EDEDED;
+  font-size: 1rem;
+}
+.hero-right  img{
+
+  height: 100%;
+  border-radius: 10px;
+}
+/* end hero sectom */
+
+@media (max-width:768px){
+  /* start hero sectom */
+  .hero-section{
+    flex-direction: column;
+    gap:10px;
+    
+  }
+  .hero-section .hero-left{
+    gap: 10px;
+    margin-top: 1.5rem;
+  }
+  .hero-left h2{
+    font-size: 2rem;
+  
+  }
+  .hero-left p{
+    font-size: 1rem;
+  }
+  .hero-right{
+    width: 100%;
+  }
+  .hero-right img{
+    height: 230px;
+    width: 100%;
+  }
+  /* end hero sectom */
+}
