@@ -197,12 +197,6 @@ img{
 }
 
 /* mobile section */
-@media (max-width:768px){
-  .recent-jobs-list-container {
-    display: grid;
-    grid-template-columns: 1fr;  
-      
-}
-}
+
 
 /* job posting list end */
