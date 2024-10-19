@@ -184,7 +184,7 @@ img{
     border-radius: 5px;
     cursor: pointer;
 }
-.Job-tilte{
+.Job-tilte p{
   
   font-size: 25px;
   
@@ -195,4 +195,8 @@ img{
   font-weight: 500px;
    
 }
+
+ 
+
+
 /* job posting list end */
