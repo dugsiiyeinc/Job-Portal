@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #171717;
+    color: #EDEDED;
+  }
+  .container{
+    width: min(90% ,1200px);
+    margin: 0 auto;
+  }
+  header{
+    background-color: #444;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .logo h1 a{
+    color: #EDEDED;
+    font-size: 2rem;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+  .nav-links {
+    display: flex;
+   align-items: center;
+   gap: 2rem;
+  }
+  .nav-links  li{
+   list-style: none;
+  }
+  .nav-links  li a{
+    color: #EDEDED;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .nav-links  li a:hover{
+    color: #DA0037;
+  }
+  .nav-links .btn{
+    background-color: #DA0037;
+    color: #EDEDED;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  .nav-links .btn:hover{
+    background-color: #FF0044;
+  }
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  .toggle-button .bar{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  @media (max-width:768px){
+     nav{
+      flex-direction: column;
+      align-items: start;
+      gap: .7rem;
+     }
+     nav h1{
+      margin-top: 1rem;
+     }
+     .nav-links{
+      width: 100%;
+     flex-direction: column;
+     justify-content: center;
+     background-color: #444;
+     padding-top: 10px ;
+     height: 0;
+     opacity: 0;
+     
+     }
+     .toggle-button{
+      display: flex;
+  }
+  .nav-links.active {
+      height: 300px;
+      opacity: 1;
+      transition: 300ms ease-in-out;
+  }
+  nav.active .toggle-button .bar{
+      transition: 300ms ease-in-out;
+  }
+  nav.active .toggle-button .bar:nth-child(2){
+      opacity: 0;
+  
+  }
+  nav.active .toggle-button .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+  }
+  nav.active .toggle-button .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-links .btn{
+    width: 100%;
+    padding: 15px 0;
+  }
+  }
