@@ -10,8 +10,8 @@
   <body>
     <div class="auth-model">
       <div class="auth-container">
-        <h1>Sign in</h1>
-        <form class="auth-form">
+        <h1 id="formTitle">Sign in</h1>
+        <form class="authForm">
           <input
             type="text"
             id="username"
@@ -31,11 +31,11 @@
           />
           <input
             type="password"
-            id="confirm-password"
+            id="confirmPassword"
             placeholder="Confirm your Password"
             style="display: none"
           />
-          <button type="submit" class="btn">Sign In</button>
+          <button type="submit" class="btn" id="authButton">Sign In</button>
          
         </form>
         <p id="authSwitch">
