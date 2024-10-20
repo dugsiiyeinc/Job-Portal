@@ -6,6 +6,9 @@ const confirPassword = document.querySelector("#confirmPassword");
 const authSwitch = document.querySelector("#authSwitch");
 const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
+const authForm = document.querySelector(".authForm");
+
+
 
 let signin = true;
 
@@ -14,8 +17,6 @@ document.body.addEventListener("click", (e) =>{
     if(e.target.id != "switchForm") return;
      switchAuthForm();
 });
-
-
 const switchAuthForm = () =>{
     signin = !signin;
 
@@ -23,7 +24,7 @@ const switchAuthForm = () =>{
         formTitle.textContent = "Sign Up";
         username.style.display = "block";
         confirPassword.style.display = "block";
-        authButton.textContent = "Sign Up";
+        authButton.textContent = "Regester";
         authSwitch.innerHTML = `
             <p id="authSwitch">
             Already have an account? <a href="#" id="switchForm">Signin</a>
@@ -40,4 +41,58 @@ const switchAuthForm = () =>{
     }
     
     
-}
+};
+
+authForm.addEventListener("submit" , (e) =>{
+    e.preventDefault();
+
+
+    let user = {
+        username : signin? undefined : username.value,
+        email : email.value,
+        password : password.value,
+        confirPassword :signin? undefined:  confirPassword.value
+    }
+  
+    
+    if(signin){
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        console.log(users);
+        
+
+        const exestingUser = users.find(currentUser => currentUser.email  === user.email || currentUser.password === user.password );
+        
+        if(exestingUser){
+            localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
+           window.location.href = "../html/jobs.html";
+       
+        }else{
+            alert("Invalid credentials");
+            return;
+        }
+
+    }else{
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        console.log(users);
+        
+
+        const exestingUser = users.find(currentUser => currentUser.username  === user.username || currentUser.email === user.email );
+        
+        if(exestingUser){
+            alert(`user ${user.username} already exists!`);
+            return;
+        }
+
+
+        if(confirPassword.value !== password.value){
+            alert("password does not matched");
+            return;
+        }
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+        switchAuthForm();
+    }
+})
+
+
+
