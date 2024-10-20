@@ -10,13 +10,16 @@ body{
   background-color: #171717;
   color: #EDEDED;
 }
+
 .container{
   width: min(90% ,1200px);
   margin: 0 auto;
 }
+
 img{
   max-width: 100%;
 }
+
 /* hero section */
 .hero-section{
   height:calc(100vh - 4rem);
@@ -74,7 +77,7 @@ img{
   
   }
   .hero-left p{
-    font-size: 1rem;
+   display: none;
   }
   .hero-right{
     width: 100%;
