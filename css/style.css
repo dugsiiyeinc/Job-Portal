@@ -200,6 +200,20 @@ img{
      
       
 }
+
+.job-card-buttom button{
+  background-color: #DA0037;
+    color: #EDEDED;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  .Job-tilte{
+    font-size: 19px;
+  }
 }
 
 /* job posting list end */
