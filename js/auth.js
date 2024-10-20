@@ -15,7 +15,15 @@ const getusersFromLocalstorage = () =>{
 
 let signin = true;
 
-
+const adminusers = [
+    {
+        username : "shiine1",
+        email : "shiine1@gmail.com",
+        password : 11,
+        confirPassword :11,
+        isAdmin : true
+    },
+];
 
 
 
