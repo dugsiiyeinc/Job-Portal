@@ -23,6 +23,13 @@ const adminusers = [
         confirPassword :11,
         isAdmin : true
     },
+    {
+        username : "ayanle1",
+        email : "ayanle1@gmail.com",
+        password : 11,
+        confirPassword :11,
+        isAdmin : true
+    },
 ];
 
 const users = getusersFromLocalstorage();
@@ -88,14 +95,23 @@ authForm.addEventListener("submit" , (e) =>{
     
     if(signin){
         const users = getusersFromLocalstorage();
-
-        const exestingUser = users.find(currentUser => currentUser.email  === user.email || currentUser.password === user.password );
-        
-        if(exestingUser){
-            localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-           window.location.href = "../html/jobs.html";
        
-        }else{
+       
+        const exestingUser = users.find(currentUser => currentUser.email  == user.email && currentUser.password == user.password );
+       console.log(exestingUser);
+       console.log(users);
+       
+        
+        if(exestingUser && exestingUser.isAdmin){
+            localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
+        //    window.location.href = "../html/jobs.html";
+         alert("user is  admin");
+        }
+        else if(exestingUser && !exestingUser.isAdmin){
+            localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
+            alert("user is not admin");
+        }
+        else{
             alert("Invalid credentials");
             return;
         }
@@ -117,6 +133,7 @@ authForm.addEventListener("submit" , (e) =>{
             return;
         }
         users.push(user);
+        alert("user regestration Successfully!")
         localStorage.setItem("users", JSON.stringify(users));
         switchAuthForm();
     }
