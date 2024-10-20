@@ -60,3 +60,9 @@
 .auth-container p a:hover{
     color: #FF0044;
 }
+
+@media (max-width:768px){
+    .auth-container{
+        width: 90%;
+    }
+}
