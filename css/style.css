@@ -189,6 +189,7 @@ img{
 .Job-hiring-company{
   font-size: 18px;
   font-weight: 500px;
+  
    
 }
 
@@ -221,7 +222,7 @@ img{
 /* start hiring comapnies */
 
 .hiring-companies{
-  
+  margin-top: 5rem !important;
   /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)); */
   margin-bottom: 5px;
   display: flex;
