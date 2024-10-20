@@ -25,7 +25,13 @@ const adminusers = [
     },
 ];
 
+const users = getusersFromLocalstorage();
 
+adminusers.forEach(user => {
+    users.push(user);  
+})
+
+localStorage.setItem("users" ,JSON.stringify(users));
 
 
 document.body.addEventListener("click", (e) =>{
