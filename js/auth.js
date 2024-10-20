@@ -40,7 +40,7 @@ adminusers.forEach(user => {
 
 localStorage.setItem("users" ,JSON.stringify(users));
 
-console.log(users);
+
 
 document.body.addEventListener("click", (e) =>{
   
