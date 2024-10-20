@@ -291,9 +291,20 @@ img{
   .slides {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-     
-     
-      
 }
+
+  .slides{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;       
+    justify-items: center; 
+  }
+  .stats{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    align-items: center;       
+    justify-items: center; 
+  }
+  
 }
 /* end Hiring Companies */
