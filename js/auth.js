@@ -104,11 +104,13 @@ authForm.addEventListener("submit" , (e) =>{
         
         if(exestingUser && exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-        //    window.location.href = "../html/jobs.html";
+           window.location.href = "../html/admin.html";
       
         }
         else if(exestingUser && !exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
+            window.location.href = "../html/jobs.html";
+
         }
         else{
             alert("Invalid credentials");
