@@ -67,7 +67,7 @@
     width: 30px;
     height: 21px;
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
   }
   .toggle-button .bar{
@@ -119,5 +119,6 @@
   .nav-links .btn{
     width: 100%;
     padding: 15px 0;
+    text-align: center;
   }
   }

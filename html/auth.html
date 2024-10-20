@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth</title>
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/manu.css">
+  </head>
+  <body>
+    <header >
+        <nav class="container ">
+            <div class="logo">
+                <h1> <a href="/">Job <strong style="color:#DA0037">Portal</strong></a></h1>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+         
+                <ul class="nav-links ">
+                    <li> <a href="/">Home</a> </li>
+                    <li> <a href="#">Jobs</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                    <a href="/html/auth.html" class="btn">Log in</a>
+                </ul>
+                
+    </nav>
+    
+ </header>
+    <div class="auth-model">
+      <div class="auth-container">
+        <h1>Sign in</h1>
+        <form class="auth-form">
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your Username"
+            style="display: none"
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your Email"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="enter your password"
+          />
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm your Password"
+            style="display: none"
+          />
+          <button type="submit" class="btn">Sign In</button>
+         
+        </form>
+        <p id="authSwitch">
+            New to JobPortal? <a href="#" id="switchForm">Register now</a>
+          </p>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
