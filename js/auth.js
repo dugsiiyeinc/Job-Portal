@@ -8,9 +8,17 @@ const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
 
-
+const getusersFromLocalstorage = () =>{
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    return users;
+}
 
 let signin = true;
+
+
+
+
+
 
 document.body.addEventListener("click", (e) =>{
   
@@ -51,14 +59,13 @@ authForm.addEventListener("submit" , (e) =>{
         username : signin? undefined : username.value,
         email : email.value,
         password : password.value,
-        confirPassword :signin? undefined:  confirPassword.value
+        confirPassword :signin? undefined:  confirPassword.value,
+        idAdmin:  false
     }
   
     
     if(signin){
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        console.log(users);
-        
+        const users = getusersFromLocalstorage();
 
         const exestingUser = users.find(currentUser => currentUser.email  === user.email || currentUser.password === user.password );
         
@@ -72,9 +79,8 @@ authForm.addEventListener("submit" , (e) =>{
         }
 
     }else{
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        console.log(users);
-        
+
+        const users = getusersFromLocalstorage();
 
         const exestingUser = users.find(currentUser => currentUser.username  === user.username || currentUser.email === user.email );
         
