@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 4rem) ;
 }
 
 .auth-container{
@@ -63,6 +63,6 @@
 
 @media (max-width:768px){
     .auth-container{
-        width: 90%;
+        max-width: 90%;
     }
 }
