@@ -1,7 +1,11 @@
 .footer {
     padding: 40px 0;
-    background-color: #171717;
+    background-color: #333;
     color: white;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer ul {
