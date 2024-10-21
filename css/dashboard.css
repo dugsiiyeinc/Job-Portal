@@ -59,3 +59,43 @@
     margin: 0;
     color: #ffffff;
 }
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.stat-card:last-child {
+    margin-right: 0;
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    color: #b3b3b3;
+}
+
+.stat-card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+}
