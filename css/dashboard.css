@@ -120,6 +120,65 @@
     margin-right: 0;
 }
 
+/* job post from css */
+    
+.blog-container{
+    background-color: #fff;
+    max-width: 500px;
+    margin:  auto;
+    padding: 30PX;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+.post-container{
+    background-color: #fff;
+    max-width: 500px;
+    margin:  auto;
+    padding: 30PX;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+#bloghead{
+    text-align: center;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.allElements{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px ;
+  border-radius: 5px;
+  border: none;
+  background-color: #EDEDED;
+  font-size: 1rem;
+  align-items: center;
+}
+
+textarea{
+    height: 100px;
+    margin-bottom: 15px;
+}
+#form button{
+    width: 100%;
+    padding: 8px;
+}
+#form input{
+     padding: 5px;
+     
+}
+
+.image{
+    width: 100%;
+}
+/* end job post form */
+
 @media (max-width: 768px) {
     .sidebar {
         position: fixed;
