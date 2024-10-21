@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/manu.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/manu.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <!-- start header -->
-    <header >
-        <nav class="container ">
-            <div class="logo">
-                <h1> <a href="#">Job <strong style="color:#DA0037">Portal</strong></a></h1>
-                <a href="#" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-            </div>
-         
-                <ul class="nav-links ">
-                    <li> <a href="#home">Home</a> </li>
-                    <li> <a href="#about">Jobs</a> </li>
-                    <li> <a href="#service">Contact</a> </li>
-                    <a href="/html/auth.html" class="btn">Log in</a>
-                </ul>
-                
-    </nav>
-    
- </header>
-  <!-- end header -->
+    <header>
+      <nav class="container">
+        <div class="logo">
+          <h1>
+            <a href="#">Job <strong style="color: #da0037">Portal</strong></a>
+          </h1>
+          <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
+        </div>
 
-  <!-- startfooter -->
-  <footer class="footer">
-    <div class="social" >
-        <h3 id="social-heading" class="sr-only"> Follow us on social media</h3>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-    <hr class="footer-break">
-    <ul class="footer-links" >
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Jobs</a></li>
+          <li><a href="#service">Contact</a></li>
+          <a href="/html/auth.html" class="btn">Log in</a>
+        </ul>
+      </nav>
+    </header>
+    <!-- end header -->
+    <main>
+      <div class="dashboard">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#" id="jobs">Job Listings</a></li>
+                    <li><a href="#">Applications</a></li>
+                    <li><a href="#">Interviews</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </ul>
+            </nav>
+        </aside>
+      </div>
+    </main>
+    <!-- startfooter -->
+    <footer class="footer">
+      <div class="social">
+        <h3 id="social-heading" class="sr-only">Follow us on social media</h3>
+        <a href="#" aria-label="Facebook"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="#" aria-label="Twitter"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a href="#" aria-label="Instagram"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+      <hr class="footer-break" />
+      <ul class="footer-links">
         <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Privacy </a></li>
         <li><a href="#">Sitemap</a></li>
-    </ul>
-    <p class="copyright"> © 2024 Job Portal. Some Rights Reserved</p>
-</footer>
-<!-- end footer -->
+      </ul>
+      <p class="copyright">© 2024 Job Portal. Some Rights Reserved</p>
+    </footer>
+    <!-- end footer -->
 
- <script src="/js/main.js"></script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
