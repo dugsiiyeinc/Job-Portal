@@ -1,7 +1,7 @@
-const dashboardTab = document.querySelector('.dashboard-tab');
-const addJobTab = document.querySelector('.jobs-tab')
+const dashboardTab = document.querySelector('.dashboard-tab a');
+const jobAddContainer = document.querySelector('.add-job-container')
 const mainDashboard = document.querySelector('.main-content-tab')
-const addnewJobTab = document.querySelector('.job-post')
+const addnewJobTab = document.querySelector('.jobs-tab')
 
 
 
@@ -9,20 +9,21 @@ dashboardTab.addEventListener('click', function() {
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
     mainDashboard.style.display = 'block';
-    addnewJobTab.style.display = 'none';
-    jobTab.classList.toggle('active');;
+    jobAddContainer.style.display = 'none';
+    addnewJobTab.classList.toggle('active');;
     dashboardTab.classList.toggle('active');
 
     
     
 })
 
-addJobTab.addEventListener('click', function() { 
+addnewJobTab.addEventListener('click', function() { 
         console.log('job tab clicked')
         // show the jobs tab content and hide the dashboard tab content
-        mainDashboard.style.display = 'none';
-        // dashboardTab.classList.remove('active');
+         
+        mainDashboard.style.display = 'none'
+        jobAddContainer.style.display = 'block'
+        addnewJobTab.classList.toggle('active');
         dashboardTab.classList.toggle('active');
-        addnewJobTab.style.display = 'block'
-        jobTab.classList.toggle('active');;
+        
 })

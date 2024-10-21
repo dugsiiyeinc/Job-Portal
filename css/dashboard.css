@@ -3,7 +3,7 @@
     display: flex;
     min-height: 100vh;
 }
-.job-post{
+.add-job-container{
     display: none;
 }
 .sidebar {
