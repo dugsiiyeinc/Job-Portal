@@ -46,14 +46,16 @@
             <h2>Menu</h2>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li class="dashboard-tab"> <a href="#" class="active">Dashboard</a></li>
                     <li><a href="#" id="jobs">Job Listings</a></li>
                     <li><a href="#">Applications</a></li>
                     <li><a href="#">Log out</a></li>
                 </ul>
             </nav>
         </aside>
-        <div class="main-content">
+
+
+        <div class=" main-content-tab main-content ">
             <div class="header">
                 <button id="sidebarToggle" class="sidebar-toggle">☰</button>
                 <h1>Job Portal Dashboard</h1>
@@ -80,8 +82,41 @@
                 </section>
             </div>
         </div>
+
+
+        <!-- job post tab -->
+        <div class="main-content job-post">
+          <div class="header">
+              <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+              <h1>Add new job</h1>
+          </div>
+          <div class="content">
+              <section class="stats">
+                  <div class="stat-card">
+                      <h3>Total Jobs</h3>
+                      <p id="totalJobs">0</p>
+                  </div>
+                  <div class="stat-card">
+                      <h3>Active Applications</h3>
+                      <p id="activeApplications">0</p>
+                  </div>
+                  <div class="stat-card">
+                      <h3>Interviews Scheduled</h3>
+                      <p id="interviewsScheduled">0</p>
+                  </div>
+              </section>
+              <section class="charts">
+                  <div class="chart-container">
+                      <canvas id="applicationStatusChart"></canvas>
+                  </div>
+              </section>
+          </div>
+      </div>
+
       </div>
     </main>
+
+
     <!-- startfooter -->
     <footer class="footer">
       <div class="social">
@@ -109,5 +144,6 @@
     <!-- end footer -->
 
     <script src="/js/main.js"></script>
+    <script src="/js/dash.js"></script>
   </body>
 </html>
