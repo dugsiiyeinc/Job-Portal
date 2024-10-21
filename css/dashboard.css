@@ -39,3 +39,23 @@
     background-color: #3c3c3c;
     color: #ffffff;
 }
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content header {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content header h1 {
+    margin: 0;
+    color: #ffffff;
+}
