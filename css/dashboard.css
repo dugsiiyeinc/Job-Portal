@@ -46,16 +46,16 @@
     transition: margin-left 0.3s ease-in-out;
 }
 
-.main-content header {
+.main-content .header {
     background-color: #2c2c2c;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
-.main-content header h1 {
+.main-content .header h1 {
     margin: 0;
     color: #ffffff;
 }
@@ -116,4 +116,37 @@
 
 .chart-container:last-child {
     margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .stats, .charts {
+       
+        flex-direction: column;
+    }
+
+    .stat-card, .chart-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
