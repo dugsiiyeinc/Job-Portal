@@ -1,5 +1,5 @@
 const dashboardTab = document.querySelector('.dashboard-tab');
-const jobTab = document.querySelector('.jobs-tab')
+const addJobTab = document.querySelector('.jobs-tab')
 const mainDashboard = document.querySelector('.main-content-tab')
 const addnewJobTab = document.querySelector('.job-post')
 
@@ -17,7 +17,7 @@ dashboardTab.addEventListener('click', function() {
     
 })
 
-jobTab.addEventListener('click', function() { 
+addJobTab.addEventListener('click', function() { 
         console.log('job tab clicked')
         // show the jobs tab content and hide the dashboard tab content
         mainDashboard.style.display = 'none';
