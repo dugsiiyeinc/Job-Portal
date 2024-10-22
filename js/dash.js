@@ -155,9 +155,7 @@ function addPost (e) {
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
-        postTitle.value = ""
-        imageUrl.value = ""
-        postArea.value = ""
+       window.location.reload()
     }
     
 }
