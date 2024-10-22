@@ -145,7 +145,8 @@ function SavePostDetailToLocalStorage(jobPostDetail){
     const oldJobPostDetail = getPostFromLocalStorage()
     oldJobPostDetail.push(jobPostDetail)
 
-    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail))   
+    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail));  
+   
 }
 
 function getPostFromLocalStorage(){ 
@@ -177,7 +178,8 @@ const addJobsToTheDom = (job) =>{
             </div>`;
 
             Swal.fire({
-                title: "add job to the Job lists",
+                title: "success!",
+                text: "add job to the Job lists",
                 icon: "success",
                 ConfirmedButtonText:"ok"
               });
