@@ -12,10 +12,12 @@ const dateInput = document.querySelector('#dateInput');
 const companyInput = document.querySelector('#companyInput');
 const jobCategory = document.querySelector('#jobCategory')
 const postButton = document.querySelector('#addPostBtn')
-
 const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
+const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
+
+
 
 // openSidebar
 
@@ -28,19 +30,21 @@ closeSidebar.addEventListener("click", () =>{
     sidebar.classList.toggle("active");
 })
 
+//active side bar links when click
 
+sidebarLinks.forEach(link => {
+    link.addEventListener("click", () =>{
+        sidebarLinks.forEach(link => link.classList.remove("active"));
+        link.classList.add("active");
+    })
+})
 
 // labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
 dashboardTab.addEventListener('click', function() { 
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
     mainDashboard.style.display = 'block';
-    jobAddContainer.style.display = 'none';
-    addnewJobTab.classList.toggle('active');;
-    dashboardTab.classList.toggle('active');
-
-    
-    
+    jobAddContainer.style.display = 'none';    
 })
 
 addnewJobTab.addEventListener('click', function() { 
@@ -49,8 +53,6 @@ addnewJobTab.addEventListener('click', function() {
          
         mainDashboard.style.display = 'none'
         jobAddContainer.style.display = 'block'
-        addnewJobTab.classList.toggle('active');
-        dashboardTab.classList.toggle('active');
         
 })
 

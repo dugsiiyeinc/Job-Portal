@@ -36,9 +36,10 @@
     transition: background-color 0.2s;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
+.sidebar nav ul li:hover,
+.sidebar nav ul li.active {
     background-color: #3c3c3c;
+    border-radius: 5px;
     color: #ffffff;
 }
 /* end side bar */
