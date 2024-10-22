@@ -175,10 +175,11 @@
 }
 
 textarea{
-    width: 400px; /* Fixed width */
+    width: 400px; 
     overflow: hidden;
-    resize: none; /* Prevents user from resizing */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    resize: none;  
+    box-sizing: border-box; 
+    
 }
 #form button{
     width: 100%;
@@ -195,9 +196,25 @@ textarea{
       
      
 }
+.date-and-select{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin : 10px;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    
+    
+}
 
 .date-placeholder {
     color: #aaa;
+
+}
+option{
+    background-color: #171717;
+    font-size: 24px;
 }
 
 .image{
