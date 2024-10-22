@@ -1,4 +1,4 @@
-
+/* start side bar */
 .dashboard {
     display: flex;
     min-height: 100vh;
@@ -41,7 +41,9 @@
     background-color: #3c3c3c;
     color: #ffffff;
 }
+/* end side bar */
 
+/* start main content */
 .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -120,6 +122,8 @@
     margin-right: 0;
 }
 
+/* start main content */
+
 /* job post from css */
     
 .blog-container{
@@ -180,6 +184,7 @@ textarea{
 /* end job post form */
 
 @media (max-width: 768px) {
+    /* start side bar responsive */
     .sidebar {
         position: fixed;
         top: 0;
@@ -192,7 +197,8 @@ textarea{
     .sidebar.active {
         transform: translateX(0);
     }
-
+     /* end side bar responsive */
+       /* start main content responsive */
     .main-content {
         margin-left: 0;
     }
@@ -213,6 +219,7 @@ textarea{
         margin-right: 0;
         margin-bottom: 10px;
     }
+       /* end main content responsive */
 }
 
 @media (max-width: 480px){
