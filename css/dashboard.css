@@ -160,6 +160,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .allElements{
@@ -174,18 +175,29 @@
 }
 
 textarea{
-    height: 100px;
-    margin-bottom: 15px;
-    width: 100%;
+    width: 400px; /* Fixed width */
+    overflow: hidden;
+    resize: none; /* Prevents user from resizing */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 #form button{
     width: 100%;
-    padding: 8px;
+    background-color: #DA0037;
+    color: #EDEDED;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
-#form input{
+#form input select {
      padding: 12px 12px;
       
      
+}
+
+.date-placeholder {
+    color: #aaa;
 }
 
 .image{
