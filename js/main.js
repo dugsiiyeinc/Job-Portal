@@ -22,8 +22,8 @@ function loadJobPosts(){
     const posts = getPostFromLocalStorage()
 
     posts.forEach(jobPost => {
-        // addPostToDOm(jobPost)
-        console.log(jobPost)
+        addjobPostToDOm(jobPost)
+        // console.log(jobPost)
 
     });
 
@@ -37,7 +37,30 @@ function getPostFromLocalStorage(){
     
 }
  
+// function kaan waxa ku soo daabaca latesr four job to dom
 
+function addjobPostToDOm (jobPost ){
+    console.log(jobPost)
+    const jobPostContainer = document.querySelector('.recent-jobs-list-container')
+    jobPostContainer.innerHTML = `
+         <div class="job-card-above">
+                        <img src="${jobPost.imageUrl}" alt="">
+                        <div class="job-card-titles">
+                        <p class="Job-tilte">${jobPost.postTitle}</p>
+                        </p>  
+                        <p class=" Job-hiring-company">${jobPost.companyInput}</p>
+                    </div>
+                    </div>
+                    <div class="job-card-buttom" >
+                        <button> <i class="fa-solid fa-suitcase"></i> Job </button>
+                        <button> <i class="fa-solid fa-calendar-week"></i> ${jobPost.dateInput} </button>
+                        <button> <i class="fa-solid fa-location-arrow"></i> ${jobPost.postLocation} </button>
+                    </div>
+        
+                </div>
+    `    
+
+}
 
 
 
