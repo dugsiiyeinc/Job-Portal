@@ -59,6 +59,7 @@
   }
  .btn:hover{
     background-color: #FF0044;
+    color: #EDEDED !important;
   }
   .toggle-button {
     display: none;
@@ -91,7 +92,7 @@
      justify-content: center;
      background-color: #444;
      padding-top: 10px ;
-     height: 0;
+     min-height: 0;
      opacity: 0;
      z-index: 1;
      }
@@ -99,7 +100,7 @@
       display: flex;
   }
   .nav-links.active {
-      height: 300px;
+      min-height: 220px;
       opacity: 1;
       transition: 300ms ease-in-out;
   }
@@ -116,9 +117,11 @@
   nav.active .toggle-button .bar:nth-child(3){
       transform: translateY(-8px) rotate(-45deg);
   }
-  .nav-links .btn{
+  .nav-links li {
     width: 100%;
-    padding: 15px 0;
     text-align: center;
+  }
+  .nav-links  .btn{
+    width: 100%;
   }
   }
