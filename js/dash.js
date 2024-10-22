@@ -22,6 +22,11 @@ const sidebar = document.querySelector('.sidebar');
 openSidebar.addEventListener("click", () =>{
     sidebar.classList.toggle("active");
 })
+// closeidebar
+
+closeSidebar.addEventListener("click", () =>{
+    sidebar.classList.toggle("active");
+})
 
 
 
