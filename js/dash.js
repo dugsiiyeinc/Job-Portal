@@ -16,6 +16,8 @@ const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
+const jobList = document.querySelector("#job-list");
+const jobListCon = document.querySelector("#job-list-con");
 
 
 
