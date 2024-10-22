@@ -232,7 +232,7 @@ option{
 
 
 /* start job lest style  */
-.job-list-con{
+#job-list-con{
     display: none;
 }
 .job-lists{
@@ -241,11 +241,11 @@ option{
     flex-direction: column;
     padding: 15px;
     border-radius: 5px;
-    gap: 1rem;
 }
 .joblist-header {
     background-color: #3c3c3c;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 .joblist-header ul, .all-joblists ul{
     display: grid;
