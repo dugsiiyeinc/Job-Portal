@@ -12,14 +12,11 @@ const dateInput = document.querySelector('#dateInput');
 const companyInput = document.querySelector('#companyInput');
 const jobCategory = document.querySelector('#jobCategory')
 const postButton = document.querySelector('#addPostBtn')
+
 const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
 
-sidebarToggle.addEventListener("click", () =>{
-    sidebar.classList.toggle("active");
-    
-})
 
 
 
