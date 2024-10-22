@@ -1,6 +1,6 @@
 const dashboardTab = document.querySelector('.dashboard-tab a');
 const jobAddContainer = document.querySelector('.add-job-container')
-const mainDashboard = document.querySelector('.main-content-tab')
+const mainDashboard = document.querySelector('.overview')
 const addnewJobTab = document.querySelector('.jobs-tab')
 const postForm = document.querySelector('#form');
 const postTitle = document.querySelector('#titleInput');
@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded",loadJobsdata);
 // openSidebar
 
 openSidebar.addEventListener("click", () =>{
-    sidebar.classList.toggle("active");
+    sidebar.classList.add("active");
 })
 // closeidebar
 
 closeSidebar.addEventListener("click", () =>{
-    sidebar.classList.toggle("active");
+    sidebar.classList.remove("active");
 })
 
 //active side bar links when click
