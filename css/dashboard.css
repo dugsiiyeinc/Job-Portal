@@ -49,6 +49,7 @@
     flex-grow: 1;
     padding: 20px;
     transition: margin-left 0.3s ease-in-out;
+    display: none;
 }
 
 .main-content .header {
@@ -191,7 +192,7 @@ textarea{
 
 /* start job lest style  */
 .job-list-con{
-    display: none;
+    display: block;
 }
 /*  */
 

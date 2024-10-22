@@ -45,7 +45,7 @@ sidebarLinks.forEach(link => {
 dashboardTab.addEventListener('click', function() { 
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
-    mainDashboard.style.display = 'block';
+    mainDashboard.style.display = 'noe';
     jobAddContainer.style.display = 'none';  
     // changeTabs(dashboardTab,mainDashboard);  
 })
@@ -55,7 +55,7 @@ addnewJobTab.addEventListener('click', function() {
         // show the jobs tab content and hide the dashboard tab content
          
         mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'block'
+        jobAddContainer.style.display = 'none'
         // changeTabs(addnewJobTab,jobAddContainer);
         
 })
