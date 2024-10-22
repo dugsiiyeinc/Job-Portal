@@ -46,14 +46,17 @@
             <h2>Menu</h2>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#" id="jobs">Job Listings</a></li>
+                    <li class="dashboard-tab"> <a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#" class="jobs-tab" id="jobs"> Add Job </a></li>
+                    <li><a href="#" class="jobs-listingtab" id="jobs"> Job Listing </a></li>
                     <li><a href="#">Applications</a></li>
                     <li><a href="#">Log out</a></li>
                 </ul>
             </nav>
         </aside>
-        <div class="main-content">
+
+
+        <div class=" main-content-tab main-content ">
             <div class="header">
                 <button id="sidebarToggle" class="sidebar-toggle">☰</button>
                 <h1>Job Portal Dashboard</h1>
@@ -80,8 +83,43 @@
                 </section>
             </div>
         </div>
+
+
+        <!-- job post tab -->
+        <div class="main-content add-job-container">
+          <div class="header">
+              <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+              <h1>Add new job</h1>
+          </div>
+          <div class="content">
+            <div class=".stat-car">
+              <form action="" id="form">
+                   
+                  <input type="text" name="" id="titleInput" class="allElements" placeholder="Fadlan Cinwaanka shaqada">
+                  <input type="text" name="" id="locationInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
+                  <input type="date" name="" id="dateInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
+                  <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
+                  <input type="text" name="" id="imageInput" class="allElements" placeholder="Fadlan gali  url image-ka company-ga"> 
+                  <select name=""id="jobCategory" class="allElements" >
+                    <option value="">Select job category</option>
+                    <option value="technology">technology</option>
+                    <option value="marketing">marketing</option>
+                    <option value="sales">sales</option>
+                    <option value="finance">finance</option>
+                  </select>
+                   
+                  <textarea name="" id="PostInput"  class="allElements"  placeholder="fadlan gali Faah Faahinta Shaqada "></textarea>  
+                  <button class="allElements" id="addPostBtn">Add Post</button>  
+              </form>
+          </div>
+              </section>
+          </div>
+      </div>
+
       </div>
     </main>
+
+
     <!-- startfooter -->
     <footer class="footer">
       <div class="social">
@@ -109,5 +147,6 @@
     <!-- end footer -->
 
     <script src="/js/main.js"></script>
+    <script src="/js/dash.js"></script>
   </body>
 </html>

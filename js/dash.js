@@ -1,0 +1,109 @@
+const dashboardTab = document.querySelector('.dashboard-tab a');
+const jobAddContainer = document.querySelector('.add-job-container')
+const mainDashboard = document.querySelector('.main-content-tab')
+const addnewJobTab = document.querySelector('.jobs-tab')
+const postForm = document.querySelector('#form');
+const postTitle = document.querySelector('#titleInput');
+const imageUrl = document.querySelector('#imageInput');
+const postArea = document.querySelector('#PostInput')
+const body = document.querySelector('body')
+const  postLocation = document.querySelector('#locationInput');
+const dateInput = document.querySelector('#dateInput');
+const companyInput = document.querySelector('#companyInput');
+const jobCategory = document.querySelector('#jobCategory')
+const postButton = document.querySelector('#addPostBtn')
+
+
+
+
+// labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
+dashboardTab.addEventListener('click', function() { 
+    console.log('dashboard tab clicked')
+           // show the dashboard tab content and hide the job tab content
+    mainDashboard.style.display = 'block';
+    jobAddContainer.style.display = 'none';
+    addnewJobTab.classList.toggle('active');;
+    dashboardTab.classList.toggle('active');
+
+    
+    
+})
+
+addnewJobTab.addEventListener('click', function() { 
+        console.log('job tab clicked')
+        // show the jobs tab content and hide the dashboard tab content
+         
+        mainDashboard.style.display = 'none'
+        jobAddContainer.style.display = 'block'
+        addnewJobTab.classList.toggle('active');
+        dashboardTab.classList.toggle('active');
+        
+})
+
+postForm.addEventListener('submit', addPost)
+
+// all functions 
+
+
+function addPost (e) {
+    e.preventDefault()
+  
+    // console.log('addPost', postTitle)
+    // console.log('imageUrl', imageUrl)
+    // console.log('postArea', postArea)
+    // console.log('postLocation', postLocation)
+    // console.log('dateInput', dateInput)
+    // console.log('companyInput', companyInput)
+    // console.log('jobCategory', jobCategory)
+    // console.log('postButton', postButton)
+
+
+    if(!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() ){
+
+
+         
+        alert("waxbaa ka tagtay fadlan iska hubi")
+    }else{
+         const jobPostDetail = {
+            postTitle: postTitle.value,
+            imageUrl: imageUrl.value,
+            postAreatext: postArea.value,
+            postLocation: postLocation.value,
+            dateInput: dateInput.value,
+            companyInput: companyInput.value,
+            jobCategory: jobCategory.value,
+            postTime: Date.now()
+         }
+
+         console.log(jobPostDetail)
+        //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
+
+        
+        SavePostDetailToLocalStorage(jobPostDetail)
+
+        postTitle.value = ""
+        imageUrl.value = ""
+        postArea.value = ""
+    }
+    
+}
+
+function SavePostDetailToLocalStorage(jobPostDetail){
+    const oldJobPostDetail = getPostFromLocalStorage()
+    oldJobPostDetail.push(jobPostDetail)
+
+    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail))   
+}
+
+function getPostFromLocalStorage(){ 
+    const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
+     
+    return oldJobPostDetail
+    
+}
+
+
+
+
+//  all Events
+
