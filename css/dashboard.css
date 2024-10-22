@@ -131,7 +131,7 @@
 
 /* job post from css */
     
-.blog-container{
+/* .blog-container{
     background-color: #fff;
     max-width: 500px;
     margin:  auto;
@@ -150,11 +150,14 @@
 
 #bloghead{
     text-align: center;
-}
+} */
 
 #form{
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -162,7 +165,7 @@
 .allElements{
   width: 100%;
   margin-bottom: 10px;
-  padding: 12px ;
+  padding: 12px  ;
   border-radius: 5px;
   border: none;
   background-color: #EDEDED;
@@ -173,13 +176,15 @@
 textarea{
     height: 100px;
     margin-bottom: 15px;
+    width: 100%;
 }
 #form button{
     width: 100%;
     padding: 8px;
 }
 #form input{
-     padding: 5px;
+     padding: 12px 12px;
+      
      
 }
 
