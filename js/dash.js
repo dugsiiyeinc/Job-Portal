@@ -176,7 +176,11 @@ const addJobsToTheDom = (job) =>{
               </ul>
             </div>`;
 
-           
+            Swal.fire({
+                title: "add job to the Job lists",
+                icon: "success",
+                ConfirmedButtonText:"ok"
+              });
 }
 
 
