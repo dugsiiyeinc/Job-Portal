@@ -41,25 +41,33 @@ function getPostFromLocalStorage(){
 
 function addjobPostToDOm (jobPost ){
     console.log(jobPost)
-    const jobPostContainer = document.querySelector('.recent-jobs-list-container')
-    jobPostContainer.innerHTML = `
-         <div class="job-card-above">
+
+    const jobMainContainer = document.querySelector('.recent-jobs-list-container')
+    const jobPostDiv = document.createElement('div')
+    jobPostDiv.classList.add('recent-jobs-list')
+
+    jobPostDiv.innerHTML =  `
+        
+
+          <div class="recent-jobs-list">
+            
+                    <div class="job-card-above">
                         <img src="${jobPost.imageUrl}" alt="">
                         <div class="job-card-titles">
-                        <p class="Job-tilte">${jobPost.postTitle}</p>
+                        <p class="Job-tilte">${jobPost.postTitle}
                         </p>  
-                        <p class=" Job-hiring-company">${jobPost.companyInput}</p>
+                        <p class=" Job-hiring-company">${jobPost.companyInput}
                     </div>
                     </div>
                     <div class="job-card-buttom" >
-                        <button> <i class="fa-solid fa-suitcase"></i> Job </button>
+                        <button> <i class="fa-solid fa-suitcase"></i> Tenders </button>
                         <button> <i class="fa-solid fa-calendar-week"></i> ${jobPost.dateInput} </button>
                         <button> <i class="fa-solid fa-location-arrow"></i> ${jobPost.postLocation} </button>
                     </div>
         
                 </div>
-    `    
-
+    `;
+    jobMainContainer.appendChild(jobPostDiv)
 }
 
 

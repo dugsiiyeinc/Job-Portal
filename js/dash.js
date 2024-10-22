@@ -101,9 +101,7 @@ function addPost (e) {
         
         SavePostDetailToLocalStorage(jobPostDetail)
 
-        postTitle.value = ""
-        imageUrl.value = ""
-        postArea.value = ""
+       window.location.reload()
     }
     
 }
