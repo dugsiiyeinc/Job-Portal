@@ -16,7 +16,7 @@ const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
-const jobList = document.querySelector("#job-list");
+const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 
 
@@ -46,7 +46,8 @@ dashboardTab.addEventListener('click', function() {
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
     mainDashboard.style.display = 'block';
-    jobAddContainer.style.display = 'none';    
+    jobAddContainer.style.display = 'none';  
+    // changeTabs(dashboardTab,mainDashboard);  
 })
 
 addnewJobTab.addEventListener('click', function() { 
@@ -55,8 +56,30 @@ addnewJobTab.addEventListener('click', function() {
          
         mainDashboard.style.display = 'none'
         jobAddContainer.style.display = 'block'
+        // changeTabs(addnewJobTab,jobAddContainer);
         
 })
+// const changeTabs = (tab,container) =>{
+//     const tabs = [dashboardTab,addnewJobTab,jobListTab];
+//     const containers = [mainDashboard,jobAddContainer,jobListCon];
+//     // container.classList.add("hidde");
+//     // console.log(container);
+    
+//     tabs.forEach(currentTab => {
+//         if(currentTab === tab){
+//             containers.forEach(currentCon => {
+//                 if(currentCon === container){
+                   
+                    
+//                 }
+//                 // container.style.display = 'block';
+                
+//             })
+//         }else{
+//             return;
+//         }
+//     });
+// }
 
 postForm.addEventListener('submit', addPost)
 

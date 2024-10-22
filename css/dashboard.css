@@ -188,6 +188,13 @@ textarea{
 }
 /* end job post form */
 
+
+/* start job lest style  */
+.job-list-con{
+    display: none;
+}
+/*  */
+
 @media (max-width: 768px) {
     /* start side bar responsive */
     .sidebar {
