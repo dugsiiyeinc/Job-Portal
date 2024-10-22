@@ -104,7 +104,7 @@ authForm.addEventListener("submit" , (e) =>{
         
         if(exestingUser && exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-           window.location.href = "../html/admin.html";
+           window.location.href = "../html/dashboard.html";
       
         }
         else if(exestingUser && !exestingUser.isAdmin){

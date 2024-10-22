@@ -1,4 +1,4 @@
-
+/* start side bar */
 .dashboard {
     display: flex;
     min-height: 100vh;
@@ -36,12 +36,15 @@
     transition: background-color 0.2s;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
+.sidebar nav ul li:hover,
+.sidebar nav ul li.active {
     background-color: #3c3c3c;
+    border-radius: 5px;
     color: #ffffff;
 }
+/* end side bar */
 
+/* start main content */
 .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -66,9 +69,13 @@
     background: none;
     border: none;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     margin-right: 30px;
+}
+.sidebar-title{
+    display: flex;
+    justify-content: space-between;
 }
 
 .stats {
@@ -119,6 +126,8 @@
 .chart-container:last-child {
     margin-right: 0;
 }
+
+/* start main content */
 
 /* job post from css */
     
@@ -180,6 +189,7 @@ textarea{
 /* end job post form */
 
 @media (max-width: 768px) {
+    /* start side bar responsive */
     .sidebar {
         position: fixed;
         top: 0;
@@ -192,7 +202,8 @@ textarea{
     .sidebar.active {
         transform: translateX(0);
     }
-
+     /* end side bar responsive */
+       /* start main content responsive */
     .main-content {
         margin-left: 0;
     }
@@ -213,6 +224,7 @@ textarea{
         margin-right: 0;
         margin-bottom: 10px;
     }
+       /* end main content responsive */
 }
 
 @media (max-width: 480px){

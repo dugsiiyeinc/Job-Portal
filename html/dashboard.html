@@ -32,10 +32,10 @@
         </div>
 
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">Jobs</a></li>
-          <li><a href="#service">Contact</a></li>
-          <a href="/html/auth.html" class="btn">Log in</a>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Jobs</a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/html/auth.html" class="btn">Log in</a></li>
         </ul>
       </nav>
     </header>
@@ -43,10 +43,14 @@
     <main>
       <div class="dashboard">
         <aside class="sidebar">
+          <div class="sidebar-title">
             <h2>Menu</h2>
+            <button id="closeSidebar" class="sidebar-toggle">&times;</button>
+          </div>
+            
             <nav>
-                <ul>
-                    <li class="dashboard-tab"> <a href="#" class="active">Dashboard</a></li>
+                <ul class="sidebar-links">
+                    <li class="dashboard-tab active" > <a href="#" >Dashboard</a></li>
                     <li><a href="#" class="jobs-tab" id="jobs"> Add Job </a></li>
                     <li><a href="#" class="jobs-listingtab" id="jobs"> Job Listing </a></li>
                     <li><a href="#">Applications</a></li>
@@ -58,7 +62,7 @@
 
         <div class=" main-content-tab main-content ">
             <div class="header">
-                <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+                <button id="openSidebar" class="sidebar-toggle">☰</button>
                 <h1>Job Portal Dashboard</h1>
             </div>
             <div class="content">
@@ -88,7 +92,7 @@
         <!-- job post tab -->
         <div class="main-content add-job-container">
           <div class="header">
-              <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+              <button id="openSidebar" class="sidebar-toggle">☰</button>
               <h1>Add new job</h1>
           </div>
           <div class="content">
