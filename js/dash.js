@@ -22,6 +22,18 @@ const allJobsList = document.querySelector(".all-joblists");
 
 
 
+//loading data 
+const loadJobsdata = () =>{
+    const alljobDetails = getPostFromLocalStorage();
+
+    alljobDetails.forEach(job => {
+        addJobsToTheDom(job);
+        
+    });
+}
+document.addEventListener("DOMContentLoaded",loadJobsdata);
+
+
 // openSidebar
 
 openSidebar.addEventListener("click", () =>{
