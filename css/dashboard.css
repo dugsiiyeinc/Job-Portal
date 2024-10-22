@@ -68,9 +68,13 @@
     background: none;
     border: none;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     margin-right: 30px;
+}
+.sidebar-title{
+    display: flex;
+    justify-content: space-between;
 }
 
 .stats {
