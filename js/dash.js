@@ -17,7 +17,11 @@ const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
 
+// openSidebar
 
+openSidebar.addEventListener("click", () =>{
+    sidebar.classList.toggle("active");
+})
 
 
 
