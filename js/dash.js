@@ -1,7 +1,8 @@
 const dashboardTab = document.querySelector('.dashboard-tab a');
-const jobAddContainer = document.querySelector('.add-job-container')
-const mainDashboard = document.querySelector('.main-content-tab')
-const addnewJobTab = document.querySelector('.jobs-tab')
+const jobAddContainer = document.querySelector('.add-job-container');
+const mainDashboard = document.querySelector('.overview');
+const headerTitle = document.querySelector('#header-title');
+const addnewJobTab = document.querySelector('.jobs-tab');
 const postForm = document.querySelector('#form');
 const postTitle = document.querySelector('#titleInput');
 const imageUrl = document.querySelector('#imageInput');
@@ -16,18 +17,34 @@ const openSidebar = document.querySelector('#openSidebar');
 const closeSidebar = document.querySelector('#closeSidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
+const jobListTab = document.querySelector("#job-list");
+const jobListCon = document.querySelector("#job-list-con");
+const allJobsList = document.querySelector(".all-joblists");
 
+
+ 
+
+//loading data 
+const loadJobsdata = () =>{
+    const alljobDetails = getPostFromLocalStorage();
+
+    alljobDetails.forEach(job => {
+        addJobsToTheDom(job);
+        
+    });
+}
+document.addEventListener("DOMContentLoaded",loadJobsdata);
 
 
 // openSidebar
 
 openSidebar.addEventListener("click", () =>{
-    sidebar.classList.toggle("active");
+    sidebar.classList.add("active");
 })
 // closeidebar
 
 closeSidebar.addEventListener("click", () =>{
-    sidebar.classList.toggle("active");
+    sidebar.classList.remove("active");
 })
 
 //active side bar links when click
@@ -48,7 +65,10 @@ dashboardTab.addEventListener('click', function() {
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
     mainDashboard.style.display = 'block';
-    jobAddContainer.style.display = 'none';    
+    jobAddContainer.style.display = 'none';  
+    jobListCon.style.display = "none";
+    headerTitle.textContent = "Job Portal Dashboard";
+    // changeTabs(dashboardTab,mainDashboard);  
 })
 
 addnewJobTab.addEventListener('click', function() { 
@@ -57,8 +77,42 @@ addnewJobTab.addEventListener('click', function() {
          
         mainDashboard.style.display = 'none'
         jobAddContainer.style.display = 'block'
+        jobListCon.style.display = "none";
+        headerTitle.textContent = "Add New Job";
+        // changeTabs(addnewJobTab,jobAddContainer);
         
+});
+
+//joblist tab in  side
+jobListTab.addEventListener("click", () =>{
+    mainDashboard.style.display = 'none'
+        jobAddContainer.style.display = 'none';
+        jobListCon.style.display = "block";
+        headerTitle.textContent = "Job lists";
+
 })
+
+// const changeTabs = (tab,container) =>{
+//     const tabs = [dashboardTab,addnewJobTab,jobListTab];
+//     const containers = [mainDashboard,jobAddContainer,jobListCon];
+//     // container.classList.add("hidde");
+//     // console.log(container);
+    
+//     tabs.forEach(currentTab => {
+//         if(currentTab === tab){
+//             containers.forEach(currentCon => {
+//                 if(currentCon === container){
+                   
+                    
+//                 }
+//                 // container.style.display = 'block';
+                
+//             })
+//         }else{
+//             return;
+//         }
+//     });
+// }
 
 postForm.addEventListener('submit', addPost)
 
@@ -98,7 +152,7 @@ function addPost (e) {
          console.log(jobPostDetail)
         //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
 
-        
+        addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
         postTitle.value = ""
@@ -112,7 +166,14 @@ function SavePostDetailToLocalStorage(jobPostDetail){
     const oldJobPostDetail = getPostFromLocalStorage()
     oldJobPostDetail.push(jobPostDetail)
 
-    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail))   
+    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail));  
+    Swal.fire({
+        title: "success!",
+        text: "saving data to the local storage",
+        icon: "success",
+        ConfirmedButtonText:"ok"
+      });
+   
 }
 
 function getPostFromLocalStorage(){ 
@@ -122,6 +183,29 @@ function getPostFromLocalStorage(){
     
 }
 
+
+//add jobs to the Dom
+
+const addJobsToTheDom = (job) =>{
+
+    allJobsList.innerHTML += `
+                  <div class="job">
+              <ul>
+                <li><img src="${job.imageUrl}" alt=""></li>
+                <li>${job.companyInput}</li>
+                <li>${job.postTitle}</li>
+                <li>${job.postLocation}</li>
+                <li>${job.jobCategory}</li>
+                <li><div>
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> 
+              </li>
+              </ul>
+            </div>`;
+
+           
+}
 
 
 

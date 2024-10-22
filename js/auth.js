@@ -75,6 +75,11 @@ const switchAuthForm = () =>{
            <p id="authSwitch">
             New to JobPortal? <a href="#" id="switchForm">Register now</a>
           </p>`;
+
+          username.value = "";
+          password.value = "";
+          email.value = "";
+          confirPassword.value = "";
     }
     
     
@@ -98,13 +103,22 @@ authForm.addEventListener("submit" , (e) =>{
        
        
         const exestingUser = users.find(currentUser => currentUser.email  == user.email && currentUser.password == user.password );
-       console.log(exestingUser);
-       console.log(users);
+ 
        
         
         if(exestingUser && exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-           window.location.href = "../html/dashboard.html";
+            Swal.fire({
+                title: "click ok go to the dashboard!",
+                icon: "success",
+                ConfirmedButtonText:"ok"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "../html/dashboard.html";
+                }
+              });
+
+        
       
         }
         else if(exestingUser && !exestingUser.isAdmin){
@@ -113,7 +127,13 @@ authForm.addEventListener("submit" , (e) =>{
 
         }
         else{
-            alert("Invalid credentials");
+           
+            Swal.fire({
+                title: "!Error",
+                text: "Invalid credentials",
+                icon: "warning!",
+                confirmButtonText: "ok"
+              });
             return;
         }
 
@@ -124,17 +144,32 @@ authForm.addEventListener("submit" , (e) =>{
         const exestingUser = users.find(currentUser => currentUser.username  === user.username || currentUser.email === user.email );
         
         if(exestingUser){
-            alert(`user ${user.username} already exists!`);
+            Swal.fire({
+                title: "!Error",
+                text: `user ${exestingUser.username} already exists`,
+                icon: "warning!",
+                confirmButtonText: "ok"
+              });
             return;
         }
 
 
         if(confirPassword.value !== password.value){
-            alert("password does not matched");
+            Swal.fire({
+                title: "password",
+                text: "password doeas not match",
+                icon: "info!",
+                confirmButtonText: "ok"
+              });
             return;
         }
         users.push(user);
-        alert("user regestration Successfully!")
+        Swal.fire({
+            title: "user regestration",
+            text: "user regestration Successfully!",
+            icon: "info!",
+            confirmButtonText: "ok"
+          });
         localStorage.setItem("users", JSON.stringify(users));
         switchAuthForm();
     }

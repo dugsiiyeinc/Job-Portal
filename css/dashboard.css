@@ -49,6 +49,7 @@
     flex-grow: 1;
     padding: 20px;
     transition: margin-left 0.3s ease-in-out;
+    display: block;
 }
 
 .main-content .header {
@@ -63,6 +64,10 @@
 .main-content .header h1 {
     margin: 0;
     color: #ffffff;
+}
+
+.overview{
+    display: block;
 }
 .sidebar-toggle {
     display: none;
@@ -130,6 +135,9 @@
 /* start main content */
 
 /* job post from css */
+.add-job-container{
+    display: none;
+}
     
 /* .blog-container{
     background-color: #fff;
@@ -222,6 +230,64 @@ option{
 }
 /* end job post form */
 
+
+/* start job lest style  */
+.job-list-con{
+    display: none;
+}
+.job-lists{
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+    gap: 1rem;
+}
+.joblist-header {
+    background-color: #3c3c3c;
+    border-radius: 5px;
+}
+.joblist-header ul, .all-joblists ul{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.all-joblists {
+    background: #444;
+    border-radius: 10px;
+   
+}
+.all-joblists ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.edit-btn,.delete-btn{
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #EDEDED;
+    cursor: pointer;
+}
+.edit-btn{
+    background-color: #008000;
+}
+.edit-btn:hover{
+    background-color: #069006;
+}
+.delete-btn{
+    background-color: #DA0037;
+}
+.delete-btn:hover{
+    background-color: #FF0044;
+
+}
+/*  end job lists style*/
+
 @media (max-width: 768px) {
     /* start side bar responsive */
     .sidebar {
@@ -259,6 +325,17 @@ option{
         margin-bottom: 10px;
     }
        /* end main content responsive */
+       
+       /* start job lists conten responsive design */
+       .joblist-header ul, .all-joblists ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+      
+
+
+     /* end job lists conten responsive design */
 }
 
 @media (max-width: 480px){

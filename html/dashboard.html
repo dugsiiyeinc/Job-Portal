@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/manu.css" />
     <link rel="stylesheet" href="/css/footer.css" />
@@ -52,9 +53,9 @@
                 <ul class="sidebar-links">
                     <li class="dashboard-tab active" > <a href="#" >Dashboard</a></li>
                     <li><a href="#" class="jobs-tab" id="jobs"> Add Job </a></li>
-                    <li><a href="#" class="jobs-listingtab" id="jobs"> Job Listing </a></li>
+                    <li><a href="#"  id="job-list"> Job Listing </a></li>
                     <li><a href="#">Applications</a></li>
-                    <li><a href="#">Log out</a></li>
+                    <li><a href="../html/auth.html">Log out</a></li>
                 </ul>
             </nav>
         </aside>
@@ -63,9 +64,9 @@
         <div class=" main-content-tab main-content ">
             <div class="header">
                 <button id="openSidebar" class="sidebar-toggle">☰</button>
-                <h1>Job Portal Dashboard</h1>
+                <h1 id="header-title">Job Portal Dashboard</h1>
             </div>
-            <div class="content">
+            <div class="content overview">
                 <section class="stats">
                     <div class="stat-card">
                         <h3>Total Jobs</h3>
@@ -86,16 +87,12 @@
                     </div>
                 </section>
             </div>
-        </div>
+        
 
 
         <!-- job post tab -->
-        <div class="main-content add-job-container">
-          <div class="header">
-              <button id="openSidebar" class="sidebar-toggle">☰</button>
-              <h1>Add new job</h1>
-          </div>
-          <div class="content">
+      
+          <div class="content add-job-container">
             <div class=".stat-car">
               <form action="" id="form">
                    
@@ -121,8 +118,69 @@
           </div>
               </section>
           </div>
-      </div>
+       
 
+       <!--job lesting  section-->
+      
+        <section class="job-lists job-list-con"  id="job-list-con">
+          <div class="joblist-header" >
+            <ul>
+              <li>campany logo</li>
+              <li>campany name</li>
+              <li>job name</li>
+              <li>location</li>
+              <li>job category</li>
+              <li>Actions</li>
+            </ul>
+          </div>
+          <div class="all-joblists">
+            <!-- <div class="job">
+              <ul>
+                <li><img src="/images/image1.png" alt=""></li>
+                <li>google</li>
+                <li>developer</li>
+                <li>mogadisho</li>
+                <li>technology</li>
+                <li><div>
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> 
+              </li>
+              </ul>
+            </div>
+            <div class="job">
+              <ul>
+                <li><img src="/images/image1.png" alt=""></li>
+                <li>google</li>
+                <li>developer</li>
+                <li>mogadisho</li>
+                <li>technology</li>
+                <li><div>
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> 
+              </li>
+              </ul>
+            </div>
+            <div class="job">
+              <ul>
+                <li><img src="/images/image1.png" alt=""></li>
+                <li>google</li>
+                <li>developer</li>
+                <li>mogadisho</li>
+                <li>technology</li>
+                <li><div>
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> 
+              </li>
+              </ul>
+            </div> -->
+           
+          </div>
+        </section>
+        
+       </div>
       </div>
     </main>
 
