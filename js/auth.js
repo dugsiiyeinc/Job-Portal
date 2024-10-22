@@ -75,6 +75,11 @@ const switchAuthForm = () =>{
            <p id="authSwitch">
             New to JobPortal? <a href="#" id="switchForm">Register now</a>
           </p>`;
+
+          username.value = "";
+          password.value = "";
+          email.value = "";
+          confirPassword.value = "";
     }
     
     
@@ -141,7 +146,7 @@ authForm.addEventListener("submit" , (e) =>{
         if(exestingUser){
             Swal.fire({
                 title: "!Error",
-                text: "user already exists",
+                text: `user ${exestingUser.username} already exists`,
                 icon: "warning!",
                 confirmButtonText: "ok"
               });
