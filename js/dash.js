@@ -45,8 +45,9 @@ sidebarLinks.forEach(link => {
 dashboardTab.addEventListener('click', function() { 
     console.log('dashboard tab clicked')
            // show the dashboard tab content and hide the job tab content
-    mainDashboard.style.display = 'noe';
+    mainDashboard.style.display = 'block';
     jobAddContainer.style.display = 'none';  
+    jobListCon.style.display = "none";
     // changeTabs(dashboardTab,mainDashboard);  
 })
 
@@ -55,10 +56,20 @@ addnewJobTab.addEventListener('click', function() {
         // show the jobs tab content and hide the dashboard tab content
          
         mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'none'
+        jobAddContainer.style.display = 'block'
+        jobListCon.style.display = "none";
         // changeTabs(addnewJobTab,jobAddContainer);
         
+});
+
+//joblist tab in  side
+jobListTab.addEventListener("click", () =>{
+    mainDashboard.style.display = 'none'
+        jobAddContainer.style.display = 'none';
+        jobListCon.style.display = "block";
+
 })
+
 // const changeTabs = (tab,container) =>{
 //     const tabs = [dashboardTab,addnewJobTab,jobListTab];
 //     const containers = [mainDashboard,jobAddContainer,jobListCon];

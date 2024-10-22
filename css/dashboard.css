@@ -131,6 +131,9 @@
 /* start main content */
 
 /* job post from css */
+.add-job-container{
+    display: none;
+}
     
 .blog-container{
     background-color: #fff;
