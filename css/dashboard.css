@@ -286,6 +286,12 @@ textarea{
        /* end main content responsive */
        
        /* start job lists conten responsive design */
+       .joblist-header ul, .all-joblists ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+
      /* end job lists conten responsive design */
 }
 
