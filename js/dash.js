@@ -39,6 +39,10 @@ sidebarLinks.forEach(link => {
     })
 })
 
+postArea.addEventListener('input', function (){
+    this.style.height = 'auto'; // Reset height
+    this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
+})
 // labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
 dashboardTab.addEventListener('click', function() { 
     console.log('dashboard tab clicked')

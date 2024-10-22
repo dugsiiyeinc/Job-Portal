@@ -101,16 +101,19 @@
                    
                   <input type="text" name="" id="titleInput" class="allElements" placeholder="Fadlan Cinwaanka shaqada">
                   <input type="text" name="" id="locationInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
-                  <input type="date" name="" id="dateInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
+                  
                   <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
                   <input type="text" name="" id="imageInput" class="allElements" placeholder="Fadlan gali  url image-ka company-ga"> 
-                  <select name=""id="jobCategory" class="allElements" >
-                    <option value="">Select job category</option>
+                  <div class="date-and-select">
+                  <input type="date" name="" id="dateInput" class="allElements" >
+                  <select name=""id="jobCategory" class="allElements date-placeholder " >
+                    <option value="" disabled selected> Select job gategory </option>
                     <option value="technology">technology</option>
                     <option value="marketing">marketing</option>
                     <option value="sales">sales</option>
                     <option value="finance">finance</option>
                   </select>
+                </div>
                    
                   <textarea name="" id="PostInput"  class="allElements"  placeholder="fadlan gali Faah Faahinta Shaqada "></textarea>  
                   <button class="allElements" id="addPostBtn">Add Post</button>  
