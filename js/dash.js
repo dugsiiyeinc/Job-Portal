@@ -1,7 +1,8 @@
 const dashboardTab = document.querySelector('.dashboard-tab a');
-const jobAddContainer = document.querySelector('.add-job-container')
-const mainDashboard = document.querySelector('.overview')
-const addnewJobTab = document.querySelector('.jobs-tab')
+const jobAddContainer = document.querySelector('.add-job-container');
+const mainDashboard = document.querySelector('.overview');
+const headerTitle = document.querySelector('#header-title');
+const addnewJobTab = document.querySelector('.jobs-tab');
 const postForm = document.querySelector('#form');
 const postTitle = document.querySelector('#titleInput');
 const imageUrl = document.querySelector('#imageInput');
@@ -21,6 +22,7 @@ const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 
 
+ 
 
 //loading data 
 const loadJobsdata = () =>{
@@ -61,6 +63,7 @@ dashboardTab.addEventListener('click', function() {
     mainDashboard.style.display = 'block';
     jobAddContainer.style.display = 'none';  
     jobListCon.style.display = "none";
+    headerTitle.textContent = "Job Portal Dashboard";
     // changeTabs(dashboardTab,mainDashboard);  
 })
 
@@ -71,6 +74,7 @@ addnewJobTab.addEventListener('click', function() {
         mainDashboard.style.display = 'none'
         jobAddContainer.style.display = 'block'
         jobListCon.style.display = "none";
+        headerTitle.textContent = "Add New Job";
         // changeTabs(addnewJobTab,jobAddContainer);
         
 });
@@ -80,6 +84,7 @@ jobListTab.addEventListener("click", () =>{
     mainDashboard.style.display = 'none'
         jobAddContainer.style.display = 'none';
         jobListCon.style.display = "block";
+        headerTitle.textContent = "Job lists";
 
 })
 
