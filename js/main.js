@@ -79,10 +79,10 @@ function addjobPostToDOm (jobPost ){
 
 // })
 
-showAllButton.addEventListener('click' , function (){
-    window.location.href = 'jobs.html';
+// showAllButton.addEventListener('click' , function (){
+//     window.location.href = 'jobs.html';
  
-})
+// })
 
 showUserInfo.addEventListener("click", (e) =>{
         userInfo.classList.toggle("show");
