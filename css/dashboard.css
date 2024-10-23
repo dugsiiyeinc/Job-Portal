@@ -252,7 +252,7 @@ option{
     grid-template-columns: repeat(6,1fr);
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 10px;
 }
 .all-joblists {
     background: #444;
@@ -267,12 +267,13 @@ option{
 .edit-btn,.delete-btn{
     background-color: #fff;
     border: none;
-    padding: 10px;
+    padding: 8px;
     border-radius: 3px;
     font-size: 14px;
     color: #EDEDED;
     cursor: pointer;
 }
+
 .edit-btn{
     background-color: #008000;
 }
@@ -327,13 +328,28 @@ option{
        /* end main content responsive */
        
        /* start job lists conten responsive design */
-       .joblist-header ul, .all-joblists ul{
+       .job-lists{
+        width: 100%;
+        padding: 8px;
+       }
+       .all-joblists{
+        border-radius: 5px;
+       }
+       .joblist-header ul, .all-joblists .job{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 10px 5px;
+        font-size: 13px;
        }
-      
-
+      .edit-btn,.delete-btn{
+        padding: 5px;
+       }
+       .all-joblists .job img{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+    }
 
      /* end job lists conten responsive design */
 }
@@ -342,4 +358,8 @@ option{
  .header h1{
     font-size: 1.4rem;
  }
+ .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul{
+    font-size: 8px;
+   }
+
 }
