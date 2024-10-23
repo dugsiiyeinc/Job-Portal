@@ -62,30 +62,20 @@ postArea.addEventListener('input', function (){
     this.style.height = 'auto'; // Reset height
     this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
 })
-// labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
+
+
+// when click dashboard tab
 dashboardTab.addEventListener('click', function() { 
-    // console.log('dashboard tab clicked')
-    //        // show the dashboard tab content and hide the job tab content
-    // mainDashboard.style.display = 'block';
-    // jobAddContainer.style.display = 'none';  
-    // jobListCon.style.display = "none";
-    // headerTitle.textContent = "Job Portal Dashboard";
     changeTabs(dashboardTab,mainDashboard, "Job Portal Dashboard");  
 })
 
+// when click add new job tab
 addnewJobTab.addEventListener('click', function() { 
-        // console.log('job tab clicked')
-        // // show the jobs tab content and hide the dashboard tab content
-         
-        // mainDashboard.style.display = 'none'
-        // jobAddContainer.style.display = 'block'
-        // jobListCon.style.display = "none";
-        // headerTitle.textContent = "Add New Job";
+
         changeTabs(addnewJobTab,jobAddContainer,"Add New Job");
         
 });
-
-//joblist tab in  side
+// when click joblists tab
 jobListTab.addEventListener("click", () =>{
   
     changeTabs(jobListTab,jobListCon,"Job lists");
