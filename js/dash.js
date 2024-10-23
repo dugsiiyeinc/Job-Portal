@@ -223,9 +223,9 @@
             jobListCon.style.display = "none";
             updateJobContainer.style.display = 'block';
             headerTitle.textContent ='Update Jobs'
-            handleEdit(job )
+            handleEdit(job , job.postTime)
             
-            console.log(Date.now())
+           
 
             console.log(job )
 
@@ -242,7 +242,7 @@
 
     //update job
 
-    function  handleEdit  (job , updateJobContainer) {
+    function  handleEdit  (job , jobPostTime) {
 
 
         
@@ -256,13 +256,8 @@
         const companyInput = document.querySelector('.update-job-container #companyInput');
         const jobCategory = document.querySelector('.update-job-container #jobCategory');
         const addPostBtn = document.querySelector('.update-job-container #addPostBtn');
-
-        // // text area ayu fidinaaa
-        // postArea.addEventListener('input', function (){
-        //     this.style.height = 'auto'; // Reset height
-        //     this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
-        //     console.log('hello 264', this.style.height)
-        // })
+        console.log('line 259', jobPostTime)
+     
         // markaane soo bandhiga shaqada la edit garena
 
         postTitle.value = job.postTitle
@@ -290,7 +285,8 @@
             };
     
 
-            updateJOb(job.postTime, jobPostDetail);
+            updateJob(jobPostDetail ,jobPostTime);
+
         })
         
         
@@ -319,5 +315,38 @@
         
     }
 
-    //  all Events
 
+    // update job post
+    function  updateJob(jobPostDetail, jobPostTime){
+
+        console.log('line 322', jobPostDetail, jobPostTime)
+        let jobPosts =getPostFromLocalStorage ()
+
+        const findPjostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === jobPostTime)
+           if (findPjostToUpdate) {
+            findPjostToUpdate.postTitle = jobPostDetail.postTitle;
+            findPjostToUpdate.imageUrl = jobPostDetail.imageUrl;
+            findPjostToUpdate.postAreatext = jobPostDetail.postAreatext;
+            findPjostToUpdate.dateInput = jobPostDetail.dateInput;
+            findPjostToUpdate.companyInput = jobPostDetail.companyInput;
+            findPjostToUpdate.jobCategory = jobPostDetail.jobCategory;
+            findPjostToUpdate.postTime = jobPostDetail.postTime;
+
+
+        localStorage.setItem('jobPosts', JSON.stringify(jobPosts));
+
+        Swal.fire({
+            title: "Updated!",
+            text: "job updated successfuly!",
+            icon: "success",
+            ConfirmedButtonText:"ok"
+        });
+
+           }
+
+         
+        
+    }
+
+
+    
