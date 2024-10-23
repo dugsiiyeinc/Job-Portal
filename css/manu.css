@@ -110,6 +110,7 @@
     align-items: start;
     gap: .5rem;
     border-radius: 10px;
+    z-index: 11111;
   }
  .btn:hover{
     background-color: #FF0044;
