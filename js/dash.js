@@ -155,7 +155,7 @@ function addPost (e) {
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
-       window.location.reload()
+    //    window.location.reload()
     }
     
 }
@@ -186,8 +186,10 @@ function getPostFromLocalStorage(){
 
 const addJobsToTheDom = (job) =>{
     const div = document.createElement("div");
-    allJobsList.innerHTML += `
-                  <div class="job">
+    div.className = "job";
+
+    
+    div.innerHTML += `
                 <img src="${job.imageUrl}" alt="campany img">
                 <span class="campany-logo">${job.companyInput}</span>
                 <span class="job-name">${job.postTitle}</span>
@@ -197,8 +199,8 @@ const addJobsToTheDom = (job) =>{
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>
                 </div> 
-            </div> `;
-
+           `;
+    allJobsList.appendChild(div);
            
 }
 
