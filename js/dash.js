@@ -21,9 +21,11 @@ const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
+const onlineUserName = document.querySelector(".username");
+const onlineUserEmail = document.querySelector(".user-email");
 
 
-console.log(jobListCon);
+
 
  
 
