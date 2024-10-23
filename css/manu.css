@@ -57,12 +57,16 @@
     cursor: pointer;
     
   }
-  .user-login .btn , .log-out-btn{
+  .user-login .btn , .log-out-btn , .log-btn{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
    
     
+  }
+  .log-btn{
+    display: none;
   }
   .log-out-btn{
     background: none;
@@ -75,7 +79,7 @@
 
   }
  
-  .user-login .btn a , .log-out-btn a{
+  .user-login .btn a , .log-out-btn a , .log-btn a{
     color: #EDEDED;
   }
   .user-login{
@@ -173,5 +177,13 @@
   }
   .nav-links  .btn{
     width: 100%;
+  }
+
+  .log-btn{
+    display: block;
+  }
+
+  .user-info{
+    top: 14%;
   }
   }
