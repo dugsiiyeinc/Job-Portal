@@ -7,8 +7,7 @@ const authSwitch = document.querySelector("#authSwitch");
 const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
-const onlineUserName = document.querySelector(".username");
-const onlineUserEmail = document.querySelector(".user-email");
+
 
 const getusersFromLocalstorage = () =>{
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -126,8 +125,7 @@ authForm.addEventListener("submit" , (e) =>{
         else if(exestingUser && !exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
             window.location.href = "../html/jobs.html";
-            onlineUserName.textContent = `username: ${exestingUser.username}`;
-            onlineUserEmail.textContent = `username: ${exestingUser.email}`;
+        
         }
         else{
            
