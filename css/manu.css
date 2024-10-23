@@ -180,10 +180,20 @@
   }
 
   .log-btn{
-    display: block;
+    margin-top: 5px;
+    display: flex;
   }
 
   .user-info{
     top: 14%;
+  }
+
+  .user-login .btn{
+    display: none;
+  }
+  .user-login #user{
+    position: absolute;
+    right: 18%;
+    top:12px;
   }
   }
