@@ -219,6 +219,25 @@ img{
 
 /* job posting list end */
 
+/* css of show all button */
+.showallbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin  : 50px;
+}
+  .showallbtn button{
+    background-color: #DA0037;
+    color: #EDEDED;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+     
+  }
+
 /* start hiring comapnies */
 
 .hiring-companies{

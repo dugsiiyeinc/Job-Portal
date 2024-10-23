@@ -6,6 +6,7 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
+const showAllButton = document.querySelector(".showallBTN")
 
 
 
@@ -18,16 +19,14 @@ toggleBtn.addEventListener("click", () => {
 
 document.addEventListener('DOMContentLoaded', loadJobPosts);
 
-function loadJobPosts(){
-    const posts = getPostFromLocalStorage()
+function loadJobPosts() {
+    const posts = getPostFromLocalStorage();
+    const lastThreePosts = posts.slice(-4); // soo hel 4-ta post oo u danbeysa
 
-    posts.forEach(jobPost => {
-        addjobPostToDOm(jobPost)
+    lastThreePosts.forEach(jobPost => {
+        addjobPostToDOm(jobPost);
         // console.log(jobPost)
-
     });
-
-
 }
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
@@ -72,5 +71,13 @@ function addjobPostToDOm (jobPost ){
 
 
 
+// // event listener waxa o quseya marka la riixo show all button in oo geeyo page-ka job list
+// showAllButton.addEventListener('click', function (){
+//     window.location.href = 'auth.html';
 
+// })
 
+showAllButton.addEventListener('click' , function (){
+    window.location.href = 'jobs.html';
+ 
+})
