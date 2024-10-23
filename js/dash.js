@@ -20,6 +20,7 @@ const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
 const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
+const addPostBtn = document.querySelector("#addPostBtn");
 
 
 console.log(jobListCon);
@@ -216,6 +217,7 @@ const attachHandler = (div,job) =>{
 
      editBtn.addEventListener("click", () =>{
         changeTabs(addnewJobTab,jobAddContainer,"update job");
+        addPostBtn.textContent = "update Job";
         handleEdit(div,job);
 
 
@@ -236,6 +238,24 @@ const handleEdit = (div,job) =>{
      companyInput.value = job.companyInput;
     jobCategory.value = job.jobCategory;
 
+    addPostBtn.addEventListener("click", () =>{
+        const jobPostDetail = {
+            postTitle: postTitle.value,
+            imageUrl: imageUrl.value,
+            postAreatext: postArea.value,
+            postLocation: postLocation.value,
+            dateInput: dateInput.value,
+            companyInput: companyInput.value,
+            jobCategory: jobCategory.value,
+            postTime: Date.now()
+         };
+    
+         console.log(jobPostDetail);
+
+         updateJOb(job.postTime, jobPostDetail);
+    })
+    
+     
 }
 
 
