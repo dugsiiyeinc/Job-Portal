@@ -219,6 +219,14 @@ const attachHandler = (div,job) =>{
 }
 
 const deleteJob = (div,id) =>{
+    let oldJobPostDetail = getPostFromLocalStorage();
+  
+    oldJobPostDetail = oldJobPostDetail.filter(job => job.postTime != id);
+
+    localStorage.setItem("jobPosts", JSON.stringify(oldJobPostDetail));
+
+    div.remove();
+
     
 }
 
