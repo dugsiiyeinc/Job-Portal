@@ -186,21 +186,18 @@ function getPostFromLocalStorage(){
 
 const addJobsToTheDom = (job) =>{
 
-    // allJobsList.innerHTML += `
-    //               <div class="job">
-    //           <ul>
-    //             <li><img src="${job.imageUrl}" alt=""></li>
-    //             <li>${job.companyInput}</li>
-    //             <li>${job.postTitle}</li>
-    //             <li>${job.postLocation}</li>
-    //             <li>${job.jobCategory}</li>
-    //             <li><div>
-    //               <button class="edit-btn">edit</button>
-    //               <button class="delete-btn">Delete</button>
-    //             </div> 
-    //           </li>
-    //           </ul>
-    //         </div>`;
+    allJobsList.innerHTML += `
+                  <div class="job">
+                <img src="${job.imageUrl}" alt="campany img">
+                <span class="campany-logo">${job.companyInput}</span>
+                <span class="job-name">${job.postTitle}</span>
+                <span class="job-location">${job.postLocation}</span>
+                <span class="job-category">${job.jobCategory}</span>
+                <div class="buttons">
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> 
+            </div> `;
 
            
 }
