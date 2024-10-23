@@ -61,7 +61,7 @@
             link.classList.add("active");
         })
     })
-
+    // qetbtaan text area ayuu u awood siinaa in oo is dheereyo iyado loo eega qoraalka dhirirkisa
     postArea.addEventListener('input', function (){
         this.style.height = 'auto'; // Reset height
         this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
@@ -227,7 +227,7 @@
             
             console.log(Date.now())
 
-            console.log(job, )
+            console.log(job )
 
             
 
@@ -244,6 +244,8 @@
 
     function  handleEdit  (job , updateJobContainer) {
 
+
+        
         // soo hel input elements marka ay ku jiraan div-ka  updateJobContainer
 
         const postTitle = document.querySelector('.update-job-container #titleInput');
@@ -255,6 +257,12 @@
         const jobCategory = document.querySelector('.update-job-container #jobCategory');
         const addPostBtn = document.querySelector('.update-job-container #addPostBtn');
 
+        // // text area ayu fidinaaa
+        // postArea.addEventListener('input', function (){
+        //     this.style.height = 'auto'; // Reset height
+        //     this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
+        //     console.log('hello 264', this.style.height)
+        // })
         // markaane soo bandhiga shaqada la edit garena
 
         postTitle.value = job.postTitle
@@ -264,7 +272,8 @@
         dateInput.value = job.dateInput
         companyInput.value = job.companyInput
         jobCategory.value = job.jobCategory
-        
+        addPostBtn.textContent = 'Update Job'
+
          
         
 
