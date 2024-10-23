@@ -210,6 +210,9 @@ const attachHandler = (div,job) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");
 
+    deleteBtn.addEventListener("click", () =>{
+        deleteJob(div,job.postTime);
+    })
     
 
 }
