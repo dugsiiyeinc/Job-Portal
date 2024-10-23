@@ -20,7 +20,10 @@ const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
 const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
+const addPostBtn = document.querySelector("#addPostBtn");
 
+
+console.log(jobListCon);
 
  
 
@@ -60,60 +63,55 @@ postArea.addEventListener('input', function (){
     this.style.height = 'auto'; // Reset height
     this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
 })
-// labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
+
+
+// when click dashboard tab
 dashboardTab.addEventListener('click', function() { 
-    console.log('dashboard tab clicked')
-           // show the dashboard tab content and hide the job tab content
-    mainDashboard.style.display = 'block';
-    jobAddContainer.style.display = 'none';  
-    jobListCon.style.display = "none";
-    headerTitle.textContent = "Job Portal Dashboard";
-    // changeTabs(dashboardTab,mainDashboard);  
+    changeTabs(dashboardTab,mainDashboard, "Job Portal Dashboard");  
 })
 
+// when click add new job tab
 addnewJobTab.addEventListener('click', function() { 
-        console.log('job tab clicked')
-        // show the jobs tab content and hide the dashboard tab content
-         
-        mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'block'
-        jobListCon.style.display = "none";
-        headerTitle.textContent = "Add New Job";
-        // changeTabs(addnewJobTab,jobAddContainer);
+
+        changeTabs(addnewJobTab,jobAddContainer,"Add New Job");
         
 });
-
-//joblist tab in  side
+// when click joblists tab
 jobListTab.addEventListener("click", () =>{
-    mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'none';
-        jobListCon.style.display = "block";
-        headerTitle.textContent = "Job lists";
+  
+    changeTabs(jobListTab,jobListCon,"Job lists");
 
 })
 
-// const changeTabs = (tab,container) =>{
-//     const tabs = [dashboardTab,addnewJobTab,jobListTab];
-//     const containers = [mainDashboard,jobAddContainer,jobListCon];
-//     // container.classList.add("hidde");
-//     // console.log(container);
-    
-//     tabs.forEach(currentTab => {
-//         if(currentTab === tab){
-//             containers.forEach(currentCon => {
-//                 if(currentCon === container){
-                   
-                    
-//                 }
-//                 // container.style.display = 'block';
-                
-//             })
-//         }else{
-//             return;
-//         }
-//     });
-// }
 
+//change tabs function 
+const changeTabs = (tab,container,tabTitle) =>{
+    const tabs = [dashboardTab,addnewJobTab,jobListTab];
+    const containers = [mainDashboard,jobAddContainer,jobListCon];
+
+    tabs.forEach(currentTab => {
+
+        if(currentTab === tab){
+
+            containers.forEach(currentCon => {
+                if(currentCon == container){
+                    container.style.display = "block";
+                    headerTitle.textContent = tabTitle
+
+                }else{
+                    currentCon.style.display = "none";
+                }
+                
+            })
+        }else{
+            return;
+        }
+    });
+}
+
+
+
+// add new job form event
 postForm.addEventListener('submit', addPost)
 
 // all functions 
@@ -155,7 +153,7 @@ function addPost (e) {
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
-       window.location.reload()
+    //    window.location.reload()
     }
     
 }
@@ -185,27 +183,101 @@ function getPostFromLocalStorage(){
 //add jobs to the Dom
 
 const addJobsToTheDom = (job) =>{
+    const div = document.createElement("div");
+    div.className = "job";
 
-    allJobsList.innerHTML += `
-                  <div class="job">
-              <ul>
-                <li><img src="${job.imageUrl}" alt=""></li>
-                <li>${job.companyInput}</li>
-                <li>${job.postTitle}</li>
-                <li>${job.postLocation}</li>
-                <li>${job.jobCategory}</li>
-                <li><div>
+    
+    div.innerHTML += `
+                <img src="${job.imageUrl}" alt="campany img">
+                <span class="campany-logo">${job.companyInput}</span>
+                <span class="job-name">${job.postTitle}</span>
+                <span class="job-location">${job.postLocation}</span>
+                <span class="job-category">${job.jobCategory}</span>
+                <div class="buttons">
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>
                 </div> 
-              </li>
-              </ul>
-            </div>`;
+           `;
+    allJobsList.appendChild(div);
 
+    attachHandler(div,job);
            
 }
 
+//attach handler
+const attachHandler = (div,job) =>{
+    const editBtn = div.querySelector(".edit-btn");
+    const deleteBtn = div.querySelector(".delete-btn");
 
+    // delete btn event
+    deleteBtn.addEventListener("click", () =>{
+        deleteJob(div,job.postTime);
+    });
+     //edit btn  event
+
+     editBtn.addEventListener("click", () =>{
+        changeTabs(addnewJobTab,jobAddContainer,"update job");
+        addPostBtn.textContent = "update Job";
+
+
+     })
+    
+
+}
+
+//update job
+
+const handleEdit = (div,job) =>{
+
+    //  postTitle.value = job.postTitle;
+    // imageUrl.value = job. imageUrl;
+    //  postArea.value =  job.postAreatext;
+    //  postLocation.value = job.postLocation;
+    // dateInput.value = job. dateInput;
+    //  companyInput.value = job.companyInput;
+    // jobCategory.value = job.jobCategory;
+
+    // addPostBtn.addEventListener("click", () =>{
+    //     const jobPostDetail = {
+    //         postTitle: postTitle.value,
+    //         imageUrl: imageUrl.value,
+    //         postAreatext: postArea.value,
+    //         postLocation: postLocation.value,
+    //         dateInput: dateInput.value,
+    //         companyInput: companyInput.value,
+    //         jobCategory: jobCategory.value,
+    //         postTime: Date.now()
+    //      };
+  
+
+    //      updateJOb(job.postTime, jobPostDetail);
+    // })
+    
+     
+}
+
+
+
+
+//delete job
+const deleteJob = (div,id) =>{
+    let oldJobPostDetail = getPostFromLocalStorage();
+  
+    oldJobPostDetail = oldJobPostDetail.filter(job => job.postTime != id);
+
+    localStorage.setItem("jobPosts", JSON.stringify(oldJobPostDetail));
+
+    div.remove();
+    
+    Swal.fire({
+        title: "Delete!",
+        text: "job deleting successfuly!",
+        icon: "success",
+        ConfirmedButtonText:"ok"
+      });
+
+    
+}
 
 //  all Events
 
