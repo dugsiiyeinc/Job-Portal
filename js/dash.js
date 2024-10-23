@@ -21,6 +21,7 @@ const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
+const updateJobContainer = document.querySelector(".update-job-container");
 
 
 console.log(jobListCon);
@@ -216,8 +217,14 @@ const attachHandler = (div,job) =>{
      //edit btn  event
 
      editBtn.addEventListener("click", () =>{
-        changeTabs(addnewJobTab,jobAddContainer,"update job");
-        addPostBtn.textContent = "update Job";
+         
+        jobListCon.style.display = "none";
+        updateJobContainer.style.display = 'block';
+        headerTitle.textContent ='Update Jobs'
+         
+
+        
+        
 
 
      })

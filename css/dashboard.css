@@ -230,7 +230,13 @@ option{
 }
 /* end job post form */
 
+/* update job section */
+    .update-job-container{
+        display: none;
+        border: solid 3px #ccc;
+    }
 
+/* end update job section */
 /* start job lest style  */
 #job-list-con{
     display: none;

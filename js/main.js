@@ -6,7 +6,7 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
-const showAllButton = document.querySelector(".showallBTN")
+const showAllButton = document.querySelector(".showAllBTN")
 
 
 
