@@ -226,6 +226,13 @@ const deleteJob = (div,id) =>{
     localStorage.setItem("jobPosts", JSON.stringify(oldJobPostDetail));
 
     div.remove();
+    
+    Swal.fire({
+        title: "Delete!",
+        text: "job deleting successfuly!",
+        icon: "success",
+        ConfirmedButtonText:"ok"
+      });
 
     
 }
