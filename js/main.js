@@ -6,6 +6,7 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
+const showAllButton = document.querySelector(".showallBTN")
 
 
 
@@ -70,5 +71,13 @@ function addjobPostToDOm (jobPost ){
 
 
 
+// // event listener waxa o quseya marka la riixo show all button in oo geeyo page-ka job list
+// showAllButton.addEventListener('click', function (){
+//     window.location.href = 'auth.html';
 
+// })
 
+showAllButton.addEventListener('click' , function (){
+    window.location.href = 'jobs.html';
+ 
+})
