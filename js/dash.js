@@ -218,7 +218,6 @@ const attachHandler = (div,job) =>{
      editBtn.addEventListener("click", () =>{
         changeTabs(addnewJobTab,jobAddContainer,"update job");
         addPostBtn.textContent = "update Job";
-        handleEdit(div,job);
 
 
      })
@@ -230,43 +229,34 @@ const attachHandler = (div,job) =>{
 
 const handleEdit = (div,job) =>{
 
-     postTitle.value = job.postTitle;
-    imageUrl.value = job. imageUrl;
-     postArea.value =  job.postAreatext;
-     postLocation.value = job.postLocation;
-    dateInput.value = job. dateInput;
-     companyInput.value = job.companyInput;
-    jobCategory.value = job.jobCategory;
+    //  postTitle.value = job.postTitle;
+    // imageUrl.value = job. imageUrl;
+    //  postArea.value =  job.postAreatext;
+    //  postLocation.value = job.postLocation;
+    // dateInput.value = job. dateInput;
+    //  companyInput.value = job.companyInput;
+    // jobCategory.value = job.jobCategory;
 
-    addPostBtn.addEventListener("click", () =>{
-        const jobPostDetail = {
-            postTitle: postTitle.value,
-            imageUrl: imageUrl.value,
-            postAreatext: postArea.value,
-            postLocation: postLocation.value,
-            dateInput: dateInput.value,
-            companyInput: companyInput.value,
-            jobCategory: jobCategory.value,
-            postTime: Date.now()
-         };
-    
-        //  console.log(jobPostDetail);
+    // addPostBtn.addEventListener("click", () =>{
+    //     const jobPostDetail = {
+    //         postTitle: postTitle.value,
+    //         imageUrl: imageUrl.value,
+    //         postAreatext: postArea.value,
+    //         postLocation: postLocation.value,
+    //         dateInput: dateInput.value,
+    //         companyInput: companyInput.value,
+    //         jobCategory: jobCategory.value,
+    //         postTime: Date.now()
+    //      };
+  
 
-         updateJOb(job.postTime, jobPostDetail);
-    })
+    //      updateJOb(job.postTime, jobPostDetail);
+    // })
     
      
 }
 
-//update 
-const updateJOb = (id,newJob) =>{
-    const oldJobPostDetail = getPostFromLocalStorage();
 
-    const job = oldJobPostDetail.find(job => job.postTime == id);
-    console.log(job);
-    console.log(newJob);
-    
-}
 
 
 //delete job
