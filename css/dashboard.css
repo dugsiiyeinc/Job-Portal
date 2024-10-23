@@ -354,12 +354,12 @@ option{
      /* end job lists conten responsive design */
 }
 
-@media (max-width: 480px){
+@media (max-width: 487px){
  .header h1{
     font-size: 1.4rem;
  }
  .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul{
-    font-size: 8px;
+    font-size: 9px;
    }
 
 }
