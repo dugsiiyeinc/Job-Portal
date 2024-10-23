@@ -185,7 +185,7 @@ function getPostFromLocalStorage(){
 //add jobs to the Dom
 
 const addJobsToTheDom = (job) =>{
-
+    const div = document.createElement("div");
     allJobsList.innerHTML += `
                   <div class="job">
                 <img src="${job.imageUrl}" alt="campany img">
