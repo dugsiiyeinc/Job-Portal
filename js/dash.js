@@ -26,6 +26,10 @@ const onlineUserEmail = document.querySelector(".user-email");
 
 
 
+const onlineUser = JSON.parse(localStorage.getItem("onlineUser"));
+
+onlineUserName.textContent = `username : ${onlineUser.username}`;
+onlineUserEmail.textContent = `email : ${onlineUser.email}`;
 
  
 
