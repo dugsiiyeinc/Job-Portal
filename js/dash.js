@@ -206,6 +206,7 @@ const addJobsToTheDom = (job) =>{
            
 }
 
+//attach handler
 const attachHandler = (div,job) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");
@@ -215,6 +216,10 @@ const attachHandler = (div,job) =>{
     })
     
 
+}
+
+const deleteJob = (div,id) =>{
+    
 }
 
 //  all Events
