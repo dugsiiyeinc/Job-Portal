@@ -84,6 +84,6 @@ showAllButton.addEventListener('click' , function (){
  
 })
 
-showUserInfo.addEventListener("click", () =>{
-    userInfo.classList.toggle("show");
+showUserInfo.addEventListener("click", (e) =>{
+        userInfo.classList.toggle("show");
 })
