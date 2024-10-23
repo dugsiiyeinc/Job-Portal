@@ -18,16 +18,14 @@ toggleBtn.addEventListener("click", () => {
 
 document.addEventListener('DOMContentLoaded', loadJobPosts);
 
-function loadJobPosts(){
-    const posts = getPostFromLocalStorage()
+function loadJobPosts() {
+    const posts = getPostFromLocalStorage();
+    const lastThreePosts = posts.slice(-4); // Get the last three elements
 
-    posts.forEach(jobPost => {
-        addjobPostToDOm(jobPost)
+    lastThreePosts.forEach(jobPost => {
+        addjobPostToDOm(jobPost);
         // console.log(jobPost)
-
     });
-
-
 }
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
