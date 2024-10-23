@@ -64,40 +64,37 @@ postArea.addEventListener('input', function (){
 })
 // labadan function waxa ay quseyaan in loo kale wareego Main dashboard tab iyo Add job tab
 dashboardTab.addEventListener('click', function() { 
-    console.log('dashboard tab clicked')
-           // show the dashboard tab content and hide the job tab content
-    mainDashboard.style.display = 'block';
-    jobAddContainer.style.display = 'none';  
-    jobListCon.style.display = "none";
-    headerTitle.textContent = "Job Portal Dashboard";
-    // changeTabs(dashboardTab,mainDashboard);  
+    // console.log('dashboard tab clicked')
+    //        // show the dashboard tab content and hide the job tab content
+    // mainDashboard.style.display = 'block';
+    // jobAddContainer.style.display = 'none';  
+    // jobListCon.style.display = "none";
+    // headerTitle.textContent = "Job Portal Dashboard";
+    changeTabs(dashboardTab,mainDashboard, "Job Portal Dashboard");  
 })
 
 addnewJobTab.addEventListener('click', function() { 
-        console.log('job tab clicked')
-        // show the jobs tab content and hide the dashboard tab content
+        // console.log('job tab clicked')
+        // // show the jobs tab content and hide the dashboard tab content
          
-        mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'block'
-        jobListCon.style.display = "none";
-        headerTitle.textContent = "Add New Job";
-        // changeTabs(addnewJobTab,jobAddContainer);
+        // mainDashboard.style.display = 'none'
+        // jobAddContainer.style.display = 'block'
+        // jobListCon.style.display = "none";
+        // headerTitle.textContent = "Add New Job";
+        changeTabs(addnewJobTab,jobAddContainer,"Add New Job");
         
 });
 
 //joblist tab in  side
 jobListTab.addEventListener("click", () =>{
-    // mainDashboard.style.display = 'none'
-    //     jobAddContainer.style.display = 'none';
-    //     jobListCon.style.display = "block";
-    //     headerTitle.textContent = "Job lists";
-    changeTabs(jobListTab,jobListCon);
+  
+    changeTabs(jobListTab,jobListCon,"Job lists");
 
 })
 
 
 //change tabs function 
-const changeTabs = (tab,container) =>{
+const changeTabs = (tab,container,tabTitle) =>{
     const tabs = [dashboardTab,addnewJobTab,jobListTab];
     const containers = [mainDashboard,jobAddContainer,jobListCon];
 
@@ -108,6 +105,7 @@ const changeTabs = (tab,container) =>{
             containers.forEach(currentCon => {
                 if(currentCon == container){
                     container.style.display = "block";
+                    headerTitle.textContent = tabTitle
 
                 }else{
                     currentCon.style.display = "none";
