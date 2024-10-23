@@ -250,7 +250,7 @@ const handleEdit = (div,job) =>{
             postTime: Date.now()
          };
     
-         console.log(jobPostDetail);
+        //  console.log(jobPostDetail);
 
          updateJOb(job.postTime, jobPostDetail);
     })
@@ -258,7 +258,15 @@ const handleEdit = (div,job) =>{
      
 }
 
+//update 
+const updateJOb = (id,newJob) =>{
+    const oldJobPostDetail = getPostFromLocalStorage();
 
+    const job = oldJobPostDetail.find(job => job.postTime == id);
+    console.log(job);
+    console.log(newJob);
+    
+}
 
 
 //delete job
