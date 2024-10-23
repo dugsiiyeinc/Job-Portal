@@ -230,7 +230,23 @@ option{
 }
 /* end job post form */
 
+/* update job section */
+    .update-job-container{
+        display: none;
+        border: solid 3px #ccc;
+    }
 
+    .update-job-container textarea{
+        max-width: 100%; 
+        overflow: hidden;
+        resize: none;  
+        box-sizing: border-box; 
+        
+         
+        
+    }
+
+/* end update job section */
 /* start job lest style  */
 #job-list-con{
     display: none;
