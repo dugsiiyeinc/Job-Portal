@@ -22,6 +22,8 @@ const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 
 
+console.log(jobListCon);
+
  
 
 //loading data 
@@ -85,34 +87,38 @@ addnewJobTab.addEventListener('click', function() {
 
 //joblist tab in  side
 jobListTab.addEventListener("click", () =>{
-    mainDashboard.style.display = 'none'
-        jobAddContainer.style.display = 'none';
-        jobListCon.style.display = "block";
-        headerTitle.textContent = "Job lists";
+    // mainDashboard.style.display = 'none'
+    //     jobAddContainer.style.display = 'none';
+    //     jobListCon.style.display = "block";
+    //     headerTitle.textContent = "Job lists";
+    changeTabs(jobListTab,jobListCon);
 
 })
 
-// const changeTabs = (tab,container) =>{
-//     const tabs = [dashboardTab,addnewJobTab,jobListTab];
-//     const containers = [mainDashboard,jobAddContainer,jobListCon];
-//     // container.classList.add("hidde");
-//     // console.log(container);
-    
-//     tabs.forEach(currentTab => {
-//         if(currentTab === tab){
-//             containers.forEach(currentCon => {
-//                 if(currentCon === container){
-                   
-                    
-//                 }
-//                 // container.style.display = 'block';
+
+//change tabs function 
+const changeTabs = (tab,container) =>{
+    const tabs = [dashboardTab,addnewJobTab,jobListTab];
+    const containers = [mainDashboard,jobAddContainer,jobListCon];
+
+    tabs.forEach(currentTab => {
+
+        if(currentTab === tab){
+
+            containers.forEach(currentCon => {
+                if(currentCon == container){
+                    container.style.display = "block";
+
+                }else{
+                    currentCon.style.display = "none";
+                }
                 
-//             })
-//         }else{
-//             return;
-//         }
-//     });
-// }
+            })
+        }else{
+            return;
+        }
+    });
+}
 
 postForm.addEventListener('submit', addPost)
 
