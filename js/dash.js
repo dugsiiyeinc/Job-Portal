@@ -201,10 +201,18 @@ const addJobsToTheDom = (job) =>{
                 </div> 
            `;
     allJobsList.appendChild(div);
+
+    attachHandler(div,job);
            
 }
 
+const attachHandler = (div,job) =>{
+    const editBtn = div.querySelector(".edit-btn");
+    const deleteBtn = div.querySelector(".delete-btn");
 
+    
+
+}
 
 //  all Events
 
