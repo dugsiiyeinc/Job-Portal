@@ -108,6 +108,9 @@ const changeTabs = (tab,container,tabTitle) =>{
     });
 }
 
+
+
+// add new job form event
 postForm.addEventListener('submit', addPost)
 
 // all functions 
@@ -205,13 +208,40 @@ const attachHandler = (div,job) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");
 
+    // delete btn event
     deleteBtn.addEventListener("click", () =>{
         deleteJob(div,job.postTime);
-    })
+    });
+     //edit btn  event
+
+     editBtn.addEventListener("click", () =>{
+        changeTabs(addnewJobTab,jobAddContainer,"update job");
+        handleEdit(div,job);
+
+
+     })
     
 
 }
 
+//update job
+
+const handleEdit = (div,job) =>{
+
+     postTitle.value = job.postTitle;
+    imageUrl.value = job. imageUrl;
+     postArea.value =  job.postAreatext;
+     postLocation.value = job.postLocation;
+    dateInput.value = job. dateInput;
+     companyInput.value = job.companyInput;
+    jobCategory.value = job.jobCategory;
+
+}
+
+
+
+
+//delete job
 const deleteJob = (div,id) =>{
     let oldJobPostDetail = getPostFromLocalStorage();
   
