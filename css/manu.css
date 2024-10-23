@@ -110,7 +110,11 @@
     align-items: start;
     gap: .5rem;
     border-radius: 10px;
-    z-index: 11111;
+    z-index: 1;
+    transition: 300ms ease ;
+  }
+  .user-info.show{
+    display: flex;
   }
  .btn:hover{
     background-color: #FF0044;

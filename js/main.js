@@ -83,3 +83,7 @@ showAllButton.addEventListener('click' , function (){
     window.location.href = 'jobs.html';
  
 })
+
+showUserInfo.addEventListener("click", () =>{
+    userInfo.classList.toggle("show");
+})
