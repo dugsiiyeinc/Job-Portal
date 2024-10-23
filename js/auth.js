@@ -9,6 +9,7 @@ const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
 
 
+
 const getusersFromLocalstorage = () =>{
     const users = JSON.parse(localStorage.getItem("users")) || [];
     return users;
