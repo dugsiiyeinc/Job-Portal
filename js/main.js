@@ -9,6 +9,8 @@ const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector(".showallBTN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
+const onlineUserName = document.querySelector(".username");
+const onlineUserEmail = document.querySelector(".user-email");
 
 
 

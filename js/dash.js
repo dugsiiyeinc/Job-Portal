@@ -23,7 +23,7 @@ const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
 const onlineUserEmail = document.querySelector(".user-email");
-// const loginBtn = document.querySelectorAll("#loginBtn");
+
 
 
 
