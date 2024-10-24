@@ -44,7 +44,7 @@
     font-size: 1.2rem;
     text-decoration: none;
   }
-  .nav-links  li a:hover{
+  .nav-links  li a:hover , .log-out-btn a:hover {
     color: #DA0037;
   }
 .btn{
@@ -56,6 +56,66 @@
     border-radius: 5px;
     cursor: pointer;
     
+  }
+  .user-login .btn , .log-out-btn , .log-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+   
+    
+  }
+  .log-btn{
+    display: none;
+  }
+  .log-out-btn{
+    background: none;
+    display: flex;
+    gap: 10px;
+    border:none ;
+    color: #3c3c3c;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+  }
+ 
+  .user-login .btn a , .log-out-btn a , .log-btn a{
+    color: #EDEDED;
+  }
+  .user-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .user-login #user{
+    display: none;
+    background-color: #2c2c2c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #EDEDED;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .user-info{
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    background-color: #2c2c2c;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    border-radius: 10px;
+    z-index: 1;
+    transition: 300ms ease ;
+  }
+  .user-info.show{
+    display: flex;
   }
  .btn:hover{
     background-color: #FF0044;
@@ -88,6 +148,7 @@
      }
      .nav-links{
       width: 100%;
+      display: none;
      flex-direction: column;
      justify-content: center;
      background-color: #444;
@@ -100,6 +161,7 @@
       display: flex;
   }
   .nav-links.active {
+    display: flex;
       min-height: 220px;
       opacity: 1;
       transition: 300ms ease-in-out;
@@ -123,5 +185,23 @@
   }
   .nav-links  .btn{
     width: 100%;
+  }
+
+  .log-btn{
+    margin-top: 5px;
+    display: flex;
+  }
+
+  .user-info{
+    top: 14%;
+  }
+
+  .user-login .btn{
+    display: none;
+  }
+  .user-login #user{
+    position: absolute;
+    right: 16%;
+    top:12px;
   }
   }

@@ -8,6 +8,8 @@ const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
 
+
+
 const getusersFromLocalstorage = () =>{
     const users = JSON.parse(localStorage.getItem("users")) || [];
     return users;
@@ -124,7 +126,7 @@ authForm.addEventListener("submit" , (e) =>{
         else if(exestingUser && !exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
             window.location.href = "../html/jobs.html";
-
+        
         }
         else{
            
@@ -172,6 +174,7 @@ authForm.addEventListener("submit" , (e) =>{
           });
         localStorage.setItem("users", JSON.stringify(users));
         switchAuthForm();
+
     }
 })
 
