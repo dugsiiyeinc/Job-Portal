@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     const dashboardTab = document.querySelector('.dashboard-tab a');
     const jobAddContainer = document.querySelector('.add-job-container');
     const mainDashboard = document.querySelector('.overview');
@@ -28,46 +27,6 @@
     
 
 
-=======
-const dashboardTab = document.querySelector('.dashboard-tab a');
-const jobAddContainer = document.querySelector('.add-job-container');
-const mainDashboard = document.querySelector('.overview');
-const headerTitle = document.querySelector('#header-title');
-const addnewJobTab = document.querySelector('.jobs-tab');
-const postForm = document.querySelector('#form');
-const postTitle = document.querySelector('#titleInput');
-const imageUrl = document.querySelector('#imageInput');
-const postArea = document.querySelector('#PostInput')
-const body = document.querySelector('body')
-const  postLocation = document.querySelector('#locationInput');
-const dateInput = document.querySelector('#dateInput');
-const companyInput = document.querySelector('#companyInput');
-const jobCategory = document.querySelector('#jobCategory')
-const postButton = document.querySelector('#addPostBtn')
-const openSidebar = document.querySelector('#openSidebar');
-const closeSidebar = document.querySelector('#closeSidebar');
-const sidebar = document.querySelector('.sidebar');
-const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
-const jobListTab = document.querySelector("#job-list");
-const jobListCon = document.querySelector("#job-list-con");
-const allJobsList = document.querySelector(".all-joblists");
-const addPostBtn = document.querySelector("#addPostBtn");
-// const onlineUserName = document.querySelector(".username");
-// const onlineUserEmail = document.querySelector(".user-email");
-// const loginBtn = document.querySelector("loginBtn");
-
-
-
-// const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-// if (!onlineUser) return (window.location.href = "../html/auth.html");
-
-// onlineUserName.textContent = `username : ${onlineUser.username}`;
-// onlineUserEmail.textContent = `email : ${onlineUser.email}`;
-
-// console.log(loginBtn);
-
-// loginBtn.style.display = "none";
->>>>>>> dashboard
 
     
 
