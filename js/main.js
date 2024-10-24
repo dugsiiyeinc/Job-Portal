@@ -31,6 +31,19 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
         // console.log(jobPost)
     });
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser){
+
+        // return (window.location.href = "../html/auth.html")
+    };
+    
+    onlineUserName.textContent = `username : ${onlineUser.username}`;
+    onlineUserEmail.textContent = `email : ${onlineUser.email}`;
+    
+    // loginBtn.textContent = "Log out"
+    document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
+    document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
 }
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
