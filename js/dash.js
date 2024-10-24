@@ -22,20 +22,6 @@ const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
-const onlineUserEmail = document.querySelector(".user-email");
-const loginBtn1 =  document.querySelectorAll(".loginBtn")[0];
-const loginBtn2 =  document.querySelectorAll(".loginBtn")[1];
-
-
-
-
-//set log in buttons when loptop or mobile menu
-loginBtn1.addEventListener("click", () => {
-    localStorage.removeItem("onlineUser")
-});
-loginBtn2.addEventListener("click", () => {
-    localStorage.removeItem("onlineUser")
-});
 const loginBtn1 =  document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 =  document.querySelectorAll(".loginBtn")[1];
 
@@ -50,7 +36,6 @@ loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
  
-
 //loading data 
 const loadJobsdata = () =>{
     const alljobDetails = getPostFromLocalStorage();
@@ -60,15 +45,16 @@ const loadJobsdata = () =>{
         
     });
 
+    showUserInfo.style.display = "block";
+
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
 if (!onlineUser) return (window.location.href = "../html/auth.html");
 
-onlineUserName.textContent = `username : ${onlineUser.username}`;
-onlineUserEmail.textContent = `email : ${onlineUser.email}`;
+onlineUserName.textContent = ` ${onlineUser.username}`;
 
 // loginBtn.textContent = "Log out"
-document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
-document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
+loginBtn1.textContent = "Log out";
+loginBtn2.textContent = "Log out";
 }
 
 //event dom content loaded
