@@ -9,8 +9,7 @@ const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector(".showallBTN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
-const onlineUserName = document.querySelector(".username");
-const onlineUserEmail = document.querySelector(".user-email");
+
 
 
 
@@ -31,17 +30,13 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
         // console.log(jobPost)
     });
+    showUserInfo.style.display = "none";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser){
+    if (!onlineUser) return;
 
-        // return (window.location.href = "../html/auth.html")
-    };
-    
-    onlineUserName.textContent = `username : ${onlineUser.username}`;
-    onlineUserEmail.textContent = `email : ${onlineUser.email}`;
-    
     // loginBtn.textContent = "Log out"
+    
     document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
     document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
 }
