@@ -41,7 +41,7 @@ const loadJobsdata = () =>{
     });
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-// if (!onlineUser) return (window.location.href = "../html/auth.html");
+if (!onlineUser) return (window.location.href = "../html/auth.html");
 
 onlineUserName.textContent = `username : ${onlineUser.username}`;
 onlineUserEmail.textContent = `email : ${onlineUser.email}`;
