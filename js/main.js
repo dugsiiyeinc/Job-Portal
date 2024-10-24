@@ -9,14 +9,23 @@ const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector(".showallBTN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
+const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
+const logBtn2 =  document.querySelectorAll(".loginBtn")[1];
 
-
-
-
+//hidde and show menu 
 toggleBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     navbar.classList.toggle("active");
-})
+});
+
+
+//set log in buttons when loptop or mobile menu
+logBtn1.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
+logBtn2.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
 
 //  load  job post from Local Storage
 
@@ -37,12 +46,9 @@ function loadJobPosts() {
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
-   const loginBtn1 =  document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
-   const loginBtn2 =  document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
-   
-   loginBtn1.addEventListener("click", localStorage.removeItem("onlineUser"));
-   loginBtn2.addEventListener("click", localStorage.removeItem("onlineUser"));
-   
+    logBtn1.textContent = "Log out";
+    logBtn2.textContent = "Log out";
+  
    
 }
 
