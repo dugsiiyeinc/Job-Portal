@@ -45,9 +45,18 @@ function loadJobPosts() {
     if (!onlineUser) return;
 
     // loginBtn.textContent = "Log out"
-    document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
-    document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
+    //set log in buttons when loptop or mobile menu
+   const loginBtn1 =  document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
+   const loginBtn2 =  document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
+   
+   loginBtn1.addEventListener("click", localStorage.removeItem("onlineUser"));
+   loginBtn2.addEventListener("click", localStorage.removeItem("onlineUser"));
+   
+   
 }
+
+
+
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
