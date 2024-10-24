@@ -23,12 +23,19 @@ const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
 const onlineUserEmail = document.querySelector(".user-email");
+const loginBtn1 =  document.querySelectorAll(".loginBtn")[0];
+const loginBtn2 =  document.querySelectorAll(".loginBtn")[1];
 
 
 
 
-
-
+//set log in buttons when loptop or mobile menu
+loginBtn1.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
+loginBtn2.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
  
 
 //loading data 
@@ -45,12 +52,18 @@ if (!onlineUser) return (window.location.href = "../html/auth.html");
 
 onlineUserName.textContent = `username : ${onlineUser.username}`;
 onlineUserEmail.textContent = `email : ${onlineUser.email}`;
+//change text content of  log in buttons when loptop or mobile menu
+ loginBtn1.textContent = "Log out";
+ loginBtn2.textContent = "Log out";
 
-// loginBtn.textContent = "Log out"
-document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
-document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
+
+
 }
+
+//event dom content loaded
 document.addEventListener("DOMContentLoaded",loadJobsdata);
+
+ 
 
 
 // openSidebar
