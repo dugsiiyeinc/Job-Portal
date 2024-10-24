@@ -6,9 +6,13 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
+<<<<<<< HEAD
+const showAllButton = document.querySelector(".showAllBTN")
+=======
 const showAllButton = document.querySelector(".showallBTN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
+>>>>>>> dashboard
 
 
 
