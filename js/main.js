@@ -46,12 +46,9 @@ function loadJobPosts() {
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
-   const loginBtn1 =  document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
-   const loginBtn2 =  document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
-   
-   loginBtn1.addEventListener("click", localStorage.removeItem("onlineUser"));
-   loginBtn2.addEventListener("click", localStorage.removeItem("onlineUser"));
-   
+    logBtn1.textContent = "Log out";
+    logBtn2.textContent = "Log out";
+  
    
 }
 
