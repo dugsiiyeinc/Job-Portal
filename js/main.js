@@ -45,15 +45,9 @@ function loadJobPosts() {
     if (!onlineUser) return;
 
     // loginBtn.textContent = "Log out"
-    //set log in buttons when loptop or mobile menu
-    logBtn1.textContent = "Log out";
-    logBtn2.textContent = "Log out";
-  
-   
+    document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
+    document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
 }
-
-
-
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
