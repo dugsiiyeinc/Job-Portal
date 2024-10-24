@@ -21,21 +21,13 @@ const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
-// const onlineUserName = document.querySelector(".username");
-// const onlineUserEmail = document.querySelector(".user-email");
-// const loginBtn = document.querySelector("loginBtn");
+const onlineUserName = document.querySelector(".username");
+const onlineUserEmail = document.querySelector(".user-email");
+// const loginBtn = document.querySelectorAll("#loginBtn");
 
 
 
-// const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-// if (!onlineUser) return (window.location.href = "../html/auth.html");
 
-// onlineUserName.textContent = `username : ${onlineUser.username}`;
-// onlineUserEmail.textContent = `email : ${onlineUser.email}`;
-
-// console.log(loginBtn);
-
-// loginBtn.style.display = "none";
 
  
 
@@ -47,6 +39,16 @@ const loadJobsdata = () =>{
         addJobsToTheDom(job);
         
     });
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+// if (!onlineUser) return (window.location.href = "../html/auth.html");
+
+onlineUserName.textContent = `username : ${onlineUser.username}`;
+onlineUserEmail.textContent = `email : ${onlineUser.email}`;
+
+// loginBtn.textContent = "Log out"
+document.querySelectorAll(".loginBtn")[0].textContent = "Log out";
+document.querySelectorAll(".loginBtn")[1].textContent = "Log out";
 }
 document.addEventListener("DOMContentLoaded",loadJobsdata);
 
