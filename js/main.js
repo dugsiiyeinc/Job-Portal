@@ -6,12 +6,26 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
-const showAllButton = document.querySelector(".showAllBTN");
+const showAllButton = document.querySelector(".showallBTN")
+const showUserInfo = document.querySelector("#user");
+const userInfo = document.querySelector(".user-info");
+const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
+const logBtn2 =  document.querySelectorAll(".loginBtn")[1];
 
+//hidde and show menu 
 toggleBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     navbar.classList.toggle("active");
-})
+});
+
+
+//set log in buttons when loptop or mobile menu
+logBtn1.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
+logBtn2.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
 
 //  load  job post from Local Storage
 
@@ -25,7 +39,21 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
         // console.log(jobPost)
     });
+    showUserInfo.style.display = "none";
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser) return;
+
+    // loginBtn.textContent = "Log out"
+    //set log in buttons when loptop or mobile menu
+    logBtn1.textContent = "Log out";
+    logBtn2.textContent = "Log out";
+  
+   
 }
+
+
+
 // function kaan waxa o ka so aqraa post-ka local storage-ka
 function getPostFromLocalStorage(){ 
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
