@@ -3,8 +3,12 @@ const  jobList  = document.querySelector('#jobList')
 document.addEventListener("DOMContentLoaded",loadJobsdata);
 
 function loadJobsdata() {
-    const jobs = getPostFromLocalStorage();
-
+  
+    const makeJobsReverse = getPostFromLocalStorage();
+     
+    // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
+    const jobs = makeJobsReverse.reverse()
+    
      console.log(jobs)
     //  function to display to dom
     addJobsToTheDom(jobs)
