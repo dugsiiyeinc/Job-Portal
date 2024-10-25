@@ -31,9 +31,16 @@ function addJobsToTheDom (jobPosts){
         const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
+                  <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
+                  <div class='job-info'>
                     <h3>${jobPosts.postTitle}</h3>
                     <p>${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
+                    </div>
+                    <div class='expire-date'>
+                         
+                        <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
+                    </div>
                 `;
                 jobList.appendChild(jobCard);
     });

@@ -10,6 +10,8 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
 }
 h2 {
     margin-top: 0;
@@ -41,17 +43,61 @@ h2 {
 }
  
 .job-card h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-     
-    font-weight: bold;
-    unicode-bidi: isolate;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-family: Lato, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+ .job-card p {
+    color: #EDEDED;
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 1.5rem;
 }
 
-.job-card p {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.imge-company img {
+    width: 80px;
+    height: 80px;
+    
+    margin-right: 15px;
+}
+
+
+
+.expire-date {
+    text-align: right;  
+    margin-left: auto;  
+    align-items: center;
+      
+    display: flex;  
+    justify-content: center; 
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+    .job-card {
+        flex-direction: column;
+         
+    }
+    .imge-company img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .job-info{
+        margin-bottom: 10px;
+         
+         
+         display: flex;
+         flex-direction: column;
+        
+    }
+    
+    
 }
