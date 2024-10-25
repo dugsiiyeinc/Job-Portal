@@ -40,3 +40,18 @@ h2 {
     border-radius: 5px;
 }
  
+.job-card h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+     
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.job-card p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
