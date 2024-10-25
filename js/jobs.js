@@ -22,5 +22,16 @@ function getPostFromLocalStorage(){
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom (jobPosts){
+
+    jobPosts.forEach(jobPosts => {
+        const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                jobCard.innerHTML = `
+                    <h3>${jobPosts.postTitle}</h3>
+                    <p>${jobPosts.companyInput}</p>
+                    <p>${jobPosts.postLocation}</p>
+                `;
+                jobList.appendChild(jobCard);
+    });
     
 }
