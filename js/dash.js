@@ -356,13 +356,14 @@ const deleteJob = (div,id) =>{
             text: "job updated successfuly!",
             icon: "success",
             ConfirmedButtonText:"ok"
-        });
+        })
 
-           }else {
-            alert('')
-           }
+          
+           } 
 
-         
+            
+           
+           
         
     }
 
