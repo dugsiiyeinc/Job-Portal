@@ -24,6 +24,7 @@ const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
 const loginBtn1 =  document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 =  document.querySelectorAll(".loginBtn")[1];
+const updateJobContainer = document.querySelector(".update-job-container")
 
 
 
@@ -111,7 +112,7 @@ jobListTab.addEventListener("click", () =>{
 //change tabs function 
 const changeTabs = (tab,container,tabTitle) =>{
     const tabs = [dashboardTab,addnewJobTab,jobListTab];
-    const containers = [mainDashboard,jobAddContainer,jobListCon];
+    const containers = [mainDashboard,jobAddContainer,jobListCon, updateJobContainer];
 
     tabs.forEach(currentTab => {
 
@@ -144,14 +145,7 @@ postForm.addEventListener('submit', addPost)
 function addPost (e) {
     e.preventDefault()
   
-    // console.log('addPost', postTitle)
-    // console.log('imageUrl', imageUrl)
-    // console.log('postArea', postArea)
-    // console.log('postLocation', postLocation)
-    // console.log('dateInput', dateInput)
-    // console.log('companyInput', companyInput)
-    // console.log('jobCategory', jobCategory)
-    // console.log('postButton', postButton)
+
 
 
     if(!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() ){
@@ -171,7 +165,6 @@ function addPost (e) {
             postTime: Date.now()
          }
 
-         console.log(jobPostDetail)
         //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
 
         addJobsToTheDom(jobPostDetail);
@@ -240,8 +233,11 @@ const attachHandler = (div,job) =>{
      //edit btn  event
 
      editBtn.addEventListener("click", () =>{
-        changeTabs(addnewJobTab,jobAddContainer,"update job");
-        addPostBtn.textContent = "update Job";
+        jobListCon.style.display = "none";
+            updateJobContainer.style.display = 'block';
+            headerTitle.textContent ='Update Jobs'
+            handleEdit(job , job.postTime)
+
 
 
      })
@@ -251,33 +247,62 @@ const attachHandler = (div,job) =>{
 
 //update job
 
-const handleEdit = (div,job) =>{
+function  handleEdit  (job , jobPostTime) {
 
-    //  postTitle.value = job.postTitle;
-    // imageUrl.value = job. imageUrl;
-    //  postArea.value =  job.postAreatext;
-    //  postLocation.value = job.postLocation;
-    // dateInput.value = job. dateInput;
-    //  companyInput.value = job.companyInput;
-    // jobCategory.value = job.jobCategory;
 
-    // addPostBtn.addEventListener("click", () =>{
-    //     const jobPostDetail = {
-    //         postTitle: postTitle.value,
-    //         imageUrl: imageUrl.value,
-    //         postAreatext: postArea.value,
-    //         postLocation: postLocation.value,
-    //         dateInput: dateInput.value,
-    //         companyInput: companyInput.value,
-    //         jobCategory: jobCategory.value,
-    //         postTime: Date.now()
-    //      };
-  
+        
+    // soo hel input elements marka ay ku jiraan div-ka  updateJobContainer
 
-    //      updateJOb(job.postTime, jobPostDetail);
-    // })
+    const postTitle = document.querySelector('.update-job-container #titleInput');
+    const imageUrl = document.querySelector('.update-job-container #imageInput');
+    const postArea = document.querySelector('.update-job-container #PostInput');
+    const postLocation = document.querySelector('.update-job-container #locationInput');
+    const dateInput = document.querySelector('.update-job-container #dateInput');
+    const companyInput = document.querySelector('.update-job-container #companyInput');
+    const jobCategory = document.querySelector('.update-job-container #jobCategory');
+    const updatepost = document.querySelector('.update-job-container #updatePostBtn');
+    console.log(postArea);
     
+    postArea.addEventListener('input', function (){
+        this.style.height = 'auto'; // Reset height
+        this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
+    })
+ 
+    // markaane soo bandhiga shaqada la edit garena
+
+    postTitle.value = job.postTitle
+    imageUrl.value = job.imageUrl
+    postArea.value = job.postAreatext
+    postLocation.value = job.postLocation
+    dateInput.value = job.dateInput
+    companyInput.value = job.companyInput
+    jobCategory.value = job.jobCategory
+    updatepost.textContent = 'Update Job'
+
+
      
+    
+
+    updatepost.addEventListener("click", () =>{
+        const jobPostDetail = {
+            postTitle: postTitle.value,
+            imageUrl: imageUrl.value,
+            postAreatext: postArea.value,
+            postLocation: postLocation.value,
+            dateInput: dateInput.value,
+            companyInput: companyInput.value,
+            jobCategory: jobCategory.value,
+            postTime: Date.now()
+        };
+        
+
+
+        updateJob(jobPostDetail ,jobPostTime);
+     
+
+    })
+    
+    
 }
 
 
@@ -286,7 +311,7 @@ const handleEdit = (div,job) =>{
 //delete job
 const deleteJob = (div,id) =>{
     let oldJobPostDetail = getPostFromLocalStorage();
-  
+  oldJobPostDetail
     oldJobPostDetail = oldJobPostDetail.filter(job => job.postTime != id);
 
     localStorage.setItem("jobPosts", JSON.stringify(oldJobPostDetail));
@@ -302,6 +327,44 @@ const deleteJob = (div,id) =>{
 
     
 }
+
+
+    // update job post
+    function  updateJob(jobPostDetail, jobPostTime){
+
+       
+        let jobPosts = getPostFromLocalStorage ()
+
+        const findPjostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === jobPostTime)
+
+           if (findPjostToUpdate) {
+            findPjostToUpdate.postTitle = jobPostDetail.postTitle;
+            findPjostToUpdate.imageUrl = jobPostDetail.imageUrl;
+            findPjostToUpdate.postAreatext = jobPostDetail.postAreatext;
+            findPjostToUpdate.dateInput = jobPostDetail.dateInput;
+            findPjostToUpdate.companyInput = jobPostDetail.companyInput;
+            findPjostToUpdate.jobCategory = jobPostDetail.jobCategory;
+            findPjostToUpdate.postLocation = jobPostDetail.postLocation;
+
+            
+
+
+        localStorage.setItem('jobPosts', JSON.stringify(jobPosts));
+
+        Swal.fire({
+            title: "Updated!",
+            text: "job updated successfuly!",
+            icon: "success",
+            ConfirmedButtonText:"ok"
+        });
+
+           }else {
+            alert('')
+           }
+
+         
+        
+    }
 
 //  all Events
 
