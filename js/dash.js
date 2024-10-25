@@ -199,9 +199,41 @@ function SavePostDetailToLocalStorage(jobPostDetail){
 function getPostFromLocalStorage(){ 
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
      
-    return oldJobPostDetail
-    
-}
+
+        // markaane soo bandhiga shaqada la edit garena
+
+        postTitle.value = job.postTitle
+        imageUrl.value = job.imageUrl
+        postArea.value = job.postAreatext
+        postLocation.value = job.postLocation
+        dateInput.value = job.dateInput
+        companyInput.value = job.companyInput
+        jobCategory.value = job.jobCategory
+        addPostBtn.textContent = 'Update Job'
+
+         
+        
+
+        addPostBtn.addEventListener("click", () =>{
+            const jobPostDetail = {
+                postTitle: postTitle.value,
+                imageUrl: imageUrl.value,
+                postAreatext: postArea.value,
+                postLocation: postLocation.value,
+                dateInput: dateInput.value,
+                companyInput: companyInput.value,
+                jobCategory: jobCategory.value,
+                postTime: Date.now()
+            };
+            console.log('line 259', jobPostTime)
+
+            updateJob(jobPostDetail ,jobPostTime);
+
+        })
+        
+        
+    }
+
 
 
 //add jobs to the Dom
