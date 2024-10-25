@@ -283,7 +283,7 @@
                 jobCategory: jobCategory.value,
                 postTime: Date.now()
             };
-    
+            console.log('line 259', jobPostTime)
 
             updateJob(jobPostDetail ,jobPostTime);
 
