@@ -288,6 +288,7 @@ img{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+   align-items: flex-start;
   
  }
 
@@ -296,7 +297,7 @@ img{
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
+  
   padding: 30px;
   margin: 10px;
  
@@ -306,18 +307,19 @@ img{
 }
 
 .stat-value {
-  font-size: 48px;
   font-weight: bold;
   font-size: 48px; /* Adjust size as needed */
   background-image: linear-gradient(to right, #8a8a8a, #e2fe7b); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
-  background-clip: text; /
+  background-clip: text;  
+  
 }
 
 .stat-label {
   font-size: 18px;
   color: #666;
+  
 }
 
 
