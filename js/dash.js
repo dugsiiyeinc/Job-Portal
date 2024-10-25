@@ -272,7 +272,7 @@ const handleEdit = (div,job) =>{
     //         jobCategory: jobCategory.value,
     //         postTime: Date.now()
     //      };
-  
+          console.log('line 259', jobPostTime)
 
     //      updateJOb(job.postTime, jobPostDetail);
     // })
