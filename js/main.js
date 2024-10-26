@@ -83,6 +83,7 @@ function addjobPostToDOm (jobPost ){
                         <p class="Job-tilte">${jobPost.postTitle}
                         </p>  
                         <p class=" Job-hiring-company">${jobPost.companyInput}
+                        <p class=" Job-hiring-time">${jobPost.postTime}
                     </div>
                     </div>
                     <div class="job-card-buttom" >
@@ -91,7 +92,7 @@ function addjobPostToDOm (jobPost ){
                         <button> <i class="fa-solid fa-location-arrow"></i> ${jobPost.postLocation} </button>
                     </div>
         
-              
+               
     `;
     jobMainContainer.appendChild(jobPostDiv)
 }
@@ -118,9 +119,33 @@ showUserInfo.addEventListener("click", (e) =>{
         userInfo.classList.toggle("show");
 })
 
-// marka clic lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
+// marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
 
-recentJobsContainer.addEventListener("click", function(){
-     console.log('heelo from recent jobs')
-      
-})
+recentJobsContainer.addEventListener("click", handleJobCardClick);
+
+function handleJobCardClick(event) {
+    const jobCard = event.target.closest(".recent-jobs-list");
+
+    if (jobCard) {
+        const PostTimeId = getPostTimeId(jobCard);
+        if (PostTimeId) {
+            console.log(PostTimeId);
+        }
+    }
+}
+
+function getPostTimeId(jobCard) {
+    const posttimeId = jobCard.querySelector(".Job-hiring-time");
+    const PostTimeId = posttimeId ? posttimeId.textContent.trim() : null;
+
+    if (PostTimeId) {
+        // Redirect using the dynamic PostTimeId in the URL
+        window.location.href = `/html/jobs.html/${encodeURIComponent(PostTimeId)}`;
+    }
+
+    return PostTimeId;
+}
+
+ 
+
+ 
