@@ -1,6 +1,7 @@
 const  jobList  = document.querySelector('#jobList')
 
 document.addEventListener("DOMContentLoaded",loadJobsdata);
+ 
 
 function loadJobsdata() {
   
@@ -34,10 +35,12 @@ function addJobsToTheDom (jobPosts){
                   <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
                   <div class='job-info'>
                     <h3>${jobPosts.postTitle}</h3>
-                    <p>${jobPosts.companyInput}</p>
+                    <p>11${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
+                    
                     </div>
                     <div class='expire-date'>
+                         
                          
                         <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
                     </div>

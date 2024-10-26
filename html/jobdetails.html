@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/manu.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/jobs.css" />
+    <link rel="stylesheet" href="/css/jobdetails.css" />
      
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -38,13 +39,46 @@
       </nav>
     </header>
     
-     
+    <div class="container">
+        <div class="main-content">
+            <div class="job-listings">
+                <input type="text" class="search-bar" placeholder="Search by title, company or keywords">
+                <div class="sort-container">
+                    <span class="sort-label">Sort by:</span>
+                    <select class="sort-select">
+                        <option value="n1ewest">Newessasst</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="relevance">Relevance</option>
+                    </select>
+                </div>
+                <div id="jobList"></div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social" >
+            <h3 id="social-heading" class="sr-only"> Follow us on social media</h3>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <hr class="footer-break">
+        <ul class="footer-links" >
+            <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Privacy </a></li>
+            <li><a href="#">Sitemap</a></li>
+        </ul>
+        <p class="copyright"> © 2024 Job Portal. Some Rights Reserved</p>
+    </footer>
     <!-- end footer -->
     
-    <script src="/js/jobs.js"></script>
+    
     <script src="/js/main.js"></script>
-     
- 
-        
-  </body>
+    <script src="/js/jobdetails.js"></script>
+       
+</body>
 </html>
