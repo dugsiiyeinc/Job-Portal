@@ -55,7 +55,7 @@ function addJobsToTheDom (jobPosts){
 const url = new URL(window.location.href);
 
 // Get the 'id' parameter from the URL
-const id = url.searchParams.get("id");
+const id = url.searchParams.get("jobId");
 
 // Log the result or do something with the id
 console.log(id);
