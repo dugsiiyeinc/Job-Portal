@@ -11,6 +11,7 @@ const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
 const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
 const logBtn2 =  document.querySelectorAll(".loginBtn")[1];
+const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -115,4 +116,11 @@ showAllButton.addEventListener('click', function(){
 
 showUserInfo.addEventListener("click", (e) =>{
         userInfo.classList.toggle("show");
+})
+
+// marka clic lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
+
+recentJobsContainer.addEventListener("click", function(){
+     console.log('heelo from recent jobs')
+      
 })
