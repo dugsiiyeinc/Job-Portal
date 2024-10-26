@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/manu.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/jobs.css" />
+    <link rel="stylesheet" href="/css/jobdetails.css" />
      
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -45,7 +46,7 @@
                 <div class="sort-container">
                     <span class="sort-label">Sort by:</span>
                     <select class="sort-select">
-                        <option value="newest">Newest</option>
+                        <option value="n1ewest">Newessasst</option>
                         <option value="oldest">Oldest</option>
                         <option value="relevance">Relevance</option>
                     </select>
@@ -75,116 +76,9 @@
     </footer>
     <!-- end footer -->
     
-    <script src="/js/jobs.js"></script>
+    
     <script src="/js/main.js"></script>
-     
-    <!-- <script>
-        const jobsData = [
-            {
-                title: "Administrative Assistant - Pharo Primary School",
-                company: "Pharo Foundation",
-                location: "Hargeisa, Somaliland"
-            },
-            {
-                title: "Terms Of Reference (Tor) For Consultant - Organizational Restructuring And Hr Review",
-                company: "Shaqodoon Organization",
-                location: "Hargeisa"
-            },
-            {
-                title: "Project Manager - Health Sector",
-                company: "International NGO",
-                location: "Mogadishu, Somalia"
-            },
-            {
-                title: "Software Developer - Full Stack",
-                company: "Tech Startup",
-                location: "Remote (Somalia)"
-            },
-            {
-                title: "Finance Officer",
-                company: "Local Bank",
-                location: "Garowe, Puntland"
-            },
-            {
-                title: "English Teacher",
-                company: "International School",
-                location: "Kismayo"
-            },
-            {
-                title: "Marketing Specialist",
-                company: "Telecom Company",
-                location: "Mogadishu"
-            },
-            {
-                title: "Nurse Practitioner",
-                company: "General Hospital",
-                location: "Hargeisa"
-            },
-            {
-                title: "Logistics Coordinator",
-                company: "Humanitarian Organization",
-                location: "Baidoa"
-            },
-            {
-                title: "Agricultural Engineer",
-                company: "Development Agency",
-                location: "Jowhar"
-            }
-        ];
-
-        const itemsPerPage = 4;
-        let currentPage = 1;
-
-        function displayJobs(page) {
-            const jobList = document.getElementById('jobList');
-            jobList.innerHTML = '';
-            
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const pageJobs = jobsData.slice(startIndex, endIndex);
-
-            pageJobs.forEach(job => {
-                const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
-                jobCard.innerHTML = `
-                    <h3>${job.title}</h3>
-                    <p>${job.company}</p>
-                    <p>${job.location}</p>
-                `;
-                jobList.appendChild(jobCard);
-            });
-        }
-
-        function setupPagination() {
-            const pageCount = Math.ceil(jobsData.length / itemsPerPage);
-            const paginationElement = document.getElementById('pagination');
-            paginationElement.innerHTML = '';
-
-            for (let i = 1; i <= pageCount; i++) {
-                const button = document.createElement('button');
-                button.innerText = i;
-
-                if (i === currentPage) {
-                    button.classList.add('active');
-                }
-
-                button.addEventListener('click', () => {
-                    currentPage = i;
-                    displayJobs(currentPage);
-                    
-                    const currentBtn = document.querySelector('.pagination button.active');
-                    currentBtn.classList.remove('active');
-                    
-                    button.classList.add('active');
-                });
-
-                paginationElement.appendChild(button);
-            }
-        }
-
-        // Initial display
-        displayJobs(currentPage);
-        setupPagination();
-    </script> -->
-  </body>
+    <script src="/js/jobdetails.js"></script>
+       
+</body>
 </html>

@@ -1,6 +1,7 @@
 const  jobList  = document.querySelector('#jobList')
 
 document.addEventListener("DOMContentLoaded",loadJobsdata);
+ 
 
 function loadJobsdata() {
   
@@ -34,10 +35,12 @@ function addJobsToTheDom (jobPosts){
                   <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
                   <div class='job-info'>
                     <h3>${jobPosts.postTitle}</h3>
-                    <p>${jobPosts.companyInput}</p>
+                    <p>11${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
+                    
                     </div>
                     <div class='expire-date'>
+                         
                          
                         <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
                     </div>
@@ -46,3 +49,13 @@ function addJobsToTheDom (jobPosts){
     });
     
 }
+
+
+// Create a new URL object using the current page URL
+const url = new URL(window.location.href);
+
+// Get the 'id' parameter from the URL
+const id = url.searchParams.get("jobId");
+
+// Log the result or do something with the id
+console.log(id);

@@ -6,11 +6,12 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
-const showAllButton = document.querySelector(".showallBTN")
+const showAllButton = document.querySelector("#showAllbtN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
 const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
 const logBtn2 =  document.querySelectorAll(".loginBtn")[1];
+const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -82,6 +83,7 @@ function addjobPostToDOm (jobPost ){
                         <p class="Job-tilte">${jobPost.postTitle}
                         </p>  
                         <p class=" Job-hiring-company">${jobPost.companyInput}
+                        <p class=" Job-hiring-time">${jobPost.postTime}
                     </div>
                     </div>
                     <div class="job-card-buttom" >
@@ -90,7 +92,7 @@ function addjobPostToDOm (jobPost ){
                         <button> <i class="fa-solid fa-location-arrow"></i> ${jobPost.postLocation} </button>
                     </div>
         
-              
+               
     `;
     jobMainContainer.appendChild(jobPostDiv)
 }
@@ -105,9 +107,45 @@ function addjobPostToDOm (jobPost ){
 
 // showAllButton.addEventListener('click' , function (){
 //     window.location.href = 'jobs.html';
+//     console('heelo from 108')
  
 // })
+showAllButton.addEventListener('click', function(){
+    console.log('heelo from')
+    window.location.href = '/html/jobs.html';
+})
 
 showUserInfo.addEventListener("click", (e) =>{
         userInfo.classList.toggle("show");
 })
+
+// marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
+
+recentJobsContainer.addEventListener("click", handleJobCardClick);
+
+function handleJobCardClick(event) {
+    const jobCard = event.target.closest(".recent-jobs-list");
+
+    if (jobCard) {
+        const PostTimeId = getPostTimeId(jobCard);
+        if (PostTimeId) {
+            console.log(PostTimeId);
+        }
+    }
+}
+
+function getPostTimeId(jobCard) {
+    const posttimeId = jobCard.querySelector(".Job-hiring-time");
+    const PostTimeId = posttimeId ? posttimeId.textContent.trim() : null;
+
+    if (PostTimeId) {
+        // Redirect using the dynamic PostTimeId in the URL
+        window.location.href = `/html/jobdetails.html?jobId=${encodeURIComponent(PostTimeId)}`;
+    }
+
+    return PostTimeId;
+}
+
+ 
+
+ 
