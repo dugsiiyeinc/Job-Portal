@@ -6,7 +6,7 @@ const jobDate = document.querySelector(".jobdate")
 const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
-const showAllButton = document.querySelector(".showallBTN")
+const showAllButton = document.querySelector("#showAllbtN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
 const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
@@ -105,8 +105,13 @@ function addjobPostToDOm (jobPost ){
 
 // showAllButton.addEventListener('click' , function (){
 //     window.location.href = 'jobs.html';
+//     console('heelo from 108')
  
 // })
+showAllButton.addEventListener('click', function(){
+    console.log('heelo from')
+    window.location.href = '/html/jobs.html';
+})
 
 showUserInfo.addEventListener("click", (e) =>{
         userInfo.classList.toggle("show");
