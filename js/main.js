@@ -140,7 +140,7 @@ function getPostTimeId(jobCard) {
 
     if (PostTimeId) {
         // Redirect using the dynamic PostTimeId in the URL
-        window.location.href = `/html/jobs.html/${encodeURIComponent(PostTimeId)}`;
+        window.location.href = `/html/jobs.html/jobId=${encodeURIComponent(PostTimeId)}`;
     }
 
     return PostTimeId;
