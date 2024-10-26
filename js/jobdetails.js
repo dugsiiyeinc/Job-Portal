@@ -49,3 +49,13 @@ function addJobsToTheDom (jobPosts){
     });
     
 }
+
+
+// Create a new URL object using the current page URL
+const url = new URL(window.location.href);
+
+// Get the 'id' parameter from the URL
+const id = url.searchParams.get("id");
+
+// Log the result or do something with the id
+console.log(id);
