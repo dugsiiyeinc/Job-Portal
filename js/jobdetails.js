@@ -1,18 +1,24 @@
-const  jobList  = document.querySelector('#jobList')
+const  container  = document.querySelector('.container')
 
+//  marka hore ka so aqri url dhamaan 
+const url = new URL(window.location.href);
+
+// markaan la bax  parameter ka aa rabto 
+const id = url.searchParams.get("jobId");
+
+ console.log(id);   
 document.addEventListener("DOMContentLoaded",loadJobsdata);
+ 
  
 
 function loadJobsdata() {
-  
-    const makeJobsReverse = getPostFromLocalStorage();
-     
-    // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
-    const jobs = makeJobsReverse.reverse()
+    const jobPosts = getPostFromLocalStorage()
     
-     console.log(jobs)
-    //  function to display to dom
-    addJobsToTheDom(jobs)
+    console.log(jobPosts, id)
+      
+    getJobToShow(id)
+     
+    
 
 
 }
@@ -24,38 +30,37 @@ function getPostFromLocalStorage(){
     
 }
  
+function  getJobToShow(id){
+    let jobPosts = getPostFromLocalStorage ()
+    console.log(id)
+    const findPostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === Number(id))
+    
+    addJobsToTheDom(findPostToUpdate)
+
+}
+
+
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom (jobPosts){
-
-    jobPosts.forEach(jobPosts => {
-        const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
+        console.log(jobPosts)
+    
+        const jobCard = document.querySelector('.content');
+                
                 jobCard.innerHTML = `
-                  <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
-                  <div class='job-info'>
-                    <h3>${jobPosts.postTitle}</h3>
-                    <p>11${jobPosts.companyInput}</p>
-                    <p>${jobPosts.postLocation}</p>
-                    
-                    </div>
-                    <div class='expire-date'>
-                         
-                         
-                        <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
-                    </div>
+                 <h1>${jobPosts.postTitle}</h1>
+                  <h3>${jobPosts.companyInput}</h3>
+                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  </p>
+                 <p > ${jobPosts.postAreatext} </p>
+                 
                 `;
-                jobList.appendChild(jobCard);
-    });
+              
+                document.title = `${jobPosts.postTitle}`
+
     
 }
 
 
-// Create a new URL object using the current page URL
-const url = new URL(window.location.href);
 
-// Get the 'id' parameter from the URL
-const id = url.searchParams.get("jobId");
 
-// Log the result or do something with the id
-console.log(id);
+ 

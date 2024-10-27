@@ -1,4 +1,5 @@
 const  jobList  = document.querySelector('#jobList')
+const jobcontainer = document.querySelector('.job-card')
 
 document.addEventListener("DOMContentLoaded",loadJobsdata);
 
@@ -36,6 +37,7 @@ function addJobsToTheDom (jobPosts){
                     <h3>${jobPosts.postTitle}</h3>
                     <p>${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
+                    <p class="Job-hiring-time">${jobPosts.postTime}
                     </div>
                     <div class='expire-date'>
                          
@@ -45,4 +47,31 @@ function addJobsToTheDom (jobPosts){
                 jobList.appendChild(jobCard);
     });
     
+}
+
+//  raaci job id-ga marka click la siiyo job card-ka
+
+jobList.addEventListener("click", handleJobCardClick);
+
+function handleJobCardClick(event) {
+    const jobCard = event.target.closest(".job-card");
+
+    if (jobCard) {
+        const PostTimeId = getPostTimeId(jobCard);
+        if (PostTimeId) {
+            console.log(PostTimeId);
+        }
+    }
+}
+
+function getPostTimeId(jobCard) {
+    const posttimeId = jobCard.querySelector(".Job-hiring-time");
+    const PostTimeId = posttimeId ? posttimeId.textContent.trim() : null;
+
+    if (PostTimeId) {
+        // Redirect using the dynamic PostTimeId in the URL
+        window.location.href = `/html/jobdetails.html?jobId=${encodeURIComponent(PostTimeId)}`;
+    }
+
+    return PostTimeId;
 }
