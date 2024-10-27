@@ -49,13 +49,14 @@ function addJobsToTheDom (jobPosts){
                 
                 jobCard.innerHTML = `
                  <h1>${jobPosts.postTitle}</h1>
-                  <h2>${jobPosts.companyInput}</h2>
-                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  ago</p>
+                  <h3>${jobPosts.companyInput}</h3>
+                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  </p>
                  <p > ${jobPosts.postAreatext} </p>
                  
                 `;
               
-    
+                document.title = `${jobPosts.postTitle}`
+
     
 }
 
