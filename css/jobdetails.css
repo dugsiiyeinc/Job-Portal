@@ -1,103 +1,40 @@
-
-.main-content {
-    margin-top: 20px;
-}
-.job-listings {
-    width: 100%;
-}
-.job-card {
-    background-color: #444;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-}
-h2 {
-    margin-top: 0;
-}
-.search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #444;
-    border: none;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #171717;
     color: #EDEDED;
-    border-radius: 5px;
 }
-.sort-container {
+header {
+    background-color: #171717;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
-.sort-label {
+.logo {
+    color: #EDEDED;
+    font-size: 24px;
     font-weight: bold;
 }
-.sort-select {
-    background-color: #444;
+nav a {
     color: #EDEDED;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px;
 }
- 
-.job-card h3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    font-family: Lato, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    text-transform: capitalize;
+main {
+    padding: 20px;
 }
- .job-card p {
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1 {
     color: #EDEDED;
-    margin-top: 5px;
-    font-size: 18px;
-    line-height: 1.5rem;
 }
-
-.imge-company img {
-    width: 80px;
-    height: 80px;
-    
-    margin-right: 15px;
+p {
+    line-height: 1.6;
 }
-
-
-
-.expire-date {
-    text-align: right;  
-    margin-left: auto;  
-    align-items: center;
-      
-    display: flex;  
-    justify-content: center; 
-}
-
-/* mobile */
-
-@media screen and (max-width: 768px) {
-    .job-card {
-        flex-direction: column;
-         
-    }
-    .imge-company img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 10px;
-    }
-    .job-info{
-        margin-bottom: 10px;
-         
-         
-         display: flex;
-         flex-direction: column;
-        
-    }
-    
-    
+.secondary-color {
+    color: #444;
 }
