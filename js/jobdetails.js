@@ -1,4 +1,4 @@
-const  jobList  = document.querySelector('#jobList')
+const  container  = document.querySelector('.container')
 
 //  marka hore ka so aqri url dhamaan 
 const url = new URL(window.location.href);
@@ -43,28 +43,22 @@ function  getJobToShow(id){
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom (jobPosts){
-
+        console.log(jobPosts)
     
-        const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
+        const jobCard = document.querySelector('.content');
+                
                 jobCard.innerHTML = `
-                  <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
-                  <div class='job-info'>
-                    <h3>${jobPosts.postTitle}</h3>
-                    <p>${jobPosts.companyInput}</p>
-                    <p>${jobPosts.postLocation}</p>
-                    
-                    </div>
-                    <div class='expire-date'>
-                         
-                         
-                        <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
-                    </div>
+                 <h1>${jobPosts.postTitle}</h1>
+                  <h2>${jobPosts.companyInput}</h2>
+                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  ago</p>
+                 <p > ${jobPosts.postAreatext} </p>
+                 
                 `;
-                jobList.appendChild(jobCard);
+              
     
     
 }
+
 
 
 

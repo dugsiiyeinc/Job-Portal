@@ -1,34 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #171717;
-    color: #EDEDED;
-}
-header {
-    background-color: #171717;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    color: #EDEDED;
-    font-size: 24px;
-    font-weight: bold;
-}
-nav a {
-    color: #EDEDED;
-    text-decoration: none;
-    margin-left: 20px;
-}
-main {
-    padding: 20px;
-}
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-}
+
 h1 {
     color: #EDEDED;
 }
