@@ -1,18 +1,24 @@
 const  jobList  = document.querySelector('#jobList')
 
+//  marka hore ka so aqri url dhamaan 
+const url = new URL(window.location.href);
+
+// markaan la bax  parameter ka aa rabto 
+const id = url.searchParams.get("jobId");
+
+ console.log(id);   
 document.addEventListener("DOMContentLoaded",loadJobsdata);
+ 
  
 
 function loadJobsdata() {
-  
-    const makeJobsReverse = getPostFromLocalStorage();
-     
-    // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
-    const jobs = makeJobsReverse.reverse()
+    const jobPosts = getPostFromLocalStorage()
     
-     console.log(jobs)
-    //  function to display to dom
-    addJobsToTheDom(jobs)
+    console.log(jobPosts, id)
+      
+    getJobToShow(id)
+     
+    
 
 
 }
@@ -24,18 +30,28 @@ function getPostFromLocalStorage(){
     
 }
  
+function  getJobToShow(id){
+    let jobPosts = getPostFromLocalStorage ()
+    console.log(id)
+    const findPostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === Number(id))
+    
+    addJobsToTheDom(findPostToUpdate)
+
+}
+
+
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom (jobPosts){
 
-    jobPosts.forEach(jobPosts => {
+    
         const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
                   <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
                   <div class='job-info'>
                     <h3>${jobPosts.postTitle}</h3>
-                    <p>11${jobPosts.companyInput}</p>
+                    <p>${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
                     
                     </div>
@@ -46,16 +62,10 @@ function addJobsToTheDom (jobPosts){
                     </div>
                 `;
                 jobList.appendChild(jobCard);
-    });
+    
     
 }
 
 
-// Create a new URL object using the current page URL
-const url = new URL(window.location.href);
 
-// Get the 'id' parameter from the URL
-const id = url.searchParams.get("jobId");
-
-// Log the result or do something with the id
-console.log(id);
+ 
