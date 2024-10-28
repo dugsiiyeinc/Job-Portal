@@ -26,6 +26,7 @@ const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
+const activeJobs = document.querySelector('#activejobs')
 
 
 
@@ -41,9 +42,13 @@ loginBtn2.addEventListener("click", () => {
 //loading data 
 const loadJobsdata = () => {
     const alljobDetails = getPostFromLocalStorage();
-
+    // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
     const AlltotalJobs = alljobDetails.length
     totalJobs.textContent = AlltotalJobs
+    //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
+    const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
+    activeJobs.textContent = AllactiveJobs.length
+
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
