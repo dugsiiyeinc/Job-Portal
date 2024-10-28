@@ -384,10 +384,6 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 }
 //  qeybtaan waxa lagu soo bandhigaa Recent Jobs
-
-
-
- 
  
 
 function   addjobPostToDOmRecent(jobPost){
@@ -395,7 +391,7 @@ function   addjobPostToDOmRecent(jobPost){
    
     const jobs = jobPost
    
-    console.log('line 393',jobs)
+     
      
         const li = document.createElement('li');
     li.textContent = `${jobs.postTitle} at ${jobs.companyInput} - ${jobs.postLocation}`;
