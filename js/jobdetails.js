@@ -1,5 +1,6 @@
 const container = document.querySelector('.container')
 
+
 //  marka hore ka so aqri url dhamaan 
 const url = new URL(window.location.href);
 
@@ -59,8 +60,4 @@ function addJobsToTheDom(jobPosts) {
 
 
 }
-
-
-
-
 

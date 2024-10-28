@@ -1,37 +1,39 @@
-const  jobList  = document.querySelector('#jobList')
+const jobList = document.querySelector('#jobList')
 const jobcontainer = document.querySelector('.job-card')
+const Sort = document.querySelector('.sort-select')
+const search = document.querySelector('.search-bar')
 
-document.addEventListener("DOMContentLoaded",loadJobsdata);
+document.addEventListener("DOMContentLoaded", loadJobsdata);
 
 function loadJobsdata() {
-  
+
     const makeJobsReverse = getPostFromLocalStorage();
-     
+
     // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
     const jobs = makeJobsReverse.reverse()
-    
-     console.log(jobs)
+
+
     //  function to display to dom
     addJobsToTheDom(jobs)
 
 
 }
 // get data from local storage
-function getPostFromLocalStorage(){ 
+function getPostFromLocalStorage() {
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
-     
+
     return oldJobPostDetail
-    
+
 }
- 
+
 // kun soo  bandhiga jobs  dom-ka
 
-function addJobsToTheDom (jobPosts){
-
+function addJobsToTheDom(jobPosts) {
+    jobList.innerHTML = '';
     jobPosts.forEach(jobPosts => {
         const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
-                jobCard.innerHTML = `
+        jobCard.className = 'job-card';
+        jobCard.innerHTML = `
                   <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
                   <div class='job-info'>
                     <h3>${jobPosts.postTitle}</h3>
@@ -44,9 +46,9 @@ function addJobsToTheDom (jobPosts){
                         <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
                     </div>
                 `;
-                jobList.appendChild(jobCard);
+        jobList.appendChild(jobCard);
     });
-    
+
 }
 
 //  raaci job id-ga marka click la siiyo job card-ka
@@ -75,3 +77,44 @@ function getPostTimeId(jobCard) {
 
     return PostTimeId;
 }
+
+
+// event listeners kaan waxa oo quseya marka sort by la sameynaa sida newest or oldest
+
+Sort.addEventListener('change', function () {
+    const sortValue = this.value;
+    let jobPosts = getPostFromLocalStorage()
+
+
+
+    if (sortValue === 'newest') {
+        const makeJobsReverse = getPostFromLocalStorage();
+
+        // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
+        const jobPosts = makeJobsReverse.reverse()
+
+        console.log(sortValue)
+        //  function to display to dom
+        addJobsToTheDom(jobPosts)
+
+
+    } else if (sortValue === 'oldest') {
+
+
+
+        // qeybtaan  reverse() waxa ay qabane in ay ka dhigto array-ka ugu danbeyo kan ugu horeyo
+        const jobPosts = getPostFromLocalStorage();
+
+
+        //  function to display to dom
+        addJobsToTheDom(jobPosts)
+    }
+
+})
+// event-kaan waxa oo sameyna in wixi la galiyo search-barka oo soo saaro
+search.addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase()
+    let jobPosts = getPostFromLocalStorage()
+    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
+    addJobsToTheDom(jobPosts)
+})
