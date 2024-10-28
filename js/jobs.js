@@ -82,6 +82,7 @@ function getPostTimeId(jobCard) {
 // event listeners kaan waxa oo quseya marka sort by la sameynaa sida newest or oldest
 
 Sort.addEventListener('change', function () {
+    search.value = ''
     const sortValue = this.value;
     let jobPosts = getPostFromLocalStorage()
 
