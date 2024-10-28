@@ -379,3 +379,13 @@ option{
    }
 
 }
+
+/* dashboard recent Jobs */
+
+.recentJobs li {
+    background-color: #3c3c3c;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
