@@ -25,6 +25,7 @@ const onlineUserName = document.querySelector(".username");
 const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
+const totalJobs = document.querySelector('#totalJobs')
 
 
 
@@ -40,6 +41,9 @@ loginBtn2.addEventListener("click", () => {
 //loading data 
 const loadJobsdata = () => {
     const alljobDetails = getPostFromLocalStorage();
+
+    const AlltotalJobs = alljobDetails.length
+    totalJobs.textContent = AlltotalJobs
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
