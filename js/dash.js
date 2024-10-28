@@ -47,6 +47,7 @@ const loadJobsdata = () => {
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
+        addjobPostToDOmRecent(job)
 
     });
 
@@ -377,6 +378,26 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 
 }
+//  qeybtaan waxa lagu soo bandhigaa Recent Jobs
 
+
+
+ 
+ 
+
+function   addjobPostToDOmRecent(jobPost){
+    const recentJobsList = document.getElementById('recentJobs');
+   
+    const jobs = jobPost
+   
+    console.log('line 393',jobs)
+     
+        const li = document.createElement('li');
+    li.textContent = `${jobs.postTitle} at ${jobs.companyInput} - ${jobs.postLocation}`;
+    recentJobsList.appendChild(li);
+        
+     
+
+}
 //  all Events
 
