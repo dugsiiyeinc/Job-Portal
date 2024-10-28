@@ -8,7 +8,7 @@ const postTitle = document.querySelector('#titleInput');
 const imageUrl = document.querySelector('#imageInput');
 const postArea = document.querySelector('#PostInput')
 const body = document.querySelector('body')
-const  postLocation = document.querySelector('#locationInput');
+const postLocation = document.querySelector('#locationInput');
 const dateInput = document.querySelector('#dateInput');
 const companyInput = document.querySelector('#companyInput');
 const jobCategory = document.querySelector('#jobCategory')
@@ -22,9 +22,10 @@ const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
-const loginBtn1 =  document.querySelectorAll(".loginBtn")[0];
-const loginBtn2 =  document.querySelectorAll(".loginBtn")[1];
+const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
+const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
+const totalJobs = document.querySelector('#totalJobs')
 
 
 
@@ -36,99 +37,102 @@ loginBtn1.addEventListener("click", () => {
 loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
- 
+
 //loading data 
-const loadJobsdata = () =>{
+const loadJobsdata = () => {
     const alljobDetails = getPostFromLocalStorage();
+
+    const AlltotalJobs = alljobDetails.length
+    totalJobs.textContent = AlltotalJobs
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
-        
+
     });
 
     showUserInfo.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-if (!onlineUser) return (window.location.href = "../html/auth.html");
+    if (!onlineUser) return (window.location.href = "../html/auth.html");
 
-onlineUserName.textContent = ` ${onlineUser.username}`;
+    onlineUserName.textContent = ` ${onlineUser.username}`;
 
-// loginBtn.textContent = "Log out"
-loginBtn1.textContent = "Log out";
-loginBtn2.textContent = "Log out";
+    // loginBtn.textContent = "Log out"
+    loginBtn1.textContent = "Log out";
+    loginBtn2.textContent = "Log out";
 }
 
 //event dom content loaded
-document.addEventListener("DOMContentLoaded",loadJobsdata);
+document.addEventListener("DOMContentLoaded", loadJobsdata);
 
- 
+
 
 
 // openSidebar
 
-openSidebar.addEventListener("click", () =>{
+openSidebar.addEventListener("click", () => {
     sidebar.classList.add("active");
 })
 // closeidebar
 
-closeSidebar.addEventListener("click", () =>{
+closeSidebar.addEventListener("click", () => {
     sidebar.classList.remove("active");
 })
 
 //active side bar links when click
 
 sidebarLinks.forEach(link => {
-    link.addEventListener("click", () =>{
+    link.addEventListener("click", () => {
         sidebarLinks.forEach(link => link.classList.remove("active"));
         link.classList.add("active");
     })
 })
 
-postArea.addEventListener('input', function (){
+postArea.addEventListener('input', function () {
     this.style.height = 'auto'; // Reset height
     this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
 })
 
 
 // when click dashboard tab
-dashboardTab.addEventListener('click', function() { 
-    changeTabs(dashboardTab,mainDashboard, "Job Portal Dashboard");  
+dashboardTab.addEventListener('click', function () {
+    changeTabs(dashboardTab, mainDashboard, "Job Portal Dashboard");
 })
 
 // when click add new job tab
-addnewJobTab.addEventListener('click', function() { 
+addnewJobTab.addEventListener('click', function () {
 
-        changeTabs(addnewJobTab,jobAddContainer,"Add New Job");
-        
+    changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
+
 });
 // when click joblists tab
-jobListTab.addEventListener("click", () =>{
-  
-    changeTabs(jobListTab,jobListCon,"Job lists");
+jobListTab.addEventListener("click", () => {
+
+    changeTabs(jobListTab, jobListCon, "Job lists");
 
 })
 
 
 //change tabs function 
-const changeTabs = (tab,container,tabTitle) =>{
-    const tabs = [dashboardTab,addnewJobTab,jobListTab];
-    const containers = [mainDashboard,jobAddContainer,jobListCon, updateJobContainer];
+const changeTabs = (tab, container, tabTitle) => {
+    const tabs = [dashboardTab, addnewJobTab, jobListTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer];
 
     tabs.forEach(currentTab => {
 
-        if(currentTab === tab){
+        if (currentTab === tab) {
 
             containers.forEach(currentCon => {
-                if(currentCon == container){
+                if (currentCon == container) {
                     container.style.display = "block";
                     headerTitle.textContent = tabTitle
 
-                }else{
+                } else {
                     currentCon.style.display = "none";
                 }
-                
+
             })
-        }else{
+        } else {
             return;
         }
     });
@@ -142,19 +146,23 @@ postForm.addEventListener('submit', addPost)
 // all functions 
 
 
-function addPost (e) {
+function addPost(e) {
     e.preventDefault()
-  
 
 
 
-    if(!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() ){
+
+    if (!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() || !postImage.value.trim() || !postTime.value.trim() || !companyInput.value.trim() || postLocation.value.trim() || companyInput.value.trim()) {
 
 
-         
+
         alert("waxbaa ka tagtay fadlan iska hubi")
-    }else{
-         const jobPostDetail = {
+    } else if (new Date(dateInput.value) < new Date()) {
+        alert(" the must be from to day")
+        return;
+    }
+    else {
+        const jobPostDetail = {
             postTitle: postTitle.value,
             imageUrl: imageUrl.value,
             postAreatext: postArea.value,
@@ -163,47 +171,47 @@ function addPost (e) {
             companyInput: companyInput.value,
             jobCategory: jobCategory.value,
             postTime: Date.now()
-         }
+        }
 
         //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
 
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
-    //    window.location.reload()
+        //    window.location.reload()
     }
-    
+
 }
 
-function SavePostDetailToLocalStorage(jobPostDetail){
+function SavePostDetailToLocalStorage(jobPostDetail) {
     const oldJobPostDetail = getPostFromLocalStorage()
     oldJobPostDetail.push(jobPostDetail)
 
-    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail));  
+    localStorage.setItem('jobPosts', JSON.stringify(oldJobPostDetail));
     Swal.fire({
         title: "success!",
         text: "saving data to the local storage",
         icon: "success",
-        ConfirmedButtonText:"ok"
-      });
-   
+        ConfirmedButtonText: "ok"
+    });
+
 }
 
-function getPostFromLocalStorage(){ 
+function getPostFromLocalStorage() {
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
-     
+
     return oldJobPostDetail
-    
+
 }
 
 
 //add jobs to the Dom
 
-const addJobsToTheDom = (job) =>{
+const addJobsToTheDom = (job) => {
     const div = document.createElement("div");
     div.className = "job";
 
-    
+
     div.innerHTML += `
                 <img src="${job.imageUrl}" alt="campany img">
                 <span class="campany-logo">${job.companyInput}</span>
@@ -217,40 +225,40 @@ const addJobsToTheDom = (job) =>{
            `;
     allJobsList.appendChild(div);
 
-    attachHandler(div,job);
-           
+    attachHandler(div, job);
+
 }
 
 //attach handler
-const attachHandler = (div,job) =>{
+const attachHandler = (div, job) => {
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");
 
     // delete btn event
-    deleteBtn.addEventListener("click", () =>{
-        deleteJob(div,job.postTime);
+    deleteBtn.addEventListener("click", () => {
+        deleteJob(div, job.postTime);
     });
-     //edit btn  event
+    //edit btn  event
 
-     editBtn.addEventListener("click", () =>{
+    editBtn.addEventListener("click", () => {
         jobListCon.style.display = "none";
-            updateJobContainer.style.display = 'block';
-            headerTitle.textContent ='Update Jobs'
-            handleEdit(job , job.postTime)
+        updateJobContainer.style.display = 'block';
+        headerTitle.textContent = 'Update Jobs'
+        handleEdit(job, job.postTime)
 
 
 
-     })
-    
+    })
+
 
 }
 
 //update job
 
-function  handleEdit  (job , jobPostTime) {
+function handleEdit(job, jobPostTime) {
 
 
-        
+
     // soo hel input elements marka ay ku jiraan div-ka  updateJobContainer
 
     const postTitle = document.querySelector('.update-job-container #titleInput');
@@ -262,12 +270,12 @@ function  handleEdit  (job , jobPostTime) {
     const jobCategory = document.querySelector('.update-job-container #jobCategory');
     const updatepost = document.querySelector('.update-job-container #updatePostBtn');
     console.log(postArea);
-    
-    postArea.addEventListener('input', function (){
+
+    postArea.addEventListener('input', function () {
         this.style.height = 'auto'; // Reset height
         this.style.height = this.scrollHeight + 'px'; // Set new height based on scroll height
     })
- 
+
     // markaane soo bandhiga shaqada la edit garena
 
     postTitle.value = job.postTitle
@@ -280,10 +288,10 @@ function  handleEdit  (job , jobPostTime) {
     updatepost.textContent = 'Update Job'
 
 
-     
-    
 
-    updatepost.addEventListener("click", () =>{
+
+
+    updatepost.addEventListener("click", () => {
         const jobPostDetail = {
             postTitle: postTitle.value,
             imageUrl: imageUrl.value,
@@ -294,59 +302,62 @@ function  handleEdit  (job , jobPostTime) {
             jobCategory: jobCategory.value,
             postTime: Date.now()
         };
-        
 
+        if (new Date(dateInput.value) < new Date()) {
+            alert(" the must be from to day")
+            return;
+        }
 
-        updateJob(jobPostDetail ,jobPostTime);
-     
+        updateJob(jobPostDetail, jobPostTime);
+
 
     })
-    
-    
+
+
 }
 
 
 
 
 //delete job
-const deleteJob = (div,id) =>{
+const deleteJob = (div, id) => {
     let oldJobPostDetail = getPostFromLocalStorage();
-  oldJobPostDetail
+    oldJobPostDetail
     oldJobPostDetail = oldJobPostDetail.filter(job => job.postTime != id);
 
     localStorage.setItem("jobPosts", JSON.stringify(oldJobPostDetail));
 
     div.remove();
-    
+
     Swal.fire({
         title: "Delete!",
         text: "job deleting successfuly!",
         icon: "success",
-        ConfirmedButtonText:"ok"
-      });
+        ConfirmedButtonText: "ok"
+    });
 
-    
+
 }
 
 
-    // update job post
-    function  updateJob(jobPostDetail, jobPostTime){
+// update job post
+function updateJob(jobPostDetail, jobPostTime) {
 
-       
-        let jobPosts = getPostFromLocalStorage ()
 
-        const findPjostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === jobPostTime)
+    let jobPosts = getPostFromLocalStorage()
 
-           if (findPjostToUpdate) {
-            findPjostToUpdate.postTitle = jobPostDetail.postTitle;
-            findPjostToUpdate.imageUrl = jobPostDetail.imageUrl;
-            findPjostToUpdate.postAreatext = jobPostDetail.postAreatext;
-            findPjostToUpdate.dateInput = jobPostDetail.dateInput;
-            findPjostToUpdate.companyInput = jobPostDetail.companyInput;
-            findPjostToUpdate.jobCategory = jobPostDetail.jobCategory;
-            findPjostToUpdate.postLocation = jobPostDetail.postLocation;
+    const findPjostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === jobPostTime)
 
-            
+    if (findPjostToUpdate) {
+        findPjostToUpdate.postTitle = jobPostDetail.postTitle;
+        findPjostToUpdate.imageUrl = jobPostDetail.imageUrl;
+        findPjostToUpdate.postAreatext = jobPostDetail.postAreatext;
+        findPjostToUpdate.dateInput = jobPostDetail.dateInput;
+        findPjostToUpdate.companyInput = jobPostDetail.companyInput;
+        findPjostToUpdate.jobCategory = jobPostDetail.jobCategory;
+        findPjostToUpdate.postLocation = jobPostDetail.postLocation;
+
+
 
 
         localStorage.setItem('jobPosts', JSON.stringify(jobPosts));
@@ -355,17 +366,17 @@ const deleteJob = (div,id) =>{
             title: "Updated!",
             text: "job updated successfuly!",
             icon: "success",
-            ConfirmedButtonText:"ok"
+            ConfirmedButtonText: "ok"
         })
 
-          
-           } 
 
-            
-           
-           
-        
     }
+
+
+
+
+
+}
 
 //  all Events
 
