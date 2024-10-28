@@ -1,6 +1,7 @@
 const jobList = document.querySelector('#jobList')
 const jobcontainer = document.querySelector('.job-card')
 const Sort = document.querySelector('.sort-select')
+const search = document.querySelector('.search-bar')
 
 document.addEventListener("DOMContentLoaded", loadJobsdata);
 
@@ -109,4 +110,11 @@ Sort.addEventListener('change', function () {
         addJobsToTheDom(jobPosts)
     }
 
+})
+// event-kaan waxa oo sameyna in wixi la galiyo search-barka oo soo saaro
+search.addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase()
+    let jobPosts = getPostFromLocalStorage()
+    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
+    addJobsToTheDom(jobPosts)
 })
