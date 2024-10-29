@@ -27,6 +27,7 @@ const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
+const nonActiveJobs = document.querySelector('#interviewsScheduled')
 
 
 
@@ -48,6 +49,9 @@ const loadJobsdata = () => {
     //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
     const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
     activeJobs.textContent = AllactiveJobs.length
+
+    const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
+    nonActiveJobs.textContent = AllnonActiveJobs.length
 
 
     alljobDetails.forEach(job => {
@@ -311,10 +315,10 @@ function handleEdit(job, jobPostTime) {
             postTime: Date.now()
         };
 
-        if (new Date(dateInput.value) < new Date()) {
-            alert(" the must be from to day")
-            return;
-        }
+        // if (new Date(dateInput.value) < new Date()) {
+        //     alert(" the must be from to day")
+        //     return;
+        // }
 
         updateJob(jobPostDetail, jobPostTime);
 
