@@ -31,6 +31,9 @@ function getPostFromLocalStorage() {
 function addJobsToTheDom(jobPosts) {
     jobList.innerHTML = '';
     jobPosts.forEach(jobPosts => {
+        const postedDate = new Date(jobPosts.PostedDate).toDateString();
+        const expireDate = new Date(jobPosts.dateInput).toDateString();
+
         const jobCard = document.createElement('div');
         jobCard.className = 'job-card';
         jobCard.innerHTML = `
@@ -40,10 +43,13 @@ function addJobsToTheDom(jobPosts) {
                     <p>${jobPosts.companyInput}</p>
                     <p>${jobPosts.postLocation}</p>
                     <p class="Job-hiring-time">${jobPosts.postTime}
+
                     </div>
                     <div class='expire-date'>
+                    
                          
-                        <p class='expire-date-p'>  Expire Date ${jobPosts.dateInput} </p>
+                        <p class='expire-date-p'>  Posted Date ${postedDate} </p>
+                        <p class='expire-date-p'>  Expire Date ${expireDate} </p>
                     </div>
                 `;
         jobList.appendChild(jobCard);

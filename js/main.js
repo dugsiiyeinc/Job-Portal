@@ -88,7 +88,7 @@ function addjobPostToDOm(jobPost) {
                     </div>
                     </div>
                     <div class="job-card-buttom" >
-                        <button> <i class="fa-solid fa-suitcase"></i> jobs </button>
+                        <button> <i class="fa-solid fa-suitcase"></i>  ${jobPost.jobCategory} </button>
                         <button> <i class="fa-solid fa-calendar-week"></i> ${jobPost.dateInput} </button>
                         <button> <i class="fa-solid fa-location-arrow"></i> ${jobPost.postLocation} </button>
                     </div>
