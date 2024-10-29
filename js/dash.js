@@ -52,9 +52,15 @@ const loadJobsdata = () => {
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
-        addjobPostToDOmRecent(job)
 
     });
+    // recent jobs-ka lagu so bandhigaa Main dashboard-ka ayuu quseeya marka hore 4-ta shaqo  u danbesay ayuu so qaba
+    // kadib ne  array la so helay aya reverse lagu sameyna si ka ugu danbeeyo oo u noqdo ka ugu horeya
+    const lastfourjobs = alljobDetails.slice(-4)
+    const lastfourjobsReverce = lastfourjobs.reverse()
+    lastfourjobsReverce.forEach(job => {
+        addjobPostToDOmRecent(job)
+    })
 
     showUserInfo.style.display = "block";
 
@@ -176,7 +182,8 @@ function addPost(e) {
             dateInput: dateInput.value,
             companyInput: companyInput.value,
             jobCategory: jobCategory.value,
-            postTime: Date.now()
+            postTime: Date.now(),
+            PostedDate: Date.now()
         }
 
         //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
@@ -275,7 +282,7 @@ function handleEdit(job, jobPostTime) {
     const companyInput = document.querySelector('.update-job-container #companyInput');
     const jobCategory = document.querySelector('.update-job-container #jobCategory');
     const updatepost = document.querySelector('.update-job-container #updatePostBtn');
-    console.log(postArea);
+
 
     postArea.addEventListener('input', function () {
         this.style.height = 'auto'; // Reset height
@@ -384,20 +391,20 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 }
 //  qeybtaan waxa lagu soo bandhigaa Recent Jobs
- 
 
-function   addjobPostToDOmRecent(jobPost){
+
+function addjobPostToDOmRecent(jobPost) {
     const recentJobsList = document.getElementById('recentJobs');
-   
+
+
+
     const jobs = jobPost
-   
-     
-     
-        const li = document.createElement('li');
+
+    const li = document.createElement('li');
     li.textContent = `${jobs.postTitle} at ${jobs.companyInput} - ${jobs.postLocation}`;
     recentJobsList.appendChild(li);
-        
-     
+
+
 
 }
 //  all Events
