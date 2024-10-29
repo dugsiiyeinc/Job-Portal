@@ -1,12 +1,9 @@
-.main-footer{
-    position: relative;
-}
 .footer {
     margin-top: 25px;
     padding: 10px 0;
     background-color: #333;
     color: white;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
