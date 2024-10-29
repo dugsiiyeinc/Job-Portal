@@ -182,7 +182,8 @@ function addPost(e) {
             dateInput: dateInput.value,
             companyInput: companyInput.value,
             jobCategory: jobCategory.value,
-            postTime: Date.now()
+            postTime: Date.now(),
+            PostedDate: Date.now()
         }
 
         //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
