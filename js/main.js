@@ -111,10 +111,10 @@ function addjobPostToDOm(jobPost) {
 //     
 
 // })
-showAllButton.addEventListener('click', function () {
+// console.log('lol', showAllButton);
+showAllButton && showAllButton.addEventListener('click', function () {window.location.href = '/html/jobs.html';})
 
-    window.location.href = '/html/jobs.html';
-})
+
 
 showUserInfo.addEventListener("click", (e) => {
     userInfo.classList.toggle("show");

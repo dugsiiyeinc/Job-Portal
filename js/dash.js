@@ -386,6 +386,8 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 
 
+    loadJobsdata()
+
 
 
 }
