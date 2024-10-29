@@ -39,7 +39,7 @@ function loadJobPosts() {
 
     LastThreeJobsRevenrce.forEach(jobPost => {
         addjobPostToDOm(jobPost);
-        // console.log(jobPost)
+
     });
     showUserInfo.style.display = "none";
 
@@ -67,7 +67,7 @@ function getPostFromLocalStorage() {
 // function kaan waxa ku soo daabaca latesr four job to dom
 
 function addjobPostToDOm(jobPost) {
-    console.log(jobPost)
+
 
     const jobMainContainer = document.querySelector('.recent-jobs-list-container')
     const jobPostDiv = document.createElement('div')
@@ -108,11 +108,11 @@ function addjobPostToDOm(jobPost) {
 
 // showAllButton.addEventListener('click' , function (){
 //     window.location.href = 'jobs.html';
-//     console('heelo from 108')
+//     
 
 // })
 showAllButton.addEventListener('click', function () {
-    console.log('heelo from')
+
     window.location.href = '/html/jobs.html';
 })
 
@@ -130,7 +130,7 @@ function handleJobCardClick(event) {
     if (jobCard) {
         const PostTimeId = getPostTimeId(jobCard);
         if (PostTimeId) {
-            console.log(PostTimeId);
+
         }
     }
 }

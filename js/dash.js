@@ -53,10 +53,14 @@ const loadJobsdata = () => {
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
 
-
-        addjobPostToDOmRecent(job)
-
     });
+    // recent jobs-ka lagu so bandhigaa Main dashboard-ka ayuu quseeya marka hore 4-ta shaqo  u danbesay ayuu so qaba
+    // kadib ne  array la so helay aya reverse lagu sameyna si ka ugu danbeeyo oo u noqdo ka ugu horeya
+    const lastfourjobs = alljobDetails.slice(-4)
+    const lastfourjobsReverce = lastfourjobs.reverse()
+    lastfourjobsReverce.forEach(job => {
+        addjobPostToDOmRecent(job)
+    })
 
     showUserInfo.style.display = "block";
 
@@ -277,7 +281,7 @@ function handleEdit(job, jobPostTime) {
     const companyInput = document.querySelector('.update-job-container #companyInput');
     const jobCategory = document.querySelector('.update-job-container #jobCategory');
     const updatepost = document.querySelector('.update-job-container #updatePostBtn');
-    console.log(postArea);
+
 
     postArea.addEventListener('input', function () {
         this.style.height = 'auto'; // Reset height
@@ -391,7 +395,7 @@ function updateJob(jobPostDetail, jobPostTime) {
 function addjobPostToDOmRecent(jobPost) {
     const recentJobsList = document.getElementById('recentJobs');
 
-    console.log('checking if jobPost is Array ,', jobPost)
+
 
     const jobs = jobPost
 
