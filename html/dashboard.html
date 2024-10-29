@@ -1,172 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/manu.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/dashboard.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <!-- start header -->
-    <header>
-      <nav class="container">
-        <div class="logo">
-          <h1>
-            <a href="#">Job <strong style="color: #da0037">Portal</strong></a>
-          </h1>
-          <a href="#" class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/manu.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- start header -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <h1>
+          <a href="#">Job <strong style="color: #da0037">Portal</strong></a>
+        </h1>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Jobs</a></li>
+        <li><a href="/">Contact</a></li>
+        <button class="btn log-btn"><a href="/html/auth.html" class="loginBtn">Log in</a></button>
+      </ul>
+      <div class="user-login">
+        <i class="fa fa-user" id="user"></i>
+
+        <div class="user-info ">
+          <span class="username">shiine1</span>
+
+        </div>
+        <button class="btn"><a href="/html/auth.html" class="loginBtn">Log in</a></button>
+      </div>
+    </nav>
+  </header>
+  <!-- end header -->
+  <main>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <div class="sidebar-title">
+          <h2>Menu</h2>
+          <button id="closeSidebar" class="sidebar-toggle">&times;</button>
         </div>
 
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Jobs</a></li>
-          <li><a href="/">Contact</a></li>
-             <button class="btn log-btn"><a href="/html/auth.html"  class="loginBtn">Log in</a></button>
-        </ul>
-        <div class="user-login">
-          <i class="fa fa-user" id="user"></i>
-         
-          <div class="user-info ">
-             <span class="username">shiine1</span>
+        <nav>
+          <ul class="sidebar-links">
+            <li class="dashboard-tab active"> <a href="#">Dashboard</a></li>
+            <li><a href="#" class="jobs-tab" id="jobs"> Add Job </a></li>
+            <li><a href="#" id="job-list"> Job Listing </a></li>
+            <!-- <li><a href="#">Applications</a></li> -->
+          </ul>
 
-          </div>
-          <button class="btn"><a href="/html/auth.html" class="loginBtn">Log in</a></button>
-      </div>
-      </nav>
-    </header>
-    <!-- end header -->
-    <main>
-      <div class="dashboard">
-        <aside class="sidebar">
-          <div class="sidebar-title">
-            <h2>Menu</h2>
-            <button id="closeSidebar" class="sidebar-toggle">&times;</button>
-          </div>
-            
-            <nav>
-                <ul class="sidebar-links">
-                    <li class="dashboard-tab active" > <a href="#" >Dashboard</a></li>
-                    <li><a href="#" class="jobs-tab" id="jobs"> Add Job </a></li>
-                    <li><a href="#"  id="job-list"> Job Listing </a></li>
-                    <li><a href="#">Applications</a></li>
-                </ul>
-               
-            </nav>
-        </aside>
+        </nav>
+      </aside>
 
 
-        <div class=" main-content-tab main-content ">
-            <div class="header">
-                <button id="openSidebar" class="sidebar-toggle">☰</button>
-                <h1 id="header-title">Job Portal Dashboard</h1>
+      <div class=" main-content-tab main-content ">
+        <div class="header">
+          <button id="openSidebar" class="sidebar-toggle">☰</button>
+          <h1 id="header-title">Job Portal Dashboard</h1>
+        </div>
+        <div class="content overview">
+          <section class="stats">
+            <div class="stat-card">
+              <h3>Total Jobs</h3>
+              <p id="totalJobs">0</p>
             </div>
-            <div class="content overview">
-                <section class="stats">
-                    <div class="stat-card">
-                        <h3>Total Jobs</h3>
-                        <p id="totalJobs">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Active Jobs </h3>
-                        <p id="activejobs">0</p>
-                    </div>
-                    <!-- <div class="stat-card">
+            <div class="stat-card">
+              <h3>Active Jobs </h3>
+              <p id="activejobs">0</p>
+            </div>
+            <!-- <div class="stat-card">
                         <h3>Interviews Scheduled</h3>
                         <p id="interviewsScheduled">0</p>
                     </div> -->
-                </section>
-                <section class="charts">
-                    <div class="chart-container recentJobs">
-                         
-                           
-                            <h2>Recent Job Postings</h2>
-                            <ul id="recentJobs"></ul>
-                         
-                         
-                    </div>
-                </section>
+          </section>
+          <section class="charts">
+            <div class="chart-container recentJobs">
+
+
+              <h2>Recent Job Postings</h2>
+              <ul id="recentJobs"></ul>
+
+
             </div>
-        
+          </section>
+        </div>
+
 
 
         <!-- job post tab -->
-      
-          <div class="content add-job-container">
-            <div class=".stat-car">
-              <form action="" id="form">
-                   
-                  <input type="text" name="" id="titleInput" class="allElements" placeholder="Fadlan Cinwaanka shaqada">
-                  <input type="text" name="" id="locationInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
-                  
-                  <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
-                  <input type="text" name="" id="imageInput" class="allElements" placeholder="Fadlan gali  url image-ka company-ga"> 
-                  <div class="date-and-select">
-                  <input type="date" name="" id="dateInput" class="allElements" >
-                  <select name=""id="jobCategory" class="allElements date-placeholder " >
-                    <option value="" disabled selected> Select job gategory </option>
-                    <option value="technology">technology</option>
-                    <option value="marketing">marketing</option>
-                    <option value="sales">sales</option>
-                    <option value="finance">finance</option>
-                  </select>
-                </div>
-                   
-                  <textarea name="" id="PostInput"  class="allElements"  placeholder="fadlan gali Faah Faahinta Shaqada "></textarea>  
-                  <button class="allElements" id="addPostBtn">Add Post</button>  
-              </form>
-          </div>
-              </section>
-          </div>
-       
-          <!-- update job section -->
 
-          <div class="content update-job-container">
-            <div class=".stat-car">
-              <form action="" id="form">
-                   
-                  <input type="text" name="" id="titleInput" class="allElements" placeholder=" update Cinwaanka shaqada">
-                  <input type="text" name="" id="locationInput" class="allElements" placeholder="Fadlan gali location-ka shaqada">
-                  
-                  <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
-                  <input type="text" name="" id="imageInput" class="allElements" placeholder="Fadlan gali  url image-ka company-ga"> 
-                  <div class="date-and-select">
-                  <input type="date" name="" id="dateInput" class="allElements" >
-                  <select name=""id="jobCategory" class="allElements date-placeholder " >
-                    <option value="" disabled selected> Select job gategory </option>
-                    <option value="technology">technology</option>
-                    <option value="marketing">marketing</option>
-                    <option value="sales">sales</option>
-                    <option value="finance">finance</option>
-                  </select>
-                </div>
-                   
-                  <textarea name="" id="PostInput"  class="allElements"  placeholder="update: fadlan gali Faah Faahinta Shaqada "></textarea>  
-                  <button class="allElements" id="updatePostBtn">Add Post</button>  
-              </form>
-          </div>
-              </section>
-          </div>
-          <!-- end update job section -->
+        <div class="content add-job-container">
+          <div class=".stat-car">
+            <form action="" id="form">
 
-       <!--job lesting  section-->
-      
-        <section class="job-lists job-list-con"  id="job-list-con">
-          <div class="joblist-header" >
+              <input type="text" name="" id="titleInput" class="allElements" placeholder="Fadlan Cinwaanka shaqada">
+              <input type="text" name="" id="locationInput" class="allElements"
+                placeholder="Fadlan gali location-ka shaqada">
+
+              <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
+              <input type="text" name="" id="imageInput" class="allElements"
+                placeholder="Fadlan gali  url image-ka company-ga">
+              <div class="date-and-select">
+                <input type="date" name="" id="dateInput" class="allElements">
+                <select name="" id="jobCategory" class="allElements date-placeholder ">
+                  <option value="" disabled selected> Select job gategory </option>
+                  <option value="technology">technology</option>
+                  <option value="marketing">marketing</option>
+                  <option value="sales">sales</option>
+                  <option value="finance">finance</option>
+                </select>
+              </div>
+
+              <textarea name="" id="PostInput" class="allElements"
+                placeholder="fadlan gali Faah Faahinta Shaqada "></textarea>
+              <button class="allElements" id="addPostBtn">Add Post</button>
+            </form>
+          </div>
+          </section>
+        </div>
+
+        <!-- update job section -->
+
+        <div class="content update-job-container">
+          <div class=".stat-car">
+            <form action="" id="form">
+
+              <input type="text" name="" id="titleInput" class="allElements" placeholder=" update Cinwaanka shaqada">
+              <input type="text" name="" id="locationInput" class="allElements"
+                placeholder="Fadlan gali location-ka shaqada">
+
+              <input type="text" name="" id="companyInput" class="allElements" placeholder="Fadlan gali Company name">
+              <input type="text" name="" id="imageInput" class="allElements"
+                placeholder="Fadlan gali  url image-ka company-ga">
+              <div class="date-and-select">
+                <input type="date" name="" id="dateInput" class="allElements">
+                <select name="" id="jobCategory" class="allElements date-placeholder ">
+                  <option value="" disabled selected> Select job gategory </option>
+                  <option value="technology">technology</option>
+                  <option value="marketing">marketing</option>
+                  <option value="sales">sales</option>
+                  <option value="finance">finance</option>
+                </select>
+              </div>
+
+              <textarea name="" id="PostInput" class="allElements"
+                placeholder="update: fadlan gali Faah Faahinta Shaqada "></textarea>
+              <button class="allElements" id="updatePostBtn">Add Post</button>
+            </form>
+          </div>
+          </section>
+        </div>
+        <!-- end update job section -->
+
+        <!--job lesting  section-->
+
+        <section class="job-lists job-list-con" id="job-list-con">
+          <div class="joblist-header">
             <ul>
               <li>Logo</li>
               <li>Name</li>
@@ -177,7 +181,7 @@
             </ul>
           </div>
           <div class="all-joblists">
-             <!-- <div class="job">
+            <!-- <div class="job">
                 <img src="/images/image1.png" alt="campany img">
                 <span class="campany-logo">google</span>
                 <span class="job-name">developer</span>
@@ -188,43 +192,38 @@
                   <button class="delete-btn">Delete</button>
                 </div> 
             </div> -->
-            
-           
+
+
           </div>
         </section>
-        
-       </div>
+
       </div>
-    </main>
+    </div>
+  </main>
 
 
-    <!-- startfooter -->
-    <footer class="footer">
-      <div class="social">
-        <h3 id="social-heading" class="sr-only">Follow us on social media</h3>
-        <a href="#" aria-label="Facebook"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="#" aria-label="Twitter"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <a href="#" aria-label="Instagram"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-      </div>
-      <hr class="footer-break" />
-      <ul class="footer-links">
-        <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Privacy </a></li>
-        <li><a href="#">Sitemap</a></li>
-      </ul>
-      <p class="copyright">© 2024 Job Portal. Some Rights Reserved</p>
-    </footer>
-    <!-- end footer -->
+  <!-- startfooter -->
+  <footer class="footer">
+    <div class="social">
+      <h3 id="social-heading" class="sr-only">Follow us on social media</h3>
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <hr class="footer-break" />
+    <ul class="footer-links">
+      <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Privacy </a></li>
+      <li><a href="#">Sitemap</a></li>
+    </ul>
+    <p class="copyright">© 2024 Job Portal. Some Rights Reserved</p>
+  </footer>
+  <!-- end footer -->
 
-    <script src="/js/main.js"></script>
-    <script src="/js/dash.js"></script>
-  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/dash.js"></script>
+</body>
+
 </html>
