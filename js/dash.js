@@ -164,16 +164,12 @@ function addPost(e) {
 
 
 
-    if (!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() || !postImage.value.trim() || !postTime.value.trim() || !companyInput.value.trim() || postLocation.value.trim() || companyInput.value.trim()) {
-
-
-
-        alert("waxbaa ka tagtay fadlan iska hubi")
+    if (!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() || !postLocation.value.trim() || !dateInput.value.trim() || !companyInput.value.trim() || !jobCategory.value.trim()) {
+        alert("waxbaa ka tagtay fadlan iska hubi");
     } else if (new Date(dateInput.value) < new Date()) {
-        alert(" the must be from to day")
+        alert("The date must be from today onwards");
         return;
-    }
-    else {
+    } else {
         const jobPostDetail = {
             postTitle: postTitle.value,
             imageUrl: imageUrl.value,
@@ -184,10 +180,9 @@ function addPost(e) {
             jobCategory: jobCategory.value,
             postTime: Date.now(),
             PostedDate: Date.now()
+
+            //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
         }
-
-        //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
-
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
