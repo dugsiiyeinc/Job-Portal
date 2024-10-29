@@ -9,8 +9,8 @@ const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector("#showAllbtN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
-const logBtn1 =  document.querySelectorAll(".loginBtn")[0];
-const logBtn2 =  document.querySelectorAll(".loginBtn")[1];
+const logBtn1 = document.querySelectorAll(".loginBtn")[0];
+const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
 
 //hidde and show menu 
@@ -35,8 +35,9 @@ document.addEventListener('DOMContentLoaded', loadJobPosts);
 function loadJobPosts() {
     const posts = getPostFromLocalStorage();
     const lastThreePosts = posts.slice(-4); // soo hel 4-ta post oo u danbeysa
+    const LastThreeJobsRevenrce = lastThreePosts.reverse();
 
-    lastThreePosts.forEach(jobPost => {
+    LastThreeJobsRevenrce.forEach(jobPost => {
         addjobPostToDOm(jobPost);
         // console.log(jobPost)
     });
@@ -49,30 +50,30 @@ function loadJobPosts() {
     //set log in buttons when loptop or mobile menu
     logBtn1.textContent = "Log out";
     logBtn2.textContent = "Log out";
-  
-   
+
+
 }
 
 
 
 // function kaan waxa o ka so aqraa post-ka local storage-ka
-function getPostFromLocalStorage(){ 
+function getPostFromLocalStorage() {
     const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
-     
+
     return oldJobPostDetail
-    
+
 }
- 
+
 // function kaan waxa ku soo daabaca latesr four job to dom
 
-function addjobPostToDOm (jobPost ){
+function addjobPostToDOm(jobPost) {
     console.log(jobPost)
 
     const jobMainContainer = document.querySelector('.recent-jobs-list-container')
     const jobPostDiv = document.createElement('div')
     jobPostDiv.classList.add('recent-jobs-list')
 
-    jobPostDiv.innerHTML =  `
+    jobPostDiv.innerHTML = `
         
 
           
@@ -108,15 +109,15 @@ function addjobPostToDOm (jobPost ){
 // showAllButton.addEventListener('click' , function (){
 //     window.location.href = 'jobs.html';
 //     console('heelo from 108')
- 
+
 // })
-showAllButton.addEventListener('click', function(){
+showAllButton.addEventListener('click', function () {
     console.log('heelo from')
     window.location.href = '/html/jobs.html';
 })
 
-showUserInfo.addEventListener("click", (e) =>{
-        userInfo.classList.toggle("show");
+showUserInfo.addEventListener("click", (e) => {
+    userInfo.classList.toggle("show");
 })
 
 // marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
@@ -146,6 +147,5 @@ function getPostTimeId(jobCard) {
     return PostTimeId;
 }
 
- 
 
- 
+
