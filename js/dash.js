@@ -379,14 +379,19 @@ function updateJob(jobPostDetail, jobPostTime) {
             text: "job updated successfuly!",
             icon: "success",
             ConfirmedButtonText: "ok"
-        })
+        }).then((result) => {
+            if (result.isConfirmed) {
+                changeTabs(jobListTab, jobListCon, "Job lists");
+            }
+          });
 
 
     }
 
 
+    allJobsList.innerHTML = "";
+    loadJobsdata();
 
-    loadJobsdata()
 
 
 
