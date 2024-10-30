@@ -47,7 +47,7 @@
     font-size: 1.2rem;
     text-decoration: none;
   }
-  .nav-links  li a:hover , .log-out-btn a:hover {
+  .nav-links  li a:hover , .nav-links  li a.active , .log-out-btn a:hover {
     color: #DA0037;
   }
 .btn{
