@@ -28,7 +28,8 @@ const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
-const nonActiveJobs = document.querySelector('#interviewsScheduled')
+const nonActiveJobs = document.querySelector('#interviewsScheduled');
+const dashLink = document.querySelector('.dash-link');
 
 
 
@@ -77,6 +78,11 @@ const loadJobsdata = () => {
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
     loginBtn2.textContent = "Log out";
+
+     //show dashboard if user is admin
+     if(onlineUser.isAdmin){
+        dashLink.style.display = "block";
+    }
 }
 
 //event dom content loaded
