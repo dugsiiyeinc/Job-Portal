@@ -16,6 +16,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border-radius: 5px;
 }
 .all-job-details .details-title{
     color: #EDEDED;
