@@ -7,11 +7,13 @@ const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector("#showAllbtN")
-const showUserInfo = document.querySelector("#user");
+const showUserInfo1 = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
+const onlineUserName1 = document.querySelector(".username");
 const logBtn1 = document.querySelectorAll(".loginBtn")[0];
 const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
+const dashLink1 = document.querySelector('.dash-link');
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -41,15 +43,24 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
 
     });
-    showUserInfo.style.display = "none";
+    //show user
+    showUserInfo1.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
+
+    onlineUserName1.textContent = ` ${onlineUser.username}`;
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
     logBtn1.textContent = "Log out";
     logBtn2.textContent = "Log out";
+
+
+      //show dashboard if user is admin
+    if(onlineUser.isAdmin){
+        dashLink1.style.display = "block";
+    }
 
 
 }
@@ -115,11 +126,24 @@ function addjobPostToDOm(jobPost) {
 showAllButton && showAllButton.addEventListener('click', function () {window.location.href = '/html/jobs.html';})
 
 
-
-showUserInfo.addEventListener("click", (e) => {
+//show user info
+showUserInfo1.addEventListener("click", (e) => {
     userInfo.classList.toggle("show");
 })
 
+
+// check window onclick
+window.onclick = (event) =>{
+      // Check if the click target is showUser info
+
+    if(event.target == showUserInfo1){
+        userInfo.classList.add("show");
+       
+        
+    }else{
+        userInfo.classList.remove("show");
+    }
+}
 // marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
 
 recentJobsContainer.addEventListener("click", handleJobCardClick);
