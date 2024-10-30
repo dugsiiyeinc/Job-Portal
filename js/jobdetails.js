@@ -43,21 +43,21 @@ function getJobToShow(id) {
 
 // kun soo  bandhiga jobs  dom-ka
 
-function addJobsToTheDom(jobPosts) {
-    console.log(jobPosts)
-    const formatedJobData = jobPosts.postAreatext.replace(/\n/g, '<br>')
-    const jobCard = document.querySelector('.content');
+// function addJobsToTheDom(jobPosts) {
+//     console.log(jobPosts)
+//     const formatedJobData = jobPosts.postAreatext.replace(/\n/g, '<br>')
+//     const jobCard = document.querySelector('.content');
 
-    jobCard.innerHTML = `
-                 <h1>${jobPosts.postTitle}</h1>
-                  <h3>${jobPosts.companyInput}</h3>
-                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  </p>
-                 <p > ${formatedJobData} </p>
+//     jobCard.innerHTML = `
+//                  <h1>${jobPosts.postTitle}</h1>
+//                   <h3>${jobPosts.companyInput}</h3>
+//                  <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  </p>
+//                  <p > ${formatedJobData} </p>
                  
-                `;
+//                 `;
 
-    document.title = `${jobPosts.postTitle}`
+//     document.title = `${jobPosts.postTitle}`
 
 
-}
+// }
 
