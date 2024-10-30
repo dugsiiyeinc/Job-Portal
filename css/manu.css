@@ -39,6 +39,9 @@
   .nav-links  li{
    list-style: none;
   }
+  .nav-links .dash-link{
+    display: none;
+  }
   .nav-links  li a{
     color: #EDEDED;
     font-size: 1.2rem;
