@@ -2,6 +2,9 @@ const container = document.querySelector('.container');
 const onlineUserName = document.querySelector(".username");
 const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
+const showUserInfo = document.querySelector("#user");
+const dashLink = document.querySelector('.dash-link');
+
 
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
@@ -43,7 +46,11 @@ function loadJobsdata() {
     loginBtn1.textContent = "Log out";
     loginBtn2.textContent = "Log out";
 
-
+  
+    //show dashboard if user is admin
+    if(onlineUser.isAdmin){
+      dashLink.style.display = "block";
+  }
 
 }
 // get data from local storage
