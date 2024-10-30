@@ -9,10 +9,11 @@ const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector("#showAllbtN")
 const showUserInfo = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
+const onlineUserName = document.querySelector(".username");
 const logBtn1 = document.querySelectorAll(".loginBtn")[0];
 const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
-const dashLink = document.querySelector('.dash-link')
+const dashLink = document.querySelector('.dash-link');
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -42,16 +43,21 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
 
     });
-    showUserInfo.style.display = "none";
+    //show user
+    showUserInfo.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
+
+    onlineUserName.textContent = ` ${onlineUser.username}`;
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
     logBtn1.textContent = "Log out";
     logBtn2.textContent = "Log out";
 
+
+      //show dashboard if user is admin
     if(onlineUser.isAdmin){
         dashLink.style.display = "block";
     }
