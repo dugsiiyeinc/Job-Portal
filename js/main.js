@@ -12,6 +12,7 @@ const userInfo = document.querySelector(".user-info");
 const logBtn1 = document.querySelectorAll(".loginBtn")[0];
 const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
+const dashLink = document.querySelector('.dash-link')
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -50,6 +51,10 @@ function loadJobPosts() {
     //set log in buttons when loptop or mobile menu
     logBtn1.textContent = "Log out";
     logBtn2.textContent = "Log out";
+
+    if(onlineUser.isAdmin){
+        dashLink.style.display = "block";
+    }
 
 
 }
