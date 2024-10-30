@@ -17,3 +17,13 @@ p {
     flex-direction: column;
     gap: 1rem;
 }
+.jobs-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.job-deatil-info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
