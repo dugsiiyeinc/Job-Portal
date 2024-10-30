@@ -9,16 +9,16 @@ p {
     color: #444;
 }
 
-.all-job-details{
+.all-job-details, .job-descreption{
     margin-top: 3rem;
-    background-color:#333;
+    background-color:#2c2c2c;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border-radius: 5px;
 }
-.all-job-details .details-title{
+.details-title , .desc-title{
     color: #EDEDED;
     font-size: 2rem;
 }
@@ -33,7 +33,7 @@ p {
     gap: 1rem;
 }
 .job-deatail-info i {
-    background-color: #444;
+    background-color: #3c3c3c;
     padding: 12px;
     font-size: 25px;
     color: #EDEDED;
@@ -43,9 +43,9 @@ p {
     font-size: 1.2rem;
     color: #EDEDED;
 }
-.job-deatail-text p{
+.job-deatail-text p, .desc-text{
     font-size: 1rem;
-    color: #a9a4a4;
+    color: #9c9c9c;
 }
 
 
