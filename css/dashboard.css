@@ -259,9 +259,8 @@ option{
     border-radius: 5px;
 }
 .joblist-header {
-    background-color: #3c3c3c;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+    background-color: #282727;
+    border-top: 1px solid #EDEDED;
 }
 .joblist-header ul, .all-joblists .job{
     display: grid;
@@ -269,11 +268,10 @@ option{
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px;
+    border-bottom: 1px solid #EDEDED;
 }
 .all-joblists {
-    background: #444;
-    border-radius: 10px;
-   
+    background: #444;  
 }
 .all-joblists .job img{
     width: 50px;
