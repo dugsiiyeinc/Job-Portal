@@ -5,3 +5,10 @@
     margin-top: 30px;
     gap: 40px;  
 }
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    /* Remove the margin-right property */
+}
