@@ -8,3 +8,53 @@ p {
 .secondary-color {
     color: #444;
 }
+
+.all-job-details, .job-descreption{
+    margin-top: 3rem;
+    background-color:#2c2c2c;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 5px;
+}
+.details-title , .desc-title{
+    color: #EDEDED;
+    font-size: 2rem;
+}
+.jobs-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.job-deatail-info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.job-deatail-info i {
+    background-color: #3c3c3c;
+    padding: 12px;
+    font-size: 25px;
+    color: #EDEDED;
+    border-radius: 5px;
+}
+.job-deatail-text h4{
+    font-size: 1.2rem;
+    color: #EDEDED;
+}
+.job-deatail-text p, .desc-text{
+    font-size: 1rem;
+    color: #9c9c9c;
+}
+
+
+@media (max-width: 768px){
+    .all-job-details{
+        align-items: center;
+    }
+    .jobs-details{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

@@ -1,7 +1,18 @@
 const jobList = document.querySelector('#jobList')
 const jobcontainer = document.querySelector('.job-card')
 const Sort = document.querySelector('.sort-select')
-const search = document.querySelector('.search-bar')
+const search = document.querySelector('.search-bar');
+const onlineUserName = document.querySelector(".username");
+const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
+const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
+
+//set log in buttons when loptop or mobile menu
+loginBtn1.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
+loginBtn2.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
 
 document.addEventListener("DOMContentLoaded", loadJobsdata);
 
@@ -15,6 +26,18 @@ function loadJobsdata() {
 
     //  function to display to dom
     addJobsToTheDom(jobs)
+
+    //showing user info 
+    showUserInfo.style.display = "block";
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser) return (window.location.href = "../html/auth.html");
+
+    onlineUserName.textContent = ` ${onlineUser.username}`;
+
+    // loginBtn.textContent = "Log out"
+    loginBtn1.textContent = "Log out";
+    loginBtn2.textContent = "Log out";
 
 
 }

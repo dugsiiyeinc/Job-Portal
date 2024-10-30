@@ -1,4 +1,15 @@
-const container = document.querySelector('.container')
+const container = document.querySelector('.container');
+const onlineUserName = document.querySelector(".username");
+const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
+const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
+
+//set log in buttons when loptop or mobile menu
+loginBtn1.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
+loginBtn2.addEventListener("click", () => {
+    localStorage.removeItem("onlineUser")
+});
 
 
 //  marka hore ka so aqri url dhamaan 
@@ -19,6 +30,18 @@ function loadJobsdata() {
 
     getJobToShow(id)
 
+
+    //showing user info
+    showUserInfo.style.display = "block";
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser) return (window.location.href = "../html/auth.html");
+
+    onlineUserName.textContent = ` ${onlineUser.username}`;
+
+    // loginBtn.textContent = "Log out"
+    loginBtn1.textContent = "Log out";
+    loginBtn2.textContent = "Log out";
 
 
 
@@ -46,13 +69,60 @@ function getJobToShow(id) {
 function addJobsToTheDom(jobPosts) {
     console.log(jobPosts)
     const formatedJobData = jobPosts.postAreatext.replace(/\n/g, '<br>')
-    const jobCard = document.querySelector('.content');
+    const jobCard = document.querySelector('#job-details');
+    const postedDate = new Date(jobPosts.PostedDate).toDateString();
+    const expireDate = new Date(jobPosts.dateInput).toDateString();
 
     jobCard.innerHTML = `
-                 <h1>${jobPosts.postTitle}</h1>
-                  <h3>${jobPosts.companyInput}</h3>
-                 <p class="secondary-color">  Expire date :  ${jobPosts.dateInput}  </p>
-                 <p > ${formatedJobData} </p>
+                 <div class="content all-job-details">
+        <h4 class="details-title">job details</h4>
+        <div class="jobs-details">
+       
+        <div class="job-deatil">
+         
+          <div class="job-deatail-info posted-date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <div class="job-deatail-text">
+              <h4>${postedDate}</h4>
+              <p>Posted Date</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-deatail">
+          <div class="job-deatail-info posted-date">
+            <i class="fa-regular fa-calendar"></i>
+            <div class="job-deatail-text">
+              <h4>${jobPosts.dateInput}</h4>
+              <p>Expire Date</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-deatail">
+          <div class="job-deatail-info posted-date">
+            <i class="fa-solid fa-layer-group"></i>
+            <div class="job-deatail-text">
+              <h4>${jobPosts.jobCategory}</h4>
+              <p>Category</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-deatail">
+          <div class="job-deatail-info posted-date">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="job-deatail-text">
+              <h4>${jobPosts.postLocation}</h4>
+              <p>Location</p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      </div>
+      <div class="job-descreption">
+        <h4 class="desc-title">job Description</h4>
+        <p class="desc-text">${formatedJobData}</p>
+      </div>
+    </div>
                  
                 `;
 
