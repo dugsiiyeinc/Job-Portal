@@ -30,6 +30,16 @@ function loadJobsdata() {
 
     getJobToShow(id)
 
+    showUserInfo.style.display = "block";
+
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser) return (window.location.href = "../html/auth.html");
+
+    onlineUserName.textContent = ` ${onlineUser.username}`;
+
+    // loginBtn.textContent = "Log out"
+    loginBtn1.textContent = "Log out";
+    loginBtn2.textContent = "Log out";
 
 
 
