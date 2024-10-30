@@ -47,3 +47,14 @@ p {
     font-size: 1rem;
     color: #a9a4a4;
 }
+
+
+@media (max-width: 768px){
+    .all-job-details{
+        align-items: center;
+    }
+    .jobs-details{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
