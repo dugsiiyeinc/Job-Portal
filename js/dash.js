@@ -22,6 +22,7 @@ const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
+const showUserInfo = document.querySelector("#user");
 const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
@@ -33,10 +34,10 @@ const nonActiveJobs = document.querySelector('#interviewsScheduled')
 
 
 //set log in buttons when loptop or mobile menu
-loginBtn1.addEventListener("click", () => {
+logBtn1.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
-loginBtn2.addEventListener("click", () => {
+logBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
 
