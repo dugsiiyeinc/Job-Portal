@@ -131,6 +131,19 @@ showUserInfo1.addEventListener("click", (e) => {
     userInfo.classList.toggle("show");
 })
 
+window.onclick = (event) =>{
+    
+
+      // Check if the click target is the modal itself
+
+    if(event.target == showUserInfo1){
+        userInfo.classList.add("show");
+       
+        
+    }else{
+        userInfo.classList.remove("show");
+    }
+}
 // marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
 
 recentJobsContainer.addEventListener("click", handleJobCardClick);
