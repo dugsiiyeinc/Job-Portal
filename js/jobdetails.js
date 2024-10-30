@@ -1,4 +1,7 @@
-const container = document.querySelector('.container')
+const container = document.querySelector('.container');
+const onlineUserName = document.querySelector(".username");
+const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
+const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 
 
 //  marka hore ka so aqri url dhamaan 
