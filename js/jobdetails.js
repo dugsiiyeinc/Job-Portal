@@ -30,6 +30,8 @@ function loadJobsdata() {
 
     getJobToShow(id)
 
+
+    //showing user info
     showUserInfo.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
