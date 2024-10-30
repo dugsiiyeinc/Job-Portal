@@ -7,13 +7,13 @@ const jobLocation = document.querySelector(".joblocation")
 const hiringCompany = document.querySelector(".Job-hiring-company")
 const jobTitle = document.querySelector(".Job-tilte")
 const showAllButton = document.querySelector("#showAllbtN")
-const showUserInfo = document.querySelector("#user");
+const showUserInfo1 = document.querySelector("#user");
 const userInfo = document.querySelector(".user-info");
-const onlineUserName = document.querySelector(".username");
+const onlineUserName1 = document.querySelector(".username");
 const logBtn1 = document.querySelectorAll(".loginBtn")[0];
 const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
-const dashLink = document.querySelector('.dash-link');
+const dashLink1 = document.querySelector('.dash-link');
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -44,12 +44,12 @@ function loadJobPosts() {
 
     });
     //show user
-    showUserInfo.style.display = "block";
+    showUserInfo1.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
 
-    onlineUserName.textContent = ` ${onlineUser.username}`;
+    onlineUserName1.textContent = ` ${onlineUser.username}`;
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
@@ -59,7 +59,7 @@ function loadJobPosts() {
 
       //show dashboard if user is admin
     if(onlineUser.isAdmin){
-        dashLink.style.display = "block";
+        dashLink1.style.display = "block";
     }
 
 
@@ -127,7 +127,7 @@ showAllButton && showAllButton.addEventListener('click', function () {window.loc
 
 
 
-showUserInfo.addEventListener("click", (e) => {
+showUserInfo1.addEventListener("click", (e) => {
     userInfo.classList.toggle("show");
 })
 

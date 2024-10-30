@@ -2,6 +2,7 @@ const jobList = document.querySelector('#jobList')
 const jobcontainer = document.querySelector('.job-card')
 const Sort = document.querySelector('.sort-select')
 const search = document.querySelector('.search-bar');
+const showUserInfo = document.querySelector("#user");
 const onlineUserName = document.querySelector(".username");
 const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
