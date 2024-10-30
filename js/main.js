@@ -126,15 +126,15 @@ function addjobPostToDOm(jobPost) {
 showAllButton && showAllButton.addEventListener('click', function () {window.location.href = '/html/jobs.html';})
 
 
-
+//show user info
 showUserInfo1.addEventListener("click", (e) => {
     userInfo.classList.toggle("show");
 })
 
-window.onclick = (event) =>{
-    
 
-      // Check if the click target is the modal itself
+// check window onclick
+window.onclick = (event) =>{
+      // Check if the click target is showUser info
 
     if(event.target == showUserInfo1){
         userInfo.classList.add("show");
