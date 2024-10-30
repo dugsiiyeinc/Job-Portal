@@ -70,6 +70,8 @@ function addJobsToTheDom(jobPosts) {
     console.log(jobPosts)
     const formatedJobData = jobPosts.postAreatext.replace(/\n/g, '<br>')
     const jobCard = document.querySelector('#job-details');
+    const postedDate = new Date(jobPosts.PostedDate).toDateString();
+    const expireDate = new Date(jobPosts.dateInput).toDateString();
 
     jobCard.innerHTML = `
                  <div class="content all-job-details">
@@ -81,7 +83,7 @@ function addJobsToTheDom(jobPosts) {
           <div class="job-deatail-info posted-date">
             <i class="fa-solid fa-calendar-days"></i>
             <div class="job-deatail-text">
-              <h4>${jobPosts.dateInput}</h4>
+              <h4>${postedDate}</h4>
               <p>Posted Date</p>
             </div>
           </div>
