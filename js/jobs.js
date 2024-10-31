@@ -29,14 +29,15 @@ function loadJobsdata() {
     //  function to display to dom
     addJobsToTheDom(jobs)
 
-    //showing user info 
-    showUserInfo.style.display = "block";
+   
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return (window.location.href = "../html/auth.html");
+    if (!onlineUser) return ;
 
+    //online user  name
     onlineUserName.textContent = ` ${onlineUser.username}`;
-
+     //showing user info 
+     showUserInfo.style.display = "block";
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
     loginBtn2.textContent = "Log out";

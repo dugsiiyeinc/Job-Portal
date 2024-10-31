@@ -68,12 +68,15 @@ const loadJobsdata = () => {
         addjobPostToDOmRecent(job)
     })
 
-    showUserInfo.style.display = "block";
+    
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return (window.location.href = "../html/auth.html");
 
+    //online username
     onlineUserName.textContent = ` ${onlineUser.username}`;
+    //show user info
+    showUserInfo.style.display = "block";
 
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
