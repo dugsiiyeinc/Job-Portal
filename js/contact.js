@@ -38,4 +38,4 @@ const loadData = ()  =>{
 }
 
 //DomContent Loaded
-document.addEventListener("DOMContentLoaded", loaddata);
+document.addEventListener("DOMContentLoaded", loadData);
