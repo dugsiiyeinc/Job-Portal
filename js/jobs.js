@@ -33,7 +33,7 @@ function loadJobsdata() {
     showUserInfo.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return (window.location.href = "../html/auth.html");
+    if (!onlineUser) return ;
 
     onlineUserName.textContent = ` ${onlineUser.username}`;
 
