@@ -92,7 +92,7 @@
     gap: 1rem;
   }
   .user-login #user{
-    display: block;
+    display: none;
     background-color: #2c2c2c;
     width: 40px;
     height: 40px;

@@ -34,13 +34,16 @@ function loadJobsdata() {
     getJobToShow(id)
 
 
-    //showing user info
-    showUserInfo.style.display = "block";
+   
+    //check if user is online
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return (window.location.href = "../html/auth.html");
 
+    //online username
     onlineUserName.textContent = ` ${onlineUser.username}`;
+     //showing user info
+     showUserInfo.style.display = "block";
 
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
