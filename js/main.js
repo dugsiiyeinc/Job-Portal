@@ -43,14 +43,13 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
 
     });
-  
+    //show user
+    showUserInfo1.style.display = "block";
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
 
     onlineUserName1.textContent = ` ${onlineUser.username}`;
-      //show user info
-      showUserInfo1.style.display = "block";
 
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
@@ -129,7 +128,7 @@ showAllButton && showAllButton.addEventListener('click', function () {window.loc
 
 //show user info
 // showUserInfo1.addEventListener("click", (e) => {
-//     userInfo.classList.add("show");
+//     userInfo.classList.toggle("show");
 // })
 
 

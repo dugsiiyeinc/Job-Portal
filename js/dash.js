@@ -96,9 +96,21 @@ document.addEventListener("DOMContentLoaded", loadJobsdata);
 
 // openSidebar
 
-openSidebar.addEventListener("click", () => {
+// openSidebar.addEventListener("click", () => {
+//     sidebar.classList.add("active");
+// });
+// check window onclick
+window.onclick = (event) =>{
+    // Check if the click target is openside
+
+  if(event.target == openSidebar){
     sidebar.classList.add("active");
-})
+     
+      
+  }else{
+    sidebar.classList.remove("active");
+  }
+}
 // closeidebar
 
 closeSidebar.addEventListener("click", () => {
