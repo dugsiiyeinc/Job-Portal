@@ -11,3 +11,6 @@ loginBtn1.addEventListener("click", () => {
 loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
+
+//DomContent Loaded
+document.addEventListener("DOMContentLoaded", loaddata);
