@@ -15,7 +15,7 @@ loginBtn2.addEventListener("click", () => {
 
 
 //load data 
-const loaddata = ()  =>{
+const loadData = ()  =>{
 
     //check if onlineuser 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
