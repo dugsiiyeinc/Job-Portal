@@ -12,5 +12,30 @@ loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
 
+
+
+//load data 
+const loaddata = ()  =>{
+
+    //check if onlineuser 
+    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+    if (!onlineUser) return ;
+
+    //online user  name
+    onlineUserName.textContent = ` ${onlineUser.username}`;
+     //showing user info 
+     showUserInfo.style.display = "block";
+    // loginBtn.textContent = "Log out"
+    loginBtn1.textContent = "Log out";
+    loginBtn2.textContent = "Log out";
+
+    //show dashboard if user is admin
+    if(onlineUser.isAdmin){
+        dashLink.style.display = "block";
+    }
+
+
+}
+
 //DomContent Loaded
 document.addEventListener("DOMContentLoaded", loaddata);
