@@ -128,9 +128,9 @@ showAllButton && showAllButton.addEventListener('click', function () {window.loc
 
 
 //show user info
-showUserInfo1.addEventListener("click", (e) => {
-    userInfo.classList.toggle("show");
-})
+// showUserInfo1.addEventListener("click", (e) => {
+//     userInfo.classList.add("show");
+// })
 
 
 // check window onclick
@@ -138,7 +138,7 @@ window.onclick = (event) =>{
       // Check if the click target is showUser info
 
     if(event.target == showUserInfo1){
-        userInfo.classList.add("show");
+        userInfo.classList.toggle("show");
        
         
     }else{
