@@ -213,7 +213,7 @@ function addPost(e) {
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
-        //    window.location.reload()
+        
     }
 
 }
@@ -228,7 +228,16 @@ function SavePostDetailToLocalStorage(jobPostDetail) {
         text: "saving data to the local storage",
         icon: "success",
         ConfirmedButtonText: "ok"
-    });
+    }).then((result) => {
+        if (result.isConfirmed) {
+            
+            reloadPage();
+
+                  
+           
+                       
+        }
+      });
 
 }
 
