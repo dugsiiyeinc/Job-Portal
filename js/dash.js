@@ -147,6 +147,7 @@ addnewJobTab.addEventListener('click', function () {
 jobListTab.addEventListener("click", () => {
 
     changeTabs(jobListTab, jobListCon, "Job lists");
+     
 
 })
 
@@ -404,7 +405,9 @@ function updateJob(jobPostDetail, jobPostTime) {
             ConfirmedButtonText: "ok"
         }).then((result) => {
             if (result.isConfirmed) {
-              window.location.reload();
+                
+                reloadPage();
+
                       
                
                            
@@ -422,10 +425,24 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 }
 //  function waxa oo sameynaa . marka window ka la reload lagu sameyo ayuu waxa so kicina Job List Container
-window.addEventListener('load', function() {
-    changeTabs(jobListTab, jobListCon, "Job lists");  
-})
 
+// Set a flag in session storage before reloading
+function reloadPage() {
+    sessionStorage.setItem('reloaded', 'true');
+    window.location.reload();
+}
+
+window.addEventListener('load', () => {
+    if (sessionStorage.getItem('reloaded')) {
+        jobListTab.click()
+        changeTabs(jobListTab, jobListCon, "Job lists");
+        
+        console.log('Page reloaded programmatically');
+        sessionStorage.removeItem('reloaded');  
+    } else {
+        console.log('Page reloaded manually');
+    }
+});
 
 //  qeybtaan waxa lagu soo bandhigaa Recent Jobs
 
