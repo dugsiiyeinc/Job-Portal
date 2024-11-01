@@ -395,6 +395,7 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 
         localStorage.setItem('jobPosts', JSON.stringify(jobPosts));
+     
 
         Swal.fire({
             title: "Updated!",
@@ -403,23 +404,30 @@ function updateJob(jobPostDetail, jobPostTime) {
             ConfirmedButtonText: "ok"
         }).then((result) => {
             if (result.isConfirmed) {
-                changeTabs(jobListTab, jobListCon, "Job lists");
+              window.location.reload();
+                      
+               
+                           
             }
           });
-
-
+          
+        
     }
-
-
-    allJobsList.innerHTML = "";
-    loadJobsdata();
-
+    
+    
+ 
+    
 
 
 
 }
-//  qeybtaan waxa lagu soo bandhigaa Recent Jobs
+//  function waxa oo sameynaa . marka window ka la reload lagu sameyo ayuu waxa so kicina Job List Container
+window.addEventListener('load', function() {
+    changeTabs(jobListTab, jobListCon, "Job lists");  
+})
 
+
+//  qeybtaan waxa lagu soo bandhigaa Recent Jobs
 
 function addjobPostToDOmRecent(jobPost) {
     const recentJobsList = document.getElementById('recentJobs');
