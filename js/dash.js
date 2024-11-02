@@ -75,6 +75,7 @@ const loadJobsdata = () => {
         },
        
     };
+    localStorage.setItem('jobPortalData', JSON.stringify(initialData));
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
