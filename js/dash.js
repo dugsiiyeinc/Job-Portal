@@ -515,6 +515,19 @@ const data = JSON.parse(localStorage.getItem('jobPortalData'));
 
 //selecting jobCategoryCtx from Dom
 const jobCategoryCtx = document.getElementById('jobCategoryChart').getContext('2d');
+// Create Job Category Chart
+
+new Chart(jobCategoryCtx, {
+    type: 'bar',
+    data: {
+        labels: Object.keys(data.jobCategories),
+        datasets: [{
+            label: 'Number of Jobs',
+            data: Object.values(data.jobCategories),
+            backgroundColor: '#59a14f'
+        }]
+    },
+});
 
 
 
