@@ -54,6 +54,8 @@ const loadJobsdata = () => {
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
     // nonActiveJobs.textContent = AllnonActiveJobs.length
+     //AllTechnologyJobs
+     const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
 
     const initialData = {
         totalJobs: AlltotalJobs,
