@@ -47,13 +47,13 @@ const loadJobsdata = () => {
     const alljobDetails = getPostFromLocalStorage();
     // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
     const AlltotalJobs = alljobDetails.length
-    totalJobs.textContent = AlltotalJobs
+    // totalJobs.textContent = AlltotalJobs
     //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
     const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
-    activeJobs.textContent = AllactiveJobs.length
+    // activeJobs.textContent = AllactiveJobs.length
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
-    nonActiveJobs.textContent = AllnonActiveJobs.length
+    // nonActiveJobs.textContent = AllnonActiveJobs.length
 
     const initialData = {
         totalJobs: AlltotalJobs,
@@ -80,6 +80,13 @@ const loadJobsdata = () => {
             // Load data from local storage
 const data = JSON.parse(localStorage.getItem('jobPortalData'));
 console.log(data);
+
+// Update stats
+totalJobs.textContent = AlltotalJobs;
+activeJobs.textContent = AllactiveJobs.length
+nonActiveJobs.textContent = AllnonActiveJobs.length
+
+
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
