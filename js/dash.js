@@ -47,13 +47,53 @@ const loadJobsdata = () => {
     const alljobDetails = getPostFromLocalStorage();
     // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
     const AlltotalJobs = alljobDetails.length
-    totalJobs.textContent = AlltotalJobs
+    // totalJobs.textContent = AlltotalJobs
     //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
     const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
-    activeJobs.textContent = AllactiveJobs.length
+    // activeJobs.textContent = AllactiveJobs.length
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
-    nonActiveJobs.textContent = AllnonActiveJobs.length
+    // nonActiveJobs.textContent = AllnonActiveJobs.length
+     //AllTechnologyJobs
+     const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
+    //AllMarketingJobs
+     const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
+     //AllSalesJobs
+     const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
+     //AllFinanceJobs
+     const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
+
+    const initialData = {
+        totalJobs: AlltotalJobs,
+        activeApplications: AllactiveJobs.length,
+        interviewsScheduled: AllnonActiveJobs.length,
+        applicationStatus: {
+            applied: 100,
+            inReview: 50,
+            interviewed: 30,
+            offered: 15,
+            rejected: 20
+        },
+        jobCategories: {
+            technology: AllTechnologyJobs.length,
+            marketing: AllMarketingJobs.length,
+            sales: AllSalesJobs.length,
+            finance: AllFinanceJobs.length,
+            hr: 15
+        },
+       
+    };
+    localStorage.setItem('jobPortalData', JSON.stringify(initialData));
+
+            // Load data from local storage
+const data = JSON.parse(localStorage.getItem('jobPortalData'));
+console.log(data);
+
+// Update stats
+totalJobs.textContent = AlltotalJobs;
+activeJobs.textContent = AllactiveJobs.length
+nonActiveJobs.textContent = AllnonActiveJobs.length
+
 
 
     alljobDetails.forEach(job => {
@@ -469,5 +509,52 @@ function addjobPostToDOmRecent(jobPost) {
 
 
 }
+
+//loaded data from local storage
+const data = JSON.parse(localStorage.getItem('jobPortalData'));
+
+//selecting jobCategoryCtx from Dom
+const jobCategoryCtx = document.getElementById('jobCategoryChart').getContext('2d');
+// Create Job Category Chart
+
+new Chart(jobCategoryCtx, {
+    type: 'bar',
+    data: {
+        labels: Object.keys(data.jobCategories),
+        datasets: [{
+            label: 'Number of Jobs',
+            data: Object.values(data.jobCategories),
+            backgroundColor: '#59a14f'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Job Categories',
+                color: '#ffffff'
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: '#e0e0e0'
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#e0e0e0'
+                }
+            }
+        }
+    }
+});
+
+
+
 //  all Events
 
