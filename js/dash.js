@@ -527,6 +527,31 @@ new Chart(jobCategoryCtx, {
             backgroundColor: '#59a14f'
         }]
     },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Job Categories',
+                color: '#ffffff'
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: '#e0e0e0'
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#e0e0e0'
+                }
+            }
+        }
+    }
 });
 
 
