@@ -509,5 +509,11 @@ function addjobPostToDOmRecent(jobPost) {
 
 
 }
+
+//loaded data from local storage
+const data = JSON.parse(localStorage.getItem('jobPortalData'));
+
+
+
 //  all Events
 
