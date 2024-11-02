@@ -77,6 +77,10 @@ const loadJobsdata = () => {
     };
     localStorage.setItem('jobPortalData', JSON.stringify(initialData));
 
+            // Load data from local storage
+const data = JSON.parse(localStorage.getItem('jobPortalData'));
+console.log(data);
+
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
 
