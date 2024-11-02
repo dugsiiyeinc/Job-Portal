@@ -56,6 +56,8 @@ const loadJobsdata = () => {
     // nonActiveJobs.textContent = AllnonActiveJobs.length
      //AllTechnologyJobs
      const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
+    //AllMarketingJobs
+     const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
 
     const initialData = {
         totalJobs: AlltotalJobs,
