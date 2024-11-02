@@ -131,6 +131,32 @@
 .chart-container:last-child {
     margin-right: 0;
 }
+.job-list {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.job-list h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.job-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-list li {
+    background-color: #3c3c3c;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.job-list li:last-child {
+    margin-bottom: 0;
+}
 
 /* start main content */
 
@@ -378,12 +404,4 @@ option{
 
 }
 
-/* dashboard recent Jobs */
 
-.recentJobs li {
-    background-color: #3c3c3c;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 10px;
-}
