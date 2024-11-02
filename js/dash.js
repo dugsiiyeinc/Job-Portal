@@ -513,6 +513,9 @@ function addjobPostToDOmRecent(jobPost) {
 //loaded data from local storage
 const data = JSON.parse(localStorage.getItem('jobPortalData'));
 
+//selecting jobCategoryCtx from Dom
+const jobCategoryCtx = document.getElementById('jobCategoryChart').getContext('2d');
+
 
 
 //  all Events
