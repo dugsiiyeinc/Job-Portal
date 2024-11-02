@@ -225,7 +225,7 @@ postForm.addEventListener('submit', addPost)
 // all functions 
 
 
-function addPost(e) {
+async function addPost(e) {
     e.preventDefault()
 
 
@@ -252,8 +252,34 @@ function addPost(e) {
         }
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
-
         
+        //  qeybtaan waxa ay ku post garee shaqada facebook anagoo isticmaaleyno  api
+        const url = `https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZjMDYzNjA0MzQ1MjZkNTUzNDUxMzIi_pc`;
+   
+
+        console.log(url);
+        
+        const options = {
+            method: 'POST',
+             
+            body: JSON.stringify({
+                JobTitle: postTitle.value,
+                HiringCompany: companyInput.value,
+                JobImage: imageUrl.value 
+            })
+        
+        };
+        
+        console.log(options);
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            console.log(result);
+             
+            
+        } catch (error) {
+            console.error(error);
+        }
     }
 
 }
