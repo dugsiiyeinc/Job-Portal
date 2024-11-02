@@ -60,6 +60,8 @@ const loadJobsdata = () => {
      const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
      //AllSalesJobs
      const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
+     //AllFinanceJobs
+     const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
 
     const initialData = {
         totalJobs: AlltotalJobs,
