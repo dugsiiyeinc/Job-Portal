@@ -58,6 +58,8 @@ const loadJobsdata = () => {
      const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
     //AllMarketingJobs
      const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
+     //AllSalesJobs
+     const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
 
     const initialData = {
         totalJobs: AlltotalJobs,
