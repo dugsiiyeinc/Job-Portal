@@ -55,6 +55,26 @@ const loadJobsdata = () => {
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
     nonActiveJobs.textContent = AllnonActiveJobs.length
 
+    const initialData = {
+        totalJobs: AlltotalJobs,
+        activeApplications: AllactiveJobs.length,
+        interviewsScheduled: AllnonActiveJobs.length,
+        applicationStatus: {
+            applied: 100,
+            inReview: 50,
+            interviewed: 30,
+            offered: 15,
+            rejected: 20
+        },
+        jobCategories: {
+            technology: AllTechnologyJobs.length,
+            marketing: AllMarketingJobs.length,
+            sales: AllSalesJobs.length,
+            finance: AllFinanceJobs.length,
+            hr: 15
+        },
+       
+    };
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
