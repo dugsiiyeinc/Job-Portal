@@ -131,14 +131,27 @@ function addJobsToTheDom(jobPosts) {
       <div class="job-descreption">
         <h4 class="desc-title">job Description</h4>
         <p class="desc-text">${formatedJobData}</p>
-         <button class="btn">Apply</button>
+         <button class="btn" id="apply-btn">Apply</button>
       </div>
     </div>
                  
                 `;
 
-    document.title = `${jobPosts.postTitle}`
+    document.title = `${jobPosts.postTitle}`;
+
+
+    handleAttach(jobPosts.postTime,jobCard);
+    
 
 
 }
 
+//handle attach
+
+const handleAttach = (id,jobCard) =>{
+  applyBtn = jobCard.querySelector("#apply-btn");
+  console.log(applyBtn);
+ 
+  
+  
+}
