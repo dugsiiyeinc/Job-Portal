@@ -329,6 +329,12 @@ option{
 }
 /*  end job lists style*/
 
+/* strat applications styles */
+#applications-con{
+    display: none;
+}
+/* end applications styles */
+
 @media (max-width: 768px) {
     /* start side bar responsive */
     .sidebar {

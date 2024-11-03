@@ -33,6 +33,8 @@ const activeJobs = document.querySelector('#activejobs')
 const nonActiveJobs = document.querySelector('#interviewsScheduled');
 const dashLink = document.querySelector('.dash-link');
 
+console.log(applicationsTab,applicationsCon);
+
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
@@ -189,13 +191,20 @@ jobListTab.addEventListener("click", () => {
     changeTabs(jobListTab, jobListCon, "Job lists");
      
 
+});
+// when click joblists tab
+applicationsTab.addEventListener("click", () => {
+
+    changeTabs(applicationsTab, applicationsCon, "Applications");
+     
+
 })
 
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
-    const tabs = [dashboardTab, addnewJobTab, jobListTab];
-    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer];
+    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon];
 
     tabs.forEach(currentTab => {
 
