@@ -593,8 +593,9 @@ new Chart(jobCategoryCtx, {
 
 const displayApplications = () =>{
     
+    const applicationList = document.querySelector(".applications-list");
     const allApplications = JSON.parse(localStorage.getItem("applications"));
-    
+   
     
 }
 

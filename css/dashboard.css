@@ -334,7 +334,7 @@ option{
     display: none;
 }
 
-.applications-flex{
+.applications-list{
     display: flex;
     justify-content: start;
     align-items: center;
