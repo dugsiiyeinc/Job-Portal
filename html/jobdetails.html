@@ -56,10 +56,34 @@
 
   <main>
     <!-- job detials contianer -->
-    <div class="container " id="job-details">
+    <div class="container " id="job-details"></div>
 
-      <div class="apply-containner">
+      <div class="apply-containner ">
+          <h1 id="formTitle">Apply Job</h1>
+          <form class="applyForm">
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your Username"
+              style="display: none"
+            />
+            <input type="email" id="email" placeholder="Enter your Email" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="enter your password"
+            />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm your Password"
+              style="display: none"
+            />
+            <button type="submit" class="btn" id="authButton">Apply</button>
+          </form>
         
+      
       </div>
      
   </main>
