@@ -176,5 +176,13 @@ const handleAttach = (id,jobCard) =>{
 //Apply Job function
 
 const applyJob = (id) =>{
-  
+//selecting dom elements
+ const applicantName = document.querySelector("#fullName");
+ const  applicantEmail = document.querySelector("#email");
+ const applicantPhone = document.querySelector("#phone");
+ const applicantDistrict = document.querySelector("#district");
+ const applyForm = document.querySelector(".applyForm");
+
+ 
+ 
 }
