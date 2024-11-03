@@ -131,6 +131,7 @@ function addJobsToTheDom(jobPosts) {
       <div class="job-descreption">
         <h4 class="desc-title">job Description</h4>
         <p class="desc-text">${formatedJobData}</p>
+         <button class="btn">Apply</button>
       </div>
     </div>
                  
