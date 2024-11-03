@@ -204,9 +204,10 @@ const applyJob = (id) => {
     //checking if  exestingAppliedUser
     const exestingAppliedUser = applications.find(
       (appliedUser) =>
-        appliedUser.appliedUserPhone === applicantData.appliedUserPhone ||
-        appliedUser.appliedUserEmail === applicantData.appliedUserEmail
+       (appliedUser.appliedUserPhone === applicantData.appliedUserPhone &&
+        appliedUser.appliedUserEmail === applicantData.appliedUserEmail ) && appliedUser.appliedJob === findPostToapply.postTitle
     );
+  console.log(exestingAppliedUser,findPostToapply);
   
     if(exestingAppliedUser) {
       Swal.fire({
