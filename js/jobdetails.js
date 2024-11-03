@@ -156,7 +156,14 @@ const handleAttach = (id,jobCard) =>{
   if (!onlineUser || onlineUser.isAdmin) return applyBtn.style.display = "none";
   
   applyBtn.addEventListener("click",() => {
-    document.querySelector(".apply-model").style.display = "flex";
+   const applyModel =  document.querySelector(".apply-model");
+   applyModel.style.display = "flex"
+
+    window.onclick = (event) =>{
+      if(event.target !== applyBtn){
+        applyModel.style.display = "none"
+      }
+    }
    
      
      
