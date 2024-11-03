@@ -10,6 +10,7 @@ const dashLink = document.querySelector(".dash-link");
  const applicantPhone = document.querySelector("#phone");
  const applicantDistrict = document.querySelector("#district");
  const applyForm = document.querySelector(".applyForm");
+ const closeBtn = document.querySelector(".closeBtn");
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
   localStorage.removeItem("onlineUser");
@@ -234,6 +235,8 @@ const applyJob = (id) => {
   });
 };
 
+
+//close model function
 const closeModel = () =>{
     applicantName.value = "",
     applicantEmail.value = "",
@@ -242,3 +245,6 @@ const closeModel = () =>{
     applyModel.style.display = "none";
 
 }
+
+//closeBtn
+closeBtn.addEventListener("click", closeModel);
