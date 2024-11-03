@@ -1,89 +1,80 @@
-const container = document.querySelector('.container');
+const container = document.querySelector(".container");
 const onlineUserName = document.querySelector(".username");
 const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const showUserInfo = document.querySelector("#user");
-const dashLink = document.querySelector('.dash-link');
-
+const dashLink = document.querySelector(".dash-link");
 
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
-    localStorage.removeItem("onlineUser")
+  localStorage.removeItem("onlineUser");
 });
 loginBtn2.addEventListener("click", () => {
-    localStorage.removeItem("onlineUser")
+  localStorage.removeItem("onlineUser");
 });
 
-
-//  marka hore ka so aqri url dhamaan 
+//  marka hore ka so aqri url dhamaan
 const url = new URL(window.location.href);
 
-// markaan la bax  parameter ka aa rabto 
+// markaan la bax  parameter ka aa rabto
 const id = url.searchParams.get("jobId");
 
 console.log(id);
 document.addEventListener("DOMContentLoaded", loadJobsdata);
 
-
-
 function loadJobsdata() {
-    const jobPosts = getPostFromLocalStorage()
+  const jobPosts = getPostFromLocalStorage();
 
-    console.log(jobPosts, id)
+  console.log(jobPosts, id);
 
-    getJobToShow(id)
+  getJobToShow(id);
 
+  //check if user is online
 
-   
-    //check if user is online
+  const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+  if (!onlineUser) return;
 
-    const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return;
+  //online username
+  onlineUserName.textContent = ` ${onlineUser.username}`;
+  //showing user info
+  showUserInfo.style.display = "block";
 
-    //online username
-    onlineUserName.textContent = ` ${onlineUser.username}`;
-     //showing user info
-     showUserInfo.style.display = "block";
+  // loginBtn.textContent = "Log out"
+  loginBtn1.textContent = "Log out";
+  loginBtn2.textContent = "Log out";
 
-    // loginBtn.textContent = "Log out"
-    loginBtn1.textContent = "Log out";
-    loginBtn2.textContent = "Log out";
-
-  
-    //show dashboard if user is admin
-    if(onlineUser.isAdmin){
-      dashLink.style.display = "block";
+  //show dashboard if user is admin
+  if (onlineUser.isAdmin) {
+    dashLink.style.display = "block";
   }
-
 }
 // get data from local storage
 function getPostFromLocalStorage() {
-    const oldJobPostDetail = JSON.parse(localStorage.getItem('jobPosts')) || [];
+  const oldJobPostDetail = JSON.parse(localStorage.getItem("jobPosts")) || [];
 
-    return oldJobPostDetail
-
+  return oldJobPostDetail;
 }
 
 function getJobToShow(id) {
-    let jobPosts = getPostFromLocalStorage()
-    console.log(id)
-    const findPostToUpdate = jobPosts.find(jobPosts => jobPosts.postTime === Number(id))
+  let jobPosts = getPostFromLocalStorage();
+  console.log(id);
+  const findPostToUpdate = jobPosts.find(
+    (jobPosts) => jobPosts.postTime === Number(id)
+  );
 
-    addJobsToTheDom(findPostToUpdate)
-
+  addJobsToTheDom(findPostToUpdate);
 }
-
 
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom(jobPosts) {
-    console.log(jobPosts)
-    const formatedJobData = jobPosts.postAreatext.replace(/\n/g, '<br>')
-    const jobCard = document.querySelector('#job-details');
-    const postedDate = new Date(jobPosts.PostedDate).toDateString();
-    const expireDate = new Date(jobPosts.dateInput).toDateString();
+  console.log(jobPosts);
+  const formatedJobData = jobPosts.postAreatext.replace(/\n/g, "<br>");
+  const jobCard = document.querySelector("#job-details");
+  const postedDate = new Date(jobPosts.PostedDate).toDateString();
+  const expireDate = new Date(jobPosts.dateInput).toDateString();
 
-    jobCard.innerHTML = `
+  jobCard.innerHTML = `
                  <div class="content all-job-details">
         <h4 class="details-title">job details</h4>
         <div class="jobs-details">
@@ -137,64 +128,67 @@ function addJobsToTheDom(jobPosts) {
                  
                 `;
 
-    document.title = `${jobPosts.postTitle}`;
+  document.title = `${jobPosts.postTitle}`;
 
-
-    handleAttach(jobPosts.postTime,jobCard);
-    
-
-
+  handleAttach(jobPosts.postTime, jobCard);
 }
 
 //handle attach
 
-const handleAttach = (id,jobCard) =>{
+const handleAttach = (id, jobCard) => {
   //select apply Btn
   applyBtn = jobCard.querySelector("#apply-btn");
 
   //check if online user is admin
   const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-  if (!onlineUser || onlineUser.isAdmin) return applyBtn.style.display = "none";
-  
+  if (!onlineUser || onlineUser.isAdmin)
+    return (applyBtn.style.display = "none");
 
   // add event on applyBtn
-  applyBtn.addEventListener("click",() => {
-   const applyModel =  document.querySelector(".apply-model");
-   applyModel.style.display = "flex"
+  applyBtn.addEventListener("click", () => {
+    const applyModel = document.querySelector(".apply-model");
+    applyModel.style.display = "flex";
 
-    window.onclick = (event) =>{
-      if(event.target !== applyBtn){
-        applyModel.style.display = "none"
+    window.onclick = (event) => {
+      if (event.target !== applyBtn) {
+        applyModel.style.display = "none";
       }
-    }
-     
+    };
+
     applyJob(id);
   });
-}
-
+};
 
 //Apply Job function
 
-const applyJob = (id) =>{
-//selecting dom elements
- const applicantName = document.querySelector("#fullName");
- const  applicantEmail = document.querySelector("#email");
- const applicantPhone = document.querySelector("#phone");
- const applicantDistrict = document.querySelector("#district");
- const applyForm = document.querySelector(".applyForm");
+const applyJob = (id) => {
+  //selecting dom elements
+  const applicantName = document.querySelector("#fullName");
+  const applicantEmail = document.querySelector("#email");
+  const applicantPhone = document.querySelector("#phone");
+  const applicantDistrict = document.querySelector("#district");
+  const applyForm = document.querySelector(".applyForm");
 
- //finding the current job using job id
+  //finding the current job using job id
 
- const jobPosts = getPostFromLocalStorage()
- const findPostToapply= jobPosts.find(jobPosts => jobPosts.postTime === Number(id));
+  const jobPosts = getPostFromLocalStorage();
+  const findPostToapply = jobPosts.find(
+    (jobPosts) => jobPosts.postTime === Number(id)
+  );
 
- applyForm.addEventListener("submit", (e) =>{
-
+  applyForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
- })
-
-
- 
- 
-}
+    ("");
+    //checking the input values are empty
+    if (
+      applicantName.value === "" ||
+      applicantEmail.value === "" ||
+      applicantPhone.value === "" ||
+      applicantDistrict === ""
+    ) {
+      alert("please fill all Inputs");
+      return;
+    }
+    
+  });
+};
