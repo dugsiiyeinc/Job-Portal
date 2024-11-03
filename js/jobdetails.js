@@ -167,13 +167,14 @@ const applyJob = (id) => {
   //finding the current job using job id
 
   const jobPosts = getPostFromLocalStorage();
+
   const findPostToapply = jobPosts.find(
     (jobPosts) => jobPosts.postTime === Number(id)
   );
 
   applyForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    ("");
+    
     //checking the input values are empty
     if (
       applicantName.value === "" ||
@@ -196,7 +197,7 @@ const applyJob = (id) => {
       appliedUserPhone: applicantPhone.value,
       appliedUserDistrict: applicantDistrict.value,
     };
-    console.log(applicantData);
+    // console.log(applicantData);
 
     const applications = JSON.parse(localStorage.getItem("applications")) || [];
 
