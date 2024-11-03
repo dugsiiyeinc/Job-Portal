@@ -6,7 +6,7 @@
     height: calc(100vh - 4rem) ;
 }
 
-.auth-container{
+.auth-container, .apply-containner {
     background-color: #444;
     display: flex;
     flex-direction: column;
@@ -16,12 +16,12 @@
     gap: 1rem;
     width: 500px;
 }
-.auth-container h1{
+.auth-container h1 , .apply-containner h1{
     text-align: center;
     font-size: 2rem;
 }
 
-form{
+form, .applyForm{
     width: 100%;
     display: flex;
     flex-direction: column;
