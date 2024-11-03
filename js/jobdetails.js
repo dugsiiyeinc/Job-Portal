@@ -149,12 +149,15 @@ function addJobsToTheDom(jobPosts) {
 //handle attach
 
 const handleAttach = (id,jobCard) =>{
+  //select apply Btn
   applyBtn = jobCard.querySelector("#apply-btn");
 
   //check if online user is admin
   const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
   if (!onlineUser || onlineUser.isAdmin) return applyBtn.style.display = "none";
   
+
+  // add event on applyBtn
   applyBtn.addEventListener("click",() => {
    const applyModel =  document.querySelector(".apply-model");
    applyModel.style.display = "flex"
@@ -164,8 +167,14 @@ const handleAttach = (id,jobCard) =>{
         applyModel.style.display = "none"
       }
     }
-   
      
-     
+    applyJob(id);
   });
+}
+
+
+//Apply Job function
+
+const applyJob = (id) =>{
+  
 }
