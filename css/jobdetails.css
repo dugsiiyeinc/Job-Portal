@@ -97,4 +97,8 @@ p {
         flex-wrap: wrap;
         gap: 1rem;
     }
+    .apply-model .closeBtn{
+        top: 25%;
+        right: 8%;
+    }
 }

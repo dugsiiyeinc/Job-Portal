@@ -25,13 +25,13 @@ const url = new URL(window.location.href);
 // markaan la bax  parameter ka aa rabto
 const id = url.searchParams.get("jobId");
 
-console.log(id);
+// console.log(id);
 document.addEventListener("DOMContentLoaded", loadJobsdata);
 
 function loadJobsdata() {
   const jobPosts = getPostFromLocalStorage();
 
-  console.log(jobPosts, id);
+  // console.log(jobPosts, id);
 
   getJobToShow(id);
 
@@ -63,7 +63,7 @@ function getPostFromLocalStorage() {
 
 function getJobToShow(id) {
   let jobPosts = getPostFromLocalStorage();
-  console.log(id);
+  // console.log(id);
   const findPostToUpdate = jobPosts.find(
     (jobPosts) => jobPosts.postTime === Number(id)
   );
@@ -74,7 +74,7 @@ function getJobToShow(id) {
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom(jobPosts) {
-  console.log(jobPosts);
+  // console.log(jobPosts);
   const formatedJobData = jobPosts.postAreatext.replace(/\n/g, "<br>");
   const jobCard = document.querySelector("#job-details");
   const postedDate = new Date(jobPosts.PostedDate).toDateString();

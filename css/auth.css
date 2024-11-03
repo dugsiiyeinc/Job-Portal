@@ -62,7 +62,7 @@ form input{
 }
 
 @media (max-width:768px){
-    .auth-container{
+    .auth-container, .apply-containner{
         max-width: 90%;
     }
 }
