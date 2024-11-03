@@ -47,7 +47,16 @@ p {
     font-size: 1rem;
     color: #9c9c9c;
 }
-
+.job-descreption {
+    align-items: start;
+    position: relative;
+    padding: 30px 20px;
+}
+.job-descreption button{
+    position: absolute;
+    bottom:3%;
+    right: 1%;
+}
 
 @media (max-width: 768px){
     .all-job-details{
