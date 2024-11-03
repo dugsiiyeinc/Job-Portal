@@ -4,7 +4,12 @@ const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const showUserInfo = document.querySelector("#user");
 const dashLink = document.querySelector(".dash-link");
-
+ const applyModel = document.querySelector(".apply-model");
+ const applicantName = document.querySelector("#fullName");
+ const applicantEmail = document.querySelector("#email");
+ const applicantPhone = document.querySelector("#phone");
+ const applicantDistrict = document.querySelector("#district");
+ const applyForm = document.querySelector(".applyForm");
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
   localStorage.removeItem("onlineUser");
@@ -146,8 +151,7 @@ const handleAttach = (id, jobCard) => {
 
   // add event on applyBtn
   applyBtn.addEventListener("click", () => {
-    const applyModel = document.querySelector(".apply-model");
-
+   
     applyModel.style.display = "flex";
 
     applyJob(id);
@@ -157,13 +161,7 @@ const handleAttach = (id, jobCard) => {
 //Apply Job function
 
 const applyJob = (id) => {
-  //selecting dom elements
-  const applyModel = document.querySelector(".apply-model");
-  const applicantName = document.querySelector("#fullName");
-  const applicantEmail = document.querySelector("#email");
-  const applicantPhone = document.querySelector("#phone");
-  const applicantDistrict = document.querySelector("#district");
-  const applyForm = document.querySelector(".applyForm");
+ 
 
   //finding the current job using job id
 
@@ -229,9 +227,18 @@ const applyJob = (id) => {
       confirmButtonText: "ok"
     }).then((result) => {
       if (result.isConfirmed) {
-        applyModel.style.display = "none";
+        closeModel();
       }
     });
     
   });
 };
+
+const closeModel = () =>{
+    applicantName.value,
+    applicantEmail.value,
+    applicantPhone.value,
+    applicantDistrict.value,
+    applyModel.style.display = "none";
+
+}
