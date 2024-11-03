@@ -183,6 +183,13 @@ const applyJob = (id) =>{
  const applicantDistrict = document.querySelector("#district");
  const applyForm = document.querySelector(".applyForm");
 
+ //finding the current job using job id
+
+ const jobPosts = getPostFromLocalStorage()
+ const findPostToapply= jobPosts.find(jobPosts => jobPosts.postTime === Number(id))
+
+ 
+ 
  
  
 }
