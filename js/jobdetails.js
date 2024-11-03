@@ -38,7 +38,7 @@ function loadJobsdata() {
     //check if user is online
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return (window.location.href = "../html/auth.html");
+    if (!onlineUser) return;
 
     //online username
     onlineUserName.textContent = ` ${onlineUser.username}`;
@@ -150,8 +150,15 @@ function addJobsToTheDom(jobPosts) {
 
 const handleAttach = (id,jobCard) =>{
   applyBtn = jobCard.querySelector("#apply-btn");
-  console.log(applyBtn);
- 
+
+  //check if online user is admin
+  const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
+  if (!onlineUser || onlineUser.isAdmin) return applyBtn.style.display = "none";
   
-  
+  applyBtn.addEventListener("click",() => {
+    // applyJob(id);
+   
+     
+     
+  });
 }
