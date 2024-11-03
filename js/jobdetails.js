@@ -235,10 +235,10 @@ const applyJob = (id) => {
 };
 
 const closeModel = () =>{
-    applicantName.value,
-    applicantEmail.value,
-    applicantPhone.value,
-    applicantDistrict.value,
+    applicantName.value = "",
+    applicantEmail.value = "",
+    applicantPhone.value = "",
+    applicantDistrict.value = "",
     applyModel.style.display = "none";
 
 }
