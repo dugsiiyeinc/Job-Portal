@@ -47,6 +47,46 @@ p {
     font-size: 1rem;
     color: #9c9c9c;
 }
+.job-descreption {
+    align-items: start;
+    position: relative;
+    padding: 30px 20px;
+}
+.job-descreption .desc-text{
+    margin-bottom: 1rem;
+}
+.job-descreption button{
+    position: absolute;
+    bottom:3%;
+    right: 1%;
+}
+.apply-model{
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 111;
+    background-color: rgba(255, 255, 255, 0.5);
+  
+}
+.apply-model .closeBtn{
+   position: absolute;
+   right: 20%;
+   top: 16%;
+   background-color: #171717;
+   border: none;
+   color: #EDEDED;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   font-size: 1rem;
+   text-align: center;
+}
 
 
 @media (max-width: 768px){
@@ -56,5 +96,9 @@ p {
     .jobs-details{
         flex-wrap: wrap;
         gap: 1rem;
+    }
+    .apply-model .closeBtn{
+        top: 25%;
+        right: 8%;
     }
 }
