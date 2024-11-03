@@ -59,7 +59,7 @@ p {
 }
 .apply-model{
     height: 100vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -71,6 +71,7 @@ p {
     background-color: rgba(255, 255, 255, 0.5);
    
 }
+
 
 @media (max-width: 768px){
     .all-job-details{
