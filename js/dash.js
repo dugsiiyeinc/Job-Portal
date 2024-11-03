@@ -108,7 +108,8 @@ nonActiveJobs.textContent = AllnonActiveJobs.length
         addjobPostToDOmRecent(job)
     })
 
-    
+    //calling displayApplications
+    displayApplications()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
@@ -609,6 +610,6 @@ const displayApplications = () =>{
     
 }
 
-displayApplications()
+
 //  all Events
 
