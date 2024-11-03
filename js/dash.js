@@ -20,6 +20,8 @@ const sidebarLinks = document.querySelectorAll(".sidebar-links > *");
 const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
+const applicationsTab = document.querySelector("#applications");
+const applicationsCon= document.querySelector("#applications-con");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
 const showUserInfo = document.querySelector("#user");
@@ -30,6 +32,8 @@ const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
 const nonActiveJobs = document.querySelector('#interviewsScheduled');
 const dashLink = document.querySelector('.dash-link');
+
+console.log(applicationsTab,applicationsCon);
 
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
@@ -187,13 +191,20 @@ jobListTab.addEventListener("click", () => {
     changeTabs(jobListTab, jobListCon, "Job lists");
      
 
+});
+// when click joblists tab
+applicationsTab.addEventListener("click", () => {
+
+    changeTabs(applicationsTab, applicationsCon, "Applications");
+     
+
 })
 
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
-    const tabs = [dashboardTab, addnewJobTab, jobListTab];
-    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer];
+    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon];
 
     tabs.forEach(currentTab => {
 
@@ -580,5 +591,24 @@ new Chart(jobCategoryCtx, {
 
 
 
+const displayApplications = () =>{
+    
+    const applicationList = document.querySelector(".applications-list");
+    const allApplications = JSON.parse(localStorage.getItem("applications"));
+    allApplications.map((application =>{
+        applicationList.innerHTML += `
+         <div class="applicant-card">
+              <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
+              <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
+              <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
+              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+              <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+          </div>
+        `
+    }))
+    
+}
+
+displayApplications()
 //  all Events
 

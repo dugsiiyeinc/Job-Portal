@@ -329,6 +329,30 @@ option{
 }
 /*  end job lists style*/
 
+/* strat applications styles */
+#applications-con{
+    display: none;
+}
+
+.applications-list{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+   
+}
+.applicant-card{
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap:.5rem;
+}
+/* end applications styles */
+
 @media (max-width: 768px) {
     /* start side bar responsive */
     .sidebar {
