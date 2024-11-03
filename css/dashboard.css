@@ -333,6 +333,20 @@ option{
 #applications-con{
     display: none;
 }
+
+.applications-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+   
+}
+.applicant-card{
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 5px;
+}
 /* end applications styles */
 
 @media (max-width: 768px) {
