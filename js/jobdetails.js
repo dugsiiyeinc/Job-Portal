@@ -181,7 +181,12 @@ const applyJob = (id) => {
       applicantPhone.value === "" ||
       applicantDistrict.value === ""
     ) {
-      alert("please fill all Inputs");
+      Swal.fire({
+        title: "Error!",
+        text: `please fill all Inputs`,
+        icon: "error",
+        confirmButtonText: "ok"
+      });
       return;
     }
     const applicantData = {
@@ -203,10 +208,22 @@ const applyJob = (id) => {
     );
     console.log(exestingAppliedUser);
     if(exestingAppliedUser) {
-      alert("you applied this job");
+      Swal.fire({
+        title: "Error!",
+        text: `${applicantName.value } please use unique email and unique phone`,
+        icon: "error",
+        confirmButtonText: "ok"
+      });
       return;
-    }
-    
+    };
+
+
+    Swal.fire({
+      title: "succes",
+      text: "applied Job succesFully!",
+      icon: "success",
+      confirmButtonText: "ok"
+    });
     applications.push(applicantData);
     localStorage.setItem("applications", JSON.stringify(applications));
   });
