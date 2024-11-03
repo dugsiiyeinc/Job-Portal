@@ -43,14 +43,14 @@ function loadJobPosts() {
         addjobPostToDOm(jobPost);
 
     });
-    //show user
-    showUserInfo1.style.display = "block";
+    
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
 
     onlineUserName1.textContent = ` ${onlineUser.username}`;
-
+   //show user
+  showUserInfo1.style.display = "block";
     // loginBtn.textContent = "Log out"
     //set log in buttons when loptop or mobile menu
     logBtn1.textContent = "Log out";

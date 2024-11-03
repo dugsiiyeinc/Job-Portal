@@ -31,14 +31,11 @@ const activeJobs = document.querySelector('#activejobs')
 const nonActiveJobs = document.querySelector('#interviewsScheduled');
 const dashLink = document.querySelector('.dash-link');
 
-
-
-
 //set log in buttons when loptop or mobile menu
-logBtn1.addEventListener("click", () => {
+loginBtn1.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
-logBtn2.addEventListener("click", () => {
+loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
 
@@ -79,7 +76,6 @@ const loadJobsdata = () => {
             marketing: AllMarketingJobs.length,
             sales: AllSalesJobs.length,
             finance: AllFinanceJobs.length,
-            hr: 15
         },
        
     };
@@ -111,13 +107,15 @@ nonActiveJobs.textContent = AllnonActiveJobs.length
     
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return (window.location.href = "../html/auth.html");
+    if (!onlineUser) return ;
+  
 
-    //online username
+    //online user  name
     onlineUserName.textContent = ` ${onlineUser.username}`;
-    //show user info
-    showUserInfo.style.display = "block";
-
+    
+     //showing user info 
+     showUserInfo.style.display = "block";
+     
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
     loginBtn2.textContent = "Log out";
