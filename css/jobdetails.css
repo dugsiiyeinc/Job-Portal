@@ -52,6 +52,9 @@ p {
     position: relative;
     padding: 30px 20px;
 }
+.job-descreption .desc-text{
+    margin-bottom: 1rem;
+}
 .job-descreption button{
     position: absolute;
     bottom:3%;
