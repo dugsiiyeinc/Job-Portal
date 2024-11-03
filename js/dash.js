@@ -591,5 +591,11 @@ new Chart(jobCategoryCtx, {
 
 
 
+const displayApplications = () =>{
+    
+    
+}
+
+displayApplications()
 //  all Events
 
