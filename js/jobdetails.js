@@ -158,6 +158,7 @@ const handleAttach = (id, jobCard) => {
 
 const applyJob = (id) => {
   //selecting dom elements
+  const applyModel = document.querySelector(".apply-model");
   const applicantName = document.querySelector("#fullName");
   const applicantEmail = document.querySelector("#email");
   const applicantPhone = document.querySelector("#phone");
@@ -217,14 +218,20 @@ const applyJob = (id) => {
       return;
     };
 
+    //save data to local storage
+    applications.push(applicantData);
+    localStorage.setItem("applications", JSON.stringify(applications));
 
     Swal.fire({
       title: "succes",
       text: "applied Job succesFully!",
       icon: "success",
       confirmButtonText: "ok"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        applyModel.style.display = "none";
+      }
     });
-    applications.push(applicantData);
-    localStorage.setItem("applications", JSON.stringify(applications));
+    
   });
 };
