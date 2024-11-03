@@ -595,7 +595,17 @@ const displayApplications = () =>{
     
     const applicationList = document.querySelector(".applications-list");
     const allApplications = JSON.parse(localStorage.getItem("applications"));
-   
+    allApplications.map((application =>{
+        applicationList.innerHTML += `
+         <div class="applicant-card">
+              <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
+              <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
+              <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
+              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+              <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+          </div>
+        `
+    }))
     
 }
 
