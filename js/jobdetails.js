@@ -136,27 +136,27 @@ function addJobsToTheDom(jobPosts) {
 //handle attach
 
 const handleAttach = (id, jobCard) => {
-  //select apply Btn
+  //select dom elements
   applyBtn = jobCard.querySelector("#apply-btn");
+  
+  
 
   //check if online user is admin
   const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
   if (!onlineUser || onlineUser.isAdmin)
     return (applyBtn.style.display = "none");
 
+
   // add event on applyBtn
   applyBtn.addEventListener("click", () => {
     const applyModel = document.querySelector(".apply-model");
+   
     applyModel.style.display = "flex";
-
-    window.onclick = (event) => {
-      if (event.target !== applyBtn) {
-        applyModel.style.display = "none";
-      }
-    };
 
     applyJob(id);
   });
+
+  
 };
 
 //Apply Job function
@@ -184,11 +184,20 @@ const applyJob = (id) => {
       applicantName.value === "" ||
       applicantEmail.value === "" ||
       applicantPhone.value === "" ||
-      applicantDistrict === ""
+      applicantDistrict.value === ""
     ) {
       alert("please fill all Inputs");
       return;
     }
+    const applicantData = {
+      appliedJob: findPostToapply.postTitle,
+      appliedUserName: applicantName.value,
+      appliedUserEmail: applicantEmail.value,
+      appliedUserPhone: applicantPhone.value,
+      appliedUserDistrict: applicantDistrict.value,
+    };
+    console.log(applicantData);
     
+    const applications = JSON.parse(localStorage.getItem("applications")) || [];
   });
 };
