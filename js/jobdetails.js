@@ -199,5 +199,7 @@ const applyJob = (id) => {
     console.log(applicantData);
     
     const applications = JSON.parse(localStorage.getItem("applications")) || [];
+    applications.push(applicantData);
+    localStorage.setItem("applications", JSON.stringify(applications));
   });
 };
