@@ -207,7 +207,7 @@ const applyJob = (id) => {
         appliedUser.appliedUserPhone === applicantData.appliedUserPhone ||
         appliedUser.appliedUserEmail === applicantData.appliedUserEmail
     );
-    console.log(exestingAppliedUser);
+  
     if(exestingAppliedUser) {
       Swal.fire({
         title: "Error!",
