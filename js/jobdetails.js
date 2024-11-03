@@ -186,10 +186,15 @@ const applyJob = (id) =>{
  //finding the current job using job id
 
  const jobPosts = getPostFromLocalStorage()
- const findPostToapply= jobPosts.find(jobPosts => jobPosts.postTime === Number(id))
+ const findPostToapply= jobPosts.find(jobPosts => jobPosts.postTime === Number(id));
 
- 
- 
+ applyForm.addEventListener("submit", (e) =>{
+
+    e.preventDefault();
+
+ })
+
+
  
  
 }
