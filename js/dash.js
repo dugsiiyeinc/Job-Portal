@@ -37,6 +37,7 @@ const addJobBtn = document.querySelector('#addJobBtn');
 const usersTab = document.querySelector('#usersTab');
 const usersCon = document.querySelector('#users');
 const userList = document.querySelector('.user-list');
+const noJobsFound = document.querySelector('.nojobsFound')
 
 
 //set log in buttons when loptop or mobile menu
@@ -104,10 +105,12 @@ activeJobs.textContent = initialData.activeJobs;
 activeApplications.textContent = initialData.activeApplications;
 
 
-    alljobDetails.forEach(job => {
-        addJobsToTheDom(job);
+     
+        addJobsToTheDom(alljobDetails);
 
-    });
+     
+
+    // addJobsListToTheDom(alljobDetails)
     // recent jobs-ka lagu so bandhigaa Main dashboard-ka ayuu quseeya marka hore 4-ta shaqo  u danbesay ayuu so qaba
     // kadib ne  array la so helay aya reverse lagu sameyna si ka ugu danbeeyo oo u noqdo ka ugu horeya
     const lastfourjobs = alljobDetails.slice(-4)
@@ -352,28 +355,52 @@ function getPostFromLocalStorage() {
 
 //add jobs to the Dom
 
-const addJobsToTheDom = (job) => {
-    const div = document.createElement("div");
-    div.className = "job";
+// function addJobsToTheDom (job)  {
+  
+//     const div = document.createElement("div");
+//     div.className = "job";
 
 
-    div.innerHTML += `
-                <img src="${job.imageUrl}" alt="campany img">
-                <span class="campany-logo">${job.companyInput}</span>
-                <span class="job-name">${job.postTitle}</span>
-                <span class="job-location">${job.postLocation}</span>
-                <span class="job-category">${job.jobCategory}</span>
-                <div class="buttons">
-                  <button class="edit-btn">edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div> 
-           `;
-    allJobsList.appendChild(div);
+//     div.innerHTML += `
+//                 <img src="${job.imageUrl}" alt="campany img">
+//                 <span class="campany-logo">${job.companyInput}</span>
+//                 <span class="job-name">${job.postTitle}</span>
+//                 <span class="job-location">${job.postLocation}</span>
+//                 <span class="job-category">${job.jobCategory}</span>
+//                 <div class="buttons">
+//                   <button class="edit-btn">edit</button>
+//                   <button class="delete-btn">Delete</button>
+//                 </div> 
+//            `;
+//     allJobsList.appendChild(div);
 
-    attachHandler(div, job);
+//     attachHandler(div, job);
 
-}
+// }
+ function addJobsToTheDom (job) {
+    allJobsList.innerHTML = ''
+    job.forEach(job => {
+        const div = document.createElement("div");
+            div.className = "job";
+        
+        
+            div.innerHTML += `
+                        <img src="${job.imageUrl}" alt="campany img">
+                        <span class="campany-logo">${job.companyInput}</span>
+                        <span class="job-name">${job.postTitle}</span>
+                        <span class="job-location">${job.postLocation}</span>
+                        <span class="job-category">${job.jobCategory}</span>
+                        <div class="buttons">
+                          <button class="edit-btn">edit</button>
+                          <button class="delete-btn">Delete</button>
+                        </div> 
+                   `;
+            allJobsList.appendChild(div);
+        
+            attachHandler(div, job);
 
+    });
+ }
 //attach handler
 const attachHandler = (div, job) => {
     const editBtn = div.querySelector(".edit-btn");
@@ -655,7 +682,21 @@ const addUsersToDom = () =>{
 // soo bandhig shaqada lagu raadiayay title marka la joogo Job List
 
 searchInput.addEventListener('input',  function  () {
-    console.log('search input', searchInput.value)
+     
+   
+    const searchValue = this.value.toLowerCase()
+   
+    let jobPosts = getPostFromLocalStorage()
+    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
+    console.log('job posts',jobPosts)
+    addJobsToTheDom(jobPosts)
+    if (jobPosts.length === 0) {
+        noJobsFound.style.display = 'block'
+        noJobsFound.textContent = ` there is no job that matches " ${searchValue} " found`
+    }else {
+        noJobsFound.style.display = 'none'
+    }
+    
 });
 //  all Events
 

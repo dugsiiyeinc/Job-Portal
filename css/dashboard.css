@@ -383,6 +383,13 @@ option{
     gap:.5rem;
 }
 /* end applications styles */
+.nojobsFound{
+    display: none;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 30px;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     /* start side bar responsive */
