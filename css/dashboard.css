@@ -158,6 +158,24 @@
     margin-bottom: 0;
 }
 
+/* appliyyes job lits */
+ 
+.AppliedJobList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.AppliedJobList li {
+    background-color: #3c3c3c;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.AppliedJobList:last-child {
+    margin-bottom: 0;
+}
+
 /* start main content */
 
 /* job post from css */

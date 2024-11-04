@@ -645,22 +645,49 @@ new Chart(jobCategoryCtx, {
 
 
 const displayApplications = () =>{
+
     
-    const applicationList = document.querySelector(".applications-list");
+    const applicationList = document.querySelector(".AppliedJobList");
     const allApplications = JSON.parse(localStorage.getItem("applications"));
-    allApplications.map((application =>{
-        applicationList.innerHTML += `
-         <div class="applicant-card">
-              <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
-              <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
-              <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
-              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
-              <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
-          </div>
-        `
-    }))
+    allApplications.forEach(allApplications => {
+        console.log(allApplications)
+
+        const li = document.createElement('li');
+        li.textContent = `${allApplications.appliedJob} `;
+        applicationList.appendChild(li);
+          
+        
+    });
+     
+        
+         
+      
     
 }
+
+
+
+
+// const displayApplications = () =>{
+    
+//     const applicationList = document.querySelector(".applications-list");
+//     const allApplications = JSON.parse(localStorage.getItem("applications"));
+//     allApplications.map((application =>{
+//         applicationList.innerHTML += `
+//          <div class="applicant-card">
+//               <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
+//               <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
+//               <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
+//               <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+//               <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+//           </div>
+//         `
+//     }))
+    
+// }
+
+
+
 
 const addUsersToDom = () =>{
     const allUsers = JSON.parse(localStorage.getItem("users"));
