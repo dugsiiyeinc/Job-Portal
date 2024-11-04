@@ -274,37 +274,68 @@ option{
 
 /* end update job section */
 /* start job lest style  */
-#job-list-con{
+#job-list-con, #users{
     display: none;
 }
-.job-lists{
+.job-lists ,.users{
     background-color: #2c2c2c;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 15px 0;
     border-radius: 5px;
 }
-.joblist-header {
-    background-color: #282727;
-    border-top: 1px solid #EDEDED;
+.searc-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    position: relative;
 }
-.joblist-header ul, .all-joblists .job{
+.searc-con input{
+   flex: 1;
+    padding: 10px 30px;
+    background-color: #444;
+    border: none;
+    color: #EDEDED;
+    border-radius: 5px;
+}
+.searc-con .search-icon{
+    position: absolute;
+    left: 2%;
+}
+.joblist-header , .users-header{
+    background-color: #444;
+    border-top: 1px solid #EDEDED;
+    
+}
+.joblist-header ul, .all-joblists .job {
     display: grid;
     grid-template-columns: repeat(6,1fr);
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10px;
+    padding: 10px 10px;
     border-bottom: 1px solid #EDEDED;
 }
-.all-joblists {
-    background: #444;  
+/* strat users styles */
+.users-header ul , .user-card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EDEDED;
 }
+/* end users style */
+/* .all-joblists {
+    background: #444;  
+} */
 .all-joblists .job img{
     width: 50px;
     height: 50px;
     border-radius: 100%;
 }
-.edit-btn,.delete-btn{
+.edit-btn,.delete-btn, .addjob-btn{
     background-color: #fff;
     border: none;
     padding: 8px;
@@ -320,10 +351,10 @@ option{
 .edit-btn:hover{
     background-color: #069006;
 }
-.delete-btn{
+.delete-btn,.addjob-btn{
     background-color: #DA0037;
 }
-.delete-btn:hover{
+.delete-btn:hover ,.addjob-btn:hover{
     background-color: #FF0044;
 
 }
@@ -416,15 +447,28 @@ option{
     }
 
      /* end job lists conten responsive design */
+
+     .applications-list{
+       
+        justify-content: center;
+     }
+     .applicant-card{
+        width: 100%;
+     }
+
+     .searc-con .search-icon{
+        left: 5%;
+     }
 }
 
 @media (max-width: 487px){
  .header h1{
     font-size: 1.4rem;
  }
- .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul{
+ .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul ,.users-header ul li, .user-card{
     font-size: 9px;
    }
+   
 
 }
 

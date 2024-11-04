@@ -30,10 +30,14 @@ const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
-const nonActiveJobs = document.querySelector('#interviewsScheduled');
+const activeApplications = document.querySelector('#activeApplications');
 const dashLink = document.querySelector('.dash-link');
+const searchInput = document.querySelector('.search-input');
+const addJobBtn = document.querySelector('#addJobBtn');
+const usersTab = document.querySelector('#usersTab');
+const usersCon = document.querySelector('#users');
+const userList = document.querySelector('.user-list');
 
-console.log(applicationsTab,applicationsCon);
 
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
@@ -54,6 +58,7 @@ const loadJobsdata = () => {
     // activeJobs.textContent = AllactiveJobs.length
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
+    
     // nonActiveJobs.textContent = AllnonActiveJobs.length
      //AllTechnologyJobs
      const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
@@ -63,11 +68,15 @@ const loadJobsdata = () => {
      const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
      //AllFinanceJobs
      const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
+    //allaplications
+     const allApplications = JSON.parse(localStorage.getItem("applications"));
+     console.log(allApplications.length);
+     
 
     const initialData = {
         totalJobs: AlltotalJobs,
-        activeApplications: AllactiveJobs.length,
-        interviewsScheduled: AllnonActiveJobs.length,
+        activeJobs: AllactiveJobs.length,
+        activeApplications: allApplications.length,
         applicationStatus: {
             applied: 100,
             inReview: 50,
@@ -90,10 +99,9 @@ const data = JSON.parse(localStorage.getItem('jobPortalData'));
 console.log(data);
 
 // Update stats
-totalJobs.textContent = AlltotalJobs;
-activeJobs.textContent = AllactiveJobs.length
-nonActiveJobs.textContent = AllnonActiveJobs.length
-
+totalJobs.textContent = initialData.totalJobs;
+activeJobs.textContent = initialData.activeJobs;
+activeApplications.textContent = initialData.activeApplications;
 
 
     alljobDetails.forEach(job => {
@@ -110,6 +118,9 @@ nonActiveJobs.textContent = AllnonActiveJobs.length
 
     //calling displayApplications
     displayApplications()
+
+    //calling addedUserToDom
+    addUsersToDom();
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
@@ -201,11 +212,20 @@ applicationsTab.addEventListener("click", () => {
 
 })
 
+//when user click go add new job
+addJobBtn.addEventListener("click", () =>{
+    changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
+})
+
+//when click usersTab
+usersTab.addEventListener("click", () =>{
+    changeTabs(usersTab, usersCon, "users List");
+})
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
-    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab];
-    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon];
+    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab,usersTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon,usersCon];
 
     tabs.forEach(currentTab => {
 
@@ -242,7 +262,12 @@ async function addPost(e) {
 
 
     if (!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() || !postLocation.value.trim() || !dateInput.value.trim() || !companyInput.value.trim() || !jobCategory.value.trim()) {
-        alert("waxbaa ka tagtay fadlan iska hubi");
+        Swal.fire({
+            title: "Error!",
+            text: `please fill all Inputs`,
+            icon: "error",
+            confirmButtonText: "ok"
+          });
     } else if (new Date(dateInput.value) < new Date()) {
         alert("The date must be from today onwards");
         return;
@@ -609,6 +634,23 @@ const displayApplications = () =>{
     }))
     
 }
+
+const addUsersToDom = () =>{
+    const allUsers = JSON.parse(localStorage.getItem("users"));
+    allUsers.map(user =>{
+        userList.innerHTML += `
+         <div class="user-card">
+                <span class="qusername">${user.username}</span>
+                <span class="email">${user.email}</span>
+                <span class="email">${new Date(user.createdDate).toDateString()}</span>
+                <div class="buttons">
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> `
+    })
+   
+}
+
 
 
 //  all Events

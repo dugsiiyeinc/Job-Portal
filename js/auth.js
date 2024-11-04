@@ -23,6 +23,7 @@ const adminusers = [
         email : "shiine1@gmail.com",
         password : 11,
         confirPassword :11,
+        createdDate: Date.now(),
         isAdmin : true
     },
     {
@@ -30,6 +31,7 @@ const adminusers = [
         email : "ayanle1@gmail.com",
         password : 11,
         confirPassword :11,
+        createdDate: Date.now(),
         isAdmin : true
     },
 ];
@@ -90,12 +92,25 @@ const switchAuthForm = () =>{
 authForm.addEventListener("submit" , (e) =>{
     e.preventDefault();
 
+    if(!signin){
+        if(username.value === "" || email.value === "" || password.value === "" || confirPassword.value === ""){
+            Swal.fire({
+                title: "Error!",
+                text: `please fill all Inputs`,
+                icon: "error",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+    }
+    
 
     let user = {
         username : signin? undefined : username.value,
         email : email.value,
         password : password.value,
         confirPassword :signin? undefined:  confirPassword.value,
+        createdDate: Date.now(),
         idAdmin:  false
     }
   

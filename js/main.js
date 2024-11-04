@@ -106,7 +106,7 @@ function addjobPostToDOm(jobPost) {
         
                
     `;
-    jobMainContainer.appendChild(jobPostDiv)
+    jobMainContainer && jobMainContainer.appendChild(jobPostDiv)
 }
 
 
@@ -146,7 +146,7 @@ window.onclick = (event) =>{
 }
 // marka click lagu siiyo mida ka mid ah recent jobs-ka waa inu aadaa job details- page 
 
-recentJobsContainer.addEventListener("click", handleJobCardClick);
+recentJobsContainer && recentJobsContainer.addEventListener("click", handleJobCardClick);
 
 function handleJobCardClick(event) {
     const jobCard = event.target.closest(".recent-jobs-list");
