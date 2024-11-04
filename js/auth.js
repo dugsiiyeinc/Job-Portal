@@ -23,6 +23,7 @@ const adminusers = [
         email : "shiine1@gmail.com",
         password : 11,
         confirPassword :11,
+        createdDate: Date.now(),
         isAdmin : true
     },
     {
@@ -30,6 +31,7 @@ const adminusers = [
         email : "ayanle1@gmail.com",
         password : 11,
         confirPassword :11,
+        createdDate: Date.now(),
         isAdmin : true
     },
 ];
@@ -108,6 +110,7 @@ authForm.addEventListener("submit" , (e) =>{
         email : email.value,
         password : password.value,
         confirPassword :signin? undefined:  confirPassword.value,
+        createdDate: Date.now(),
         idAdmin:  false
     }
   
