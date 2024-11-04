@@ -214,11 +214,15 @@ addJobBtn.addEventListener("click", () =>{
     changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
 })
 
+//when click usersTab
+usersTab.addEventListener("click", () =>{
+    changeTabs(usersTab, usersCon, "users List");
+})
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
-    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab];
-    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon];
+    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab,usersTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon,usersCon];
 
     tabs.forEach(currentTab => {
 
