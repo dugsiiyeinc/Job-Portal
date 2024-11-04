@@ -633,9 +633,22 @@ const displayApplications = () =>{
 }
 
 const addUsersToDom = () =>{
-    const allUsers = JSON.parse(loadJobsdata.getItem("users"));
+    const allUsers = JSON.parse(localStorage.getItem("users"));
+    allUsers.map(user =>{
+        userList.innerHTML += `
+         <div class="user-card">
+                <span class="qusername">${user.username}</span>
+                <span class="email">${user.email}</span>
+                <span class="email">2024/1/1</span>
+                <div class="buttons">
+                  <button class="edit-btn">edit</button>
+                  <button class="delete-btn">Delete</button>
+                </div> `
+    })
    
 }
+
+
 
 //  all Events
 
