@@ -652,6 +652,10 @@ const addUsersToDom = () =>{
 }
 
 
+// soo bandhig shaqada lagu raadiayay title marka la joogo Job List
 
+searchInput.addEventListener('input',  function  () {
+    console.log('search input', searchInput.value)
+});
 //  all Events
 
