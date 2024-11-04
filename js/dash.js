@@ -30,12 +30,12 @@ const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
-const nonActiveJobs = document.querySelector('#interviewsScheduled');
+const activeApplications = document.querySelector('#activeApplications');
 const dashLink = document.querySelector('.dash-link');
 const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
 
-console.log(applicationsTab,applicationsCon);
+
 
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
@@ -56,6 +56,7 @@ const loadJobsdata = () => {
     // activeJobs.textContent = AllactiveJobs.length
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
+    
     // nonActiveJobs.textContent = AllnonActiveJobs.length
      //AllTechnologyJobs
      const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
@@ -65,11 +66,15 @@ const loadJobsdata = () => {
      const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
      //AllFinanceJobs
      const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
+    //allaplications
+     const allApplications = JSON.parse(localStorage.getItem("applications"));
+     console.log(allApplications.length);
+     
 
     const initialData = {
         totalJobs: AlltotalJobs,
-        activeApplications: AllactiveJobs.length,
-        interviewsScheduled: AllnonActiveJobs.length,
+        activeJobs: AllactiveJobs.length,
+        activeApplications: allApplications.length,
         applicationStatus: {
             applied: 100,
             inReview: 50,
@@ -92,10 +97,9 @@ const data = JSON.parse(localStorage.getItem('jobPortalData'));
 console.log(data);
 
 // Update stats
-totalJobs.textContent = AlltotalJobs;
-activeJobs.textContent = AllactiveJobs.length
-nonActiveJobs.textContent = AllnonActiveJobs.length
-
+totalJobs.textContent = initialData.totalJobs;
+activeJobs.textContent = initialData.activeJobs;
+activeApplications.textContent = initialData.activeApplications;
 
 
     alljobDetails.forEach(job => {
