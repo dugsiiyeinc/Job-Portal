@@ -633,7 +633,8 @@ const displayApplications = () =>{
 }
 
 const addUsersToDom = () =>{
-    
+    const allUsers = JSON.parse(loadJobsdata.getItem("users"));
+   
 }
 
 //  all Events
