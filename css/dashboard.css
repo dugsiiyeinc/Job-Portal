@@ -274,10 +274,10 @@ option{
 
 /* end update job section */
 /* start job lest style  */
-#job-list-con{
+#job-list-con, #users{
     display: none;
 }
-.job-lists{
+.job-lists ,.users{
     background-color: #2c2c2c;
     display: flex;
     flex-direction: column;
@@ -318,7 +318,7 @@ option{
     padding: 10px 10px;
     border-bottom: 1px solid #EDEDED;
 }
-/* users header */
+/* strat users styles */
 .users-header ul , .user-card{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -326,6 +326,7 @@ option{
     padding: 10px 20px;
     border-bottom: 1px solid #EDEDED;
 }
+/* end users style */
 /* .all-joblists {
     background: #444;  
 } */
