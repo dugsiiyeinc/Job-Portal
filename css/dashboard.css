@@ -291,14 +291,19 @@ option{
     gap: 10px;
     margin-bottom: 20px;
     padding: 0 10px;
+    position: relative;
 }
 .searc-con input{
    flex: 1;
-    padding: 10px;
+    padding: 10px 30px;
     background-color: #444;
     border: none;
     color: #EDEDED;
     border-radius: 5px;
+}
+.searc-con .search-icon{
+    position: absolute;
+    left: 2%;
 }
 .joblist-header {
     background-color: #444;
