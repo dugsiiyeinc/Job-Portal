@@ -465,9 +465,10 @@ option{
  .header h1{
     font-size: 1.4rem;
  }
- .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul{
+ .all-joblists .job, .edit-btn,.delete-btn , .joblist-header ul ,.users-header ul li, .user-card{
     font-size: 9px;
    }
+   
 
 }
 
