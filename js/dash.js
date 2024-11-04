@@ -632,6 +632,9 @@ const displayApplications = () =>{
     
 }
 
+const addUsersToDom = () =>{
+    
+}
 
 //  all Events
 
