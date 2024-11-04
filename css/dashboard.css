@@ -318,9 +318,9 @@ option{
     padding: 10px 10px;
     border-bottom: 1px solid #EDEDED;
 }
-.all-joblists {
-    /* background: #444;   */
-}
+/* .all-joblists {
+    background: #444;  
+} */
 .all-joblists .job img{
     width: 50px;
     height: 50px;

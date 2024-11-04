@@ -32,6 +32,8 @@ const totalJobs = document.querySelector('#totalJobs')
 const activeJobs = document.querySelector('#activejobs')
 const nonActiveJobs = document.querySelector('#interviewsScheduled');
 const dashLink = document.querySelector('.dash-link');
+const searchInput = document.querySelector('.search-input');
+const addJobBtn = document.querySelector('#addJobBtn');
 
 console.log(applicationsTab,applicationsCon);
 
