@@ -305,17 +305,25 @@ option{
     position: absolute;
     left: 2%;
 }
-.joblist-header {
+.joblist-header , .users-header{
     background-color: #444;
     border-top: 1px solid #EDEDED;
     
 }
-.joblist-header ul, .all-joblists .job{
+.joblist-header ul, .all-joblists .job {
     display: grid;
     grid-template-columns: repeat(6,1fr);
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
+    border-bottom: 1px solid #EDEDED;
+}
+/* users header */
+.users-header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     border-bottom: 1px solid #EDEDED;
 }
 /* .all-joblists {
