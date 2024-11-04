@@ -242,7 +242,12 @@ async function addPost(e) {
 
 
     if (!postTitle.value.trim() || !imageUrl.value.trim() || !postArea.value.trim() || !postLocation.value.trim() || !dateInput.value.trim() || !companyInput.value.trim() || !jobCategory.value.trim()) {
-        alert("waxbaa ka tagtay fadlan iska hubi");
+        Swal.fire({
+            title: "Error!",
+            text: `please fill all Inputs`,
+            icon: "error",
+            confirmButtonText: "ok"
+          });
     } else if (new Date(dateInput.value) < new Date()) {
         alert("The date must be from today onwards");
         return;
