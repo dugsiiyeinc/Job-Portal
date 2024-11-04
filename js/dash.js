@@ -203,6 +203,11 @@ applicationsTab.addEventListener("click", () => {
 
 })
 
+//when user click go add new job tab
+addJobBtn.addEventListener("click", () =>{
+    changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
+})
+
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
