@@ -90,15 +90,18 @@ const switchAuthForm = () =>{
 authForm.addEventListener("submit" , (e) =>{
     e.preventDefault();
 
-    if(username.value === "" || email.value === "" || password.value === "" || confirPassword.value === ""){
-        Swal.fire({
-            title: "Error!",
-            text: `please fill all Inputs`,
-            icon: "error",
-            confirmButtonText: "ok"
-          });
-        return;
+    if(!signin){
+        if(username.value === "" || email.value === "" || password.value === "" || confirPassword.value === ""){
+            Swal.fire({
+                title: "Error!",
+                text: `please fill all Inputs`,
+                icon: "error",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
     }
+    
 
     let user = {
         username : signin? undefined : username.value,
