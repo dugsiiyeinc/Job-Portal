@@ -319,9 +319,9 @@ option{
     border-bottom: 1px solid #EDEDED;
 }
 /* users header */
-.users-header ul{
-    display: flex;
-    justify-content: space-between;
+.users-header ul , .user-card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     align-items: center;
     padding: 10px 20px;
     border-bottom: 1px solid #EDEDED;
