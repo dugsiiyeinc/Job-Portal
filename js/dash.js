@@ -642,7 +642,7 @@ const addUsersToDom = () =>{
          <div class="user-card">
                 <span class="qusername">${user.username}</span>
                 <span class="email">${user.email}</span>
-                <span class="email">2024/1/1</span>
+                <span class="email">${new Date(user.createdDate).toDateString()}</span>
                 <div class="buttons">
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>
