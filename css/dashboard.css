@@ -326,7 +326,7 @@ option{
     height: 50px;
     border-radius: 100%;
 }
-.edit-btn,.delete-btn{
+.edit-btn,.delete-btn, .addjob-btn{
     background-color: #fff;
     border: none;
     padding: 8px;
@@ -342,10 +342,10 @@ option{
 .edit-btn:hover{
     background-color: #069006;
 }
-.delete-btn{
+.delete-btn,.addjob-btn{
     background-color: #DA0037;
 }
-.delete-btn:hover{
+.delete-btn:hover ,.addjob-btn:hover{
     background-color: #FF0044;
 
 }
@@ -445,6 +445,10 @@ option{
      }
      .applicant-card{
         width: 100%;
+     }
+
+     .searc-con .search-icon{
+        left: 5%;
      }
 }
 

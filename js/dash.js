@@ -203,7 +203,7 @@ applicationsTab.addEventListener("click", () => {
 
 })
 
-//when user click go add new job tab
+//when user click go add new job
 addJobBtn.addEventListener("click", () =>{
     changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
 })
