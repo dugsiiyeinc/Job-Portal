@@ -34,7 +34,9 @@ const activeApplications = document.querySelector('#activeApplications');
 const dashLink = document.querySelector('.dash-link');
 const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
-
+const usersTab = document.querySelector('#usersTab');
+const usersCon = document.querySelector('#users');
+const userList = document.querySelector('.user-list');
 
 
 //set log in buttons when loptop or mobile menu
