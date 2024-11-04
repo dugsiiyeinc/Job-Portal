@@ -119,6 +119,9 @@ activeApplications.textContent = initialData.activeApplications;
     //calling displayApplications
     displayApplications()
 
+    //calling addedUserToDom
+    addUsersToDom();
+
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
   
