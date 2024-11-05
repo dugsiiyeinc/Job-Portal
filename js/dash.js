@@ -622,7 +622,7 @@ new Chart(jobCategoryCtx, {
 
 const displayApplications = () =>{
     
-    const applicationList = document.querySelector(".AppliedJobList");
+    
     const allApplications = JSON.parse(localStorage.getItem("applications"));
     
     // Create a map to count the number of times each job title is applied for
@@ -643,24 +643,42 @@ const displayApplications = () =>{
     // Create and append list items with job titles and their counts
     for (var jobTitle in jobCountMap) {
         var li = document.createElement('li');
+        // li waliba waxa raaciyay setAttribute si aan ugu save gareyo Job Title-ka
+        li.setAttribute('data-job-title', jobTitle);
         li.textContent = jobTitle + ' (' + jobCountMap[jobTitle] + ' applicants)';
         appliedJobsList.appendChild(li);
+        li.addEventListener('click', function(e) {
+            // e.target refers to the element that was clicked
+            const currentJobTitle = e.target.dataset.jobTitle
+            console.log(currentJobTitle);
+            displayApplicationsBasedOnJobTitle(currentJobTitle)
+        });
     }
 
 
 
     
-    // allApplications.map((application =>{
-    //     applicationList.innerHTML += `
-    //      <div class="applicant-card">
-    //           <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
-    //           <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
-    //           <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
-    //           <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
-    //           <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
-    //       </div>
-    //     `
-    // }))
     
 }
 
+// function waxa oo soo bandhigaa applicants-ka asoo ku base garesan job title 
+ function displayApplicationsBasedOnJobTitle(jobTitle) {
+    const applicationList = document.querySelector(".applications-list");
+    const allApplications = JSON.parse(localStorage.getItem("applications"));
+    const filteredApplications = allApplications.filter(application => application.appliedJob === jobTitle);
+    console.log(filteredApplications);
+    applicationList.innerHTML =''
+
+    filteredApplications.map((application =>{
+        applicationList.innerHTML += `
+         <div class="applicant-card">
+              <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
+              <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
+              <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
+              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+              <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+          </div>
+        `
+    }))
+   
+}
