@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="/css/manu.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/dashboard.css" />
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -225,15 +227,38 @@
                 <li>username</li>
                 <li>email</li>
                 <li>crated at</li>
+                <li>Is Admin</li>
                 <li>Actions</li>
               </ul>
             </div>
 
             <div class="user-list">
               
+             
+           
             </div>
-            </div>
-
+             <!-- HTML-ka -->
+              <div class="edit-container">
+                <div id="editPopup" class="popup hidden">
+                  <h1>edit user</h1>
+                  <form id="editForm">
+                      <label for="editUsername">Username:</label>
+                      <input type="text" id="editUsername" required>
+                      
+                      <label for="editEmail">Email:</label>
+                      <input type="email" id="editEmail" required>
+                      <div class="is-admin">
+                        <label for="editIsAdmin">IsAdmin:</label>
+                        <input type="checkbox" id="editIsAdmin">
+                      </div>
+                      
+                      
+                      <button type="button" id="saveEdit" class="btn">Save Changes</button>
+                      <button type="button" id="cancelEdit" class="btn">Cancel</button>
+                  </form>
+                </div>
+              </div>
+             
           </section>
       </div>
     </div>
@@ -262,6 +287,7 @@
 
   <script src="/js/main.js"></script>
   <script src="/js/dash.js"></script>
+  <script src="/js/auth.js"></script>
 </body>
 
 </html>

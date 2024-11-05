@@ -7,8 +7,19 @@ const authSwitch = document.querySelector("#authSwitch");
 const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
+const userList = document.querySelector('.user-list');
+const editContainer = document.querySelector(".edit-container");
+const editUsername = document.getElementById("editUsername");
+const editEmail = document.getElementById("editEmail");
+const editIsAdmin = document.getElementById("editIsAdmin");
 
-
+//addig event to Dom
+document.addEventListener("DOMContentLoaded",() =>{
+    const allUsers = getusersFromLocalstorage();
+    allUsers.forEach(user =>{
+        displayUsers(user);
+    })
+})
 
 const getusersFromLocalstorage = () =>{
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -89,7 +100,7 @@ const switchAuthForm = () =>{
     
 };
 
-authForm.addEventListener("submit" , (e) =>{
+authForm && authForm.addEventListener("submit" , (e) =>{
     e.preventDefault();
 
     if(!signin){
@@ -181,6 +192,9 @@ authForm.addEventListener("submit" , (e) =>{
             return;
         }
         users.push(user);
+
+        //calling display user when registration new user
+        displayUsers(user)
         Swal.fire({
             title: "user regestration",
             text: "user regestration Successfully!",
@@ -193,5 +207,101 @@ authForm.addEventListener("submit" , (e) =>{
     }
 })
 
+//display users function
+
+function displayUsers(user){
+    const div = document.createElement("div");
+    div.className = "user-card";
+
+    //formating date
+    const date = new Date(user.createdDate);
+    const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
+
+    div.innerHTML = `
+    <span class="username">${user.username}</span>
+    <span class="email">${user.email}</span>
+    <span class="created-date">${formattedDate}</span>
+    <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
+    <div class="buttons">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+    </div>
+`;
+
+userList && userList.appendChild(div);
+
+    usersAttachHandler(div,user.createdDate);
+
+}
+
+//usersAttachHandler
+
+const usersAttachHandler = (div,id) =>{
+    const editBtn = div.querySelector(".edit-btn");
+    const deleteBtn = div.querySelector(".delete-btn");    
+    //delete btn
+    deleteBtn.addEventListener("click", () =>{
+       deleteUser(div,id);
+        
+    })
+
+    //editbtn
+    editBtn.addEventListener("click", () =>{
+        editHandle(div,id);
+         
+     })
+   
+}
+
+//edit handle function
+const editHandle = (div,id) =>{
+  //showing edit-container
+  editContainer.classList.add("show");
+
+  //getting update data
+  const user = div.querySelector(".username");
+  const email = div.querySelector(".email");
+  const admin = div.querySelector(".isAdmin");
+
+  //updating data in real time
+  editUsername.value = user.textContent;
+  editEmail.value = email.textContent;
+  editIsAdmin.checked = admin.checked;
+
+  user.textContent = editUsername.value;
+  email.textContent = editEmail.value ;
+  admin.checked = editIsAdmin.checked ;
+   
+    // calling updateuser function
+    updateUser(id,editUsername,editEmail,editIsAdmin);
+
+}
+
+// update user func
+const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
+    const allUsers = getusersFromLocalstorage();
+    const finduser = allUsers.find(user => user.createdDate == id);
+    document.getElementById("saveEdit").addEventListener("click", () => {
+        
+        if(finduser !== null){
+            finduser.username = newUsername.value;
+            finduser.email = newEmail.value;
+            finduser.isAdmin = newIsAdmin.checked;
+            localStorage.setItem("users", JSON.stringify(allUsers));
+            editContainer.classList.remove("show");
+        }
+});
+
+}
 
 
+//delete users function
+const deleteUser = (div,id) =>{
+    let allUsers = getusersFromLocalstorage();
+    allUsers = allUsers.filter(user => user.createdDate != id);
+    
+    localStorage.setItem("users", JSON.stringify(allUsers));
+
+    div.remove();
+    
+}

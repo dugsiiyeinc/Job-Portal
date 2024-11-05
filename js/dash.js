@@ -36,7 +36,7 @@ const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
 const usersTab = document.querySelector('#usersTab');
 const usersCon = document.querySelector('#users');
-const userList = document.querySelector('.user-list');
+
 
 
 //set log in buttons when loptop or mobile menu
@@ -119,8 +119,8 @@ activeApplications.textContent = initialData.activeApplications;
     //calling displayApplications
     displayApplications()
 
-    //calling addedUserToDom
-    addUsersToDom();
+    // //calling displayUsers function
+    // displayUsers()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
@@ -634,24 +634,4 @@ const displayApplications = () =>{
     }))
     
 }
-
-const addUsersToDom = () =>{
-    const allUsers = JSON.parse(localStorage.getItem("users"));
-    allUsers.map(user =>{
-        userList.innerHTML += `
-         <div class="user-card">
-                <span class="qusername">${user.username}</span>
-                <span class="email">${user.email}</span>
-                <span class="email">${new Date(user.createdDate).toDateString()}</span>
-                <div class="buttons">
-                  <button class="edit-btn">edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div> `
-    })
-   
-}
-
-
-
-//  all Events
 
