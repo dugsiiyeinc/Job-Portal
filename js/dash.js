@@ -686,5 +686,21 @@ function deleteUser(index) {
     // calling displaying users
     displayUsers();
 }
+
+// creating openEditForm  func
+function openEditForm(index) {
+    editingIndex = index;
+    const user = allUsers[index];
+    // console.log(user);
+    
+    // Buuxi xogta user-ka
+    editUsername.value = user.username;
+    editEmail.value = user.email;
+    editIsAdmin.checked = user.isAdmin;
+
+    // Muujinta pop-up
+    editContainer.classList.add("show");
+}
+
 displayUsers();
 
