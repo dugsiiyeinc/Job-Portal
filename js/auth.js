@@ -234,5 +234,8 @@ userList && userList.appendChild(div);
 //usersAttachHandler
 
 const usersAttachHandler = (div,id) =>{
+    const editBtn = div.querySelector(".edit-btn");
+    const deleteBtn = div.querySelector(".delete-btn");    
+  
    
 }
