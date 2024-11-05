@@ -36,7 +36,7 @@ const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
 const usersTab = document.querySelector('#usersTab');
 const usersCon = document.querySelector('#users');
-const userList = document.querySelector('.user-list');
+
 
 
 //set log in buttons when loptop or mobile menu
@@ -634,103 +634,4 @@ const displayApplications = () =>{
     }))
     
 }
-
-// // getting userdata from`localStorage` 
-// let allUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-// //selecting dom elements
-// const editContainer = document.querySelector(".edit-container");
-// const editUsername = document.getElementById("editUsername");
-// const editEmail = document.getElementById("editEmail");
-// const editIsAdmin = document.getElementById("editIsAdmin");
-// let editingIndex = null;
-
-// // display All users
-// function displayUsers() {
-//     userList.innerHTML = ""; // clear users list
-//     allUsers.forEach((user, index) => {
-//         // formatting data MM/DD/YYYY
-//         const date = new Date(user.createdDate);
-//         const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
-
-//         // add user to DOM
-//         userList.innerHTML += `
-//             <div class="user-card" data-index="${index}">
-//                 <span class="qusername">${user.username}</span>
-//                 <span class="email">${user.email}</span>
-//                 <span class="created-date">${formattedDate}</span>
-//                 <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
-//                 <div class="buttons">
-//                     <button class="edit-btn">Edit</button>
-//                     <button class="delete-btn">Delete</button>
-//                 </div>
-//             </div>`;
-//     });
-//      // add event to Delete-btn to delete user
-//      document.querySelectorAll('.delete-btn').forEach((btn, index) => {
-//         btn.addEventListener('click', () => deleteUser(index));
-//     });
-
-    
-//     document.querySelectorAll('.edit-btn').forEach((btn, index) => {
-//         btn.addEventListener('click', () => openEditForm(index));
-//     });
-// }
-
-// // delete user function
-// function deleteUser(index) {
-//     // delete user from localstorage
-//     allUsers.splice(index, 1);
-//     localStorage.setItem('users', JSON.stringify(allUsers));
-    
-//     // calling displaying users
-//     displayUsers();
-// }
-
-// // creating openEditForm  func
-// function openEditForm(index) {
-//     if (allUsers[index]) {
-//         editingIndex = index; 
-//         const user = allUsers[index];
-    
-//     // console.log(user);
-    
-//     // fill user
-//     editUsername.value = user.username;
-//     editEmail.value = user.email;
-//     editIsAdmin.checked = user.isAdmin;
-
-//     // show edit container
-//     editContainer.classList.add("show");
-// }else {
-//     console.error("User not found at the given index:", index);
-// }
-
-// }
-
-// // updating user data
-// document.getElementById("saveEdit").addEventListener("click", () => {
-//     if (editingIndex !== null) {
-//         // Update user data
-//         allUsers[editingIndex].username = editUsername.value;
-//         allUsers[editingIndex].email = editEmail.value;
-//         allUsers[editingIndex].isAdmin = editIsAdmin.checked;
-
-//         // Update localStorage and DOM
-//         localStorage.setItem('users', JSON.stringify(allUsers));
-//         displayUsers();
-//         editingIndex = null;
-//         console.log(editingIndex);
-        
-//         // hidde edit container
-//         editContainer.classList.remove("show");
-//     }
-
-//     editUsername.value = "";
-//     editEmail.value = "";
-//     editIsAdmin.checked = "";
-// });
-
-
-// displayUsers();
 
