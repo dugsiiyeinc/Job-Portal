@@ -10,6 +10,13 @@ const authForm = document.querySelector(".authForm");
 const userList = document.querySelector('.user-list');
 
 
+//addig event to Dom
+document.addEventListener("DOMContentLoaded",() =>{
+    const allUsers = getusersFromLocalstorage();
+    adminusers.forEach(user =>{
+        displayUsers(user);
+    })
+})
 
 const getusersFromLocalstorage = () =>{
     const users = JSON.parse(localStorage.getItem("users")) || [];
