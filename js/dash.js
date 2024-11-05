@@ -643,6 +643,7 @@ const addUsersToDom = () =>{
                 <span class="qusername">${user.username}</span>
                 <span class="email">${user.email}</span>
                 <span class="email">${new Date(user.createdDate).toDateString()}</span>
+                 <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
                 <div class="buttons">
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>

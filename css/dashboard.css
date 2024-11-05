@@ -319,12 +319,15 @@ option{
     border-bottom: 1px solid #EDEDED;
 }
 /* strat users styles */
-.users-header ul , .user-card{
+.users-header ul , .user-card {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     align-items: center;
     padding: 10px 20px;
     border-bottom: 1px solid #EDEDED;
+    font-size: 1.1rem;
+    text-align: center;
+    gap: 1rem;
 }
 /* end users style */
 /* .all-joblists {
@@ -430,7 +433,7 @@ option{
        .all-joblists{
         border-radius: 5px;
        }
-       .joblist-header ul, .all-joblists .job{
+       .joblist-header ul, .all-joblists .job, .users-header ul, .user-card{
         display: flex;
         justify-content: space-between;
         align-items: center;
