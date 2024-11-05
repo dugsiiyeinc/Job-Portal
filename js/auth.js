@@ -244,3 +244,13 @@ const usersAttachHandler = (div,id) =>{
    
 }
 
+//delete users function
+const deleteUser = (div,id) =>{
+    let allUsers = getusersFromLocalstorage();
+    allUsers = allUsers.filter(user => user.createdDate != id);
+    
+    localStorage.setItem("users", JSON.stringify(allUsers));
+
+    div.remove();
+    
+}
