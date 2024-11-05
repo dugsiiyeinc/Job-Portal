@@ -386,7 +386,59 @@ option{
     gap:.5rem;
 }
 /* end applications styles */
-
+/* start edit pop-up design */
+.edit-container{
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 111;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.popup {
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid  #ededed;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+    width: 500px;
+}
+.popup h1{
+    text-align: center;
+    font-size: 2rem;
+}
+.popup #editForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.popup #editForm input{
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ededed;
+}
+.is-admin{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.edit-container.hidden {
+    display: none;
+}
+.edit-container.show {
+    display: flex;
+}
+/* end edit pop-up design *Thank you for your business! We look forward to working with you again.
 
 
 @media (max-width: 768px) {
