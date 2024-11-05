@@ -659,7 +659,10 @@ function displayUsers() {
                 </div>
             </div>`;
     });
-
+     // add event to Delete-btn to delete user
+     document.querySelectorAll('.delete-btn').forEach((btn, index) => {
+        btn.addEventListener('click', () => {});
+    });
 }
 
 
