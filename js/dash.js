@@ -636,7 +636,12 @@ const displayApplications = () =>{
 }
 
 const addUsersToDom = () =>{
+
+    //geting users from local storage
     const allUsers = JSON.parse(localStorage.getItem("users"));
+
+
+    //all users
     allUsers.map(user =>{
         //formating date to MM/DD/YYYY
     const date = new Date(user.createdDate);
@@ -654,7 +659,11 @@ const addUsersToDom = () =>{
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>
                 </div> `
+
+
     })
+
+    
    
 }
 
