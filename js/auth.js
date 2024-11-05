@@ -288,7 +288,7 @@ const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
             finduser.email = newEmail.value;
             finduser.isAdmin = newIsAdmin.checked;
             localStorage.setItem("users", JSON.stringify(allUsers));
-           
+            editContainer.classList.remove("show");
         }
 });
 
