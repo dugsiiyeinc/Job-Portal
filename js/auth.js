@@ -194,5 +194,9 @@ authForm.addEventListener("submit" , (e) =>{
     }
 })
 
+//display users function
 
+function displayUsers(user){
+    
+}
 
