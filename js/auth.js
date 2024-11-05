@@ -263,6 +263,15 @@ const editHandle = (div,id) =>{
   const email = div.querySelector(".email");
   const admin = div.querySelector(".isAdmin");
 
+  //updating data in real time
+  editUsername.value = user.textContent;
+  editEmail.value = email.textContent;
+  editIsAdmin.checked = admin.checked;
+
+  user.textContent = editUsername.value;
+  email.textContent = editEmail.value ;
+  admin.checked = editIsAdmin.checked ;
+   
 
 }
 
