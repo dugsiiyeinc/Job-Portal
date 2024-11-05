@@ -206,10 +206,15 @@ authForm && authForm.addEventListener("submit" , (e) =>{
 function displayUsers(user){
     const div = document.createElement("div");
     div.className = "user-card";
+
+    //formating date
+    const date = new Date(user.createdDate);
+    const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
+
     div.innerHTML = `
     <span class="qusername">${user.username}</span>
     <span class="email">${user.email}</span>
-    <span class="created-date">${user.createdDate}</span>
+    <span class="created-date">${formattedDate}</span>
     <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
     <div class="buttons">
         <button class="edit-btn">Edit</button>
