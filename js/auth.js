@@ -258,6 +258,12 @@ const editHandle = (div,id) =>{
   //showing edit-container
   editContainer.classList.add("show");
 
+  //getting update data
+  const user = div.querySelector(".username");
+  const email = div.querySelector(".email");
+  const admin = div.querySelector(".isAdmin");
+
+
 }
 
 
