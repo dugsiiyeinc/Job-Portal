@@ -227,5 +227,12 @@ function displayUsers(user){
 
 userList && userList.appendChild(div);
 
+    usersAttachHandler(div,user.createdDate);
+
 }
 
+//usersAttachHandler
+
+const usersAttachHandler = (div,id) =>{
+   
+}
