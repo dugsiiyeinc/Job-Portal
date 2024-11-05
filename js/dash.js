@@ -659,9 +659,12 @@ const addUsersToDom = () =>{
                   <button class="edit-btn">edit</button>
                   <button class="delete-btn">Delete</button>
                 </div> `
+                
+    });
 
+    const  userCard =  userList.querySelectorAll(".user-card");
+    
 
-    })
 
     
    
