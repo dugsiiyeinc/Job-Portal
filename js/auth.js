@@ -281,6 +281,10 @@ const editHandle = (div,id) =>{
 const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
     const allUsers = getusersFromLocalstorage();
     const finduser = allUsers.find(user => user.createdDate == id);
+    document.getElementById("saveEdit").addEventListener("click", () => {
+        
+    
+});
 
 }
 
