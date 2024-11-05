@@ -255,7 +255,9 @@ const usersAttachHandler = (div,id) =>{
 
 //edit handle function
 const editHandle = (div,id) =>{
-  
+  //showing edit-container
+  editContainer.classList.add("show");
+
 }
 
 
