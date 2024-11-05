@@ -14,6 +14,9 @@ const logBtn1 = document.querySelectorAll(".loginBtn")[0];
 const logBtn2 = document.querySelectorAll(".loginBtn")[1];
 const recentJobsContainer = document.querySelector('.recent-jobs-list-container')
 const dashLink1 = document.querySelector('.dash-link');
+const searchInptHome = document.querySelector('#searchInputHome')
+const searchBtnHome = document.querySelector('#searchBtnHome')
+
 
 //hidde and show menu 
 toggleBtn.addEventListener("click", () => {
@@ -173,3 +176,8 @@ function getPostTimeId(jobCard) {
 
 
 
+searchBtnHome.addEventListener("click", () => {
+    const searchInput = searchInptHome.value;
+     console.log("search" , searchInput);
+    
+})
