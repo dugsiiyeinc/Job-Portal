@@ -638,6 +638,13 @@ const displayApplications = () =>{
 // getting userdata from`localStorage` 
 let allUsers = JSON.parse(localStorage.getItem('users')) || [];
 
+//selecting dom elements
+const editContainer = document.querySelector(".edit-container");
+const editUsername = document.getElementById("editUsername");
+const editEmail = document.getElementById("editEmail");
+const editIsAdmin = document.getElementById("editIsAdmin");
+let editingIndex = null;
+
 // display All users
 function displayUsers() {
     userList.innerHTML = ""; // clear users list
