@@ -191,7 +191,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
         users.push(user);
 
         //calling display user when registration new user
-        displayUsers(user);
+        displayUsers(user)
         Swal.fire({
             title: "user regestration",
             text: "user regestration Successfully!",
@@ -225,7 +225,7 @@ function displayUsers(user){
     </div>
 `;
 
-userList.appendChild(div);
+userList && userList.appendChild(div);
 
 }
 
