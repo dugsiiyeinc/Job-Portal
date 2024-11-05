@@ -702,5 +702,23 @@ function openEditForm(index) {
     editContainer.classList.add("show");
 }
 
+// updating user data
+document.getElementById("saveEdit").addEventListener("click", () => {
+    if (editingIndex !== null) {
+        // Update user-ka xogtiisa
+        allUsers[editingIndex].username = editUsername.value;
+        allUsers[editingIndex].email = editEmail.value;
+        allUsers[editingIndex].isAdmin = editIsAdmin.checked;
+
+        // Update localStorage iyo DOM
+        localStorage.setItem('users', JSON.stringify(allUsers));
+        displayUsers();
+        
+        // Xirida pop-up
+        editPopup.classList.remove("show");
+    }
+});
+
+
 displayUsers();
 
