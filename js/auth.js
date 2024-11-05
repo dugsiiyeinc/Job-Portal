@@ -13,7 +13,7 @@ const userList = document.querySelector('.user-list');
 //addig event to Dom
 document.addEventListener("DOMContentLoaded",() =>{
     const allUsers = getusersFromLocalstorage();
-    adminusers.forEach(user =>{
+    allUsers.forEach(user =>{
         displayUsers(user);
     })
 })
