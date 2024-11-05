@@ -661,10 +661,19 @@ function displayUsers() {
     });
      // add event to Delete-btn to delete user
      document.querySelectorAll('.delete-btn').forEach((btn, index) => {
-        btn.addEventListener('click', () => {});
+        btn.addEventListener('click', () => deleteUser(index));
     });
 }
 
+// delete user function
+function deleteUser(index) {
+    // delete user from localstorage
+    allUsers.splice(index, 1);
+    localStorage.setItem('users', JSON.stringify(allUsers));
+    
+    // calling displaying users
+    displayUsers();
+}
 
 //  all Events
 
