@@ -387,6 +387,8 @@ option{
 }
 /* end applications styles */
 
+
+
 @media (max-width: 768px) {
     /* start side bar responsive */
     .sidebar {

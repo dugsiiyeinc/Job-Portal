@@ -664,9 +664,9 @@ function displayUsers() {
         btn.addEventListener('click', () => deleteUser(index));
     });
 
-    // add event to Delete-btn to delete user
+    
     document.querySelectorAll('.edit-btn').forEach((btn, index) => {
-        btn.addEventListener('click', () => console.log(index));
+        btn.addEventListener('click', () => openEditForm(index));
     });
 }
 
@@ -680,5 +680,4 @@ function deleteUser(index) {
     displayUsers();
 }
 displayUsers();
-//  all Events
 
