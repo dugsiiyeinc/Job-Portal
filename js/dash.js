@@ -638,11 +638,17 @@ const displayApplications = () =>{
 const addUsersToDom = () =>{
     const allUsers = JSON.parse(localStorage.getItem("users"));
     allUsers.map(user =>{
+        //formating date to MM/DD/YYYY
+    const date = new Date(user.createdDate);
+    const formattedDate = `${String(date.getDate()).padStart(2, "0")}/${String(
+      date.getMonth() + 1
+    ).padStart(2, "0")}/${date.getFullYear()}`;
+    //added users to dom
         userList.innerHTML += `
          <div class="user-card">
                 <span class="qusername">${user.username}</span>
                 <span class="email">${user.email}</span>
-                <span class="email">${new Date(user.createdDate).toDateString()}</span>
+                <span class="email">${formattedDate}</span>
                  <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
                 <div class="buttons">
                   <button class="edit-btn">edit</button>
