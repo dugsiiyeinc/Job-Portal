@@ -253,6 +253,12 @@ const usersAttachHandler = (div,id) =>{
    
 }
 
+//edit handle function
+const editHandle = (div,id) =>{
+  
+}
+
+
 //delete users function
 const deleteUser = (div,id) =>{
     let allUsers = getusersFromLocalstorage();
