@@ -8,7 +8,10 @@ const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
 const userList = document.querySelector('.user-list');
-
+const editContainer = document.querySelector(".edit-container");
+const editUsername = document.getElementById("editUsername");
+const editEmail = document.getElementById("editEmail");
+const editIsAdmin = document.getElementById("editIsAdmin");
 
 //addig event to Dom
 document.addEventListener("DOMContentLoaded",() =>{
