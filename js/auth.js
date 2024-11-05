@@ -237,5 +237,10 @@ const usersAttachHandler = (div,id) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");    
   
+    deleteBtn.addEventListener("click", () =>{
+       deleteUser(div,id);
+        
+    })
    
 }
+
