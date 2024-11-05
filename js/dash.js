@@ -119,8 +119,8 @@ activeApplications.textContent = initialData.activeApplications;
     //calling displayApplications
     displayApplications()
 
-    //calling displayUsers function
-    displayUsers()
+    // //calling displayUsers function
+    // displayUsers()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
@@ -674,6 +674,6 @@ function deleteUser(index) {
     // calling displaying users
     displayUsers();
 }
-
+displayUsers();
 //  all Events
 
