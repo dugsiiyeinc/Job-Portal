@@ -283,7 +283,13 @@ const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
     const finduser = allUsers.find(user => user.createdDate == id);
     document.getElementById("saveEdit").addEventListener("click", () => {
         
-    
+        if(finduser !== null){
+            finduser.username = newUsername.value;
+            finduser.email = newEmail.value;
+            finduser.isAdmin = newIsAdmin.checked;
+            localStorage.setItem("users", JSON.stringify(allUsers));
+           
+        }
 });
 
 }
