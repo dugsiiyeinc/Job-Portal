@@ -272,8 +272,14 @@ const editHandle = (div,id) =>{
   email.textContent = editEmail.value ;
   admin.checked = editIsAdmin.checked ;
    
-    // callin updateuser function
+    // calling updateuser function
     updateUser(id,editUsername,editEmail,editIsAdmin);
+
+}
+
+// update user func
+const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
+  
 
 }
 
