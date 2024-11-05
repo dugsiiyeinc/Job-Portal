@@ -7,6 +7,7 @@ const authSwitch = document.querySelector("#authSwitch");
 const switchForm = document.querySelector("#switchForm");
 const formTitle = document.querySelector("#formTitle");
 const authForm = document.querySelector(".authForm");
+const userList = document.querySelector('.user-list');
 
 
 
