@@ -617,6 +617,8 @@ new Chart(jobCategoryCtx, {
 
 
 
+
+
 const displayApplications = () =>{
     
     const applicationList = document.querySelector(".applications-list");
