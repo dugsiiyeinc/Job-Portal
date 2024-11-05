@@ -120,7 +120,7 @@ activeApplications.textContent = initialData.activeApplications;
     displayApplications()
 
     //calling addedUserToDom
-    addUsersToDom();
+    // addUsersToDom();
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return ;
@@ -635,41 +635,32 @@ const displayApplications = () =>{
     
 }
 
-const addUsersToDom = () =>{
+// getting userdata from`localStorage` 
+let allUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-    //geting users from local storage
-    const allUsers = JSON.parse(localStorage.getItem("users"));
+// display All users
+function displayUsers() {
+    userList.innerHTML = ""; // clear users list
+    allUsers.forEach((user, index) => {
+        // formatting data MM/DD/YYYY
+        const date = new Date(user.createdDate);
+        const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
 
-
-    //all users
-    allUsers.map(user =>{
-        //formating date to MM/DD/YYYY
-    const date = new Date(user.createdDate);
-    const formattedDate = `${String(date.getDate()).padStart(2, "0")}/${String(
-      date.getMonth() + 1
-    ).padStart(2, "0")}/${date.getFullYear()}`;
-    //added users to dom
+        // add user to DOM
         userList.innerHTML += `
-         <div class="user-card">
+            <div class="user-card" data-index="${index}">
                 <span class="qusername">${user.username}</span>
                 <span class="email">${user.email}</span>
-                <span class="email">${formattedDate}</span>
-                 <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
+                <span class="created-date">${formattedDate}</span>
+                <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
                 <div class="buttons">
-                  <button class="edit-btn">edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div> `
-                
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>`;
     });
 
-    const  userCard =  userList.querySelectorAll(".user-card");
-    
-
-
-    
-   
 }
-
 
 
 //  all Events
