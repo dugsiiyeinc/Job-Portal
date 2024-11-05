@@ -206,6 +206,18 @@ authForm.addEventListener("submit" , (e) =>{
 function displayUsers(user){
     const div = document.createElement("div");
     div.className = "user-card";
+    div.innerHTML = `
+    <span class="qusername">${user.username}</span>
+    <span class="email">${user.email}</span>
+    <span class="created-date">${user.createdDate}</span>
+    <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
+    <div class="buttons">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+    </div>
+`;
+
+userList.appendChild(div);
 
 }
 
