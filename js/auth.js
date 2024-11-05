@@ -204,6 +204,8 @@ authForm.addEventListener("submit" , (e) =>{
 //display users function
 
 function displayUsers(user){
-    
+    const div = document.createElement("div");
+    div.className = "user-card";
+
 }
 
