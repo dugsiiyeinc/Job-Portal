@@ -18,6 +18,14 @@ loginBtn1.addEventListener("click", () => {
 loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
+//  marka hore ka so aqri url dhamaan
+const url = new URL(window.location.href);
+
+// markaan la bax  parameter ka aa rabto
+const id = url.searchParams.get("jobTitle");
+
+
+
 
 document.addEventListener("DOMContentLoaded", loadJobsdata);
 
@@ -63,33 +71,43 @@ function getPostFromLocalStorage() {
 // kun soo  bandhiga jobs  dom-ka
 
 function addJobsToTheDom(jobPosts) {
-    jobList.innerHTML = '';
-    jobPosts.forEach(jobPosts => {
-        const postedDate = new Date(jobPosts.PostedDate).toDateString();
-        const expireDate = new Date(jobPosts.dateInput).toDateString();
+    jobList.innerHTML = ''; // Clear the job list
+
+    // Check if there are any job posts
+    if (jobPosts.length === 0) {
+        const noJobsMessage = document.createElement('div');
+        noJobsMessage.className = 'no-jobs-message'; // Optional: Add a class for styling
+        noJobsMessage.innerHTML = '<p>No jobs found.</p>'; // Message to display
+        jobList.appendChild(noJobsMessage); // Append the message to the job list
+        return; // Exit the function early
+    }
+
+    // Proceed to add job posts
+    jobPosts.forEach(jobPost => {
+        const postedDate = new Date(jobPost.PostedDate).toDateString();
+        const expireDate = new Date(jobPost.dateInput).toDateString();
 
         const jobCard = document.createElement('div');
         jobCard.className = 'job-card';
         jobCard.innerHTML = `
-                  <div class='imge-company'>  <img src="${jobPosts.imageUrl}" alt="Job Image"> </div>
-                  <div class='job-info'>
-                    <h3>${jobPosts.postTitle}</h3>
-                    <p>${jobPosts.companyInput}</p>
-                    <p>${jobPosts.postLocation}</p>
-                    <p class="Job-hiring-time">${jobPosts.postTime}
-
-                    </div>
-                    <div class='expire-date'>
-                    
-                         
-                        <p class='expire-date-p'>  Posted Date ${postedDate} </p>
-                        <p class='expire-date-p'>  Expire Date ${expireDate} </p>
-                    </div>
-                `;
-        jobList.appendChild(jobCard);
+            <div class='imge-company'>
+                <img src="${jobPost.imageUrl}" alt="Job Image">
+            </div>
+            <div class='job-info'>
+                <h3>${jobPost.postTitle}</h3>
+                <p>${jobPost.companyInput}</p>
+                <p>${jobPost.postLocation}</p>
+                <p class="Job-hiring-time">${jobPost.postTime}</p>
+            </div>
+            <div class='expire-date'>
+                <p class='expire-date-p'>Posted Date: ${postedDate}</p>
+                <p class='expire-date-p'>Expire Date: ${expireDate}</p>
+            </div>
+        `;
+        jobList.appendChild(jobCard); // Append the job card to the job list
     });
-
 }
+
 
 //  raaci job id-ga marka click la siiyo job card-ka
 
@@ -122,7 +140,7 @@ function getPostTimeId(jobCard) {
 // event listeners kaan waxa oo quseya marka sort by la sameynaa sida newest or oldest
 
 Sort.addEventListener('change', function () {
-    search.value = ''
+    search.value = '' 
     const sortValue = this.value;
     let jobPosts = getPostFromLocalStorage()
 
@@ -154,8 +172,21 @@ Sort.addEventListener('change', function () {
 })
 // event-kaan waxa oo sameyna in wixi la galiyo search-barka oo soo saaro
 search.addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase()
+   
+    const searchValue = this.value.toLowerCase()  
     let jobPosts = getPostFromLocalStorage()
     jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
     addJobsToTheDom(jobPosts)
 })
+
+
+if(id){
+    window.addEventListener('DOMContentLoaded', function () {
+        const searchValue = id.toLowerCase();  
+        let jobPosts = getPostFromLocalStorage();
+        jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue));
+        addJobsToTheDom(jobPosts);
+    });
+}
+
+ 

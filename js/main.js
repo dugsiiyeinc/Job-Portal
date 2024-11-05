@@ -176,8 +176,14 @@ function getPostTimeId(jobCard) {
 
 
 
-searchBtnHome.addEventListener("click", () => {
+searchBtnHome && searchBtnHome.addEventListener("click", () => {
+    if(searchInptHome.value == ''){
+        alert("Please enter a job title to search");
+        return;
+    }
     const searchInput = searchInptHome.value;
      console.log("search" , searchInput);
+    
+     window.location.href = `/html/jobs.html?jobTitle=${searchInput}`;
     
 })
