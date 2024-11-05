@@ -36,6 +36,7 @@ const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
 const usersTab = document.querySelector('#usersTab');
 const usersCon = document.querySelector('#users');
+const appliedJobsList = document.querySelector('.JobappliedList')
 
 
 
@@ -621,19 +622,45 @@ new Chart(jobCategoryCtx, {
 
 const displayApplications = () =>{
     
-    const applicationList = document.querySelector(".applications-list");
+    const applicationList = document.querySelector(".AppliedJobList");
     const allApplications = JSON.parse(localStorage.getItem("applications"));
-    allApplications.map((application =>{
-        applicationList.innerHTML += `
-         <div class="applicant-card">
-              <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
-              <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
-              <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
-              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
-              <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
-          </div>
-        `
-    }))
+    
+    // Create a map to count the number of times each job title is applied for
+    var jobCountMap = {};
+
+    allApplications.forEach(function(application) {
+        var jobTitle = application.appliedJob;
+        if (jobCountMap[jobTitle]) {
+            jobCountMap[jobTitle]++;
+        } else {
+            jobCountMap[jobTitle] = 1;
+        }
+    });
+
+    // Clear the current list
+    appliedJobsList.innerHTML = '';
+
+    // Create and append list items with job titles and their counts
+    for (var jobTitle in jobCountMap) {
+        var li = document.createElement('li');
+        li.textContent = jobTitle + ' (' + jobCountMap[jobTitle] + ' applicants)';
+        appliedJobsList.appendChild(li);
+    }
+
+
+
+    
+    // allApplications.map((application =>{
+    //     applicationList.innerHTML += `
+    //      <div class="applicant-card">
+    //           <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
+    //           <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
+    //           <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
+    //           <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+    //           <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+    //       </div>
+    //     `
+    // }))
     
 }
 
