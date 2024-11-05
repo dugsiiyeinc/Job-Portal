@@ -663,6 +663,11 @@ function displayUsers() {
      document.querySelectorAll('.delete-btn').forEach((btn, index) => {
         btn.addEventListener('click', () => deleteUser(index));
     });
+
+    // add event to Delete-btn to delete user
+    document.querySelectorAll('.edit-btn').forEach((btn, index) => {
+        btn.addEventListener('click', () => console.log(index));
+    });
 }
 
 // delete user function
