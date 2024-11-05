@@ -196,7 +196,6 @@ const applyJob = (id) => {
       appliedUserEmail: applicantEmail.value,
       appliedUserPhone: applicantPhone.value,
       appliedUserDistrict: applicantDistrict.value,
-      JobId:id
     };
     // console.log(applicantData);
 
