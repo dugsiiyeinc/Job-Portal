@@ -279,7 +279,8 @@ const editHandle = (div,id) =>{
 
 // update user func
 const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
-  
+    const allUsers = getusersFromLocalstorage();
+    const finduser = allUsers.find(user => user.createdDate == id);
 
 }
 
