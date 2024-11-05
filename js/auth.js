@@ -97,7 +97,7 @@ const switchAuthForm = () =>{
     
 };
 
-authForm.addEventListener("submit" , (e) =>{
+authForm && authForm.addEventListener("submit" , (e) =>{
     e.preventDefault();
 
     if(!signin){
