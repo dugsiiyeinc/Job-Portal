@@ -354,7 +354,7 @@ function getPostFromLocalStorage() {
 //add jobs to the Dom
 
 const addJobsToTheDom = (job) => {
-  
+    const tr = document.createElement("tr");
     
     allJobsList.appendChild(tr);
 
