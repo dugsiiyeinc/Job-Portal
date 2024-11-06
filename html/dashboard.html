@@ -177,38 +177,25 @@
 
         <!--job lesting  section-->
 
-        <section class="job-lists job-list-con" id="job-list-con">
-          <div class="searc-con">
-            <input type="text" class="search-input" placeholder="Search by title, company or keywords">
-            <button class="addjob-btn" id="addJobBtn">Add Job</button>
+        <section id="job-list-con">
+          <div class="search-con">
+            <input type="text" class="search-input" placeholder="Search by title">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <button class="add-btn" id="addJobBtn">Add Job</button>
           </div>
-         
-          <div class="joblist-header">
-            <ul>
-              <li>Logo</li>
-              <li>Name</li>
-              <li>Job</li>
-              <li>location</li>
-              <li>job category</li>
-              <li>Actions</li>
-            </ul>
-          </div>
-          <div class="all-joblists">
-            <!-- <div class="job">
-                <img src="/images/image1.png" alt="campany img">
-                <span class="campany-logo">google</span>
-                <span class="job-name">developer</span>
-                <span class="job-location">mogadisho</span>
-                <span class="job-category">technology</span>
-                <div class="buttons">
-                  <button class="edit-btn">edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div> 
-            </div> -->
+          <table  class="jobs-list-table ">
+            <thead>
+              <th>Logo</th>
+              <th>name</th>
+              <th>job</th>
+              <th>location</th>
+              <th>job category</th>
+              <th>Actions</th>
+            </thead>
 
-
-          </div>
+            <tbody  class="all-joblists">
+            </tbody>
+          </table>
         </section>
         <!-- //applications section -->
           <section class="applications-con" id="applications-con">
@@ -229,29 +216,34 @@
           </div> -->
           </div>
           </section>
-          <section class="users" id="users">
-            <div class="users-header">
-              <ul>
-                <li>username</li>
-                <li>email</li>
-                <li>crated at</li>
-                <li>Is Admin</li>
-                <li>Actions</li>
-              </ul>
+          <section  id="users">
+            <div class="search-con">
+              <input type="text" class="search-input" placeholder="Search username">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <button class="add-btn" id="addUserBtn">Add user</button>
             </div>
+            <table  class="users-table">
+              <thead>
+                <th>username</th>
+                <th>email</th>
+                <th>crated at</th>
+                <th>Is Admin</th>
+                <th>Actions</th>
+              </thead>
 
-            <div class="user-list">
-              
-             
+              <tbody class="user-list" >
+                   
+              </tbody>
+          </table>
            
-            </div>
              <!-- HTML-ka -->
               <div class="edit-container">
                 <div id="editPopup" class="popup hidden">
-                  <h1>edit user</h1>
+                  <h1 class="edit-form-title">edit user</h1>
                   <form id="editForm">
                       <label for="editUsername">Username:</label>
-                      <input type="text" id="editUsername" required>
+                      <input type="text" id="editUsername" 
+                      placeholder="enter your password"required>
                       
                       <label for="editEmail">Email:</label>
                       <input type="email" id="editEmail" required>
@@ -263,6 +255,32 @@
                       
                       <button type="button" id="saveEdit" class="btn">Save Changes</button>
                       <button type="button" id="cancelEdit" class="btn">Cancel</button>
+                  </form>
+                </div>
+              </div>
+              <div class="add-container">
+                <div id="addPopup" class="popup hidden ">
+                  <h1 class="add-form-title">Add New user</h1>
+                  <form id="addForm">
+                      <input type="text" id="addUsername" 
+                      placeholder="enter your name"required>
+                      
+                      <input type="email" id="addEmail" 
+                      placeholder="enter Your Email"
+                      required>
+                      <input
+                        type="password"
+                        name="password"
+                        id="addPassword"
+                        placeholder="enter your password"
+                      />
+                      <input
+                        type="password"
+                        id="addConfirmPassword"
+                        placeholder="Confirm your Password"
+                      />
+                      <button type="button" id="saveAdd" class="btn">Add new User</button>
+                      <button type="button" id="cancelAdd" class=" btn" >Cancel</button>
                   </form>
                 </div>
               </div>

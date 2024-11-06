@@ -11,7 +11,17 @@ const userList = document.querySelector('.user-list');
 const editContainer = document.querySelector(".edit-container");
 const editUsername = document.getElementById("editUsername");
 const editEmail = document.getElementById("editEmail");
-const editIsAdmin = document.getElementById("editIsAdmin");
+const cancelEdit = document.querySelector("#cancelEdit");
+const saveEdit = document.getElementById("saveEdit");
+const addUserBtn = document.getElementById("addUserBtn");
+const addContainer = document.querySelector(".add-container");
+const addUsername = document.getElementById("addUsername");
+const addEmail = document.getElementById("addEmail");
+const addPassword = document.getElementById("addPassword");
+const addConfirmPassword = document.getElementById("addConfirmPassword");
+const saveAdd = document.getElementById("saveAdd");
+const cancelAdd = document.querySelector("#cancelAdd");
+
 
 //addig event to Dom
 document.addEventListener("DOMContentLoaded",() =>{
@@ -151,7 +161,16 @@ authForm && authForm.addEventListener("submit" , (e) =>{
         }
         else if(exestingUser && !exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-            window.location.href = "../html/jobs.html";
+           
+            Swal.fire({
+                title: "click ok go to the jobs!",
+                icon: "success",
+                ConfirmedButtonText:"ok"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "../html/jobs.html";
+                }
+              });
         
         }
         else{
@@ -159,7 +178,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "!Error",
                 text: "Invalid credentials",
-                icon: "warning!",
+                icon: "error",
                 confirmButtonText: "ok"
               });
             return;
@@ -175,7 +194,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "!Error",
                 text: `user ${exestingUser.username} already exists`,
-                icon: "warning!",
+                icon: "info",
                 confirmButtonText: "ok"
               });
             return;
@@ -186,7 +205,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "password",
                 text: "password doeas not match",
-                icon: "info!",
+                icon: "info",
                 confirmButtonText: "ok"
               });
             return;
@@ -198,7 +217,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
         Swal.fire({
             title: "user regestration",
             text: "user regestration Successfully!",
-            icon: "info!",
+            icon: "success",
             confirmButtonText: "ok"
           });
         localStorage.setItem("users", JSON.stringify(users));
@@ -210,25 +229,27 @@ authForm && authForm.addEventListener("submit" , (e) =>{
 //display users function
 
 function displayUsers(user){
-    const div = document.createElement("div");
-    div.className = "user-card";
+    const div = document.createElement("tr");
 
     //formating date
     const date = new Date(user.createdDate);
     const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
 
+    
     div.innerHTML = `
-    <span class="username">${user.username}</span>
-    <span class="email">${user.email}</span>
-    <span class="created-date">${formattedDate}</span>
-    <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}>
-    <div class="buttons">
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
-    </div>
-`;
+            <td class="username">${user.username}</td>
+            <td class="email">${user.email}</td>
+            <td class="email">${formattedDate}</td>
+            <td > <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}></td>
+            <td>
+            <div class="buttons">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+            </div>
+            </td>
+            `;
 
-userList && userList.appendChild(div);
+   userList && userList.appendChild(div);
 
     usersAttachHandler(div,user.createdDate);
 
@@ -239,6 +260,9 @@ userList && userList.appendChild(div);
 const usersAttachHandler = (div,id) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");    
+    const checkbox = div.querySelector(".isAdmin");    
+
+    
     //delete btn
     deleteBtn.addEventListener("click", () =>{
        deleteUser(div,id);
@@ -250,7 +274,27 @@ const usersAttachHandler = (div,id) =>{
         editHandle(div,id);
          
      })
+     
+     //checkbox
+     checkbox.addEventListener("change", ()=>{
+       
+        toogleAdminUser(id,checkbox.checked);
+        
+     })
    
+}
+
+//toogleAdminUser
+
+const toogleAdminUser = (id,isAdmin) =>{
+    const allUsers = getusersFromLocalstorage();
+    const finduser = allUsers.find(user => user.createdDate == id);
+
+    if(finduser){
+        finduser.isAdmin = isAdmin;
+        localStorage.setItem("users", JSON.stringify(allUsers));
+    
+    }
 }
 
 //edit handle function
@@ -288,7 +332,19 @@ const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
             finduser.email = newEmail.value;
             finduser.isAdmin = newIsAdmin.checked;
             localStorage.setItem("users", JSON.stringify(allUsers));
-            editContainer.classList.remove("show");
+            Swal.fire({
+                title: "Updated!",
+                text: "job updated successfuly!",
+                icon: "success",
+                ConfirmedButtonText: "ok"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    editContainer.classList.remove("show");
+                }
+              });
+           
+
         }
 });
 
@@ -302,6 +358,93 @@ const deleteUser = (div,id) =>{
     
     localStorage.setItem("users", JSON.stringify(allUsers));
 
-    div.remove();
-    
+    Swal.fire({
+        title: "Delete!",
+        text: "job deleting successfuly!",
+        icon: "success",
+        ConfirmedButtonText: "ok"
+    }).then((result) => {
+        if (result.isConfirmed) {  
+            div.remove();
+        }
+      });
+   
 }
+
+//cancelEdit
+cancelEdit.addEventListener("click", () =>{
+    
+    editContainer.classList.remove("show");
+})
+
+
+addUserBtn.addEventListener("click",() =>{
+    addContainer.classList.add("show");
+})
+
+cancelAdd.addEventListener("click", () =>{
+    
+    addContainer.classList.remove("show");
+})
+
+ saveAdd.addEventListener("click" , (e) =>{
+    e.preventDefault();
+
+        if(addUsername.value === "" || addEmail.value === "" || addPassword.value === "" || addConfirmPassword.value === ""){
+            Swal.fire({
+                title: "Error!",
+                text: `please fill all Inputs`,
+                icon: "error",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+    
+
+    let user = {
+        username : addUsername.value,
+        email : addEmail.value,
+        password : addPassword.value,
+        confirPassword :addConfirmPassword.value,
+        createdDate: Date.now(),
+        idAdmin:  false
+    }
+  
+
+        const users = getusersFromLocalstorage();
+
+        const exestingUser = users.find(currentUser => currentUser.username  === user.username || currentUser.email === user.email );
+        
+        if(exestingUser){
+            Swal.fire({
+                title: "!Error",
+                text: `user ${exestingUser.username} already exists`,
+                icon: "info",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+
+
+        if(addConfirmPassword.value !== addPassword.value){
+            Swal.fire({
+                title: "password",
+                text: "password doeas not match",
+                icon: "info",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+        users.push(user);
+
+        //calling display user when registration new user
+        displayUsers(user)
+        Swal.fire({
+            title: "user regestration",
+            text: "user regestration Successfully!",
+            icon: "success",
+            confirmButtonText: "ok"
+          });
+        localStorage.setItem("users", JSON.stringify(users));
+        addContainer.classList.remove("show");
+})
