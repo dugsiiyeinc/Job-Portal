@@ -375,3 +375,21 @@ cancelEdit.addEventListener("click", () =>{
     editContainer.classList.remove("show");
 })
 
+//switchUpdateForm
+let updateuser = true
+const switchUpdateForm = () =>{
+    updateuser = !updateuser;
+
+    if(!updateuser){
+        editFormTitle.textContent = "Add New User";
+        editPassword.style.display = "block";
+        editConfirmPassword.style.display = "block";
+        saveEdit.textContent = "Add User";
+    }else{
+        editFormTitle.textContent = "Update User";
+        editPassword.style.display = "none";
+        editConfirmPassword.style.display = "none";
+        saveEdit.textContent = "Update User";
+    }  
+    
+};
