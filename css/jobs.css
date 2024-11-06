@@ -111,3 +111,10 @@ h2 {
 
 
 }
+
+.no-jobs-message p {
+    margin-top: 20px;
+    text-align: center;
+    color: #EDEDED;
+    font-size: 2.5rem;
+}
