@@ -702,3 +702,5 @@ const displayApplications = () =>{
     }))
    
 }
+
+
