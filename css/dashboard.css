@@ -505,6 +505,22 @@ table img{
        /* end main content responsive */
        
        /* start job lists conten responsive design */
+       .edit-btn,.delete-btn{
+        padding: 5px;
+        font-size: 10px;
+       }
+       table img{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+       }
+       table thead th{
+        font-size: 9px;
+     }
+     table tbody tr td{
+        font-size: 9px;
+     }
+     
 
      /* end job lists conten responsive design */
 
