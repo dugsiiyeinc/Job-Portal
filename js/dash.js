@@ -354,35 +354,22 @@ function getPostFromLocalStorage() {
 //add jobs to the Dom
 
 const addJobsToTheDom = (job) => {
-    const div = document.createElement("div");
-    div.className = "job";
+  
+    
+    allJobsList.appendChild(tr);
 
-
-    div.innerHTML += `
-                <img src="${job.imageUrl}" alt="campany img">
-                <span class="campany-logo">${job.companyInput}</span>
-                <span class="job-name">${job.postTitle}</span>
-                <span class="job-location">${job.postLocation}</span>
-                <span class="job-category">${job.jobCategory}</span>
-                <div class="buttons">
-                  <button class="edit-btn">edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div> 
-           `;
-    allJobsList.appendChild(div);
-
-    attachHandler(div, job);
+    attachHandler(tr, job);
 
 }
 
 //attach handler
-const attachHandler = (div, job) => {
-    const editBtn = div.querySelector(".edit-btn");
-    const deleteBtn = div.querySelector(".delete-btn");
+const attachHandler = (tr, job) => {
+    const editBtn = tr.querySelector(".edit-btn");
+    const deleteBtn = tr.querySelector(".delete-btn");
 
     // delete btn event
     deleteBtn.addEventListener("click", () => {
-        deleteJob(div, job.postTime);
+        deleteJob(tr, job.postTime);
     });
     //edit btn  event
 
