@@ -11,13 +11,15 @@ const userList = document.querySelector('.user-list');
 const editContainer = document.querySelector(".edit-container");
 const editUsername = document.getElementById("editUsername");
 const editEmail = document.getElementById("editEmail");
-const editPassword = document.getElementById("editPassword");
-const editConfirmPassword = document.getElementById("editEmail");
-const editIsAdmin = document.getElementById("editIsAdmin");
 const cancelEdit = document.getElementById("cancelEdit");
 const saveEdit = document.getElementById("saveEdit");
 const addUserBtn = document.getElementById("addUserBtn");
-const editFormTitle = document.querySelector(".edit-form-title");
+const addContainer = document.querySelector(".addContainer");
+const addUsername = document.getElementById("addUsername");
+const addEmail = document.getElementById("addEmail");
+const addPassword = document.getElementById("addPassword");
+const addConfirmPassword = document.getElementById("addConfirmPassword");
+const saveAdd = document.getElementById("saveEdit");
 
 
 
