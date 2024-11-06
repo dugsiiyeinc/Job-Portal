@@ -151,7 +151,16 @@ authForm && authForm.addEventListener("submit" , (e) =>{
         }
         else if(exestingUser && !exestingUser.isAdmin){
             localStorage.setItem("onlineUser", JSON.stringify(exestingUser));
-            window.location.href = "../html/jobs.html";
+           
+            Swal.fire({
+                title: "click ok go to the jobs!",
+                icon: "success",
+                ConfirmedButtonText:"ok"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "../html/jobs.html";
+                }
+              });
         
         }
         else{
