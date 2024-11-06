@@ -361,3 +361,9 @@ const deleteUser = (div,id) =>{
       });
    
 }
+
+//cancelEdit
+cancelEdit.addEventListener("click", () =>{
+    
+    editContainer.classList.remove("show");
+})
