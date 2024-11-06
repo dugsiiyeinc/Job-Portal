@@ -156,7 +156,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
                 ConfirmedButtonText:"ok"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "../html/dashboard.html";
+                    window.location.href = "../pages/dashboard.html";
                 }
               });
 
@@ -172,7 +172,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
                 ConfirmedButtonText:"ok"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "../html/jobs.html";
+                    window.location.href = "../pages/jobs.html";
                 }
               });
         
