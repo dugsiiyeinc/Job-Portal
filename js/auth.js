@@ -159,7 +159,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "!Error",
                 text: "Invalid credentials",
-                icon: "warning!",
+                icon: "error",
                 confirmButtonText: "ok"
               });
             return;
@@ -175,7 +175,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "!Error",
                 text: `user ${exestingUser.username} already exists`,
-                icon: "warning!",
+                icon: "info",
                 confirmButtonText: "ok"
               });
             return;
@@ -186,7 +186,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
             Swal.fire({
                 title: "password",
                 text: "password doeas not match",
-                icon: "info!",
+                icon: "info",
                 confirmButtonText: "ok"
               });
             return;
@@ -198,7 +198,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
         Swal.fire({
             title: "user regestration",
             text: "user regestration Successfully!",
-            icon: "info!",
+            icon: "success",
             confirmButtonText: "ok"
           });
         localStorage.setItem("users", JSON.stringify(users));
@@ -350,7 +350,4 @@ const deleteUser = (div,id) =>{
         }
       });
    
-   
-
-    
 }
