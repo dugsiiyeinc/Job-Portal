@@ -255,8 +255,17 @@ const usersAttachHandler = (div,id) =>{
         editHandle(div,id);
          
      })
+     
+     //checkbox
+     checkbox.addEventListener("change", ()=>{
+       
+        toogleAdminUser(id,checkbox.checked);
+        
+     })
    
 }
+
+
 
 //edit handle function
 const editHandle = (div,id) =>{
