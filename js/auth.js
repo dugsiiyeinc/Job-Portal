@@ -339,6 +339,18 @@ const deleteUser = (div,id) =>{
     
     localStorage.setItem("users", JSON.stringify(allUsers));
 
-    div.remove();
+    Swal.fire({
+        title: "Delete!",
+        text: "job deleting successfuly!",
+        icon: "success",
+        ConfirmedButtonText: "ok"
+    }).then((result) => {
+        if (result.isConfirmed) {  
+            div.remove();
+        }
+      });
+   
+   
+
     
 }
