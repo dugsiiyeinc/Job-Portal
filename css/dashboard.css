@@ -592,3 +592,6 @@ table img{
    }
 }
 
+.JobappliedList  li {
+    cursor: pointer;
+}
