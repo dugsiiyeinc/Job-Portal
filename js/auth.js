@@ -313,7 +313,19 @@ const updateUser = (id,newUsername,newEmail,newIsAdmin) => {
             finduser.email = newEmail.value;
             finduser.isAdmin = newIsAdmin.checked;
             localStorage.setItem("users", JSON.stringify(allUsers));
-            editContainer.classList.remove("show");
+            Swal.fire({
+                title: "Updated!",
+                text: "job updated successfuly!",
+                icon: "success",
+                ConfirmedButtonText: "ok"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    editContainer.classList.remove("show");
+                }
+              });
+           
+
         }
 });
 
