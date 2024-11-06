@@ -247,19 +247,6 @@
                       
                       <label for="editEmail">Email:</label>
                       <input type="email" id="editEmail" required>
-                      <input
-                        type="password"
-                        name="password"
-                        id="editPassword"
-                        placeholder="enter your password"
-                        style="display: none"
-                      />
-                      <input
-                        type="password"
-                        id="editConfirmPassword"
-                        placeholder="Confirm your Password"
-                        style="display: none"
-                      />
                       <div class="is-admin">
                         <label for="editIsAdmin">IsAdmin:</label>
                         <input type="checkbox" id="editIsAdmin">
@@ -272,13 +259,15 @@
                 </div>
               </div>
               <div class="add-container">
-                <div id="addPopup" class="popup hidden">
+                <div id="addPopup" class="popup hidden ">
                   <h1 class="add-form-title">Add New user</h1>
                   <form id="addForm">
                       <input type="text" id="addUsername" 
                       placeholder="enter your name"required>
                       
-                      <input type="email" id="addEmail" required>
+                      <input type="email" id="addEmail" 
+                      placeholder="enter your password"
+                      required>
                       <input
                         type="password"
                         name="password"
@@ -291,7 +280,7 @@
                         placeholder="Confirm your Password"
                       />
                       <button type="button" id="saveAdd" class="btn">Add new User</button>
-                      <button type="button" id="cancelEdit" class="btn">Cancel</button>
+                      <button type="button" id="cancelAdd" class=" btn" >Cancel</button>
                   </form>
                 </div>
               </div>

@@ -402,10 +402,10 @@ table img{
     background-color: #FF0044;
 
 }
-#saveEdit{
+#saveEdit, #saveAdd{
     background-color: #1f6feb;
 }
-#saveEdit:hover{
+#saveEdit:hover, #saveAdd:hover{
     background-color: #54AEFF;
    
 }
@@ -435,7 +435,7 @@ table img{
 }
 /* end applications styles */
 /* start edit pop-up design */
-.edit-container{
+.edit-container, .add-container{
     height: 100vh;
     display: none;
     justify-content: center;
@@ -462,13 +462,13 @@ table img{
     text-align: center;
     font-size: 2rem;
 }
-.popup #editForm{
+.popup #editForm, .popup #addForm{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.popup #editForm input{
+.popup #editForm input , .popup #addForm input{
     width: 100%;
     padding: 10px 15px;
     border-radius: 5px;
@@ -480,10 +480,10 @@ table img{
     align-items: center;
     gap: 1rem;
 }
-.edit-container.hidden {
+.edit-container.hidden ,.add-container.hidden  {
     display: none;
 }
-.edit-container.show {
+.edit-container.show , .add-container.show {
     display: flex;
 }
 /* end edit pop-up design */

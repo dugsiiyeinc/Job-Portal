@@ -11,16 +11,16 @@ const userList = document.querySelector('.user-list');
 const editContainer = document.querySelector(".edit-container");
 const editUsername = document.getElementById("editUsername");
 const editEmail = document.getElementById("editEmail");
-const cancelEdit = document.getElementById("cancelEdit");
+const cancelEdit = document.querySelector("#cancelEdit");
 const saveEdit = document.getElementById("saveEdit");
 const addUserBtn = document.getElementById("addUserBtn");
-const addContainer = document.querySelector(".addContainer");
+const addContainer = document.querySelector(".add-container");
 const addUsername = document.getElementById("addUsername");
 const addEmail = document.getElementById("addEmail");
 const addPassword = document.getElementById("addPassword");
 const addConfirmPassword = document.getElementById("addConfirmPassword");
 const saveAdd = document.getElementById("saveEdit");
-
+const cancelAdd = document.querySelector("#cancelAdd");
 
 
 //addig event to Dom
@@ -377,21 +377,12 @@ cancelEdit.addEventListener("click", () =>{
     editContainer.classList.remove("show");
 })
 
-//switchUpdateForm
-let updateuser = true
-const switchUpdateForm = () =>{
-    updateuser = !updateuser;
 
-    if(!updateuser){
-        editFormTitle.textContent = "Add New User";
-        editPassword.style.display = "block";
-        editConfirmPassword.style.display = "block";
-        saveEdit.textContent = "Add User";
-    }else{
-        editFormTitle.textContent = "Update User";
-        editPassword.style.display = "none";
-        editConfirmPassword.style.display = "none";
-        saveEdit.textContent = "Update User";
-    }  
+addUserBtn.addEventListener("click",() =>{
+    addContainer.classList.add("show");
+})
+
+cancelAdd.addEventListener("click", () =>{
     
-};
+    addContainer.classList.remove("show");
+})
