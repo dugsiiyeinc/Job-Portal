@@ -15,7 +15,9 @@ const editPassword = document.getElementById("editPassword");
 const editConfirmPassword = document.getElementById("editEmail");
 const editIsAdmin = document.getElementById("editIsAdmin");
 const cancelEdit = document.getElementById("cancelEdit");
+const saveEdit = document.getElementById("saveEdit");
 const addUserBtn = document.getElementById("addUserBtn");
+const editFormTitle = document.querySelector(".edit-form-title");
 
 
 
@@ -372,3 +374,4 @@ cancelEdit.addEventListener("click", () =>{
     
     editContainer.classList.remove("show");
 })
+
