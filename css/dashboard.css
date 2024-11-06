@@ -304,71 +304,16 @@ option{
     }
 
 /* end update job section */
-/* start job lest style  */
+/* start job listst style  */
 #job-list-con, #users{
     display: none;
 }
-.job-lists ,.users{
-    background-color: #2c2c2c;
-    display: flex;
-    flex-direction: column;
-    padding: 15px 0;
-    border-radius: 5px;
-}
-.searc-con {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 0 10px;
-    position: relative;
-}
-.searc-con input{
-   flex: 1;
-    padding: 10px 30px;
-    background-color: #444;
-    border: none;
-    color: #EDEDED;
-    border-radius: 5px;
-}
-.searc-con .search-icon{
-    position: absolute;
-    left: 2%;
-}
-.joblist-header , .users-header{
-    background-color: #444;
-    border-top: 1px solid #EDEDED;
-    
-}
-.joblist-header ul, .all-joblists .job {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    border-bottom: 1px solid #EDEDED;
-}
-/* strat users styles */
-.users-header ul , .user-card {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #EDEDED;
-    font-size: 1.1rem;
-    text-align: center;
-    gap: 1rem;
-}
-/* end users style */
-/* .all-joblists {
-    background: #444;  
-} */
-.all-joblists .job img{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
+
+/* end job listst style  */
+
+
+/* start user list style */
+
 .edit-btn,.delete-btn, .addjob-btn{
     background-color: #fff;
     border: none;
@@ -392,7 +337,8 @@ option{
     background-color: #FF0044;
 
 }
-/*  end job lists style*/
+
+/* start user list style */
 
 /* strat applications styles */
 #applications-con{
