@@ -520,7 +520,7 @@ table img{
      table tbody tr td{
         font-size: 9px;
      }
-     
+
 
      /* end job lists conten responsive design */
 
@@ -539,6 +539,22 @@ table img{
  .header h1{
     font-size: 1.4rem;
  }
+ table thead th{
+    font-size: 6px;
+ }
+ table tbody tr td{
+    font-size: 6px;
+ }
+ table img{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+   }
+ .edit-btn,.delete-btn{
+    padding: 5px;
+    font-size: 8px;
+   }
+
 
 
 }
