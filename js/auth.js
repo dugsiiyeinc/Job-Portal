@@ -265,7 +265,18 @@ const usersAttachHandler = (div,id) =>{
    
 }
 
+//toogleAdminUser
 
+const toogleAdminUser = (id,isAdmin) =>{
+    const allUsers = getusersFromLocalstorage();
+    const finduser = allUsers.find(user => user.createdDate == id);
+
+    if(finduser){
+        finduser.isAdmin = isAdmin;
+        localStorage.setItem("users", JSON.stringify(allUsers));
+    
+    }
+}
 
 //edit handle function
 const editHandle = (div,id) =>{
