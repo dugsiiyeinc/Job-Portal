@@ -19,7 +19,7 @@ const addUsername = document.getElementById("addUsername");
 const addEmail = document.getElementById("addEmail");
 const addPassword = document.getElementById("addPassword");
 const addConfirmPassword = document.getElementById("addConfirmPassword");
-const saveAdd = document.getElementById("saveEdit");
+const saveAdd = document.getElementById("saveAdd");
 const cancelAdd = document.querySelector("#cancelAdd");
 
 
@@ -385,4 +385,66 @@ addUserBtn.addEventListener("click",() =>{
 cancelAdd.addEventListener("click", () =>{
     
     addContainer.classList.remove("show");
+})
+
+ saveAdd.addEventListener("click" , (e) =>{
+    e.preventDefault();
+
+        if(addUsername.value === "" || addEmail.value === "" || addPassword.value === "" || addConfirmPassword.value === ""){
+            Swal.fire({
+                title: "Error!",
+                text: `please fill all Inputs`,
+                icon: "error",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+    
+
+    let user = {
+        username : addUsername.value,
+        email : addEmail.value,
+        password : addPassword.value,
+        confirPassword :addConfirmPassword.value,
+        createdDate: Date.now(),
+        idAdmin:  false
+    }
+  
+
+        const users = getusersFromLocalstorage();
+
+        const exestingUser = users.find(currentUser => currentUser.username  === user.username || currentUser.email === user.email );
+        
+        if(exestingUser){
+            Swal.fire({
+                title: "!Error",
+                text: `user ${exestingUser.username} already exists`,
+                icon: "info",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+
+
+        if(addConfirmPassword.value !== addPassword.value){
+            Swal.fire({
+                title: "password",
+                text: "password doeas not match",
+                icon: "info",
+                confirmButtonText: "ok"
+              });
+            return;
+        }
+        users.push(user);
+
+        //calling display user when registration new user
+        displayUsers(user)
+        Swal.fire({
+            title: "user regestration",
+            text: "user regestration Successfully!",
+            icon: "success",
+            confirmButtonText: "ok"
+          });
+        localStorage.setItem("users", JSON.stringify(users));
+        addContainer.classList.remove("show");
 })
