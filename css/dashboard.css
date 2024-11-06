@@ -562,6 +562,7 @@ table img{
     font-size: 6px;
  }
  table tbody tr td{
+    padding: 5px;
     font-size: 6px;
  }
  table img{
@@ -571,10 +572,7 @@ table img{
    }
  .edit-btn,.delete-btn{
     padding: 5px;
-    font-size: 6px;
+    font-size: 8px;
    }
-
-
-
 }
 
