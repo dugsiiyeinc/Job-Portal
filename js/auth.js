@@ -216,7 +216,21 @@ function displayUsers(user){
     const date = new Date(user.createdDate);
     const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
 
-userList && userList.appendChild(div);
+    
+    div.innerHTML = `
+            <td class="username">${user.username}</td>
+            <td class="email">${user.email}</td>
+            <td class="email">${formattedDate}</td>
+            <td > <input type="checkbox" class="isAdmin" ${user.isAdmin ? "checked" : ""}></td>
+            <td>
+            <div class="buttons">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+            </div>
+            </td>
+            `;
+
+   userList && userList.appendChild(div);
 
     usersAttachHandler(div,user.createdDate);
 
