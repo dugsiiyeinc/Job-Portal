@@ -212,6 +212,10 @@ authForm && authForm.addEventListener("submit" , (e) =>{
 function displayUsers(user){
     const div = document.createElement("tr");
 
+    //formating date
+    const date = new Date(user.createdDate);
+    const formattedDate = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
+
 userList && userList.appendChild(div);
 
     usersAttachHandler(div,user.createdDate);
