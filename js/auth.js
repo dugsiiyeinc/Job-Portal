@@ -210,7 +210,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
 //display users function
 
 function displayUsers(user){
-   
+    const div = document.createElement("tr");
 
 userList && userList.appendChild(div);
 
