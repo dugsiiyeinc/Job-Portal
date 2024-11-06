@@ -308,6 +308,54 @@ option{
 #job-list-con, #users{
     display: none;
 }
+.add-job{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-inline: 10px;
+    margin-bottom: 1rem;
+}
+table{
+    width: 100%;
+    border: 1px solid #EDEDED;
+    border-collapse:collapse;
+    text-align: center;
+    border-radius: 10px;
+}
+table thead th{
+    border-bottom: 1px solid #EDEDED;
+    padding: 10px;
+    background-color: #2c2c2c;
+    /* font-size: 10px; */
+}
+table tbody tr {
+    border-bottom: 1px solid #EDEDED;  
+}
+table tbody tr  td{
+    padding: 10px;
+    /* font-size: 10px; */
+}
+table tbody tr:hover{
+  
+    background-color: #2c2c2c;
+}
+table img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.edit-btn,.delete-btn, .add-btn{
+    background-color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #EDEDED;
+    cursor: pointer;
+}
+
+/* strat users styles */
+
 
 /* end job listst style  */
 
@@ -330,7 +378,7 @@ option{
 .edit-btn:hover{
     background-color: #069006;
 }
-.delete-btn,.addjob-btn{
+.delete-btn,.add-btn{
     background-color: #DA0037;
 }
 .delete-btn:hover ,.addjob-btn:hover{
