@@ -241,6 +241,9 @@ function displayUsers(user){
 const usersAttachHandler = (div,id) =>{
     const editBtn = div.querySelector(".edit-btn");
     const deleteBtn = div.querySelector(".delete-btn");    
+    const checkbox = div.querySelector(".isAdmin");    
+
+    
     //delete btn
     deleteBtn.addEventListener("click", () =>{
        deleteUser(div,id);
