@@ -404,6 +404,11 @@ table img{
 }
 #saveEdit{
     background-color: #1f6feb;
+    #54AEFF
+}
+#saveEdit:hover{
+    background-color: #54AEFF;
+   
 }
 /* start user list style */
 
