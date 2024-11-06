@@ -70,7 +70,7 @@ const loadJobsdata = () => {
      //AllFinanceJobs
      const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
     //allaplications
-     const allApplications = JSON.parse(localStorage.getItem("applications"));
+     const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
      console.log(allApplications.length);
      
 
@@ -354,22 +354,37 @@ function getPostFromLocalStorage() {
 //add jobs to the Dom
 
 const addJobsToTheDom = (job) => {
-    const tr = document.createElement("tr");
-    
-    allJobsList.appendChild(tr);
+    const div = document.createElement("tr");
+    div.className = "job";
 
-    attachHandler(tr, job);
+
+    div.innerHTML = `
+                <td> <img src="${job.imageUrl}"  alt="campany img"></td>
+                <td  class="campany-logo">${job.companyInput}</td>
+                <td  class="job-name">${job.postTitle}</td>
+                <td  class="job-location">${job.postLocation}</td>
+                <td  class="job-category">${job.jobCategory}</td>
+                <td >
+                  <div class="buttons">
+                    <button class="edit-btn">edit</button>
+                    <button class="delete-btn">Delete</button>
+                  </div> 
+                </td>
+           `;
+    allJobsList.appendChild(div);
+
+    attachHandler(div, job);
 
 }
 
 //attach handler
-const attachHandler = (tr, job) => {
-    const editBtn = tr.querySelector(".edit-btn");
-    const deleteBtn = tr.querySelector(".delete-btn");
+const attachHandler = (div, job) => {
+    const editBtn = div.querySelector(".edit-btn");
+    const deleteBtn = div.querySelector(".delete-btn");
 
     // delete btn event
     deleteBtn.addEventListener("click", () => {
-        deleteJob(tr, job.postTime);
+        deleteJob(div, job.postTime);
     });
     //edit btn  event
 
@@ -610,7 +625,7 @@ new Chart(jobCategoryCtx, {
 const displayApplications = () =>{
     
     
-    const allApplications = JSON.parse(localStorage.getItem("applications"));
+    const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
     
     // Create a map to count the number of times each job title is applied for
     var jobCountMap = {};
