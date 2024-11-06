@@ -11,8 +11,13 @@ const userList = document.querySelector('.user-list');
 const editContainer = document.querySelector(".edit-container");
 const editUsername = document.getElementById("editUsername");
 const editEmail = document.getElementById("editEmail");
+const editPassword = document.getElementById("editPassword");
+const editConfirmPassword = document.getElementById("editEmail");
 const editIsAdmin = document.getElementById("editIsAdmin");
 const cancelEdit = document.getElementById("cancelEdit");
+const addUserBtn = document.getElementById("addUserBtn");
+
+
 
 //addig event to Dom
 document.addEventListener("DOMContentLoaded",() =>{
