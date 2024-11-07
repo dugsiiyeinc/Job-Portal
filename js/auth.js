@@ -44,18 +44,10 @@ let signin = true;
 
 const adminusers = [
     {
-        username: "shiine1",
-        email: "shiine1@gmail.com",
-        password: 11,
-        confirPassword: 11,
-        createdDate: Date.now(),
-        isAdmin: true
-    },
-    {
-        username: "ayanle1",
-        email: "ayanle1@gmail.com",
-        password: 11,
-        confirPassword: 11,
+        username: "admin",
+        email: "admin@gmail.com",
+        password: admin12,
+        confirPassword: admin12,
         createdDate: Date.now(),
         isAdmin: true
     },
