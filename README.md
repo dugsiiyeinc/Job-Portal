@@ -127,15 +127,15 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## Contributers
+## Members
+### Team 2 Of Group C 
 
-## Ayanle Osman
-## Abdihakin Adan
+- Ayanle Osman
+- Abdihakin Adan
 
 ## Contact
 
 - shiinedev - [shiinecadde17@gmail.com](mailto:your.email@example.com)
 - Ayaanle - [ayaanleosman@gmail.com](mailto:your.email@example.com)
 
-Project Link: [https://github.com/dugsiiyeinc/Job-Portal.git](https://github.com/dugsiiyeinc/Job-Portal.git)
 
