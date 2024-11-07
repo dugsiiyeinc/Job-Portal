@@ -8,7 +8,7 @@ const dashLink = document.querySelector(".dash-link");
  const applicantName = document.querySelector("#fullName");
  const applicantEmail = document.querySelector("#email");
  const applicantPhone = document.querySelector("#phone");
- const applicantDistrict = document.querySelector("#district");
+ const applicantEducation = document.querySelector("#education");
  const applyForm = document.querySelector(".applyForm");
  const closeBtn = document.querySelector(".closeBtn");
 //set log in buttons when loptop or mobile menu
@@ -180,7 +180,7 @@ const applyJob = (id) => {
       applicantName.value === "" ||
       applicantEmail.value === "" ||
       applicantPhone.value === "" ||
-      applicantDistrict.value === ""
+      applicantEducation.value === ""
     ) {
       Swal.fire({
         title: "Error!",
@@ -195,7 +195,7 @@ const applyJob = (id) => {
       appliedUserName: applicantName.value,
       appliedUserEmail: applicantEmail.value,
       appliedUserPhone: applicantPhone.value,
-      appliedUserDistrict: applicantDistrict.value,
+      appliedUserEducation: applicantEducation.value,
     };
     // console.log(applicantData);
 
@@ -243,7 +243,7 @@ const closeModel = () =>{
     applicantName.value = "",
     applicantEmail.value = "",
     applicantPhone.value = "",
-    applicantDistrict.value = "",
+    applicantEducation.value = "",
     applyModel.style.display = "none";
 
 }

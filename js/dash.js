@@ -710,7 +710,7 @@ function displayApplicationsBasedOnJobTitle(jobTitle) {
               <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
               <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
               <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
-              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+              <span class="email"><strong>Education Level: </strong>${application.appliedUserEducation}</span>
               <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
           </div>
         `
