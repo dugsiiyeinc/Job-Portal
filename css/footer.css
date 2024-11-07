@@ -1,3 +1,4 @@
+.footer-specific,
 .footer-specific html,
 .footer-specific body {
     height: 100%;
@@ -7,7 +8,6 @@
 }
 
 .footer-specific body {
-
     display: flex;
     /* Set body as a flex container */
     flex-direction: column;
@@ -25,9 +25,9 @@
     background-color: #333;
     color: white;
 
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 }
 
 .footer ul {
