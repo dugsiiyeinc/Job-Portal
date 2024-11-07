@@ -17,6 +17,63 @@
 
 Job Portal is a web application that connects job seekers with employers. It provides a platform for users to search and apply for jobs, while allowing employers to post job listings and manage applications. The project features a responsive design and enhanced user experience.
 
+## Website Demo
+
+You can view a live demo of the Job Portal project [here](https://your-demo-url.com).
+
+To access the demo, you can use the following credentials:
+- Admin User:
+  - Username: admin@gmail.com
+  - Password: admin12
+
+Please note that the demo is reset periodically, and any changes made will not be permanent.
+
+## Screenshots
+
+### LOG IN Page
+![login Page](screenshots/login.PNG)
+### Jobs Page
+![Jobs](screenshots/jobs.PNG)
+### Admin Page
+![Admin Dashboard](screenshots/dashboard.PNG)
+
+## Code Snippets
+
+Here are some key code snippets from the Job Portal project:
+
+### posting Job To the Facebook API
+
+This JavaScript code handles posting Job To the Facebook :
+
+```javascript
+  const url = `https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZjMDYzNjA0MzQ1MjZkNTUzNDUxMzIi_pc`;
+
+
+        console.log(url);
+
+        const options = {
+            method: 'POST',
+
+            body: JSON.stringify({
+                JobTitle: postTitle.value,
+                HiringCompany: companyInput.value,
+                JobImage: imageUrl.value
+            })
+
+        };
+
+        console.log(options);
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            console.log(result);
+
+
+        } catch (error) {
+            console.error(error);
+        }
+```
+
 ## Features
 
 - User authentication (sign up, login, logout)
@@ -59,13 +116,6 @@ Job Portal is a web application that connects job seekers with employers. It pro
 6. If you're an admin, access the admin dashboard to manage jobs and users.
 
 
-## Screenshots
-### LOG IN Page
-![login Page](screenshots/login.PNG)
-### Jobs Page
-![Jobs](screenshots/jobs.PNG)
-### Admin Page
-![Admin Dashboard](screenshots/dashboard.PNG)
 
 ## Contributing
 
