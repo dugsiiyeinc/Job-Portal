@@ -375,6 +375,7 @@ const addJobsToTheDom = (job) => {
 
     allJobsList.appendChild(div);
 
+
     attachHandler(div, job);
 
 
