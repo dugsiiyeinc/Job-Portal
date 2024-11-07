@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/auth.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/manu.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
   </head>
   <body>
     <header>
@@ -30,36 +31,56 @@
         </ul>
       </nav>
     </header>
-    <div class="auth-model">
-      <div class="auth-container">
-        <h1 id="formTitle">Sign in</h1>
-        <form class="authForm">
-          <input
-            type="text"
-            id="username"
-            placeholder="Enter your Username"
-            style="display: none"
-          />
-          <input type="email" id="email" placeholder="Enter your Email" />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="enter your password"
-          />
-          <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm your Password"
-            style="display: none"
-          />
-          <button type="submit" class="btn" id="authButton">Sign In</button>
-        </form>
-        <p id="authSwitch">
-          New to JobPortal? <a href="#" id="switchForm">Register now</a>
-        </p>
+    <main>
+      <div class="auth-model">
+        <div class="auth-container">
+          <h1 id="formTitle">Sign in</h1>
+          <form class="authForm">
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your Username"
+              style="display: none"
+            />
+            <input type="email" id="email" placeholder="Enter your Email" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="enter your password"
+            />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm your Password"
+              style="display: none"
+            />
+            <button type="submit" class="btn" id="authButton">Sign In</button>
+          </form>
+          <p id="authSwitch">
+            New to JobPortal? <a href="#" id="switchForm">Register now</a>
+          </p>
+        </div>
       </div>
-    </div>
+    </main>
+    <footer class="footer">
+      <div class="social" >
+          <h3 id="social-heading" class="sr-only"> Follow us on social media</h3>
+          <a href="https://www.facebook.com/profile.php?id=61567889467630" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <hr class="footer-break">
+      <ul class="footer-links" >
+          <h3 id="footer-links-heading" class="sr-only">Footer Links</h3>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy </a></li>
+          <li><a href="#">Sitemap</a></li>
+      </ul>
+      <p class="copyright"> © 2024 Job Portal. All Rights are Reserved</p>
+  </footer>
+    
 
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>
