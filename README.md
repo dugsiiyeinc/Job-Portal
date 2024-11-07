@@ -4,13 +4,13 @@
 
 ## Table of Contents
 - [Description](#description)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
+- [Contributers](#license)
 - [Contact](#contact)
 
 ## Description
@@ -19,7 +19,7 @@ Job Portal is a web application that connects job seekers with employers. It pro
 
 ## Website Demo
 
-You can view a live demo of the Job Portal project [here](https://your-demo-url.com).
+You can view a live demo [Live Demo here](https://your-demo-url.com).
 
 To access the demo, you can use the following credentials:
 - Admin User:
@@ -31,11 +31,11 @@ Please note that the demo is reset periodically, and any changes made will not b
 ## Screenshots
 
 ### LOG IN Page
-![login Page](screenshots/login.PNG)
+![login Page](screenshots/login%20page.PNG)
 ### Jobs Page
 ![Jobs](screenshots/jobs.PNG)
 ### Admin Page
-![Admin Dashboard](screenshots/dashboard.PNG)
+![Admin Dashboard](screenshots/job%20listing.PNG)
 
 ## Code Snippets
 
@@ -127,13 +127,15 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## License
+## Members
+### Team 2 Of Group C 
 
-Distributed under the MIT License. See `LICENSE` for more information.
+- Ayanle Osman
+- Abdihakin Adan
 
 ## Contact
 
-Your Name - [your.email@example.com](mailto:your.email@example.com)
+- shiinedev - [shiinecadde17@gmail.com](mailto:your.email@example.com)
+- Ayaanle - [ayaanleosman@gmail.com](mailto:your.email@example.com)
 
-Project Link: [https://github.com/dugsiiyeinc/Job-Portal.git](https://github.com/dugsiiyeinc/Job-Portal.git)
 
