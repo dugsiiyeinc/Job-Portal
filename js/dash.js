@@ -21,7 +21,7 @@ const jobListTab = document.querySelector("#job-list");
 const jobListCon = document.querySelector("#job-list-con");
 const allJobsList = document.querySelector(".all-joblists");
 const applicationsTab = document.querySelector("#applications");
-const applicationsCon= document.querySelector("#applications-con");
+const applicationsCon = document.querySelector("#applications-con");
 const addPostBtn = document.querySelector("#addPostBtn");
 const onlineUserName = document.querySelector(".username");
 const showUserInfo = document.querySelector("#user");
@@ -59,20 +59,20 @@ const loadJobsdata = () => {
     // activeJobs.textContent = AllactiveJobs.length
 
     const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
-    
+
     // nonActiveJobs.textContent = AllnonActiveJobs.length
-     //AllTechnologyJobs
-     const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
+    //AllTechnologyJobs
+    const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
     //AllMarketingJobs
-     const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
-     //AllSalesJobs
-     const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
-     //AllFinanceJobs
-     const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
+    const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
+    //AllSalesJobs
+    const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
+    //AllFinanceJobs
+    const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
     //allaplications
-     const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
-     console.log(allApplications.length);
-     
+    const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
+    console.log(allApplications.length);
+
 
     const initialData = {
         totalJobs: AlltotalJobs,
@@ -91,18 +91,18 @@ const loadJobsdata = () => {
             sales: AllSalesJobs.length,
             finance: AllFinanceJobs.length,
         },
-       
+
     };
     localStorage.setItem('jobPortalData', JSON.stringify(initialData));
 
-            // Load data from local storage
-const data = JSON.parse(localStorage.getItem('jobPortalData'));
-console.log(data);
+    // Load data from local storage
+    const data = JSON.parse(localStorage.getItem('jobPortalData'));
+    console.log(data);
 
-// Update stats
-totalJobs.textContent = initialData.totalJobs;
-activeJobs.textContent = initialData.activeJobs;
-activeApplications.textContent = initialData.activeApplications;
+    // Update stats
+    totalJobs.textContent = initialData.totalJobs;
+    activeJobs.textContent = initialData.activeJobs;
+    activeApplications.textContent = initialData.activeApplications;
 
 
     alljobDetails.forEach(job => {
@@ -124,21 +124,21 @@ activeApplications.textContent = initialData.activeApplications;
     // displayUsers()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
-    if (!onlineUser) return ;
-  
+    if (!onlineUser) return;
+
 
     //online user  name
     onlineUserName.textContent = ` ${onlineUser.username}`;
-    
-     //showing user info 
-     showUserInfo.style.display = "block";
-     
+
+    //showing user info 
+    showUserInfo.style.display = "block";
+
     // loginBtn.textContent = "Log out"
     loginBtn1.textContent = "Log out";
     loginBtn2.textContent = "Log out";
 
-     //show dashboard if user is admin
-     if(onlineUser.isAdmin){
+    //show dashboard if user is admin
+    if (onlineUser.isAdmin) {
         dashLink.style.display = "block";
     }
 }
@@ -155,16 +155,16 @@ document.addEventListener("DOMContentLoaded", loadJobsdata);
 //     sidebar.classList.add("active");
 // });
 // check window onclick
-window.onclick = (event) =>{
+window.onclick = (event) => {
     // Check if the click target is openside
 
-  if(event.target == openSidebar){
-    sidebar.classList.add("active");
-     
-      
-  }else{
-    sidebar.classList.remove("active");
-  }
+    if (event.target == openSidebar) {
+        sidebar.classList.add("active");
+
+
+    } else {
+        sidebar.classList.remove("active");
+    }
 }
 // closeidebar
 
@@ -202,31 +202,31 @@ addnewJobTab.addEventListener('click', function () {
 jobListTab.addEventListener("click", () => {
 
     changeTabs(jobListTab, jobListCon, "Job lists");
-     
+
 
 });
 // when click joblists tab
 applicationsTab.addEventListener("click", () => {
 
     changeTabs(applicationsTab, applicationsCon, "Applications");
-     
+
 
 })
 
 //when user click go add new job
-addJobBtn.addEventListener("click", () =>{
+addJobBtn.addEventListener("click", () => {
     changeTabs(addnewJobTab, jobAddContainer, "Add New Job");
 })
 
 //when click usersTab
-usersTab.addEventListener("click", () =>{
+usersTab.addEventListener("click", () => {
     changeTabs(usersTab, usersCon, "users List");
 })
 
 //change tabs function 
 const changeTabs = (tab, container, tabTitle) => {
-    const tabs = [dashboardTab, addnewJobTab, jobListTab,applicationsTab,usersTab];
-    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer,applicationsCon,usersCon];
+    const tabs = [dashboardTab, addnewJobTab, jobListTab, applicationsTab, usersTab];
+    const containers = [mainDashboard, jobAddContainer, jobListCon, updateJobContainer, applicationsCon, usersCon];
 
     tabs.forEach(currentTab => {
 
@@ -268,7 +268,7 @@ async function addPost(e) {
             text: `please fill all Inputs`,
             icon: "error",
             confirmButtonText: "ok"
-          });
+        });
     } else if (new Date(dateInput.value) < new Date()) {
         alert("The date must be from today onwards");
         return;
@@ -288,31 +288,31 @@ async function addPost(e) {
         }
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
-        
+
         //  qeybtaan waxa ay ku post garee shaqada facebook anagoo isticmaaleyno  api
         const url = `https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZjMDYzNjA0MzQ1MjZkNTUzNDUxMzIi_pc`;
-   
+
 
         console.log(url);
-        
+
         const options = {
             method: 'POST',
-             
+
             body: JSON.stringify({
                 JobTitle: postTitle.value,
                 HiringCompany: companyInput.value,
-                JobImage: imageUrl.value 
+                JobImage: imageUrl.value
             })
-        
+
         };
-        
+
         console.log(options);
         try {
             const response = await fetch(url, options);
             const result = await response.json();
             console.log(result);
-             
-            
+
+
         } catch (error) {
             console.error(error);
         }
@@ -332,14 +332,14 @@ function SavePostDetailToLocalStorage(jobPostDetail) {
         ConfirmedButtonText: "ok"
     }).then((result) => {
         if (result.isConfirmed) {
-            
+
             reloadPage();
 
-                  
-           
-                       
+
+
+
         }
-      });
+    });
 
 }
 
@@ -371,9 +371,12 @@ const addJobsToTheDom = (job) => {
                   </div> 
                 </td>
            `;
+
+
     allJobsList.appendChild(div);
 
     attachHandler(div, job);
+
 
 }
 
@@ -416,7 +419,13 @@ searchInput.addEventListener('input', function () {
         addJobsToTheDom(job);
 
     });
+    if (jobPosts.length === 0) {
+        const noJobsMessage = document.createElement('div');
+        noJobsMessage.className = 'no-jobs-message'; // Optional: Add a class for styling
+        noJobsMessage.innerHTML = '<p>No jobs found.</p>'; // Message to display
+        allJobsList.appendChild(noJobsMessage); // Append the message to the job list
 
+    }
 })
 
 //update job
@@ -527,7 +536,7 @@ function updateJob(jobPostDetail, jobPostTime) {
 
 
         localStorage.setItem('jobPosts', JSON.stringify(jobPosts));
-     
+
 
         Swal.fire({
             title: "Updated!",
@@ -536,21 +545,21 @@ function updateJob(jobPostDetail, jobPostTime) {
             ConfirmedButtonText: "ok"
         }).then((result) => {
             if (result.isConfirmed) {
-                
+
                 reloadPage();
 
-                      
-               
-                           
+
+
+
             }
-          });
-          
-        
+        });
+
+
     }
-    
-    
- 
-    
+
+
+
+
 
 
 
@@ -567,9 +576,9 @@ window.addEventListener('load', () => {
     if (sessionStorage.getItem('reloaded')) {
         jobListTab.click()
         changeTabs(jobListTab, jobListCon, "Job lists");
-        
+
         console.log('Page reloaded programmatically');
-        sessionStorage.removeItem('reloaded');  
+        sessionStorage.removeItem('reloaded');
     } else {
         console.log('Page reloaded manually');
     }
@@ -640,15 +649,15 @@ new Chart(jobCategoryCtx, {
 
 
 
-const displayApplications = () =>{
-    
-    
+const displayApplications = () => {
+
+
     const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
-    
+
     // Create a map to count the number of times each job title is applied for
     var jobCountMap = {};
 
-    allApplications.forEach(function(application) {
+    allApplications.forEach(function (application) {
         var jobTitle = application.appliedJob;
         if (jobCountMap[jobTitle]) {
             jobCountMap[jobTitle]++;
@@ -660,6 +669,7 @@ const displayApplications = () =>{
     // Clear the current list
     appliedJobsList.innerHTML = '';
 
+
     // Create and append list items with job titles and their counts
     for (var jobTitle in jobCountMap) {
         var li = document.createElement('li');
@@ -667,7 +677,7 @@ const displayApplications = () =>{
         li.setAttribute('data-job-title', jobTitle);
         li.textContent = jobTitle + ' (' + jobCountMap[jobTitle] + ' applicants)';
         appliedJobsList.appendChild(li);
-        li.addEventListener('click', function(e) {
+        li.addEventListener('click', function (e) {
             // e.target refers to the element that was clicked
             const currentJobTitle = e.target.dataset.jobTitle
             console.log(currentJobTitle);
@@ -675,21 +685,27 @@ const displayApplications = () =>{
         });
     }
 
+    if (allApplications.length === 0) {
+        const noJobsMessage = document.createElement('div');
+        noJobsMessage.className = 'no-jobs-message'; // Optional: Add a class for styling
+        noJobsMessage.innerHTML = '<p>No Applicants found.</p>'; // Message to display
+        appliedJobsList.appendChild(noJobsMessage); // Append the message to the job list
+
+    }
 
 
-    
-    
+
 }
 
 // function waxa oo soo bandhigaa applicants-ka asoo ku base garesan job title 
- function displayApplicationsBasedOnJobTitle(jobTitle) {
+function displayApplicationsBasedOnJobTitle(jobTitle) {
     const applicationList = document.querySelector(".applications-list");
     const allApplications = JSON.parse(localStorage.getItem("applications"));
     const filteredApplications = allApplications.filter(application => application.appliedJob === jobTitle);
     console.log(filteredApplications);
-    applicationList.innerHTML =''
+    applicationList.innerHTML = ''
 
-    filteredApplications.map((application =>{
+    filteredApplications.map((application => {
         applicationList.innerHTML += `
          <div class="applicant-card">
               <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
@@ -700,7 +716,7 @@ const displayApplications = () =>{
           </div>
         `
     }))
-   
+
 }
 
 
