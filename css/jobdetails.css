@@ -18,9 +18,14 @@ p {
     gap: 1rem;
     border-radius: 5px;
 }
+ 
 .details-title , .desc-title{
     color: #EDEDED;
     font-size: 2rem;
+}
+.all-job-details h4{
+    font-size: 1.5rem;
+     
 }
 .jobs-details{
     display: flex;

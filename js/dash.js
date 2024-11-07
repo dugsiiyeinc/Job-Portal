@@ -401,6 +401,24 @@ const attachHandler = (div, job) => {
 
 }
 
+
+// job list search ayuu quseya function kaan
+
+searchInput.addEventListener('input', function () {
+    allJobsList.innerHTML = ''
+    console.log('searching', searchInput.value)
+    const searchValue = this.value.toLowerCase()
+    let jobPosts = getPostFromLocalStorage()
+    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
+    console.log('job posts', jobPosts)
+    jobPosts.forEach(job => {
+
+        addJobsToTheDom(job);
+
+    });
+
+})
+
 //update job
 
 function handleEdit(job, jobPostTime) {
@@ -684,3 +702,5 @@ const displayApplications = () =>{
     }))
    
 }
+
+

@@ -1,9 +1,25 @@
+.footer-specific html, .footer-specific body {
+    height: 100%; /* Ensure the body takes the full height */
+    margin: 0;    /* Remove default margin */
+}
+
+.footer-specific body {
+    
+    display: flex;            /* Set body as a flex container */
+    flex-direction: column;  /* Arrange children in a column */
+}
+
+ 
+.main-conttainer {
+    flex: 1;               
+}
+
 .footer {
     margin-top: 25px;
     padding: 10px 0;
     background-color: #333;
     color: white;
-    position: relative;
+    
     bottom: 0;
     left: 0;
     right: 0;

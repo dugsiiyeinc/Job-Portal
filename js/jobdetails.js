@@ -82,7 +82,7 @@ function addJobsToTheDom(jobPosts) {
 
   jobCard.innerHTML = `
                  <div class="content all-job-details">
-        <h4 class="details-title">job details</h4>
+        <h4 class="details-title"> ${jobPosts.postTitle}</h4>
         <div class="jobs-details">
        
         <div class="job-deatil">

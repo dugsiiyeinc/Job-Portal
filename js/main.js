@@ -126,7 +126,7 @@ function addjobPostToDOm(jobPost) {
 
 // })
 // console.log('lol', showAllButton);
-showAllButton && showAllButton.addEventListener('click', function () {window.location.href = '/html/jobs.html';})
+showAllButton && showAllButton.addEventListener('click', function () {window.location.href = '/pages/jobs.html';})
 
 
 //show user info
@@ -168,7 +168,7 @@ function getPostTimeId(jobCard) {
 
     if (PostTimeId) {
         // Redirect using the dynamic PostTimeId in the URL
-        window.location.href = `/html/jobdetails.html?jobId=${encodeURIComponent(PostTimeId)}`;
+        window.location.href = `/pages/jobdetails.html?jobId=${encodeURIComponent(PostTimeId)}`;
     }
 
     return PostTimeId;
@@ -184,6 +184,6 @@ searchBtnHome && searchBtnHome.addEventListener("click", () => {
     const searchInput = searchInptHome.value;
      console.log("search" , searchInput);
     
-     window.location.href = `/html/jobs.html?jobTitle=${searchInput}`;
+     window.location.href = `/pages/jobs.html?jobTitle=${searchInput}`;
     
 })

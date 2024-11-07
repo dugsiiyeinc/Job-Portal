@@ -327,6 +327,16 @@ option{
      color: #EDEDED;
      border-radius: 5px;
  }
+
+ /* search input users */
+ .search-input1{
+    flex: 1;
+     padding: 10px 30px;
+     background-color: #444;
+     border: none;
+     color: #EDEDED;
+     border-radius: 5px;
+ }
 .search-icon{
      position: absolute;
      top: 35%;
@@ -582,3 +592,6 @@ table img{
    }
 }
 
+.JobappliedList  li {
+    cursor: pointer;
+}

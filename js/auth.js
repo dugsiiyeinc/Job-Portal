@@ -21,6 +21,10 @@ const addPassword = document.getElementById("addPassword");
 const addConfirmPassword = document.getElementById("addConfirmPassword");
 const saveAdd = document.getElementById("saveAdd");
 const cancelAdd = document.querySelector("#cancelAdd");
+ const searchInputUsers = document.querySelector('.search-input1')
+
+
+
 
 
 //addig event to Dom
@@ -152,7 +156,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
                 ConfirmedButtonText:"ok"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "../html/dashboard.html";
+                    window.location.href = "../pages/dashboard.html";
                 }
               });
 
@@ -168,7 +172,7 @@ authForm && authForm.addEventListener("submit" , (e) =>{
                 ConfirmedButtonText:"ok"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "../html/jobs.html";
+                    window.location.href = "../pages/jobs.html";
                 }
               });
         
@@ -447,4 +451,17 @@ cancelAdd.addEventListener("click", () =>{
           });
         localStorage.setItem("users", JSON.stringify(users));
         addContainer.classList.remove("show");
+})
+
+// search users
+
+searchInputUsers.addEventListener("input", function(){
+    userList.innerHTML = ''
+    console.log("he",searchInputUsers.value  );
+    const searchValue = searchInputUsers.value.toLowerCase();
+    let UsersList = getusersFromLocalstorage()
+    UsersList = UsersList.filter(user => user.username.toLowerCase().includes(searchValue) || user.email.toLowerCase().includes(searchValue));
+    console.log('UsersList' ,UsersList)
+    UsersList.map(user => displayUsers(user))
+     
 })
