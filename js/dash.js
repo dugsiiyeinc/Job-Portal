@@ -371,9 +371,12 @@ const addJobsToTheDom = (job) => {
                   </div> 
                 </td>
            `;
+
+
     allJobsList.appendChild(div);
 
     attachHandler(div, job);
+
 
 }
 
@@ -416,7 +419,13 @@ searchInput.addEventListener('input', function () {
         addJobsToTheDom(job);
 
     });
+    if (jobPosts.length === 0) {
+        const noJobsMessage = document.createElement('div');
+        noJobsMessage.className = 'no-jobs-message'; // Optional: Add a class for styling
+        noJobsMessage.innerHTML = '<p>No jobs found.</p>'; // Message to display
+        allJobsList.appendChild(noJobsMessage); // Append the message to the job list
 
+    }
 })
 
 //update job
