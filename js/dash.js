@@ -58,7 +58,9 @@ const loadJobsdata = () => {
 
     });
 
+    //DisplayingChartsData
     DisplayingChartsData();
+    
     // recent jobs-ka lagu so bandhigaa Main dashboard-ka ayuu quseeya marka hore 4-ta shaqo  u danbesay ayuu so qaba
     // kadib ne  array la so helay aya reverse lagu sameyna si ka ugu danbeeyo oo u noqdo ka ugu horeya
     const lastfourjobs = alljobDetails.slice(-4)
@@ -70,8 +72,6 @@ const loadJobsdata = () => {
     //calling displayApplications
     displayApplications()
 
-    // //calling displayUsers function
-    // displayUsers()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
