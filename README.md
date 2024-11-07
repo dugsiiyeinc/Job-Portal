@@ -28,14 +28,20 @@ To access the demo, you can use the following credentials:
 
 Please note that the demo is reset periodically, and any changes made will not be permanent.
 
+## Members
+### Team 2 Of Group C 
+
+- Ayanle Osman
+- Abdihakin Adan
+
 ## Screenshots
 
 ### LOG IN Page
-![login Page](screenshots/login%20page.PNG)
-### Jobs Page
-![Jobs](screenshots/jobs.PNG)
+![login Page](screenshots/login.PNG)
 ### Admin Page
-![Admin Dashboard](screenshots/job%20listing.PNG)
+![Admin Dashboard](screenshots/admin.PNG)
+### Jobs Lists Page
+![Job lists](screenshots/jobs.PNG)
 
 ## Code Snippets
 
@@ -46,7 +52,7 @@ Here are some key code snippets from the Job Portal project:
 This JavaScript code handles posting Job To the Facebook :
 
 ```javascript
-  const url = `https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZjMDYzNjA0MzQ1MjZkNTUzNDUxMzIi_pc`;
+  const url = `` ; //API KEY
 
 
         console.log(url);
@@ -82,6 +88,7 @@ This JavaScript code handles posting Job To the Facebook :
 - Apply to jobs feature
 - Admin dashboard for managing jobs and users
 - Responsive design for mobile and desktop
+
 
 ## Technologies Used
 
@@ -127,11 +134,6 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## Members
-### Team 2 Of Group C 
-
-- Ayanle Osman
-- Abdihakin Adan
 
 ## Contact
 
