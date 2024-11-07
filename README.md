@@ -37,9 +37,9 @@ Please note that the demo is reset periodically, and any changes made will not b
 ## Screenshots
 
 ### LOG IN Page
-![login Page](screenshots/login.PNG)
+![login Page](screenshots/login.png)
 ### Admin Page
-![Admin Dashboard](screenshots/admin.PNG)
+![Admin Dashboard](screenshots/admin.png)
 ### Jobs Lists Page
 ![Job lists](screenshots/jobs.PNG)
 
