@@ -44,21 +44,13 @@ let signin = true;
 
 const adminusers = [
     {
-        username: "shiine1",
-        email: "shiine1@gmail.com",
-        password: 11,
-        confirPassword: 11,
+        username: "admin",
+        email: "admin@gmail.com",
+        password: "admin12",
+        confirPassword: "admin12",
         createdDate: Date.now(),
         isAdmin: true
-    },
-    {
-        username: "ayanle1",
-        email: "ayanle1@gmail.com",
-        password: 11,
-        confirPassword: 11,
-        createdDate: Date.now(),
-        isAdmin: true
-    },
+    }
 ];
 
 const users = getusersFromLocalstorage();
@@ -376,22 +368,22 @@ const deleteUser = (div, id) => {
 }
 
 //cancelEdit
-cancelEdit.addEventListener("click", () => {
+cancelEdit && cancelEdit.addEventListener("click", () => {
 
     editContainer.classList.remove("show");
 })
 
 
-addUserBtn.addEventListener("click", () => {
+addUserBtn && addUserBtn.addEventListener("click", () => {
     addContainer.classList.add("show");
 })
 
-cancelAdd.addEventListener("click", () => {
+cancelAdd && cancelAdd.addEventListener("click", () => {
 
     addContainer.classList.remove("show");
 })
 
-saveAdd.addEventListener("click", (e) => {
+saveAdd && saveAdd.addEventListener("click", (e) => {
     e.preventDefault();
 
     if (addUsername.value === "" || addEmail.value === "" || addPassword.value === "" || addConfirmPassword.value === "") {
@@ -455,7 +447,7 @@ saveAdd.addEventListener("click", (e) => {
 
 // search users
 
-searchInputUsers.addEventListener("input", function () {
+searchInputUsers && searchInputUsers.addEventListener("input", function () {
     userList.innerHTML = ''
     console.log("he", searchInputUsers.value);
     const searchValue = searchInputUsers.value.toLowerCase();

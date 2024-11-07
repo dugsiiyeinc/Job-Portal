@@ -50,65 +50,17 @@ loginBtn2.addEventListener("click", () => {
 
 //loading data 
 const loadJobsdata = () => {
+   
     const alljobDetails = getPostFromLocalStorage();
-    // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
-    const AlltotalJobs = alljobDetails.length
-    // totalJobs.textContent = AlltotalJobs
-    //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
-    const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
-    // activeJobs.textContent = AllactiveJobs.length
-
-    const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
-
-    // nonActiveJobs.textContent = AllnonActiveJobs.length
-    //AllTechnologyJobs
-    const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
-    //AllMarketingJobs
-    const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
-    //AllSalesJobs
-    const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
-    //AllFinanceJobs
-    const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
-    //allaplications
-    const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
-    console.log(allApplications.length);
-
-
-    const initialData = {
-        totalJobs: AlltotalJobs,
-        activeJobs: AllactiveJobs.length,
-        activeApplications: allApplications.length,
-        applicationStatus: {
-            applied: 100,
-            inReview: 50,
-            interviewed: 30,
-            offered: 15,
-            rejected: 20
-        },
-        jobCategories: {
-            technology: AllTechnologyJobs.length,
-            marketing: AllMarketingJobs.length,
-            sales: AllSalesJobs.length,
-            finance: AllFinanceJobs.length,
-        },
-
-    };
-    localStorage.setItem('jobPortalData', JSON.stringify(initialData));
-
-    // Load data from local storage
-    const data = JSON.parse(localStorage.getItem('jobPortalData'));
-    console.log(data);
-
-    // Update stats
-    totalJobs.textContent = initialData.totalJobs;
-    activeJobs.textContent = initialData.activeJobs;
-    activeApplications.textContent = initialData.activeApplications;
-
 
     alljobDetails.forEach(job => {
         addJobsToTheDom(job);
 
     });
+
+    //DisplayingChartsData
+    DisplayingChartsData();
+    
     // recent jobs-ka lagu so bandhigaa Main dashboard-ka ayuu quseeya marka hore 4-ta shaqo  u danbesay ayuu so qaba
     // kadib ne  array la so helay aya reverse lagu sameyna si ka ugu danbeeyo oo u noqdo ka ugu horeya
     const lastfourjobs = alljobDetails.slice(-4)
@@ -120,8 +72,6 @@ const loadJobsdata = () => {
     //calling displayApplications
     displayApplications()
 
-    // //calling displayUsers function
-    // displayUsers()
 
     const onlineUser = JSON.parse(localStorage.getItem("onlineUser")) || null;
     if (!onlineUser) return;
@@ -148,7 +98,55 @@ document.addEventListener("DOMContentLoaded", loadJobsdata);
 
 
 
+//displaying charts data
+const DisplayingChartsData = () =>{
+    const alljobDetails = getPostFromLocalStorage();
+    // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
+    const AlltotalJobs = alljobDetails.length
+    // totalJobs.textContent = AlltotalJobs
+    //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
+    const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
+    // activeJobs.textContent = AllactiveJobs.length
 
+    // const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
+
+    // nonActiveJobs.textContent = AllnonActiveJobs.length
+    //AllTechnologyJobs
+    const AllTechnologyJobs = alljobDetails.filter(job => job.jobCategory === "technology");
+    //AllMarketingJobs
+    const AllMarketingJobs = alljobDetails.filter(job => job.jobCategory === "marketing");
+    //AllSalesJobs
+    const AllSalesJobs = alljobDetails.filter(job => job.jobCategory === "sales");
+    //AllFinanceJobs
+    const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
+    //allaplications
+    const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
+    console.log(allApplications.length);
+
+
+    const initialData = {
+        totalJobs: AlltotalJobs,
+        activeJobs: AllactiveJobs.length,
+        activeApplications: allApplications.length,
+        jobCategories: {
+            technology: AllTechnologyJobs.length,
+            marketing: AllMarketingJobs.length,
+            sales: AllSalesJobs.length,
+            finance: AllFinanceJobs.length,
+        },
+
+    };
+    localStorage.setItem('jobPortalData', JSON.stringify(initialData));
+
+    // Load data from local storage
+    const data = JSON.parse(localStorage.getItem('jobPortalData'));
+    console.log(data);
+
+    // Update stats
+    totalJobs.textContent = initialData.totalJobs;
+    activeJobs.textContent = initialData.activeJobs;
+    activeApplications.textContent = initialData.activeApplications;
+}
 // openSidebar
 
 // openSidebar.addEventListener("click", () => {
@@ -712,7 +710,7 @@ function displayApplicationsBasedOnJobTitle(jobTitle) {
               <span class="job"><strong>Job: </strong>${application.appliedJob}</span>
               <span class="name"><strong>Applicant: </strong>${application.appliedUserName}</span>
               <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
-              <span class="email"><strong>District: </strong>${application.appliedUserDistrict}</span>
+              <span class="email"><strong>Education Level: </strong>${application.appliedUserEducation}</span>
               <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
           </div>
         `
