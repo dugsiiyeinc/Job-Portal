@@ -141,6 +141,7 @@ window.onclick = (event) =>{
 
     if(event.target == showUserInfo1){
         userInfo.classList.toggle("show");
+        console.log(document.title)
        
         
     }else{

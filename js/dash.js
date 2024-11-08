@@ -48,6 +48,8 @@ loginBtn2.addEventListener("click", () => {
     localStorage.removeItem("onlineUser")
 });
 
+ 
+
 //loading data 
 const loadJobsdata = () => {
    
@@ -162,6 +164,16 @@ window.onclick = (event) => {
 
     } else {
         sidebar.classList.remove("active");
+    }
+
+    // user info
+    if(event.target == showUserInfo){
+        userInfo.classList.toggle("show");
+        console.log(document.title)
+       
+        
+    }else{
+        userInfo.classList.remove("show");
     }
 }
 // closeidebar
