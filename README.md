@@ -11,7 +11,9 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Contributers](#license)
+- [License](#license)
 - [Contact](#contact)
+- [Conclusion](#Conclusion)
 
 ## Description
 
@@ -134,10 +136,15 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
 - shiinedev - [shiinecadde17@gmail.com](mailto:your.email@example.com)
 - Ayaanle - [ayaanleosman@gmail.com](mailto:your.email@example.com)
 
+## Conclusion
+- Thanks to the Dugsiiye Team and especially our teacher Mc hoamuda
 
