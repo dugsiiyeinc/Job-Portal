@@ -65,12 +65,12 @@ img{
   /* start hero sectom */
   .hero-section{
     flex-direction: column;
-    gap:10px;
+    /* gap:10px; */
     
   }
   .hero-section .hero-left{
     gap: 10px;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
   }
   .hero-left h2{
     font-size: 2rem;
@@ -93,7 +93,7 @@ img{
 /* start job posting  list */
 
   .Recent-jobs {
-    margin-top: 5rem !important;
+    /* margin-top: 5rem !important; */
     margin-bottom: 30px !important;
 
 
@@ -179,6 +179,8 @@ img{
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .Job-tilte p{
   
@@ -198,6 +200,7 @@ img{
   .recent-jobs-list-container {
     display: grid;
     grid-template-columns: 1fr;
+   
      
       
 }
