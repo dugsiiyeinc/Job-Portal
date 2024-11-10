@@ -175,7 +175,7 @@ search.addEventListener('input', function () {
    
     const searchValue = this.value.toLowerCase()  
     let jobPosts = getPostFromLocalStorage()
-    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue))
+    jobPosts = jobPosts.filter(job => job.postTitle.toLowerCase().includes(searchValue) ||  job.companyInput.toLowerCase().includes(searchValue))
     addJobsToTheDom(jobPosts)
 })
 
