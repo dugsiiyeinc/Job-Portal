@@ -164,7 +164,7 @@
   }
   .nav-links.active {
     display: flex;
-      min-height: 220px;
+      min-height: 275px;
       opacity: 1;
       transition: 300ms ease-in-out;
   }
