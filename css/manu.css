@@ -153,7 +153,7 @@
       display: none;
      flex-direction: column;
      justify-content: center;
-     background-color: #444;
+     background-color:#3c3c3c;
      padding-top: 10px ;
      min-height: 0;
      opacity: 0;
@@ -164,7 +164,7 @@
   }
   .nav-links.active {
     display: flex;
-      min-height: 220px;
+      min-height: 275px;
       opacity: 1;
       transition: 300ms ease-in-out;
   }
