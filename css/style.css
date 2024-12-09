@@ -207,8 +207,8 @@ img{
   background-color: #DA0037;
     color: #EDEDED;
     border: none;
-    padding: 10px 10px;
-    font-size: 1.2rem;
+    padding: 8px;
+    font-size: .8rem;
     border-radius: 5px;
     cursor: pointer;
 }
