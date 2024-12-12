@@ -296,12 +296,16 @@ async function addPost(e) {
 
             //  method-kaan waxa ay ku dara dom-ka  object-ga PostDetail
         }
+
+        // job url 
+        const joburl = `https://job-portal11.vercel.app/pages/jobdetails.html?jobId=${jobPostDetail.postTime}`;
+
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
 
         //  qeybtaan waxa ay ku post garee shaqada facebook anagoo isticmaaleyno  api
         const url = `https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZjMDYzNjA0MzQ1MjZkNTUzNDUxMzIi_pc`;
-
+       
 
         console.log(url);
 
@@ -311,7 +315,8 @@ async function addPost(e) {
             body: JSON.stringify({
                 JobTitle: postTitle.value,
                 HiringCompany: companyInput.value,
-                JobImage: imageUrl.value
+                JobImage: imageUrl.value, 
+                joburl: joburl
             })
 
         };
