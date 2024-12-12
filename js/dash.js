@@ -298,7 +298,7 @@ async function addPost(e) {
         }
 
         // job url 
-        const joburl = `https://job-portal11.vercel.app/pages/jobdetails.html?jobId=${jobPostDetail.postTime}`;
+        const joburl = `https://jobportal13.netlify.app//pages/jobdetails.html?jobId=${jobPostDetail.postTime}`;
 
         addJobsToTheDom(jobPostDetail);
         SavePostDetailToLocalStorage(jobPostDetail)
