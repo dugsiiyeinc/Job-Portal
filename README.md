@@ -2,21 +2,6 @@
 
 ![Job Portal Preview](screenshots/home.PNG)
 
-## Table of Contents
-- [Description](#description)
-- [Problem Statement](#problem-statement)
-- [Website Demo](#website-demo)
-- [Members](#members)
-- [Screenshots](#screenshots)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Conclusion](#Conclusion)
-
 ## Description
 
 Job Portal is a web application that connects job seekers with employers. It provides a platform for users to search and apply for jobs, while allowing employers to post job listings and manage applications. The project features a responsive design and enhanced user experience.
@@ -42,7 +27,7 @@ Please note that the demo is reset periodically, and any changes made will not b
 ### Team 2 Of Group C 
 
 - Ayanle Osman
-- Abdihakin Adan
+- Abdihakim Adan
 
 ## Screenshots
 
@@ -57,7 +42,7 @@ Please note that the demo is reset periodically, and any changes made will not b
 
 Here are some key code snippets from the Job Portal project:
 
-### posting Job To the Facebook API
+### posting Job To the Facebook Using  API
 
 This JavaScript code handles posting Job To the Facebook :
 
@@ -98,6 +83,7 @@ This JavaScript code handles posting Job To the Facebook :
 - Apply to jobs feature
 - Admin dashboard for managing jobs and users
 - Responsive design for mobile and desktop
+- API for posting job to the Facebook
 
 
 ## Technologies Used
@@ -108,6 +94,7 @@ This JavaScript code handles posting Job To the Facebook :
 - Local Storage for data persistence
 - Font Awesome for icons
 - Chart.js for admin dashboard visualizations
+- API for posting job to the Facebook
 
 ## Installation
 
@@ -144,14 +131,10 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 ## Contact
 
-- shiinedev - [shiinecadde17@gmail.com](mailto:your.email@example.com)
-- Ayaanle - [ayaanleosman@gmail.com](mailto:your.email@example.com)
+- shiinedev - [shiinecadde17@gmail.com](mailto:shiinecadde17@gmail.com)
+- Ayaanle - [ayaanleosman@gmail.com](mailto:ayaanleosman@gmail.com)
 
 ## Conclusion
 - Thanks to the Dugsiiye Team and especially our teacher Mc hoamuda
