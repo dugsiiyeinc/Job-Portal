@@ -9,8 +9,10 @@ const dashLink = document.querySelector(".dash-link");
  const applicantEmail = document.querySelector("#email");
  const applicantPhone = document.querySelector("#phone");
  const applicantEducation = document.querySelector("#education");
+ const applicantGender = document.querySelector("#gender");
  const applyForm = document.querySelector(".applyForm");
  const closeBtn = document.querySelector(".closeBtn");
+
 //set log in buttons when loptop or mobile menu
 loginBtn1.addEventListener("click", () => {
   localStorage.removeItem("onlineUser");
@@ -180,7 +182,8 @@ const applyJob = (id) => {
       applicantName.value === "" ||
       applicantEmail.value === "" ||
       applicantPhone.value === "" ||
-      applicantEducation.value === ""
+      applicantEducation.value === ""||
+      applicantGender.value === ""
     ) {
       Swal.fire({
         title: "Error!",
@@ -196,6 +199,7 @@ const applyJob = (id) => {
       appliedUserEmail: applicantEmail.value,
       appliedUserPhone: applicantPhone.value,
       appliedUserEducation: applicantEducation.value,
+      applicantGender:applicantGender.value
     };
     // console.log(applicantData);
 
@@ -207,7 +211,7 @@ const applyJob = (id) => {
        (appliedUser.appliedUserPhone === applicantData.appliedUserPhone &&
         appliedUser.appliedUserEmail === applicantData.appliedUserEmail ) && appliedUser.appliedJob === findPostToapply.postTitle
     );
-  console.log(exestingAppliedUser,findPostToapply);
+  // console.log(exestingAppliedUser,findPostToapply);
   
     if(exestingAppliedUser) {
       Swal.fire({
@@ -244,6 +248,7 @@ const closeModel = () =>{
     applicantEmail.value = "",
     applicantPhone.value = "",
     applicantEducation.value = "",
+    applicantGender.value = "";
     applyModel.style.display = "none";
 
 }
