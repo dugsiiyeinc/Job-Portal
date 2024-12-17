@@ -27,7 +27,7 @@ form, .applyForm{
     flex-direction: column;
     gap: 1rem;
 }
-form input{
+form input,select{
     width: 100%;
     padding: 10px 15px;
     border-radius: 5px;

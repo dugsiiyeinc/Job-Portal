@@ -81,8 +81,8 @@ p {
 }
 .apply-model .closeBtn{
    position: absolute;
-   right: 33%;
-   top: 23%;
+   right: 31%;
+   top: 16%;
    background-color: #171717;
    border: none;
    color: #EDEDED;
@@ -103,13 +103,13 @@ p {
         gap: 1rem;
     }
     .apply-model .closeBtn{
-        top: 15%;
-        right: 10%;
+        top: 22%;
+        right: 18%;
     }
 }
 @media (max-width: 480px){
     .apply-model .closeBtn{
-        top: 24%;
+        top: 22%;
         right: 8%;
     }
 }

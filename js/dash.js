@@ -29,14 +29,15 @@ const loginBtn1 = document.querySelectorAll(".loginBtn")[0];
 const loginBtn2 = document.querySelectorAll(".loginBtn")[1];
 const updateJobContainer = document.querySelector(".update-job-container")
 const totalJobs = document.querySelector('#totalJobs')
-const activeJobs = document.querySelector('#activejobs')
-const activeApplications = document.querySelector('#activeApplications');
+const totalUsers = document.querySelector('#totalUsers')
+const totalApplications = document.querySelector('#totalApplications');
 const dashLink = document.querySelector('.dash-link');
 const searchInput = document.querySelector('.search-input');
 const addJobBtn = document.querySelector('#addJobBtn');
 const usersTab = document.querySelector('#usersTab');
 const usersCon = document.querySelector('#users');
 const appliedJobsList = document.querySelector('.JobappliedList')
+
 
 
 
@@ -103,11 +104,13 @@ document.addEventListener("DOMContentLoaded", loadJobsdata);
 //displaying charts data
 const DisplayingChartsData = () =>{
     const alljobDetails = getPostFromLocalStorage();
+    const AllUsers = JSON.parse(localStorage.getItem('users')) || [];
+
     // qeybtaan waxa ay soo bandhigee Totaal-ka shaqooyinka
     const AlltotalJobs = alljobDetails.length
     // totalJobs.textContent = AlltotalJobs
-    //  qeybtaaan waxa ay so bandhigee inta shaqo aan la gaarin waqtiga dhicitaankooda
-    const AllactiveJobs = alljobDetails.filter(job => new Date(job.dateInput) >= Date.now());
+    //  qeybtaaan waxa ay so bandhigee totalka
+    const AllTotalUsers = AllUsers.length;
     // activeJobs.textContent = AllactiveJobs.length
 
     // const AllnonActiveJobs = alljobDetails.filter(job => new Date(job.dateInput) <= Date.now());
@@ -123,19 +126,28 @@ const DisplayingChartsData = () =>{
     const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
     //allaplications
     const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
+    const maleApplicants = allApplications.filter(applicant => applicant.appliedUserGender === "male");
+    const feMaleApplicants = allApplications.filter(applicant => applicant.appliedUserGender === "female");
+    console.log(maleApplicants.length)
+    console.log(feMaleApplicants.length)
     console.log(allApplications.length);
 
 
     const initialData = {
         totalJobs: AlltotalJobs,
-        activeJobs: AllactiveJobs.length,
-        activeApplications: allApplications.length,
+        totalUsers: AllTotalUsers,
+        totalApplications: allApplications.length,
         jobCategories: {
             technology: AllTechnologyJobs.length,
             marketing: AllMarketingJobs.length,
             sales: AllSalesJobs.length,
             finance: AllFinanceJobs.length,
         },
+        applicationStatus: {
+            male:maleApplicants.length,
+            female:feMaleApplicants.length
+        },
+
 
     };
     localStorage.setItem('jobPortalData', JSON.stringify(initialData));
@@ -146,8 +158,10 @@ const DisplayingChartsData = () =>{
 
     // Update stats
     totalJobs.textContent = initialData.totalJobs;
-    activeJobs.textContent = initialData.activeJobs;
-    activeApplications.textContent = initialData.activeApplications;
+    totalUsers.textContent = initialData.totalUsers;
+    totalApplications.textContent = initialData.totalApplications;
+    console.log(totalUsers)
+    console.log(totalApplications)
 }
 // openSidebar
 
@@ -661,8 +675,33 @@ new Chart(jobCategoryCtx, {
     }
 });
 
-
-
+const applicationStatusCtx = document.getElementById('applicationStatusChart').getContext('2d');
+new Chart(applicationStatusCtx, {
+    type: 'doughnut',
+    data: {
+        labels: Object.keys(data.applicationStatus),
+        datasets: [{
+            data: Object.values(data.applicationStatus),
+            backgroundColor: ['#4e79a7', '#f28e2c']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right',
+                labels: {
+                    color: '#e0e0e0'
+                }
+            },
+            title: {
+                display: true,
+                text: 'Application Gender',
+                color: '#ffffff'
+            }
+        }
+    }
+});
 
 
 const displayApplications = () => {
@@ -729,6 +768,7 @@ function displayApplicationsBasedOnJobTitle(jobTitle) {
               <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
               <span class="email"><strong>Education Level: </strong>${application.appliedUserEducation}</span>
               <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
+              <span class="Gender"><strong>Gender: </strong>${application.appliedUserGender}</span>
           </div>
         `
     }))
