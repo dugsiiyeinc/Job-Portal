@@ -199,7 +199,7 @@ const applyJob = (id) => {
       appliedUserEmail: applicantEmail.value,
       appliedUserPhone: applicantPhone.value,
       appliedUserEducation: applicantEducation.value,
-      applicantGender:applicantGender.value
+      appliedUserGender:applicantGender.value
     };
     // console.log(applicantData);
 
