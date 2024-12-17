@@ -12,16 +12,6 @@ Problem: The fast-paced job market presents challenges like information overload
 ## 🏠 Solution Statement
 Solution: Our Job Portal offers an efficient job search with powerful filters, a streamlined application process, a centralized platform for job seekers and employers, responsive design for all devices, accessibility features including  a comprehensive admin dashboard for managing postings and applications, and local storage for smoother user experience. This aims to simplify and improve the job search and hiring process for all parties involved.
 
-## 🌐 Website Demo
-
-You can view a live demo [Live Demo here](https://job-portal11.vercel.app).
-
-To access the demo, you can use the following credentials:
-- Admin User:
-  - Username: admin@gmail.com
-  - Password: admin12
-
-Please note that the demo is reset periodically, and any changes made will not be permanent.
 
 ## 👨‍💼 Members
 ### Team 2 Of Group C 
@@ -130,6 +120,18 @@ Contributions are welcome! Please follow these steps to contribute:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
+
+
+## 🌐 Website Demo
+
+You can view a live demo [Live Demo here](jobportal13.netlify.app/).
+
+To access the demo, you can use the following credentials:
+- Admin User:
+  - Username: admin@gmail.com
+  - Password: admin12
+
+Please note that the demo is reset periodically, and any changes made will not be permanent.
 
 ## 📧 Contact
 
