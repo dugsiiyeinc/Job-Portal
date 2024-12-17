@@ -117,10 +117,14 @@
 .charts {
     display: flex;
     justify-content: space-between;
+  
     margin-bottom: 20px;
 }
 
 .chart-container {
+   display: flex;
+   justify-content: baseline;
+   align-items: center;
     background-color: #2c2c2c;
     padding: 20px;
     border-radius: 8px;
@@ -135,6 +139,7 @@
 .chart-container:last-child {
     margin-right: 0;
 }
+
 .job-list {
     background-color: #2c2c2c;
     padding: 20px;
