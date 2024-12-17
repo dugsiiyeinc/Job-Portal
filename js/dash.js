@@ -126,6 +126,10 @@ const DisplayingChartsData = () =>{
     const AllFinanceJobs = alljobDetails.filter(job => job.jobCategory === "finance");
     //allaplications
     const allApplications = JSON.parse(localStorage.getItem("applications")) || [];
+    const maleApplicants = allApplications.filter(applicant => applicant.appliedUserGender === "male");
+    const feMaleApplicants = allApplications.filter(applicant => applicant.appliedUserGender === "female");
+    console.log(maleApplicants.length)
+    console.log(feMaleApplicants.length)
     console.log(allApplications.length);
 
 
@@ -139,6 +143,11 @@ const DisplayingChartsData = () =>{
             sales: AllSalesJobs.length,
             finance: AllFinanceJobs.length,
         },
+        applicationStatus: {
+            male:maleApplicants.length,
+            female:feMaleApplicants.length
+        },
+
 
     };
     localStorage.setItem('jobPortalData', JSON.stringify(initialData));
@@ -666,6 +675,35 @@ new Chart(jobCategoryCtx, {
     }
 });
 
+const applicationStatusCtx = document.getElementById('applicationStatusChart').getContext('2d');
+new Chart(applicationStatusCtx, {
+    type: 'doughnut',
+    data: {
+        labels: Object.keys(data.applicationStatus),
+        datasets: [{
+            data: Object.values(data.applicationStatus),
+            backgroundColor: ['#4e79a7', '#f28e2c']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right',
+                labels: {
+                    color: '#e0e0e0'
+                }
+            },
+            title: {
+                display: true,
+                text: 'Application Gender',
+                color: '#ffffff'
+            }
+        }
+    }
+});
+
+
 const displayApplications = () => {
 
 
@@ -730,7 +768,7 @@ function displayApplicationsBasedOnJobTitle(jobTitle) {
               <span class="email"><strong>Email: </strong>${application.appliedUserEmail}</span>
               <span class="email"><strong>Education Level: </strong>${application.appliedUserEducation}</span>
               <span class="phone"><strong>phone: </strong>${application.appliedUserPhone}</span>
-              <span class="Gender"><strong>Gender: </strong>${application.appliedGender}</span>
+              <span class="Gender"><strong>Gender: </strong>${application.appliedUserGender}</span>
           </div>
         `
     }))
