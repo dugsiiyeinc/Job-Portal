@@ -124,7 +124,7 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## 🌐 Website Demo
 
-You can view a live demo [Live Demo here](jobportal13.netlify.app/).
+You can view a live demo [Live Demo here](https://jobportal13.netlify.app/).
 
 To access the demo, you can use the following credentials:
 - Admin User:
