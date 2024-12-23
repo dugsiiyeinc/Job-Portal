@@ -6,13 +6,6 @@
 
  Job Portal is a web application that connects job seekers with employers. It provides a platform for users to search and apply for jobs, while allowing employers to post job listings and manage applications. The project features a responsive design and enhanced user experience.
 
-## 🕵️ Problem Statement
-Problem: The fast-paced job market presents challenges like information overload, time-consuming processes for employers, lack of centralization, poor user experience, and limited accessibility on existing job portals.
-
-## 🏠 Solution Statement
-Solution: Our Job Portal offers an efficient job search with powerful filters, a streamlined application process, a centralized platform for job seekers and employers, responsive design for all devices, accessibility features including  a comprehensive admin dashboard for managing postings and applications, and local storage for smoother user experience. This aims to simplify and improve the job search and hiring process for all parties involved.
-
-
 ## 👨‍💼 Members
 ### Team 2 Of Group C 
 
